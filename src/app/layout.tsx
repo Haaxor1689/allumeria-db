@@ -9,7 +9,7 @@ import Footer from '#components/layout/Footer.tsx';
 import NavLink from '#components/layout/NavLink.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import { env } from '#env.js';
-import { NavigationLinks, SocialLinks } from '#utils/constants.ts';
+import { NavigationLinks } from '#utils/constants.ts';
 import { MobileStateSync } from '#utils/useIsMobile.tsx';
 
 const atkinsonHyperlegible = Atkinson_Hyperlegible({
@@ -56,7 +56,7 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 		</head>
 		<body className={`${atkinsonHyperlegible.className} text-white`}>
 			<div
-				className="flex min-h-screen flex-col gap-8 overflow-x-hidden p-2 lg:h-screen lg:flex-row lg:overflow-y-hidden lg:p-8"
+				className="flex min-h-screen flex-col gap-8 overflow-x-hidden p-2 lg:h-screen lg:flex-row lg:p-8"
 				style={{
 					backgroundImage: 'url(/night_sky.png)',
 					backgroundSize: 'cover',
@@ -85,11 +85,9 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 					</header>
 					<Footer className="hidden lg:block" />
 				</div>
-				<ScrollArea containerClassName="w-full shrink grow lg:-m-8">
-					<main className="flex min-h-screen flex-col gap-8 lg:p-8">
-						{children}
-					</main>
-				</ScrollArea>
+				<main className="flex w-full shrink grow flex-col gap-8">
+					{children}
+				</main>
 				<Footer className="px-4 pb-6 lg:hidden" />
 			</div>
 			<MobileStateSync />

@@ -1,14 +1,8 @@
-import { zodResolver as resolver } from '@hookform/resolvers/zod';
-import { type FieldValues, type Resolver } from 'react-hook-form';
 import { type z } from 'zod';
 
 import { type ProcedureResult } from '#server/helpers.ts';
 
 import { Errors, isErrors } from './errors';
-
-export const zodResolver = <In extends FieldValues, Out extends FieldValues>(
-	schema: z.ZodType<Out, In>
-): Resolver<Out, In> => resolver(schema as never, undefined, { mode: 'sync' });
 
 export const downloadBlob = (blob: Blob, title: string) => {
 	const url = window.URL.createObjectURL(blob);

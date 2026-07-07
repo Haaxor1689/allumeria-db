@@ -3,7 +3,7 @@
 import { atom, useAtomValue, useSetAtom } from 'jotai';
 import { useEffect } from 'react';
 
-const MOBILE_BREAKPOINT = 768;
+const MOBILE_BREAKPOINT = 1024;
 const isMobileAtom = atom(false);
 
 export const MobileStateSync = () => {
