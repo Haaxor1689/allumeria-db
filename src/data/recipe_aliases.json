@@ -1,0 +1,38 @@
+[
+  {
+    "id": "any_planks",
+    "entries": [
+      "planks",
+      "maple_planks",
+      "birch_planks",
+      "pine_planks"
+    ]
+  },
+  {
+    "id": "common_fish",
+    "entries": [
+      "fish_catfish",
+      "fish_carp",
+      "fish_tuna",
+      "fish_salmon",
+      "fish_minnow",
+      "fish_blobfish",
+      "fish_nautilus"
+    ]
+  },
+  {
+    "id": "gourmet_fish",
+    "entries": [
+      "fish_murray_cod",
+      "fish_herring",
+      "fish_lanternfish",
+      "fish_crystalfin",
+      "fish_fangtooth",
+      "fish_smoulderfish",
+      "fish_obsidieel",
+      "fish_stonefish",
+      "fish_rainbow_trout",
+      "fish_walleye"
+    ]
+  }
+]

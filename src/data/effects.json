@@ -1,0 +1,368 @@
+[
+  {
+    "id": "poison",
+    "intId": 0,
+    "type": "Poison",
+    "effectType": "Debuff",
+    "textureX": 0,
+    "textureY": 368
+  },
+  {
+    "id": "regen",
+    "intId": 1,
+    "type": "Regen",
+    "effectType": "Hidden",
+    "textureX": 64,
+    "textureY": 368,
+    "delay": 600
+  },
+  {
+    "id": "wet",
+    "intId": 2,
+    "type": "Wet",
+    "effectType": "Neutral",
+    "textureX": 16,
+    "textureY": 368
+  },
+  {
+    "id": "slowfall",
+    "intId": 3,
+    "effectType": "Buff",
+    "textureX": 32,
+    "textureY": 368
+  },
+  {
+    "id": "fire",
+    "intId": 4,
+    "type": "Fire",
+    "effectType": "Debuff",
+    "textureX": 48,
+    "textureY": 368
+  },
+  {
+    "id": "healcooldown",
+    "intId": 5,
+    "type": "HealCooldown",
+    "effectType": "Neutral",
+    "textureX": 80,
+    "textureY": 368
+  },
+  {
+    "id": "freezing",
+    "intId": 6,
+    "type": "Freezing",
+    "effectType": "Debuff",
+    "textureX": 96,
+    "textureY": 368
+  },
+  {
+    "id": "fast",
+    "intId": 7,
+    "type": "Fast",
+    "effectType": "Buff",
+    "textureX": 112,
+    "textureY": 368,
+    "speedModifier": 1.5
+  },
+  {
+    "id": "slow",
+    "intId": 8,
+    "type": "Fast",
+    "effectType": "Debuff",
+    "textureX": 128,
+    "textureY": 368,
+    "speedModifier": 0.5
+  },
+  {
+    "id": "anchored",
+    "intId": 9,
+    "effectType": "Debuff",
+    "textureX": 144,
+    "textureY": 368
+  },
+  {
+    "id": "frozen",
+    "intId": 10,
+    "effectType": "Debuff",
+    "textureX": 160,
+    "textureY": 368
+  },
+  {
+    "id": "watched",
+    "intId": 11,
+    "effectType": "Passive",
+    "textureX": 176,
+    "textureY": 368
+  },
+  {
+    "id": "fast_walking",
+    "intId": 12,
+    "type": "Fast",
+    "effectType": "Hidden",
+    "textureX": 112,
+    "textureY": 368,
+    "speedModifier": 1.25
+  },
+  {
+    "id": "buoyant",
+    "intId": 13,
+    "type": "Buoyant",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368
+  },
+  {
+    "id": "flippers",
+    "intId": 14,
+    "type": "Flippers",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368
+  },
+  {
+    "id": "flight",
+    "intId": 15,
+    "type": "Flight",
+    "effectType": "Buff",
+    "textureX": 32,
+    "textureY": 368,
+    "ticks": 30
+  },
+  {
+    "id": "short_flight",
+    "intId": 16,
+    "type": "Flight",
+    "effectType": "Hidden",
+    "textureX": 32,
+    "textureY": 368,
+    "ticks": 60
+  },
+  {
+    "id": "spring_boots",
+    "intId": 17,
+    "type": "JumpBoost",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368,
+    "strength": 1.5
+  },
+  {
+    "id": "trampoline",
+    "intId": 18,
+    "type": "JumpBoost",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368,
+    "strength": 2.5
+  },
+  {
+    "id": "glide",
+    "intId": 19,
+    "type": "Glide",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368
+  },
+  {
+    "id": "jumping_bean",
+    "intId": 20,
+    "type": "JumpingBean",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368,
+    "strength": 1.5
+  },
+  {
+    "id": "bouncy",
+    "intId": 21,
+    "type": "Bouncy",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368
+  },
+  {
+    "id": "sneaky",
+    "intId": 22,
+    "type": "Sneak",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368
+  },
+  {
+    "id": "wall_jumping",
+    "intId": 23,
+    "type": "WallJump",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368
+  },
+  {
+    "id": "speed_boots",
+    "intId": 24,
+    "type": "Sprinting",
+    "effectType": "Hidden",
+    "textureX": 224,
+    "textureY": 336,
+    "speedModifier": 1.5
+  },
+  {
+    "id": "poison_immunity",
+    "intId": 25,
+    "type": "PoisonImmunity",
+    "effectType": "Hidden",
+    "textureX": 224,
+    "textureY": 336
+  },
+  {
+    "id": "weak_health_potion",
+    "intId": 26,
+    "type": "RestoreHealth",
+    "effectType": "Hidden",
+    "textureX": 224,
+    "textureY": 336,
+    "hp": 10
+  },
+  {
+    "id": "health_potion",
+    "intId": 27,
+    "type": "RestoreHealth",
+    "effectType": "Hidden",
+    "textureX": 224,
+    "textureY": 336,
+    "hp": 20
+  },
+  {
+    "id": "regen_potion",
+    "intId": 28,
+    "type": "Regen",
+    "effectType": "Buff",
+    "textureX": 64,
+    "textureY": 368,
+    "delay": 480
+  },
+  {
+    "id": "armoured",
+    "intId": 29,
+    "type": "Armoured",
+    "effectType": "Buff",
+    "textureX": 208,
+    "textureY": 368,
+    "amount": 4
+  },
+  {
+    "id": "returning",
+    "intId": 30,
+    "type": "Return",
+    "effectType": "Hidden",
+    "textureX": 192,
+    "textureY": 368
+  },
+  {
+    "id": "concussion",
+    "intId": 31,
+    "type": "Stun",
+    "effectType": "Debuff",
+    "textureX": 240,
+    "textureY": 368
+  },
+  {
+    "id": "snack",
+    "intId": 32,
+    "type": "Snack",
+    "effectType": "Buff",
+    "textureX": 256,
+    "textureY": 368,
+    "strength": 1
+  },
+  {
+    "id": "small_meal",
+    "intId": 33,
+    "type": "Snack",
+    "effectType": "Buff",
+    "textureX": 272,
+    "textureY": 368,
+    "strength": 2
+  },
+  {
+    "id": "webbed",
+    "intId": 34,
+    "type": "Web",
+    "effectType": "Debuff",
+    "textureX": 288,
+    "textureY": 368
+  },
+  {
+    "id": "magnetism",
+    "intId": 35,
+    "type": "Magnetism",
+    "effectType": "Hidden",
+    "textureX": 288,
+    "textureY": 368
+  },
+  {
+    "id": "scuba_helmet",
+    "intId": 36,
+    "type": "WaterBreathing",
+    "effectType": "Hidden",
+    "textureX": 288,
+    "textureY": 368
+  },
+  {
+    "id": "fast_mining",
+    "intId": 37,
+    "type": "FastMining",
+    "effectType": "Buff",
+    "textureX": 304,
+    "textureY": 368
+  },
+  {
+    "id": "super_weak_heal",
+    "intId": 38,
+    "type": "RestoreHealth",
+    "effectType": "Hidden",
+    "textureX": 224,
+    "textureY": 368,
+    "hp": 4
+  },
+  {
+    "id": "curse_of_core",
+    "intId": 39,
+    "type": "CoreCurse",
+    "effectType": "Hidden",
+    "textureX": 224,
+    "textureY": 368
+  },
+  {
+    "id": "cosmic_radiation",
+    "intId": 40,
+    "type": "CosmicRadiation",
+    "effectType": "Hidden",
+    "textureX": 224,
+    "textureY": 368
+  },
+  {
+    "id": "water_walking",
+    "intId": 41,
+    "type": "WaterWalking",
+    "effectType": "Buff",
+    "textureX": 336,
+    "textureY": 368
+  },
+  {
+    "id": "crate_potion",
+    "intId": 42,
+    "type": "CratePotion",
+    "effectType": "Buff",
+    "textureX": 320,
+    "textureY": 368,
+    "amount": 2.5
+  },
+  {
+    "id": "jelly_spoon",
+    "intId": 43,
+    "type": "JellySpoon",
+    "effectType": "Hidden",
+    "textureX": 320,
+    "textureY": 368
+  }
+]

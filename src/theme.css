@@ -1,0 +1,323 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-*: initial;
+	--color-inherit: inherit;
+	--color-current: currentColor;
+	--color-white: #ffffff;
+	--color-muted: #ffffffb3;
+	--color-aqua: #34ebba;
+	--color-dark-aqua: #1869a1;
+	--color-tooltip: #c7b3fcb3;
+	--color-icon: #e6f2ffe6;
+
+	--nssource-btn-active: url('/assets/ui/btn_active.webp');
+	--nstop-btn-active: 3;
+	--nsright-btn-active: 3;
+	--nsbottom-btn-active: 5;
+	--nsleft-btn-active: 3;
+
+	--nssource-btn-dark: url('/assets/ui/btn_dark.webp');
+	--nstop-btn-dark: 3;
+	--nsright-btn-dark: 3;
+	--nsbottom-btn-dark: 5;
+	--nsleft-btn-dark: 3;
+
+	--nssource-btn-hover: url('/assets/ui/btn_hover.webp');
+	--nstop-btn-hover: 3;
+	--nsright-btn-hover: 3;
+	--nsbottom-btn-hover: 5;
+	--nsleft-btn-hover: 3;
+
+	--nssource-btn-negative: url('/assets/ui/btn_negative.webp');
+	--nstop-btn-negative: 3;
+	--nsright-btn-negative: 3;
+	--nsbottom-btn-negative: 5;
+	--nsleft-btn-negative: 3;
+
+	--nssource-btn-orange: url('/assets/ui/btn_orange.webp');
+	--nstop-btn-orange: 3;
+	--nsright-btn-orange: 3;
+	--nsbottom-btn-orange: 5;
+	--nsleft-btn-orange: 3;
+
+	--nssource-btn-pink: url('/assets/ui/btn_pink.webp');
+	--nstop-btn-pink: 3;
+	--nsright-btn-pink: 3;
+	--nsbottom-btn-pink: 5;
+	--nsleft-btn-pink: 3;
+
+	--nssource-btn-positive: url('/assets/ui/btn_positive.webp');
+	--nstop-btn-positive: 3;
+	--nsright-btn-positive: 3;
+	--nsbottom-btn-positive: 5;
+	--nsleft-btn-positive: 3;
+
+	--nssource-btn-pressed: url('/assets/ui/btn_pressed.webp');
+	--nstop-btn-pressed: 5;
+	--nsright-btn-pressed: 3;
+	--nsbottom-btn-pressed: 3;
+	--nsleft-btn-pressed: 3;
+
+	--nssource-btn-purple: url('/assets/ui/btn_purple.webp');
+	--nstop-btn-purple: 3;
+	--nsright-btn-purple: 3;
+	--nsbottom-btn-purple: 5;
+	--nsleft-btn-purple: 3;
+
+	--nssource-btn-red: url('/assets/ui/btn_red.webp');
+	--nstop-btn-red: 3;
+	--nsright-btn-red: 3;
+	--nsbottom-btn-red: 5;
+	--nsleft-btn-red: 3;
+
+	--nssource-btn-teal: url('/assets/ui/btn_teal.webp');
+	--nstop-btn-teal: 3;
+	--nsright-btn-teal: 3;
+	--nsbottom-btn-teal: 5;
+	--nsleft-btn-teal: 3;
+
+	--nssource-btn: url('/assets/ui/btn.webp');
+	--nstop-btn: 3;
+	--nsright-btn: 3;
+	--nsbottom-btn: 5;
+	--nsleft-btn: 3;
+
+	--nssource-card-hover: url('/assets/ui/card_hover.webp');
+	--nstop-card-hover: 3;
+	--nsright-card-hover: 3;
+	--nsbottom-card-hover: 3;
+	--nsleft-card-hover: 3;
+
+	--nssource-card-negative: url('/assets/ui/card_negative.webp');
+	--nstop-card-negative: 3;
+	--nsright-card-negative: 3;
+	--nsbottom-card-negative: 3;
+	--nsleft-card-negative: 3;
+
+	--nssource-card-pressed: url('/assets/ui/card_pressed.webp');
+	--nstop-card-pressed: 3;
+	--nsright-card-pressed: 3;
+	--nsbottom-card-pressed: 3;
+	--nsleft-card-pressed: 3;
+
+	--nssource-card: url('/assets/ui/card.webp');
+	--nstop-card: 3;
+	--nsright-card: 3;
+	--nsbottom-card: 3;
+	--nsleft-card: 3;
+
+	--nssource-dialog-negative: url('/assets/ui/dialog_negative.webp');
+	--nstop-dialog-negative: 4;
+	--nsright-dialog-negative: 4;
+	--nsbottom-dialog-negative: 4;
+	--nsleft-dialog-negative: 4;
+
+	--nssource-dialog-positive: url('/assets/ui/dialog_positive.webp');
+	--nstop-dialog-positive: 4;
+	--nsright-dialog-positive: 4;
+	--nsbottom-dialog-positive: 4;
+	--nsleft-dialog-positive: 4;
+
+	--nssource-dialog-rarity-0: url('/assets/ui/dialog_rarity_0.webp');
+	--nstop-dialog-rarity-0: 4;
+	--nsright-dialog-rarity-0: 4;
+	--nsbottom-dialog-rarity-0: 4;
+	--nsleft-dialog-rarity-0: 4;
+
+	--nssource-dialog-rarity-1: url('/assets/ui/dialog_rarity_1.webp');
+	--nstop-dialog-rarity-1: 4;
+	--nsright-dialog-rarity-1: 4;
+	--nsbottom-dialog-rarity-1: 4;
+	--nsleft-dialog-rarity-1: 4;
+
+	--nssource-dialog-rarity-2: url('/assets/ui/dialog_rarity_2.webp');
+	--nstop-dialog-rarity-2: 4;
+	--nsright-dialog-rarity-2: 4;
+	--nsbottom-dialog-rarity-2: 4;
+	--nsleft-dialog-rarity-2: 4;
+
+	--nssource-dialog-rarity-3: url('/assets/ui/dialog_rarity_3.webp');
+	--nstop-dialog-rarity-3: 4;
+	--nsright-dialog-rarity-3: 4;
+	--nsbottom-dialog-rarity-3: 4;
+	--nsleft-dialog-rarity-3: 4;
+
+	--nssource-dialog-rarity-4: url('/assets/ui/dialog_rarity_4.webp');
+	--nstop-dialog-rarity-4: 4;
+	--nsright-dialog-rarity-4: 4;
+	--nsbottom-dialog-rarity-4: 4;
+	--nsleft-dialog-rarity-4: 4;
+
+	--nssource-dialog-rarity-5: url('/assets/ui/dialog_rarity_5.webp');
+	--nstop-dialog-rarity-5: 4;
+	--nsright-dialog-rarity-5: 4;
+	--nsbottom-dialog-rarity-5: 4;
+	--nsleft-dialog-rarity-5: 4;
+
+	--nssource-dialog: url('/assets/ui/dialog.webp');
+	--nstop-dialog: 4;
+	--nsright-dialog: 4;
+	--nsbottom-dialog: 4;
+	--nsleft-dialog: 4;
+
+	--nssource-dialog: url('/assets/ui/dialog.webp');
+	--nstop-dialog: 4;
+	--nsright-dialog: 4;
+	--nsbottom-dialog: 4;
+	--nsleft-dialog: 4;
+
+	--nssource-hover: url('/assets/ui/hover.webp');
+	--nstop-hover: 3;
+	--nsright-hover: 3;
+	--nsbottom-hover: 3;
+	--nsleft-hover: 3;
+
+	--nssource-ingredients: url('/assets/ui/ingredients.webp');
+	--nstop-ingredients: 3;
+	--nsright-ingredients: 5;
+	--nsbottom-ingredients: 3;
+	--nsleft-ingredients: 5;
+
+	--nssource-input-active: url('/assets/ui/input_active.webp');
+	--nstop-input-active: 3;
+	--nsright-input-active: 2;
+	--nsbottom-input-active: 2;
+	--nsleft-input-active: 2;
+
+	--nssource-input-hover: url('/assets/ui/input_hover.webp');
+	--nstop-input-hover: 3;
+	--nsright-input-hover: 2;
+	--nsbottom-input-hover: 2;
+	--nsleft-input-hover: 2;
+
+	--nssource-input: url('/assets/ui/input.webp');
+	--nstop-input: 3;
+	--nsright-input: 2;
+	--nsbottom-input: 2;
+	--nsleft-input: 2;
+
+	--nssource-panel: url('/assets/ui/panel.webp');
+	--nstop-panel: 4;
+	--nsright-panel: 2;
+	--nsbottom-panel: 2;
+	--nsleft-panel: 2;
+
+	--nssource-ribbon: url('/assets/ui/ribbon.webp');
+	--nstop-ribbon: 3;
+	--nsright-ribbon: 5;
+	--nsbottom-ribbon: 3;
+	--nsleft-ribbon: 1;
+
+	--nssource-scroll-thumb: url('/assets/ui/scroll_thumb.webp');
+	--nstop-scroll-thumb: 3;
+	--nsright-scroll-thumb: 3;
+	--nsbottom-scroll-thumb: 5;
+	--nsleft-scroll-thumb: 3;
+
+	--nssource-scroll-track: url('/assets/ui/scroll_track.webp');
+	--nstop-scroll-track: 3;
+	--nsright-scroll-track: 3;
+	--nsbottom-scroll-track: 3;
+	--nsleft-scroll-track: 3;
+
+	--spacing: 4px;
+}
+
+@custom-variant hocus {
+	&:hover:not(:active),
+	&:focus:not(:active) {
+		@slot;
+	}
+}
+
+@custom-variant hocus-within {
+	&:hover:not(:active),
+	&:focus-within:not(:active) {
+		@slot;
+	}
+}
+
+@custom-variant tooltip-only (.group\/tooltip &);
+
+@utility transparent-btn {
+	border-width: calc(var(--nstop-btn) * var(--spacing))
+		calc(var(--nsright-btn) * var(--spacing))
+		calc(var(--nsbottom-btn) * var(--spacing))
+		calc(var(--nsleft-btn) * var(--spacing));
+	border-color: transparent;
+}
+
+@utility ns-* {
+	--top: --value(--nstop-*);
+	--right: --value(--nsright-*);
+	--bottom: --value(--nsbottom-*);
+	--left: --value(--nsleft-*);
+
+	border-width: calc(var(--top) * var(--spacing))
+		calc(var(--right) * var(--spacing)) calc(var(--bottom) * var(--spacing))
+		calc(var(--left) * var(--spacing));
+	border-image-source: --value(--nssource-*);
+	border-image-repeat: stretch;
+	border-image-slice: var(--top) var(--right) var(--bottom) var(--left) fill;
+}
+
+@utility ns-borderless-* {
+	--top: --value(--nstop-*);
+	--right: --value(--nsright-*);
+	--bottom: --value(--nsbottom-*);
+	--left: --value(--nsleft-*);
+
+	border-width: 0;
+	border-image-width: calc(var(--top) * var(--spacing))
+		calc(var(--right) * var(--spacing)) calc(var(--bottom) * var(--spacing))
+		calc(var(--left) * var(--spacing));
+	border-image-source: --value(--nssource-*);
+	border-image-repeat: stretch;
+	border-image-slice: var(--top) var(--right) var(--bottom) var(--left) fill;
+}
+
+@utility pixel-shadow {
+	text-shadow: calc(0.75 * var(--spacing)) calc(0.75 * var(--spacing)) 0
+		rgba(0, 0, 0, 1);
+}
+
+@utility haax-backdrop-blur {
+	@apply fixed inset-0;
+
+	@supports (backdrop-filter: blur(0)) {
+		@apply bg-[#0f0d0c]/50 backdrop-blur-xs;
+	}
+
+	@supports not (backdrop-filter: blur(0)) {
+		@apply bg-[#0f0d0c]/80;
+	}
+}
+
+@layer components {
+	* {
+		min-width: 0;
+		min-height: 0;
+		flex-shrink: 0;
+		image-rendering: pixelated;
+		-webkit-font-smoothing: none;
+		-moz-osx-font-smoothing: grayscale;
+		font-smooth: never;
+	}
+
+	*:focus {
+		outline: none;
+	}
+
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		appearance: none;
+		margin: 0;
+	}
+
+	input[type='number'] {
+		-moz-appearance: textfield;
+		appearance: textfield;
+	}
+}

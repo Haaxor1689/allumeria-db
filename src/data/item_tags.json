@@ -1,0 +1,98 @@
+[
+  {
+    "id": "can_place",
+    "label": "can_place",
+    "iconX": 48,
+    "iconY": 320
+  },
+  {
+    "id": "can_consume",
+    "label": "can_consume",
+    "iconX": 56,
+    "iconY": 320
+  },
+  {
+    "id": "axe",
+    "label": "axe_power",
+    "iconX": 72,
+    "iconY": 320
+  },
+  {
+    "id": "hammer",
+    "label": "hammer"
+  },
+  {
+    "id": "melee_damage",
+    "label": "melee_damage",
+    "iconX": 8,
+    "iconY": 320
+  },
+  {
+    "id": "pickaxe",
+    "label": "pickaxe_power",
+    "iconX": 64,
+    "iconY": 320
+  },
+  {
+    "id": "swing_speed",
+    "label": "swing_speed",
+    "iconX": 24,
+    "iconY": 320
+  },
+  {
+    "id": "cant_mine",
+    "label": "cant_mine"
+  },
+  {
+    "id": "restores_health",
+    "label": "restores_health",
+    "iconX": 40,
+    "iconY": 320
+  },
+  {
+    "id": "defence",
+    "label": "defence",
+    "iconX": 16,
+    "iconY": 320
+  },
+  {
+    "id": "required_ammo",
+    "label": "required_ammo"
+  },
+  {
+    "id": "ammo",
+    "label": "ammo",
+    "iconX": 80,
+    "iconY": 320
+  },
+  {
+    "id": "ranged_damage",
+    "label": "ranged_damage",
+    "iconX": 0,
+    "iconY": 320
+  },
+  {
+    "id": "trinket",
+    "label": "trinket",
+    "iconX": 32,
+    "iconY": 320
+  },
+  {
+    "id": "can_block",
+    "label": "can_block",
+    "iconX": 96,
+    "iconY": 320
+  },
+  {
+    "id": "knockback",
+    "label": "knockback",
+    "iconX": 104,
+    "iconY": 320
+  },
+  {
+    "id": "demo_locked",
+    "label": "demo_locked",
+    "iconX": 112,
+    "iconY": 320
+  }
+]

@@ -1,0 +1,1560 @@
+[
+  {
+    "id": "dirt",
+    "group": "Misc",
+    "entries": [
+      {
+        "item": "dirt",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "grassTall",
+    "group": "Misc",
+    "entries": [
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "grassTall",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "grass_tall_autumn",
+    "group": "Misc",
+    "entries": [
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "grass_tall_autumn",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "grass_tall_lush",
+    "group": "Misc",
+    "entries": [
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "grass_tall_lush",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "grass_tall_snowy",
+    "group": "Misc",
+    "entries": [
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "grass_tall_snowy",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "grass_tall_dry",
+    "group": "Misc",
+    "entries": [
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "grass_tall_dry",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dead_bush",
+    "group": "Misc",
+    "entries": [
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "dead_bush",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "agave",
+    "group": "Misc",
+    "entries": [
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "agave",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fuzzy",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "cotton_candy",
+        "min": 1,
+        "max": 4
+      }
+    ]
+  },
+  {
+    "id": "birch_leaves",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "chance": 0.05,
+        "entries": [
+          {
+            "item": "birch_sapling",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "birch_leaves",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pine_leaves",
+    "group": "EarlySnow",
+    "entries": [
+      {
+        "chance": 0.05,
+        "entries": [
+          {
+            "item": "pine_sapling",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "pine_leaves",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "oak_leaves",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "chance": 0.05,
+        "entries": [
+          {
+            "item": "oak_sapling",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "oak_leaves",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cotton",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "cotton_plant",
+        "min": 1,
+        "max": 4
+      }
+    ]
+  },
+  {
+    "id": "hog",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "red_meat",
+        "min": 1,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "arrow_root",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "root_arrow",
+        "min": 1,
+        "max": 4
+      },
+      {
+        "item": "arrow_root_seed",
+        "min": 1,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "rock_melon",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "rock_melon",
+        "min": 1,
+        "max": 4
+      },
+      {
+        "item": "rock_melon_seed",
+        "min": 1,
+        "max": 2
+      }
+    ]
+  },
+  {
+    "id": "watermelon",
+    "group": "Misc",
+    "entries": [
+      {
+        "item": "watermelon",
+        "amount": 1
+      },
+      {
+        "item": "watermelon_seed",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "mint",
+    "group": "Misc",
+    "entries": [
+      {
+        "item": "mint",
+        "min": 1,
+        "max": 2
+      },
+      {
+        "item": "mint_seed",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "pumpkin",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "carved_pumpkin",
+        "amount": 1
+      },
+      {
+        "item": "pumpkin_seed",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "bomberry",
+    "group": "Misc",
+    "entries": [
+      {
+        "item": "bomb_berry",
+        "amount": 1
+      },
+      {
+        "item": "bomb_berry_seed",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "tomato",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "tomato",
+        "amount": 1
+      },
+      {
+        "item": "tomato_seed",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "wheat",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "item": "wheat",
+        "min": 1,
+        "max": 3
+      },
+      {
+        "item": "wheat_seed",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "glow_beans",
+    "group": "Misc",
+    "entries": [
+      {
+        "item": "throwable_glow_bean",
+        "min": 1,
+        "max": 5
+      },
+      {
+        "item": "glow_bean_seed",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "maple_leaves",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "chance": 0.05,
+        "entries": [
+          {
+            "item": "maple_sapling",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "needs": "axe",
+        "entries": [
+          {
+            "item": "maple_leaves",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "snowman",
+    "group": "Misc",
+    "entries": [
+      {
+        "chance": 0.2,
+        "entries": [
+          {
+            "item": "snowball_cannon",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "item": "snowball",
+        "min": 1,
+        "max": 20
+      }
+    ]
+  },
+  {
+    "id": "crate_base",
+    "group": "ForestCaves",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "coal_ore",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "planks",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "copper_ore",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "iron_ore",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "shuriken",
+            "min": 30,
+            "max": 50
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "weak_health_potion",
+            "amount": 1
+          },
+          {
+            "item": "torch",
+            "min": 3,
+            "max": 8
+          }
+        ]
+      },
+      {
+        "chance": 0.25,
+        "entries": [
+          {
+            "item": "cotton_plant",
+            "min": 1,
+            "max": 3
+          }
+        ]
+      },
+      {
+        "chance": 0.1,
+        "entries": [
+          {
+            "item": "respawn_potion",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crate_ice",
+    "group": "SnowCaves",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "coal_ore",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "planks",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "silver_ore",
+            "min": 1,
+            "max": 2
+          },
+          {
+            "item": "iron_ore",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "reinforced_arrow",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "respawn_potion",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "weak_health_potion",
+            "amount": 1
+          },
+          {
+            "item": "ice_torch",
+            "min": 3,
+            "max": 8
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crate_toy",
+    "group": "Misc",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "air_horn",
+            "amount": 1
+          },
+          {
+            "item": "squeaky_toy",
+            "amount": 1
+          },
+          {
+            "item": "whoopee_cushion",
+            "amount": 1
+          },
+          {
+            "item": "eightball",
+            "amount": 1
+          },
+          {
+            "item": "dice",
+            "amount": 1
+          },
+          {
+            "item": "basketball",
+            "amount": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crate_weapon",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "boomerang",
+            "amount": 1
+          },
+          {
+            "item": "slingshot",
+            "amount": 1
+          },
+          {
+            "item": "frying_pan",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "crate_forest",
+    "group": "ForestUndergrowth",
+    "entries": [
+      {
+        "chance": 0.2,
+        "entries": [
+          {
+            "oneOf": [
+              {
+                "item": "melon_slicer",
+                "amount": 1
+              },
+              {
+                "item": "snowball_cannon",
+                "amount": 1
+              },
+              {
+                "item": "pizza_cutter",
+                "amount": 1
+              },
+              {
+                "item": "crowbar",
+                "amount": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "health_potion",
+            "amount": 1
+          },
+          {
+            "item": "torch",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "gold_ingot",
+            "amount": 1
+          },
+          {
+            "item": "skull_fragment",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "lava_bucket",
+            "min": 1,
+            "max": 3
+          }
+        ]
+      },
+      {
+        "chance": 0.1,
+        "entries": [
+          {
+            "item": "lava_sponge",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "chance": 0.2,
+        "entries": [
+          {
+            "item": "spoon_fragment",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "forest_enemy_loot",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "ref": "forest_enemy_base"
+      }
+    ]
+  },
+  {
+    "id": "skeleton_loot",
+    "group": "EarlyForest",
+    "entries": [
+      {
+        "ref": "forest_enemy_base"
+      },
+      {
+        "chance": 0.03,
+        "entries": [
+          {
+            "item": "bone_club",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "forest_spirit",
+    "group": "ForestCaves",
+    "entries": [
+      {
+        "item": "thorn_blade",
+        "amount": 1
+      },
+      {
+        "item": "forest_key",
+        "amount": 1
+      },
+      {
+        "item": "health_potion",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "forest_dungeon_enemy_loot",
+    "group": "ForestDungeon",
+    "entries": [
+      {
+        "chance": 0.4,
+        "entries": [
+          {
+            "oneOf": [
+              {
+                "item": "dart",
+                "min": 3,
+                "max": 8
+              },
+              {
+                "item": "weak_health_potion",
+                "amount": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "chance": 0.2,
+        "entries": [
+          {
+            "item": "forest_key",
+            "amount": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frozen_chest",
+    "group": "SnowDungeon",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "big_sword",
+            "amount": 1
+          },
+          {
+            "item": "snowball_splitter",
+            "amount": 1
+          },
+          {
+            "item": "fart_gun",
+            "amount": 1
+          },
+          {
+            "item": "flamethrower",
+            "amount": 1
+          },
+          {
+            "item": "frosted_boomerang",
+            "amount": 1
+          },
+          {
+            "item": "arctic_blade",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "jet_boots",
+            "amount": 1
+          },
+          {
+            "item": "speed_boots",
+            "amount": 1
+          },
+          {
+            "item": "gecko_gloves",
+            "amount": 1
+          },
+          {
+            "item": "jumping_bean",
+            "amount": 1
+          },
+          {
+            "item": "regen_charm",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "health_potion",
+            "amount": 1
+          },
+          {
+            "item": "speed_potion",
+            "amount": 1
+          },
+          {
+            "item": "regen_potion",
+            "amount": 1
+          },
+          {
+            "item": "poison_potion",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "dynamite",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "gold_ingot",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "cobalt_ore",
+            "min": 2,
+            "max": 6
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "flaming_arrow",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "reinforced_arrow",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "item": "evil_tophat",
+        "amount": 5
+      },
+      {
+        "item": "big_snowball",
+        "amount": 5
+      },
+      {
+        "ref": "allPaintings"
+      }
+    ]
+  },
+  {
+    "id": "iron_chest",
+    "group": "ForestDungeon",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "speed_boots",
+            "amount": 1
+          },
+          {
+            "item": "paraglider",
+            "amount": 1
+          },
+          {
+            "item": "sneakers",
+            "amount": 1
+          },
+          {
+            "item": "jumping_bean",
+            "amount": 1
+          },
+          {
+            "item": "magnet",
+            "amount": 1
+          },
+          {
+            "item": "scuba_helmet",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "item": "spoon_fragment",
+        "min": 2,
+        "max": 3
+      },
+      {
+        "oneOf": [
+          {
+            "item": "weak_health_potion",
+            "amount": 1
+          },
+          {
+            "item": "speed_potion",
+            "amount": 1
+          },
+          {
+            "item": "regen_potion",
+            "amount": 1
+          },
+          {
+            "item": "respawn_potion",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "dynamite",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "copper_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "iron_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "silver_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "gold_ore",
+            "min": 3,
+            "max": 8
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "shuriken",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "dart",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "arrow",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "bagel",
+            "min": 1,
+            "max": 2
+          },
+          {
+            "item": "blueberry",
+            "min": 5,
+            "max": 10
+          },
+          {
+            "item": "cotton_plant",
+            "min": 1,
+            "max": 5
+          }
+        ]
+      },
+      {
+        "chance": 0.2,
+        "entries": [
+          {
+            "item": "ominous_deer_skull",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "chance": 0.25,
+        "entries": [
+          {
+            "item": "skull_fragment",
+            "min": 1,
+            "max": 3
+          }
+        ]
+      },
+      {
+        "ref": "allPaintings"
+      }
+    ]
+  },
+  {
+    "id": "station_loot",
+    "group": "ForestCaves",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "dynamite",
+            "amount": 3
+          },
+          {
+            "item": "iron_crossbow",
+            "amount": 1
+          },
+          {
+            "item": "iron_bow",
+            "amount": 1
+          },
+          {
+            "item": "basic_rod",
+            "amount": 1
+          },
+          {
+            "item": "worm",
+            "amount": 15
+          },
+          {
+            "item": "crate_potion",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "paraglider",
+            "amount": 1
+          },
+          {
+            "item": "jumping_bean",
+            "amount": 1
+          },
+          {
+            "item": "magnet",
+            "amount": 1
+          },
+          {
+            "item": "scuba_helmet",
+            "amount": 1
+          },
+          {
+            "item": "sneakers",
+            "amount": 1
+          },
+          {
+            "item": "spring_boots",
+            "amount": 1
+          },
+          {
+            "item": "speed_boots",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "item": "weak_health_potion",
+        "amount": 1
+      },
+      {
+        "item": "respawn_potion",
+        "amount": 1
+      },
+      {
+        "oneOf": [
+          {
+            "item": "speed_potion",
+            "amount": 1
+          },
+          {
+            "item": "regen_potion",
+            "amount": 1
+          },
+          {
+            "item": "poison_potion",
+            "amount": 1
+          },
+          {
+            "item": "respawn_potion",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "copper_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "iron_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "silver_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "gold_ore",
+            "min": 3,
+            "max": 8
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "shuriken",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "dart",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "brick",
+            "min": 5,
+            "max": 10
+          },
+          {
+            "item": "rock",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "throwable_torch",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "torch",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "arrow",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "reinforced_arrow",
+            "min": 10,
+            "max": 20
+          },
+          {
+            "item": "flaming_arrow",
+            "min": 10,
+            "max": 20
+          },
+          {
+            "item": "explosive_arrow",
+            "min": 2,
+            "max": 5
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "bagel",
+            "min": 1,
+            "max": 2
+          },
+          {
+            "item": "blueberry",
+            "min": 5,
+            "max": 10
+          },
+          {
+            "item": "cotton_plant",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "bread",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "sponge",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "arrow_root_seed",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "tomato_seed",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "glow_bean_seed",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "blueberry_bush",
+            "min": 1,
+            "max": 2
+          }
+        ]
+      },
+      {
+        "chance": 0.2,
+        "entries": [
+          {
+            "item": "ominous_deer_skull",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "chance": 0.25,
+        "entries": [
+          {
+            "item": "skull_fragment",
+            "min": 1,
+            "max": 3
+          }
+        ]
+      },
+      {
+        "chance": 0.9,
+        "entries": [
+          {
+            "item": "spawn_pointer",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "ref": "allPaintings"
+      }
+    ]
+  },
+  {
+    "id": "snow_station_loot",
+    "group": "SnowCaves",
+    "entries": [
+      {
+        "oneOf": [
+          {
+            "item": "dynamite",
+            "amount": 3
+          },
+          {
+            "item": "gold_crossbow",
+            "amount": 1
+          },
+          {
+            "item": "gold_bow",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "item": "health_potion",
+        "amount": 1
+      },
+      {
+        "oneOf": [
+          {
+            "item": "speed_potion",
+            "amount": 1
+          },
+          {
+            "item": "regen_potion",
+            "amount": 1
+          },
+          {
+            "item": "poison_potion",
+            "amount": 1
+          },
+          {
+            "item": "respawn_potion",
+            "amount": 1
+          },
+          {
+            "item": "mining_potion",
+            "amount": 1
+          },
+          {
+            "item": "armour_potion",
+            "amount": 1
+          },
+          {
+            "item": "flight_potion",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "item": "respawn_potion",
+        "amount": 1
+      },
+      {
+        "oneOf": [
+          {
+            "item": "copper_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "iron_ingot",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "silver_ingot",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "gold_ingot",
+            "min": 1,
+            "max": 5
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "snowball",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "dart",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "throwable_torch",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "ice_torch",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "reinforced_arrow",
+            "min": 10,
+            "max": 20
+          },
+          {
+            "item": "flaming_arrow",
+            "min": 10,
+            "max": 20
+          },
+          {
+            "item": "explosive_arrow",
+            "min": 2,
+            "max": 5
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "bagel",
+            "min": 1,
+            "max": 2
+          },
+          {
+            "item": "blueberry",
+            "min": 5,
+            "max": 10
+          },
+          {
+            "item": "cotton_plant",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "bread",
+            "min": 1,
+            "max": 5
+          },
+          {
+            "item": "sponge",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "ref": "allPaintings"
+      }
+    ]
+  },
+  {
+    "id": "forest_dungeon_chest",
+    "group": "ForestDungeon",
+    "entries": [
+      {
+        "item": "forest_pickaxe",
+        "amount": 1
+      },
+      {
+        "item": "forest_blessing",
+        "amount": 1
+      },
+      {
+        "item": "gold_ingot",
+        "amount": 6
+      },
+      {
+        "item": "cure_cube",
+        "amount": 1
+      },
+      {
+        "item": "health_potion",
+        "amount": 2
+      },
+      {
+        "item": "entwiner",
+        "amount": 1
+      },
+      {
+        "item": "ominous_deer_skull",
+        "amount": 1
+      },
+      {
+        "item": "cotton_plant",
+        "min": 1,
+        "max": 5
+      },
+      {
+        "item": "respawn_potion",
+        "amount": 1
+      },
+      {
+        "oneOf": [
+          {
+            "item": "magnet",
+            "amount": 1
+          },
+          {
+            "item": "spring_boots",
+            "amount": 1
+          },
+          {
+            "item": "speed_boots",
+            "amount": 1
+          },
+          {
+            "item": "gecko_gloves",
+            "amount": 1
+          },
+          {
+            "item": "paraglider",
+            "amount": 1
+          },
+          {
+            "item": "sneakers",
+            "amount": 1
+          },
+          {
+            "item": "jumping_bean",
+            "amount": 1
+          },
+          {
+            "item": "scuba_helmet",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "dynamite",
+            "min": 1,
+            "max": 3
+          },
+          {
+            "item": "copper_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "iron_ingot",
+            "min": 3,
+            "max": 8
+          },
+          {
+            "item": "silver_ingot",
+            "min": 3,
+            "max": 8
+          }
+        ]
+      },
+      {
+        "oneOf": [
+          {
+            "item": "shuriken",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "dart",
+            "min": 20,
+            "max": 60
+          },
+          {
+            "item": "arrow",
+            "min": 20,
+            "max": 60
+          }
+        ]
+      },
+      {
+        "chance": 0.25,
+        "entries": [
+          {
+            "item": "skull_fragment",
+            "min": 1,
+            "max": 3
+          }
+        ]
+      },
+      {
+        "ref": "allPaintings"
+      }
+    ]
+  }
+]

@@ -1,0 +1,141 @@
+[
+  {
+    "id": "forest_grass",
+    "entries": [
+      {
+        "monster": "Zombie"
+      },
+      {
+        "monster": "NightFlyer"
+      },
+      {
+        "monster": "Hog"
+      },
+      {
+        "monster": "Fluffy"
+      }
+    ]
+  },
+  {
+    "id": "forest_underground",
+    "entries": [
+      {
+        "monster": "StoneMonster"
+      },
+      {
+        "monster": "Skeleton"
+      },
+      {
+        "monster": "Wizard"
+      }
+    ]
+  },
+  {
+    "id": "undergrowth",
+    "entries": [
+      {
+        "monster": "Shroomer"
+      },
+      {
+        "monster": "Skeleton"
+      },
+      {
+        "monster": "Wizard"
+      },
+      {
+        "monster": "FluffyGreen"
+      }
+    ]
+  },
+  {
+    "id": "snow_underground",
+    "entries": [
+      {
+        "monster": "Yeti"
+      },
+      {
+        "monster": "Skeleton"
+      },
+      {
+        "monster": "SnowWizard"
+      },
+      {
+        "monster": "Snowman"
+      },
+      {
+        "monster": "FuzzyIce"
+      }
+    ]
+  },
+  {
+    "id": "snow_surface",
+    "entries": [
+      {
+        "monster": "Yeti"
+      },
+      {
+        "monster": "Snowman"
+      }
+    ]
+  },
+  {
+    "id": "desert_underground",
+    "entries": [
+      {
+        "monster": "StoneMonster"
+      },
+      {
+        "monster": "Skeleton"
+      },
+      {
+        "monster": "Wizard"
+      }
+    ]
+  },
+  {
+    "id": "snow_dungeon_bricks",
+    "entries": [
+      {
+        "monster": "Snowman"
+      },
+      {
+        "monster": "SnowWizard"
+      },
+      {
+        "monster": "FuzzyIce"
+      },
+      {
+        "monster": "Yeti"
+      }
+    ]
+  },
+  {
+    "id": "dungeon_bricks",
+    "entries": [
+      {
+        "monster": "Skeleton",
+        "loot": "forest_dungeon_enemy_loot"
+      },
+      {
+        "monster": "Wizard",
+        "loot": "forest_dungeon_enemy_loot"
+      },
+      {
+        "monster": "NightFlyer",
+        "loot": "forest_dungeon_enemy_loot"
+      },
+      {
+        "monster": "Shroomer",
+        "loot": "forest_dungeon_enemy_loot"
+      },
+      {
+        "monster": "Fluffy",
+        "loot": "forest_dungeon_enemy_loot"
+      },
+      {
+        "monster": "FluffyGreen",
+        "loot": "forest_dungeon_enemy_loot"
+      }
+    ]
+  }
+]

@@ -1,0 +1,307 @@
+[
+  {
+    "id": "BossSnow",
+    "boss": true,
+    "walkSpeed": 0.6,
+    "health": 200,
+    "defence": 2,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.1,
+      0.1,
+      0.1
+    ],
+    "model": "entity.forest_spirit",
+    "flying": true
+  },
+  {
+    "id": "BossTest",
+    "boss": true,
+    "walkSpeed": 0.6,
+    "health": 200,
+    "defence": 2,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      2,
+      2,
+      2
+    ],
+    "model": "entity.forest_spirit",
+    "flying": true
+  },
+  {
+    "id": "DeerShield",
+    "boss": true,
+    "walkSpeed": 0.03,
+    "health": 20,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      2,
+      2,
+      2
+    ],
+    "model": "entity.deer_shield",
+    "flying": true
+  },
+  {
+    "id": "SnowmanPart",
+    "boss": true,
+    "walkSpeed": 0.6,
+    "health": 50,
+    "defence": 2,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      2,
+      2,
+      2
+    ],
+    "model": "modelStr"
+  },
+  {
+    "id": "DamnBird",
+    "walkSpeed": 0.04,
+    "health": 20,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.damnbird"
+  },
+  {
+    "id": "Fluffy",
+    "spawn": "forest_grass",
+    "walkSpeed": 0.1,
+    "canSpawnInSunlight": true,
+    "health": 4,
+    "baseDamage": 2,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1,
+      0.6
+    ],
+    "model": "entity.creature",
+    "loot": "fuzzy"
+  },
+  {
+    "id": "FluffyGreen",
+    "spawn": "undergrowth",
+    "walkSpeed": 0.1,
+    "health": 4,
+    "baseDamage": 6,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1,
+      0.6
+    ],
+    "model": "entity.creature",
+    "loot": "fuzzy"
+  },
+  {
+    "id": "FuzzyIce",
+    "spawn": "snow_underground",
+    "walkSpeed": 0.1,
+    "health": 20,
+    "baseDamage": 30,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1,
+      0.6
+    ],
+    "model": "entity.creature",
+    "loot": "fuzzy"
+  },
+  {
+    "id": "Hog",
+    "spawn": "forest_grass",
+    "walkSpeed": 0.1,
+    "canSpawnInSunlight": true,
+    "health": 4,
+    "baseDamage": 2,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.hog",
+    "loot": "hog"
+  },
+  {
+    "id": "NightFlyer",
+    "spawn": "forest_grass",
+    "walkSpeed": 0.1,
+    "health": 5,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.nightflyer",
+    "loot": "forest_enemy_loot",
+    "flying": true
+  },
+  {
+    "id": "Pukeko",
+    "walkSpeed": 0.03,
+    "health": 20,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.damnbird"
+  },
+  {
+    "id": "Shroomer",
+    "spawn": "undergrowth",
+    "walkSpeed": 0.04,
+    "health": 20,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.mushroomer",
+    "loot": "forest_enemy_loot"
+  },
+  {
+    "id": "Skeleton",
+    "spawn": "forest_underground",
+    "walkSpeed": 0.28,
+    "health": 7,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.skeleton",
+    "loot": "skeleton_loot"
+  },
+  {
+    "id": "Snowman",
+    "spawn": "snow_underground",
+    "walkSpeed": 0.04,
+    "health": 40,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.snowman",
+    "loot": "snowman"
+  },
+  {
+    "id": "SnowWizard",
+    "spawn": "snow_underground",
+    "walkSpeed": 0.08,
+    "health": 40,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.wizard",
+    "loot": "forest_enemy_loot"
+  },
+  {
+    "id": "StoneMonster",
+    "spawn": "forest_underground",
+    "walkSpeed": 0.2,
+    "health": 20,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.rockmonster",
+    "loot": "forest_enemy_loot"
+  },
+  {
+    "id": "Wizard",
+    "spawn": "forest_underground",
+    "walkSpeed": 0.04,
+    "health": 20,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.wizard",
+    "loot": "forest_enemy_loot"
+  },
+  {
+    "id": "Yeti",
+    "spawn": "snow_underground",
+    "walkSpeed": 0.08,
+    "health": 40,
+    "baseDamage": 30,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.yeti",
+    "loot": "forest_enemy_loot"
+  },
+  {
+    "id": "Zombie",
+    "spawn": "forest_grass",
+    "walkSpeed": 0.1,
+    "health": 20,
+    "baseDamage": 5,
+    "minCoinDrop": 1,
+    "maxCoinDrop": 5,
+    "scale": [
+      0.6,
+      1.8,
+      0.6
+    ],
+    "model": "entity.zombie",
+    "loot": "forest_enemy_loot"
+  }
+]
