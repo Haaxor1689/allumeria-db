@@ -6,17 +6,13 @@ import Button from '#components/styled/Button.tsx';
 import { ItemCategories } from '#utils/constants.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
 
+export const ItemFiltersSearchSchema = z.object({
+	search: z.string().optional().default(''),
+	category: z.string().optional().default('all')
+});
+
 const ItemFilters = () => {
-	const {
-		search = '',
-		category = 'all',
-		set
-	} = useSearchParams(
-		z.object({
-			search: z.string().optional(),
-			category: z.string().optional()
-		})
-	);
+	const params = useSearchParams(ItemFiltersSearchSchema);
 
 	return (
 		<div className="flex flex-wrap items-end gap-3 md:justify-between">
@@ -25,8 +21,8 @@ const ItemFilters = () => {
 			<input
 				type="search"
 				placeholder="Search items…"
-				value={search}
-				onChange={e => set('search', e.target.value)}
+				value={params.search}
+				onChange={e => params.set('search', e.target.value)}
 				className="w-full ns-input px-3 py-2 hover:ns-input-hover focus:ns-input-active md:max-w-sm"
 			/>
 
@@ -35,8 +31,8 @@ const ItemFilters = () => {
 				<Button
 					variant="teal"
 					size="icon"
-					onClick={() => set('category', 'all')}
-					active={category === 'all'}
+					onClick={() => params.set('category', 'all')}
+					active={params.category === 'all'}
 					className="text-xs"
 				>
 					ALL
@@ -48,8 +44,8 @@ const ItemFilters = () => {
 							key={key}
 							variant="teal"
 							size="icon"
-							onClick={() => set('category', key)}
-							active={category === key}
+							onClick={() => params.set('category', key)}
+							active={params.category === key}
 						>
 							<img src={icon} alt={label} width={16} height={16} />
 						</Button>

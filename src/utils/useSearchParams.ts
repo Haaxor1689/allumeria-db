@@ -9,15 +9,18 @@ const useSearchParams = <T extends z.ZodObject<any>>(schema: T) => {
 		Object.fromEntries(searchParams.entries())
 	);
 
-	const values: Partial<z.output<T>> = parsedParams.success
+	const values: z.output<T> = parsedParams.success
 		? parsedParams.data
-		: {};
+		: schema.parse({});
 
 	return {
 		...values,
 		set: (key: string, value?: string | number | boolean) => {
 			const newSearchParams = new URLSearchParams(searchParams.toString());
-			if (value === undefined) {
+			if (
+				value === undefined ||
+				value === schema.shape[key]?.def?.defaultValue
+			) {
 				newSearchParams.delete(key);
 			} else {
 				newSearchParams.set(key, value.toString());

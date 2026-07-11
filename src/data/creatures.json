@@ -8,11 +8,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.1,
-      0.1,
-      0.1
-    ],
+    "scale": [0.1, 0.1, 0.1],
     "model": "entity.forest_spirit",
     "flying": true
   },
@@ -25,11 +21,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      2,
-      2,
-      2
-    ],
+    "scale": [2, 2, 2],
     "model": "entity.forest_spirit",
     "flying": true
   },
@@ -41,11 +33,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      2,
-      2,
-      2
-    ],
+    "scale": [2, 2, 2],
     "model": "entity.deer_shield",
     "flying": true
   },
@@ -58,11 +46,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      2,
-      2,
-      2
-    ],
+    "scale": [2, 2, 2],
     "model": "modelStr"
   },
   {
@@ -72,11 +56,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.damnbird"
   },
   {
@@ -88,11 +68,7 @@
     "baseDamage": 2,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1,
-      0.6
-    ],
+    "scale": [0.6, 1, 0.6],
     "model": "entity.creature",
     "loot": "fuzzy"
   },
@@ -104,11 +80,7 @@
     "baseDamage": 6,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1,
-      0.6
-    ],
+    "scale": [0.6, 1, 0.6],
     "model": "entity.creature",
     "loot": "fuzzy"
   },
@@ -120,11 +92,7 @@
     "baseDamage": 30,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1,
-      0.6
-    ],
+    "scale": [0.6, 1, 0.6],
     "model": "entity.creature",
     "loot": "fuzzy"
   },
@@ -137,11 +105,7 @@
     "baseDamage": 2,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.hog",
     "loot": "hog"
   },
@@ -153,11 +117,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.nightflyer",
     "loot": "forest_enemy_loot",
     "flying": true
@@ -169,11 +129,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.damnbird"
   },
   {
@@ -184,11 +140,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.mushroomer",
     "loot": "forest_enemy_loot"
   },
@@ -200,11 +152,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.skeleton",
     "loot": "skeleton_loot"
   },
@@ -216,11 +164,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.snowman",
     "loot": "snowman"
   },
@@ -232,11 +176,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.wizard",
     "loot": "forest_enemy_loot"
   },
@@ -248,11 +188,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.rockmonster",
     "loot": "forest_enemy_loot"
   },
@@ -264,11 +200,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.wizard",
     "loot": "forest_enemy_loot"
   },
@@ -280,11 +212,7 @@
     "baseDamage": 30,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.yeti",
     "loot": "forest_enemy_loot"
   },
@@ -296,11 +224,7 @@
     "baseDamage": 5,
     "minCoinDrop": 1,
     "maxCoinDrop": 5,
-    "scale": [
-      0.6,
-      1.8,
-      0.6
-    ],
+    "scale": [0.6, 1.8, 0.6],
     "model": "entity.zombie",
     "loot": "forest_enemy_loot"
   }

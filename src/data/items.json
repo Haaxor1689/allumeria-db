@@ -2,518 +2,296 @@
   {
     "id": "empty",
     "block": "empty",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "unknown",
     "block": "unknown",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "worldBorder",
     "block": "worldBorder",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "stone",
     "block": "stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "core",
     "block": "core",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dirt",
     "block": "dirt",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "grass",
     "block": "grass",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "sand",
     "block": "sand",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "log",
     "block": "log",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "oak_log",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "birch_log",
     "block": "birch_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "maple_log",
     "block": "maple_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "pine_log",
     "block": "pine_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "palm_log",
     "block": "palm_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"],
     "sprite": "missing"
   },
   {
     "id": "leaves",
     "block": "leaves",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "birch_leaves",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "oak_leaves",
     "block": "oak_leaves",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "maple_leaves",
     "block": "maple_leaves",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "underground_bush",
     "block": "underground_bush",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "undergrowth_leaves",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "pine_leaves",
     "block": "pine_leaves",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "clay",
     "block": "clay",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "flint",
     "block": "flint",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "packed_dirt",
     "block": "packed_dirt",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "undergrowth_rock",
     "block": "undergrowth_rock",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "snow",
     "block": "snow",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "ice",
     "block": "ice",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "frozen_stone",
     "block": "frozen_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "permafrost",
     "block": "permafrost",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "grass_tall_snowy",
     "block": "grass_tall_snowy",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "snow_tall_grass",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "sandstone",
     "block": "sandstone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "grass_tall_dry",
     "block": "grass_tall_dry",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "desert_tall_grass",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "dead_bush",
     "block": "dead_bush",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "desert_bush",
     "block": "desert_bush",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "agave",
     "block": "agave",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "cactus_flower",
     "block": "cactus_flower",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "cactus_small",
     "block": "cactus_small",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "cactus",
     "block": "cactus",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "maple_sapling",
     "block": "maple_sapling",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "oak_sapling",
     "block": "oak_sapling",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "birch_sapling",
     "block": "birch_sapling",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "pine_sapling",
     "block": "pine_sapling",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "lush_grass",
     "block": "lush_grass",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "dry_grass",
     "block": "dry_grass",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "lava",
     "block": "lava",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "water",
     "block": "water",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "grass_tall",
     "block": "grass_tall",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "tall_grass",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "grass_tall_autumn",
     "block": "grass_tall_autumn",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "dry_tall_grass",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "grass_tall_lush",
     "block": "grass_tall_lush",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "lush_tall_grass",
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "glowing_mushroom_item",
     "block": "glowing_mushroom",
-    "tags": {
-      "can_consume": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ],
+    "tags": { "can_consume": true },
+    "category": ["blocks", "natural"],
     "type": "Potion",
     "effect": "poison",
     "ticks": 120
@@ -521,46 +299,26 @@
   {
     "id": "glow_worms",
     "block": "glow_worms",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "hanging_vines",
     "block": "hanging_vines",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "hanging_flowers",
     "block": "hanging_flowers",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "red_mushroom_item",
     "block": "red_mushroom",
-    "tags": {
-      "can_consume": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ],
+    "tags": { "can_consume": true },
+    "category": ["blocks", "natural"],
     "type": "Potion",
     "effect": "super_weak_heal",
     "ticks": 1,
@@ -570,2110 +328,1213 @@
   {
     "id": "rose",
     "block": "rose",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "myosotis",
     "block": "myosotis",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "dandelion",
     "block": "dandelion",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "heart_beet",
     "block": "heart_beet_block",
     "type": "HeartBeet",
-    "category": [
-      "blocks",
-      "natural"
-    ],
+    "category": ["blocks", "natural"],
     "sellValue": 500,
-    "tags": {
-      "can_consume": true
-    }
+    "tags": { "can_consume": true }
   },
   {
     "id": "forest_flower",
     "block": "forest_flower",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 20,
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "seaweed",
     "block": "seaweed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "pebbles",
     "block": "pebbles",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration", "natural"]
   },
   {
     "id": "frost_algae",
     "block": "frost_algae",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"],
     "targetLiquid": true
   },
   {
     "id": "slime_algae",
     "block": "slime_algae",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "lava_lily",
     "block": "lava_lily",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"],
     "targetLiquid": true
   },
   {
     "id": "lilypad",
     "block": "lilypad",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "cotton_plant",
     "block": "cotton_plant",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 2,
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "blueberry_bush",
     "block": "blueberry_bush",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 10,
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "category": ["blocks", "natural"]
   },
   {
     "id": "copper_ore",
     "block": "copper_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 3,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "iron_ore",
     "block": "iron_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 6,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "coal_ore",
     "block": "coal_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 9,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "silver_ore",
     "block": "silver_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 12,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "gold_ore",
     "block": "gold_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 15,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "cobalt_ore",
     "block": "cobalt_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 18,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "allumerium_ore",
     "block": "allumerium_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 200,
     "rarity": 1,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "amethyst_ore",
     "block": "amethyst_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 5000,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "sapphire_ore",
     "block": "sapphire_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 8000,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "diamond_ore",
     "block": "diamond_ore",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 10000,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "planks",
     "block": "planks",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "oak_planks",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "birch_planks",
     "block": "birch_planks",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "maple_planks",
     "block": "maple_planks",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "pine_planks",
     "block": "pine_planks",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "stone_brick",
     "block": "stone_brick",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "glass",
     "block": "glass",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "framed_glass",
     "block": "framed_glass",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "bubble_glass",
     "block": "bubble_glass",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "stone_brick_small",
     "block": "stone_brick_small",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "clay_brick_small",
     "block": "clay_brick_small",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "red_brick",
     "block": "red_brick",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "terracotta_tiles",
     "block": "terracotta_tiles",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "copper_plated_stone",
     "block": "copper_plated_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "iron_plated_stone",
     "block": "iron_plated_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "silver_plated_stone",
     "block": "silver_plated_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "gold_plated_stone",
     "block": "gold_plated_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "cobalt_plated_stone",
     "block": "cobalt_plated_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "sandstone_brick",
     "block": "sandstone_brick",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "sandstone_brick_small",
     "block": "sandstone_brick_small",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "snow_brick",
     "block": "snow_brick",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "stone_block",
     "block": "stone_block",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "cobblestone",
     "block": "cobblestone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "grassy_stone",
     "block": "grassy_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "workbench",
     "block": "workbench",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "potion_station",
     "block": "potion_station",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "alpha_shop",
     "block": "alpha_shop",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "decoration_station",
     "block": "decoration_station",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "cooking_station",
     "block": "cooking_station",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "furnace",
     "block": "furnace",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "lamp_white",
     "block": "lamp_white",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "lamp_red",
     "block": "lamp_red",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "lamp_green",
     "block": "lamp_green",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "lamp_blue",
     "block": "lamp_blue",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "lamp_cyan",
     "block": "lamp_cyan",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "lamp_magenta",
     "block": "lamp_magenta",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "lamp_yellow",
     "block": "lamp_yellow",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "torch",
     "block": "torch",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "white_torch",
     "block": "white_torch",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "ice_torch",
     "block": "ice_torch",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "ritual_torch",
     "block": "ritual_torch",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "throwable_glow_bean",
     "block": "placed_glow_bean",
     "type": "Throwable",
-    "category": [
-      "blocks",
-      "decoration"
-    ],
+    "category": ["blocks", "decoration"],
     "itemModel": "item.dynamite",
     "itemTexture": "item.glowing_bean",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "projectileType": "GlowBeanProjectile",
     "rangedDamage": 0
   },
   {
     "id": "ladder",
     "block": "ladder",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "dynamite_block",
     "block": "dynamite_block",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "spawner_block",
     "block": "spawner_block",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "crate",
     "block": "crate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "toy_crate",
     "block": "toy_crate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "weapon_crate",
     "block": "weapon_crate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "undergrowth_crate",
     "block": "undergrowth_crate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "ice_crate",
     "block": "ice_crate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "chest",
     "block": "chest",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "iron_chest",
     "block": "iron_chest",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "gold_chest",
     "block": "gold_chest",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "forest_chest",
     "block": "forest_chest",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "ice_chest",
     "block": "ice_chest",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "door",
     "block": "door",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "table",
     "block": "table",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "chair",
     "block": "chair",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "sign",
     "block": "sign",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "glass_sign",
     "block": "glass_sign",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "screen_sign",
     "block": "screen_sign",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "invisible_sign",
     "block": "invisible_sign",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "basic_lamp",
     "block": "basic_lamp",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "carved_pumpkin",
     "block": "carved_pumpkin",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "bed",
     "block": "bed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "npc_sign",
     "block": "npc_sign",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "dungeon_bricks",
     "block": "dungeon_bricks",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dungeon_bricks_unstable",
     "block": "dungeon_bricks_unstable",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dungeon_grate",
     "block": "dungeon_grate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dungeon_lamp",
     "block": "dungeon_lamp",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dungeon_lamp_blue",
     "block": "dungeon_lamp_blue",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dungeon_pressure_plate",
     "block": "dungeon_pressure_plate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dungeon_door",
     "block": "dungeon_door",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "forest_jelly",
     "block": "forest_jelly",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "snow_dungeon_bricks",
     "block": "snow_dungeon_bricks",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "snow_dungeon_lamp",
     "block": "snow_dungeon_lamp",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "pressure_plate",
     "block": "pressure_plate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "pressure_plate_small",
     "block": "pressure_plate_small",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "spike_trap",
     "block": "spike_trap",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "icycle",
     "block": "icycle",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "button",
     "block": "button",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "switch",
     "block": "switch",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "splitter",
     "block": "splitter",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "pulser",
     "block": "pulser",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "dart_trap",
     "block": "dart_trap",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "dungeon_spawner",
     "block": "dungeon_spawner",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "elevator",
     "block": "elevator",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_wire",
     "block": "logic_wire",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_gate",
     "block": "logic_gate",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_repeater",
     "block": "logic_repeater",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_not",
     "block": "logic_not",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_and",
     "block": "logic_and",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_xor",
     "block": "logic_xor",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_toggle",
     "block": "logic_toggle",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_memory",
     "block": "logic_memory",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "technical"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "technical"]
   },
   {
     "id": "logic_pixel",
     "block": "logic_pixel",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "copper_bars",
     "block": "copper_bars",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "iron_bars",
     "block": "iron_bars",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "silver_bars",
     "block": "silver_bars",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "gold_bars",
     "block": "gold_bars",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "cobalt_bars",
     "block": "cobalt_bars",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "concrete",
     "block": "concrete",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "asphalt",
     "block": "asphalt",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "thick_birch_log",
     "block": "thick_birch_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "thick_maple_log",
     "block": "thick_maple_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "thick_oak_log",
     "block": "thick_oak_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "thick_pine_log",
     "block": "thick_pine_log",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "trampoline",
     "block": "trampoline",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "launch_pad",
     "block": "launch_pad",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "drywall",
     "block": "drywall",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "wallpaperable_wood",
     "block": "wallpaperable_wood",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "wallpaperable_stone",
     "block": "wallpaperable_stone",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "cotton_candy",
     "block": "cotton_candy",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 3,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "arcade_carpet",
     "block": "arcade_carpet",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 3,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "blank_block",
     "block": "blank_block",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 3,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "grid_block",
     "block": "grid_block",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sellValue": 3,
-    "category": [
-      "blocks"
-    ]
+    "category": ["blocks"]
   },
   {
     "id": "cloth",
     "block": "cloth",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "amethyst_block",
     "block": "amethyst_block",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "sapphire_block",
     "block": "sapphire_block",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "diamond_block",
     "block": "diamond_block",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "sprinkler",
     "block": "sprinkler",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "soil",
     "block": "soil",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "wet_soil",
     "block": "wet_soil",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "arrow_root_seed",
     "block": "arrow_root_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "bomb_berry_seed",
     "block": "bomb_berry_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "rock_melon_seed",
     "block": "rock_melon_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "watermelon_seed",
     "block": "watermelon_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "tomato_seed",
     "block": "tomato_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "wheat_seed",
     "block": "wheat_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "mint_seed",
     "block": "mint_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "glow_bean_seed",
     "block": "glow_bean_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "pumpkin_seed",
     "block": "pumpkin_seed",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "weeds",
     "block": "weeds",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "natural"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "natural"]
   },
   {
     "id": "spider_web",
     "block": "spider_web",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "basket_hoop",
     "block": "basket_hoop",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "rail",
     "block": "rail",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "painting_child",
     "block": "painting_child",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ],
+    "tags": { "can_place": true },
+    "category": ["blocks"],
     "sprite": "missing"
   },
   {
     "id": "painting_melon",
     "block": "painting_melon",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_triangle",
     "block": "painting_triangle",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_stars",
     "block": "painting_stars",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_pipes",
     "block": "painting_pipes",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_blue",
     "block": "painting_blue",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_wreath",
     "block": "painting_wreath",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_city",
     "block": "painting_city",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_2x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_desolate",
     "block": "painting_desolate",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_2x1",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_figure",
     "block": "painting_figure",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_bird",
     "block": "painting_bird",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_undergrowth",
     "block": "painting_undergrowth",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_snowman",
     "block": "painting_snowman",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_1x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_cloud",
     "block": "painting_cloud",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_2x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_waves",
     "block": "painting_waves",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_2x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_biome",
     "block": "painting_biome",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_2x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "painting_deer",
     "block": "painting_deer",
-    "tags": {
-      "can_place": true
-    },
+    "tags": { "can_place": true },
     "sprite": "painting_2x2",
-    "category": [
-      "blocks",
-      "decoration"
-    ]
+    "category": ["blocks", "decoration"]
   },
   {
     "id": "spawn_pointer",
     "block": "spawn_pointer",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "big_snowball",
     "block": "big_snowball",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "snow_boss_base",
     "block": "snow_boss_base",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "evil_tophat",
     "block": "evil_tophat",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "structure_save",
     "block": "structure_save",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "structure_load",
     "block": "structure_load",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "structure_latch",
     "block": "structure_latch",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "structure_marker",
     "block": "structure_marker",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "structure_noreplace",
     "block": "structure_noreplace",
-    "tags": {
-      "can_place": true
-    },
-    "category": [
-      "blocks"
-    ]
+    "tags": { "can_place": true },
+    "category": ["blocks"]
   },
   {
     "id": "flint_pickaxe",
     "stackSize": 1,
     "itemModel": "item.pickaxe",
     "itemTexture": "item.flint_pickaxe",
-    "tags": {
-      "pickaxe": 2,
-      "swing_speed": 20
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "pickaxe": 2, "swing_speed": 20 },
+    "category": ["items", "tools"]
   },
   {
     "id": "copper_pickaxe",
     "stackSize": 1,
     "itemModel": "item.pickaxe",
     "itemTexture": "item.copper_pickaxe",
-    "tags": {
-      "pickaxe": 2,
-      "swing_speed": 19
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "pickaxe": 2, "swing_speed": 19 },
+    "category": ["items", "tools"]
   },
   {
     "id": "iron_pickaxe",
     "stackSize": 1,
     "itemModel": "item.pickaxe",
     "itemTexture": "item.iron_pickaxe",
-    "tags": {
-      "pickaxe": 2,
-      "swing_speed": 18
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "pickaxe": 2, "swing_speed": 18 },
+    "category": ["items", "tools"]
   },
   {
     "id": "silver_pickaxe",
     "stackSize": 1,
     "itemModel": "item.pickaxe",
     "itemTexture": "item.pickaxe",
-    "tags": {
-      "pickaxe": 3,
-      "swing_speed": 20
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "pickaxe": 3, "swing_speed": 20 },
+    "category": ["items", "tools"]
   },
   {
     "id": "gold_pickaxe",
     "stackSize": 1,
     "itemModel": "item.pickaxe",
     "itemTexture": "item.gold_pickaxe",
-    "tags": {
-      "pickaxe": 3,
-      "swing_speed": 18
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "pickaxe": 3, "swing_speed": 18 },
+    "category": ["items", "tools"]
   },
   {
     "id": "forest_pickaxe",
     "stackSize": 1,
     "itemModel": "item.pickaxe",
     "itemTexture": "item.forest_pickaxe",
-    "tags": {
-      "pickaxe": 4,
-      "swing_speed": 18
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "pickaxe": 4, "swing_speed": 18 },
+    "category": ["items", "tools"]
   },
   {
     "id": "cobalt_pickaxe",
     "stackSize": 1,
     "itemModel": "item.pickaxe",
     "itemTexture": "item.cobalt_pickaxe",
-    "tags": {
-      "pickaxe": 4,
-      "swing_speed": 16
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "pickaxe": 4, "swing_speed": 16 },
+    "category": ["items", "tools"]
   },
   {
     "id": "flint_sword",
@@ -2689,10 +1550,7 @@
       "melee_damage": 2,
       "swing_speed": 34
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "copper_sword",
@@ -2708,10 +1566,7 @@
       "melee_damage": 3,
       "swing_speed": 32
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "iron_sword",
@@ -2727,10 +1582,7 @@
       "melee_damage": 4,
       "swing_speed": 32
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "silver_sword",
@@ -2746,10 +1598,7 @@
       "melee_damage": 5,
       "swing_speed": 28
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "gold_sword",
@@ -2765,10 +1614,7 @@
       "melee_damage": 6,
       "swing_speed": 24
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "cobalt_sword",
@@ -2784,10 +1630,7 @@
       "melee_damage": 7,
       "swing_speed": 22
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "cactus_sword",
@@ -2803,10 +1646,7 @@
       "melee_damage": 4,
       "swing_speed": 32
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "bone_club",
@@ -2822,10 +1662,7 @@
       "melee_damage": 5,
       "swing_speed": 45
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "pizza_cutter",
@@ -2839,10 +1676,7 @@
       "melee_damage": 1,
       "swing_speed": 5
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "crowbar",
@@ -2856,10 +1690,7 @@
       "melee_damage": 6,
       "swing_speed": 20
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "thorn_blade",
@@ -2879,10 +1710,7 @@
     "effect": "poison",
     "ticks": 240,
     "sound": "effects.splat",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "arctic_blade",
@@ -2902,10 +1730,7 @@
     "effect": "freezing",
     "ticks": 240,
     "sound": "effects.splat",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "melon_slicer",
@@ -2924,10 +1749,7 @@
     },
     "projectileType": "WatermelonSeed",
     "rangedDamage": 2,
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "frying_pan",
@@ -2947,10 +1769,7 @@
     "effect": "concussion",
     "ticks": 120,
     "sound": "effects.loud_bang",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "big_sword",
@@ -2970,10 +1789,7 @@
     "effect": "concussion",
     "ticks": 30,
     "sound": "effects.splat",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "baguette",
@@ -2989,10 +1805,7 @@
       "melee_damage": 5,
       "swing_speed": 20
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "boomerang",
@@ -3000,16 +1813,9 @@
     "stackSize": 1,
     "itemModel": "item.boomerang",
     "itemTexture": "item.boomerang",
-    "tags": {
-      "cant_mine": true,
-      "ranged_damage": 4,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "ranged_damage": 4, "swing_speed": 30 },
     "projectileType": "BoomerangProjectile",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "frosted_boomerang",
@@ -3017,16 +1823,9 @@
     "stackSize": 1,
     "itemModel": "item.boomerang",
     "itemTexture": "item.boomerang_snow",
-    "tags": {
-      "cant_mine": true,
-      "ranged_damage": 7,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "ranged_damage": 7, "swing_speed": 30 },
     "projectileType": "BoomerangFrozen",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "cobalt_spear",
@@ -3041,360 +1840,243 @@
       "melee_damage": 10,
       "swing_speed": 35
     },
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "copper_axe",
     "stackSize": 1,
     "itemModel": "item.axe",
     "itemTexture": "item.copper_axe",
-    "tags": {
-      "axe": 2,
-      "swing_speed": 19
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "axe": 2, "swing_speed": 19 },
+    "category": ["items", "tools"]
   },
   {
     "id": "flint_axe",
     "stackSize": 1,
     "itemModel": "item.axe",
     "itemTexture": "item.flint_axe",
-    "tags": {
-      "axe": 2,
-      "swing_speed": 20
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "axe": 2, "swing_speed": 20 },
+    "category": ["items", "tools"]
   },
   {
     "id": "iron_axe",
     "stackSize": 1,
     "itemModel": "item.axe",
     "itemTexture": "item.iron_axe",
-    "tags": {
-      "axe": 2,
-      "swing_speed": 18
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "axe": 2, "swing_speed": 18 },
+    "category": ["items", "tools"]
   },
   {
     "id": "silver_axe",
     "stackSize": 1,
     "itemModel": "item.axe",
     "itemTexture": "item.axe",
-    "tags": {
-      "axe": 3,
-      "swing_speed": 20
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "axe": 3, "swing_speed": 20 },
+    "category": ["items", "tools"]
   },
   {
     "id": "gold_axe",
     "stackSize": 1,
     "itemModel": "item.axe",
     "itemTexture": "item.gold_axe",
-    "tags": {
-      "axe": 3,
-      "swing_speed": 18
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "axe": 3, "swing_speed": 18 },
+    "category": ["items", "tools"]
   },
   {
     "id": "forest_axe",
     "stackSize": 1,
     "itemModel": "item.axe",
     "itemTexture": "item.forest_axe",
-    "tags": {
-      "axe": 4,
-      "swing_speed": 20
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "axe": 4, "swing_speed": 20 },
+    "category": ["items", "tools"]
   },
   {
     "id": "cobalt_axe",
     "stackSize": 1,
     "itemModel": "item.axe",
     "itemTexture": "item.cobalt_axe",
-    "tags": {
-      "axe": 4,
-      "swing_speed": 16
-    },
-    "category": [
-      "items",
-      "tools"
-    ]
+    "tags": { "axe": 4, "swing_speed": 16 },
+    "category": ["items", "tools"]
   },
   {
     "id": "copper_helmet",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 1
-    },
+    "tags": { "defence": 1 },
     "armourType": "Helmet",
     "modelName": "player.helmet",
     "textureName": "player.copper_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "iron_helmet",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 2
-    },
+    "tags": { "defence": 2 },
     "armourType": "Helmet",
     "modelName": "player.helmet",
     "textureName": "player.iron_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "silver_helmet",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 2
-    },
+    "tags": { "defence": 2 },
     "armourType": "Helmet",
     "modelName": "player.helmet",
     "textureName": "player.silver_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gold_helmet",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 3
-    },
+    "tags": { "defence": 3 },
     "armourType": "Helmet",
     "modelName": "player.helmet",
     "textureName": "player.gold_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "forest_helmet",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 4
-    },
+    "tags": { "defence": 4 },
     "armourType": "Helmet",
     "modelName": "player.helmet",
     "textureName": "player.forest_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "cobalt_helmet",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 4
-    },
+    "tags": { "defence": 4 },
     "armourType": "Helmet",
     "modelName": "player.helmet",
     "textureName": "player.cobalt_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "copper_chestplate",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 1
-    },
+    "tags": { "defence": 1 },
     "armourType": "Chestplate",
     "modelName": "player.chestplate",
     "textureName": "player.copper_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "iron_chestplate",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 2
-    },
+    "tags": { "defence": 2 },
     "armourType": "Chestplate",
     "modelName": "player.chestplate",
     "textureName": "player.iron_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "silver_chestplate",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 3
-    },
+    "tags": { "defence": 3 },
     "armourType": "Chestplate",
     "modelName": "player.chestplate",
     "textureName": "player.silver_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gold_chestplate",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 4
-    },
+    "tags": { "defence": 4 },
     "armourType": "Chestplate",
     "modelName": "player.chestplate",
     "textureName": "player.gold_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "forest_chestplate",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 4
-    },
+    "tags": { "defence": 4 },
     "armourType": "Chestplate",
     "modelName": "player.chestplate",
     "textureName": "player.forest_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "cobalt_chestplate",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 5
-    },
+    "tags": { "defence": 5 },
     "armourType": "Chestplate",
     "modelName": "player.chestplate",
     "textureName": "player.cobalt_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "copper_greaves",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 1
-    },
+    "tags": { "defence": 1 },
     "armourType": "Greaves",
     "modelName": "player.greaves",
     "textureName": "player.copper_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "iron_greaves",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 2
-    },
+    "tags": { "defence": 2 },
     "armourType": "Greaves",
     "modelName": "player.greaves",
     "textureName": "player.iron_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "silver_greaves",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 2
-    },
+    "tags": { "defence": 2 },
     "armourType": "Greaves",
     "modelName": "player.greaves",
     "textureName": "player.silver_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gold_greaves",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 3
-    },
+    "tags": { "defence": 3 },
     "armourType": "Greaves",
     "modelName": "player.greaves",
     "textureName": "player.gold_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "forest_greaves",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 4
-    },
+    "tags": { "defence": 4 },
     "armourType": "Greaves",
     "modelName": "player.greaves",
     "textureName": "player.forest_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "cobalt_greaves",
     "type": "Armour",
     "stackSize": 1,
-    "tags": {
-      "defence": 4
-    },
+    "tags": { "defence": 4 },
     "armourType": "Greaves",
     "modelName": "player.greaves",
     "textureName": "player.cobalt_armour",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "wood_bow",
@@ -3403,17 +2085,12 @@
     "swingAnim": 7,
     "itemModel": "item.bow",
     "itemTexture": "item.bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 1,
     "allowAiming": true,
     "allowRapid": false,
     "chargeTicks": 50,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "copper_bow",
@@ -3422,17 +2099,12 @@
     "swingAnim": 7,
     "itemModel": "item.bow",
     "itemTexture": "item.copper_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 1,
     "allowAiming": true,
     "allowRapid": false,
     "chargeTicks": 45,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "iron_bow",
@@ -3441,17 +2113,12 @@
     "swingAnim": 7,
     "itemModel": "item.bow",
     "itemTexture": "item.iron_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 2,
     "allowAiming": true,
     "allowRapid": false,
     "chargeTicks": 40,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "silver_bow",
@@ -3460,17 +2127,12 @@
     "swingAnim": 7,
     "itemModel": "item.bow",
     "itemTexture": "item.silver_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 3,
     "allowAiming": true,
     "allowRapid": false,
     "chargeTicks": 35,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gold_bow",
@@ -3479,16 +2141,11 @@
     "swingAnim": 7,
     "itemModel": "item.bow",
     "itemTexture": "item.gold_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 4,
     "allowAiming": true,
     "allowRapid": false,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "cobalt_bow",
@@ -3497,17 +2154,12 @@
     "swingAnim": 7,
     "itemModel": "item.bow",
     "itemTexture": "item.cobalt_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 4,
     "allowAiming": true,
     "allowRapid": false,
     "chargeTicks": 25,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "copper_crossbow",
@@ -3516,16 +2168,11 @@
     "swingAnim": 8,
     "itemModel": "item.crossbow",
     "itemTexture": "item.copper_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 40
-    },
+    "tags": { "cant_mine": true, "swing_speed": 40 },
     "baseDamage": 1,
     "allowAiming": false,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "iron_crossbow",
@@ -3534,16 +2181,11 @@
     "swingAnim": 8,
     "itemModel": "item.crossbow",
     "itemTexture": "item.iron_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 35
-    },
+    "tags": { "cant_mine": true, "swing_speed": 35 },
     "baseDamage": 2,
     "allowAiming": false,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "silver_crossbow",
@@ -3552,16 +2194,11 @@
     "swingAnim": 8,
     "itemModel": "item.crossbow",
     "itemTexture": "item.silver_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 35
-    },
+    "tags": { "cant_mine": true, "swing_speed": 35 },
     "baseDamage": 3,
     "allowAiming": false,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gold_crossbow",
@@ -3570,16 +2207,11 @@
     "swingAnim": 8,
     "itemModel": "item.crossbow",
     "itemTexture": "item.gold_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 3,
     "allowAiming": false,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "cobalt_crossbow",
@@ -3588,16 +2220,11 @@
     "swingAnim": 8,
     "itemModel": "item.crossbow",
     "itemTexture": "item.cobalt_bow",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 25
-    },
+    "tags": { "cant_mine": true, "swing_speed": 25 },
     "baseDamage": 3,
     "allowAiming": false,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "snowball_cannon",
@@ -3606,16 +2233,11 @@
     "swingAnim": 7,
     "itemModel": "item.snowball_cannon",
     "itemTexture": "item.snowball_cannon",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 35
-    },
+    "tags": { "cant_mine": true, "swing_speed": 35 },
     "baseDamage": 5,
     "allowAiming": false,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "snowball_splitter",
@@ -3624,17 +2246,12 @@
     "swingAnim": 7,
     "itemModel": "item.snowball_cannon",
     "itemTexture": "item.snowball_splitter",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 50
-    },
+    "tags": { "cant_mine": true, "swing_speed": 50 },
     "baseDamage": 9,
     "allowAiming": false,
     "allowRapid": true,
     "shootAmount": 4,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "flamethrower",
@@ -3643,17 +2260,12 @@
     "swingAnim": 7,
     "itemModel": "item.flamethrower",
     "itemTexture": "item.flamethrower",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 10
-    },
+    "tags": { "cant_mine": true, "swing_speed": 10 },
     "projectileType": "Fireball",
     "rangedDamage": 6,
     "velocity": 0.1,
     "spread": 0.01,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "fart_gun",
@@ -3662,19 +2274,14 @@
     "swingAnim": 7,
     "itemModel": "item.snowball_cannon",
     "itemTexture": "item.fartgun",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 55
-    },
+    "tags": { "cant_mine": true, "swing_speed": 55 },
     "projectileType": "Poisonball",
     "rangedDamage": 6,
     "velocity": 0.1,
     "spread": 0.05,
     "amount": 8,
     "useSound": "effects.fart",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "raygun_death",
@@ -3683,16 +2290,11 @@
     "swingAnim": 8,
     "itemModel": "item.flamethrower",
     "itemTexture": "item.flamethrower",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 25
-    },
+    "tags": { "cant_mine": true, "swing_speed": 25 },
     "baseDamage": 1000,
     "allowAiming": false,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "slingshot",
@@ -3701,203 +2303,138 @@
     "swingAnim": 7,
     "itemModel": "item.slingshot",
     "itemTexture": "item.slingshot",
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 30
-    },
+    "tags": { "cant_mine": true, "swing_speed": 30 },
     "baseDamage": 1,
     "allowAiming": true,
     "allowRapid": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "arrow",
     "type": "Arrow",
     "itemModel": "item.arrow",
     "itemTexture": "item.arrow2",
-    "tags": {
-      "ammo": "ammo.arrow"
-    },
+    "tags": { "ammo": "ammo.arrow" },
     "rangedDamage": 1,
     "projectileType": "Arrow",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "reinforced_arrow",
     "type": "Arrow",
     "itemModel": "item.arrow",
     "itemTexture": "item.arrow2",
-    "tags": {
-      "ammo": "ammo.arrow"
-    },
+    "tags": { "ammo": "ammo.arrow" },
     "rangedDamage": 2,
     "projectileType": "Arrow",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "flaming_arrow",
     "type": "Arrow",
     "itemModel": "item.arrow",
     "itemTexture": "item.arrow2",
-    "tags": {
-      "ammo": "ammo.arrow"
-    },
+    "tags": { "ammo": "ammo.arrow" },
     "rangedDamage": 1,
     "projectileType": "FlamingArrow",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "explosive_arrow",
     "type": "Arrow",
     "itemModel": "item.arrow",
     "itemTexture": "item.arrow2",
-    "tags": {
-      "ammo": "ammo.arrow"
-    },
+    "tags": { "ammo": "ammo.arrow" },
     "rangedDamage": 1,
     "projectileType": "ExplosiveArrow",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "root_arrow",
     "type": "Arrow",
     "itemModel": "item.arrow",
     "itemTexture": "item.arrow2",
-    "tags": {
-      "ammo": "ammo.arrow"
-    },
+    "tags": { "ammo": "ammo.arrow" },
     "rangedDamage": 2,
     "projectileType": "Arrow",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "rock",
     "type": "Rock",
-    "tags": {
-      "ammo": "ammo.rock"
-    },
+    "tags": { "ammo": "ammo.rock" },
     "rangedDamage": 1,
     "projectileType": "RockProjectile",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "snowball",
     "type": "Snowball",
     "itemModel": "item.rock",
     "itemTexture": "item.snowball",
-    "tags": {
-      "ammo": "ammo.snowball"
-    },
+    "tags": { "ammo": "ammo.snowball" },
     "rangedDamage": 1,
     "projectileType": "SnowballProjectile",
     "canThrow": true,
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "rock_melon",
     "type": "Rock",
-    "tags": {
-      "ammo": "ammo.rock"
-    },
+    "tags": { "ammo": "ammo.rock" },
     "rangedDamage": 4,
     "projectileType": "RockMelonProjectile",
-    "category": [
-      "items",
-      "weapons"
-    ]
+    "category": ["items", "weapons"]
   },
   {
     "id": "shuriken",
     "type": "Throwable",
     "itemModel": "item.shuriken",
     "itemTexture": "item.shuriken",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "projectileType": "Shuriken",
     "rangedDamage": 3,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "dart",
     "type": "Throwable",
     "itemModel": "item.arrow",
     "itemTexture": "item.dart",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "projectileType": "Dart",
     "rangedDamage": 3,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "watermelon",
     "type": "Throwable",
     "itemModel": "item.watermelon",
     "itemTexture": "item.watermelon",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "projectileType": "WatermelonProjectile",
     "rangedDamage": 1,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "brick",
     "type": "Throwable",
     "itemModel": "item.brick",
     "itemTexture": "item.brick",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "projectileType": "BrickProjectile",
     "rangedDamage": 2,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "throwable_torch",
     "type": "Throwable",
     "itemModel": "item.dynamite",
     "itemTexture": "item.torch",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "projectileType": "TorchProjectile",
     "rangedDamage": 0,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "basic_rod",
@@ -3906,9 +2443,7 @@
     "itemTexture": "item.fishing_rod",
     "projectileType": "FishingBobber",
     "difficultMultiplier": 1,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "sturdy_rod",
@@ -3917,9 +2452,7 @@
     "itemTexture": "item.sturdy_rod",
     "projectileType": "FishingBobber",
     "difficultMultiplier": 0.6,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "obsidian_rod",
@@ -3928,9 +2461,7 @@
     "itemTexture": "item.obsidian_rod",
     "projectileType": "FishingBobber",
     "difficultMultiplier": 0.4,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "flint_hammer",
@@ -3938,15 +2469,8 @@
     "stackSize": 1,
     "itemModel": "item.hammer",
     "itemTexture": "hammer",
-    "category": [
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "hammer": 1,
-      "swing_speed": 20
-    }
+    "category": ["items", "tools"],
+    "tags": { "cant_mine": true, "hammer": 1, "swing_speed": 20 }
   },
   {
     "id": "forest_hammer",
@@ -3954,15 +2478,8 @@
     "stackSize": 1,
     "itemModel": "item.hammer",
     "itemTexture": "item.forest_hammer",
-    "category": [
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "hammer": 2,
-      "swing_speed": 20
-    }
+    "category": ["items", "tools"],
+    "tags": { "cant_mine": true, "hammer": 2, "swing_speed": 20 }
   },
   {
     "id": "watering_can",
@@ -3970,14 +2487,8 @@
     "stackSize": 1,
     "itemModel": "item.watering_can",
     "itemTexture": "item.watering_can",
-    "category": [
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 15
-    }
+    "category": ["items", "tools"],
+    "tags": { "cant_mine": true, "swing_speed": 15 }
   },
   {
     "id": "hoe",
@@ -3985,446 +2496,265 @@
     "stackSize": 1,
     "itemModel": "item.hammer",
     "itemTexture": "hammer",
-    "category": [
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "swing_speed": 15
-    }
+    "category": ["items", "tools"],
+    "tags": { "swing_speed": 15 }
   },
-  {
-    "id": "copper_ingot",
-    "sellValue": 10,
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "iron_ingot",
-    "sellValue": 20,
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "silver_ingot",
-    "sellValue": 30,
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "gold_ingot",
-    "sellValue": 40,
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "forest_ingot",
-    "sellValue": 60,
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "cobalt_ingot",
-    "sellValue": 100,
-    "category": [
-      "items"
-    ]
-  },
+  { "id": "copper_ingot", "sellValue": 10, "category": ["items"] },
+  { "id": "iron_ingot", "sellValue": 20, "category": ["items"] },
+  { "id": "silver_ingot", "sellValue": 30, "category": ["items"] },
+  { "id": "gold_ingot", "sellValue": 40, "category": ["items"] },
+  { "id": "forest_ingot", "sellValue": 60, "category": ["items"] },
+  { "id": "cobalt_ingot", "sellValue": 100, "category": ["items"] },
   {
     "id": "copper_coin",
     "type": "Currency",
     "currencyAmmount": 1,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "silver_coin",
     "type": "Currency",
     "currencyAmmount": 100,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gold_coin",
     "type": "Currency",
     "currencyAmmount": 10000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "allumerium_coin",
     "type": "Currency",
     "currencyAmmount": 1000000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "health_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "health_potion",
     "ticks": 1,
     "secondaryEffect": "healcooldown",
     "secondaryTicks": 1200,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "weak_health_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "weak_health_potion",
     "ticks": 1,
     "secondaryEffect": "healcooldown",
     "secondaryTicks": 1200,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "poison_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "poison",
     "ticks": 240,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "speed_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "fast",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "regen_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "regen_potion",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "armour_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "armoured",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "respawn_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "returning",
     "ticks": 1,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "flight_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "flight",
     "ticks": 3600,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "mining_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "fast_mining",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "water_walking_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "water_walking",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "crate_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "crate_potion",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "boimp_potion",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "poison",
     "ticks": 600,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "wand",
     "type": "Wand",
     "stackSize": 1,
     "rarity": 4,
-    "category": [
-      "items",
-      "technical",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true
-    }
+    "category": ["items", "technical", "tools"],
+    "tags": { "cant_mine": true }
   },
   {
     "id": "door_locker",
     "type": "DoorLocker",
     "stackSize": 1,
     "rarity": 4,
-    "category": [
-      "items",
-      "technical",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true
-    }
+    "category": ["items", "technical", "tools"],
+    "tags": { "cant_mine": true }
   },
   {
     "id": "entwiner",
     "type": "Entwiner",
     "stackSize": 1,
     "rarity": 3,
-    "category": [
-      "items",
-      "technical",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true
-    }
+    "category": ["items", "technical", "tools"],
+    "tags": { "cant_mine": true }
   },
   {
     "id": "carving_knife",
     "type": "CarvingKnife",
     "stackSize": 1,
-    "category": [
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true
-    }
+    "category": ["items", "tools"],
+    "tags": { "cant_mine": true }
   },
   {
     "id": "forest_key",
     "type": "Key",
     "sellValue": 500,
-    "tags": {
-      "can_consume": true
-    },
-    "category": [
-      "items"
-    ]
+    "tags": { "can_consume": true },
+    "category": ["items"]
   },
   {
     "id": "iron_key",
     "type": "Key",
     "sellValue": 1,
-    "tags": {
-      "can_consume": true
-    },
-    "category": [
-      "items"
-    ]
+    "tags": { "can_consume": true },
+    "category": ["items"]
   },
   {
     "id": "bagel",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "small_meal",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "everything_bagel",
     "type": "Potion",
     "rarity": 1,
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "small_meal",
     "ticks": 32000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "blueberry",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "snack",
     "ticks": 3600,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "tomato",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "snack",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "bread",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "small_meal",
     "ticks": 18000,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
-  {
-    "id": "wheat",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "mint",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "red_meat",
-    "category": [
-      "items"
-    ]
-  },
+  { "id": "wheat", "category": ["items"] },
+  { "id": "mint", "category": ["items"] },
+  { "id": "red_meat", "category": ["items"] },
   {
     "id": "steak",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "super_weak_heal",
     "ticks": 1,
     "secondaryEffect": "healcooldown",
     "secondaryTicks": 1200,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "fish_fillet",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "super_weak_heal",
     "ticks": 1,
     "secondaryEffect": "healcooldown",
     "secondaryTicks": 1200,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gormet_fish_fillet",
     "type": "Potion",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "effect": "weak_health_potion",
     "ticks": 1,
     "secondaryEffect": "healcooldown",
     "secondaryTicks": 1200,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "dynamite",
     "type": "Throwable",
     "itemModel": "item.dynamite",
     "itemTexture": "item.dynamite",
-    "category": [
-      "items",
-      "tools",
-      "weapons"
-    ],
-    "tags": {
-      "can_consume": true
-    },
+    "category": ["items", "tools", "weapons"],
+    "tags": { "can_consume": true },
     "projectileType": "Dynamite",
     "rangedDamage": 4
   },
@@ -4433,14 +2763,8 @@
     "type": "Throwable",
     "itemModel": "item.watermelon",
     "itemTexture": "item.bomberry",
-    "category": [
-      "items",
-      "tools",
-      "weapons"
-    ],
-    "tags": {
-      "can_consume": true
-    },
+    "category": ["items", "tools", "weapons"],
+    "tags": { "can_consume": true },
     "projectileType": "Bomberry",
     "rangedDamage": 4
   },
@@ -4449,99 +2773,77 @@
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "regen",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "jet_boots",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "short_flight",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spring_boots",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "spring_boots",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "paraglider",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "glide",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "jumping_bean",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "jumping_bean",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "sneakers",
     "type": "Trinket",
     "sellValue": 10,
     "passiveEffect": "sneaky",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "gecko_gloves",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "wall_jumping",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "speed_boots",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "speed_boots",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "cure_cube",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "poison_immunity",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "magnet",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "magnetism",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "scuba_helmet",
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "scuba_helmet",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "curse_of_core",
@@ -4563,77 +2865,53 @@
     "type": "Trinket",
     "sellValue": 200,
     "passiveEffect": "jelly_spoon",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "squeaky_toy",
     "type": "SoundPlayer",
     "sellValue": 200,
     "sound": "effects.squeaky",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "whoopee_cushion",
     "type": "SoundPlayer",
     "sellValue": 200,
     "sound": "effects.fart",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "air_horn",
     "type": "SoundPlayer",
     "sellValue": 200,
     "sound": "effects.honk",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "eightball",
     "type": "EightBall",
     "sellValue": 200,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
-  {
-    "id": "dice",
-    "type": "Dice",
-    "sellValue": 200,
-    "category": [
-      "items"
-    ]
-  },
+  { "id": "dice", "type": "Dice", "sellValue": 200, "category": ["items"] },
   {
     "id": "basketball",
     "type": "Throwable",
     "sellValue": 20,
     "itemModel": "item.watermelon",
     "itemTexture": "item.basketball",
-    "tags": {
-      "can_consume": true
-    },
+    "tags": { "can_consume": true },
     "projectileType": "BasketBall",
     "rangedDamage": 0,
     "velocity": 0.4,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "bucket",
     "type": "Bucket",
     "targetLiquid": true,
-    "category": [
-      "items",
-      "tools"
-    ],
+    "category": ["items", "tools"],
     "full": false,
     "liquidType": 0
   },
@@ -4641,10 +2919,7 @@
     "id": "water_bucket",
     "type": "Bucket",
     "targetLiquid": true,
-    "category": [
-      "items",
-      "tools"
-    ],
+    "category": ["items", "tools"],
     "full": true,
     "liquidType": 0
   },
@@ -4652,10 +2927,7 @@
     "id": "lava_bucket",
     "type": "Bucket",
     "targetLiquid": true,
-    "category": [
-      "items",
-      "tools"
-    ],
+    "category": ["items", "tools"],
     "full": true,
     "liquidType": 1
   },
@@ -4663,78 +2935,45 @@
     "id": "sponge",
     "type": "Sponge",
     "targetLiquid": true,
-    "category": [
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "swing_speed": 15
-    },
+    "category": ["items", "tools"],
+    "tags": { "swing_speed": 15 },
     "lava": false
   },
   {
     "id": "lava_sponge",
     "type": "Sponge",
     "targetLiquid": true,
-    "category": [
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "swing_speed": 15
-    },
+    "category": ["items", "tools"],
+    "tags": { "swing_speed": 15 },
     "lava": true
   },
   {
     "id": "forest_blessing",
     "type": "ForestBlessing",
     "sellValue": 400,
-    "tags": {
-      "can_consume": true
-    },
-    "category": [
-      "items"
-    ]
+    "tags": { "can_consume": true },
+    "category": ["items"]
   },
   {
     "id": "ominous_deer_skull",
     "type": "BossSummon",
     "sellValue": 100,
-    "tags": {
-      "can_consume": true
-    },
-    "category": [
-      "items"
-    ]
+    "tags": { "can_consume": true },
+    "category": ["items"]
   },
-  {
-    "id": "skull_fragment",
-    "category": [
-      "items"
-    ]
-  },
+  { "id": "skull_fragment", "category": ["items"] },
   {
     "id": "minecart",
     "type": "Minecart",
     "stackSize": 1,
-    "category": [
-      "items",
-      "tools"
-    ]
+    "category": ["items", "tools"]
   },
   {
     "id": "paint_roller",
     "type": "PaintRoller",
     "stackSize": 1,
-    "category": [
-      "decoration",
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 1
-    },
+    "category": ["decoration", "items", "tools"],
+    "tags": { "cant_mine": true, "swing_speed": 1 },
     "rangeStart": 1,
     "rangeEnd": 17
   },
@@ -4742,15 +2981,8 @@
     "id": "paint_roller_earthy",
     "type": "PaintRoller",
     "stackSize": 1,
-    "category": [
-      "decoration",
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 1
-    },
+    "category": ["decoration", "items", "tools"],
+    "tags": { "cant_mine": true, "swing_speed": 1 },
     "rangeStart": 17,
     "rangeEnd": 25
   },
@@ -4758,15 +2990,8 @@
     "id": "paint_roller_pastel",
     "type": "PaintRoller",
     "stackSize": 1,
-    "category": [
-      "decoration",
-      "items",
-      "tools"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 1
-    },
+    "category": ["decoration", "items", "tools"],
+    "tags": { "cant_mine": true, "swing_speed": 1 },
     "rangeStart": 33,
     "rangeEnd": 41
   },
@@ -4774,14 +2999,8 @@
     "id": "wallpaper",
     "type": "Wallpaper",
     "stackSize": 1,
-    "category": [
-      "decoration",
-      "items"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 1
-    },
+    "category": ["decoration", "items"],
+    "tags": { "cant_mine": true, "swing_speed": 1 },
     "rangeStart": 0,
     "rangeEnd": 15
   },
@@ -4789,14 +3008,8 @@
     "id": "wallpaper_wood",
     "type": "Wallpaper",
     "stackSize": 1,
-    "category": [
-      "decoration",
-      "items"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 1
-    },
+    "category": ["decoration", "items"],
+    "tags": { "cant_mine": true, "swing_speed": 1 },
     "rangeStart": 15,
     "rangeEnd": 26
   },
@@ -4804,14 +3017,8 @@
     "id": "wallpaper_stone",
     "type": "Wallpaper",
     "stackSize": 1,
-    "category": [
-      "decoration",
-      "items"
-    ],
-    "tags": {
-      "cant_mine": true,
-      "swing_speed": 1
-    },
+    "category": ["decoration", "items"],
+    "tags": { "cant_mine": true, "swing_speed": 1 },
     "rangeStart": 29,
     "rangeEnd": 41
   },
@@ -4819,268 +3026,127 @@
     "id": "spawn_fuzzy",
     "type": "SpawnEntity",
     "entityType": "Fluffy",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_fuzzy_green",
     "type": "SpawnEntity",
     "entityType": "FluffyGreen",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_fuzzy_ice",
     "type": "SpawnEntity",
     "entityType": "FuzzyIce",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_hog",
     "type": "SpawnEntity",
     "entityType": "Hog",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_skeleton",
     "type": "SpawnEntity",
     "entityType": "Skeleton",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_wizard",
     "type": "SpawnEntity",
     "entityType": "Wizard",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_wizard_ice",
     "type": "SpawnEntity",
     "entityType": "SnowWizard",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_mushroomer",
     "type": "SpawnEntity",
     "entityType": "Shroomer",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_nightflyer",
     "type": "SpawnEntity",
     "entityType": "NightFlyer",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_snowman",
     "type": "SpawnEntity",
     "entityType": "Snowman",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_stone_golem",
     "type": "SpawnEntity",
     "entityType": "StoneMonster",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_yeti",
     "type": "SpawnEntity",
     "entityType": "Yeti",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_zombie",
     "type": "SpawnEntity",
     "entityType": "Zombie",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "spawn_pukeko",
     "type": "SpawnEntity",
     "entityType": "Pukeko",
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
-  {
-    "id": "poo_gem",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "unobtainable_melon",
-    "hidden": true
-  },
-  {
-    "id": "worm",
-    "type": "Bait",
-    "baitPower": 50,
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "bug_bait",
-    "type": "Bait",
-    "baitPower": 150,
-    "category": [
-      "items"
-    ]
-  },
+  { "id": "poo_gem", "category": ["items"] },
+  { "id": "unobtainable_melon", "hidden": true },
+  { "id": "worm", "type": "Bait", "baitPower": 50, "category": ["items"] },
+  { "id": "bug_bait", "type": "Bait", "baitPower": 150, "category": ["items"] },
   {
     "id": "rage_bait",
     "type": "Bait",
     "baitPower": 200,
     "enrage": true,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
   {
     "id": "magnetic_bait",
     "type": "Bait",
     "baitPower": 40,
     "crateModifier": 2.5,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
-  {
-    "id": "fish_catfish",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_walleye",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_carp",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_tuna",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_salmon",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_murray_cod",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_herring",
-    "category": [
-      "items"
-    ]
-  },
+  { "id": "fish_catfish", "category": ["items"] },
+  { "id": "fish_walleye", "category": ["items"] },
+  { "id": "fish_carp", "category": ["items"] },
+  { "id": "fish_tuna", "category": ["items"] },
+  { "id": "fish_salmon", "category": ["items"] },
+  { "id": "fish_murray_cod", "category": ["items"] },
+  { "id": "fish_herring", "category": ["items"] },
   {
     "id": "fish_minnow",
     "type": "Bait",
     "baitPower": 100,
-    "category": [
-      "items"
-    ]
+    "category": ["items"]
   },
-  {
-    "id": "fish_lanternfish",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_crystalfin",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_fangtooth",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_blobfish",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_nautilus",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_smoulderfish",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_obsidieel",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_stonefish",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "fish_rainbow_trout",
-    "category": [
-      "items"
-    ]
-  },
-  {
-    "id": "spoon_fragment",
-    "category": [
-      "items"
-    ]
-  },
+  { "id": "fish_lanternfish", "category": ["items"] },
+  { "id": "fish_crystalfin", "category": ["items"] },
+  { "id": "fish_fangtooth", "category": ["items"] },
+  { "id": "fish_blobfish", "category": ["items"] },
+  { "id": "fish_nautilus", "category": ["items"] },
+  { "id": "fish_smoulderfish", "category": ["items"] },
+  { "id": "fish_obsidieel", "category": ["items"] },
+  { "id": "fish_stonefish", "category": ["items"] },
+  { "id": "fish_rainbow_trout", "category": ["items"] },
+  { "id": "spoon_fragment", "category": ["items"] },
   {
     "id": "merchant_hat",
     "type": "Armour",
@@ -5088,9 +3154,7 @@
     "armourType": "Helmet",
     "modelName": "vanity.merchant_hat",
     "textureName": "vanity.merchant_hat",
-    "category": [
-      "items"
-    ],
+    "category": ["items"],
     "sprite": "missing"
   },
   {
@@ -5100,9 +3164,7 @@
     "armourType": "Chestplate",
     "modelName": "vanity.merchant_backpack",
     "textureName": "vanity.merchant_backpack",
-    "category": [
-      "items"
-    ],
+    "category": ["items"],
     "sprite": "missing"
   }
 ]

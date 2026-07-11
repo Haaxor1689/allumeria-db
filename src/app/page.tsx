@@ -4,6 +4,12 @@ import Button from '#components/styled/Button.tsx';
 import summary from '#data/summary.json';
 import { SocialLinks } from '#utils/constants.ts';
 
+const generatedAt = new Intl.DateTimeFormat('en-US', {
+	dateStyle: 'medium',
+	timeStyle: 'short',
+	timeZone: 'UTC'
+}).format(new Date(summary.generatedAtUtc));
+
 const categories = [
 	{
 		href: '/items',
@@ -42,7 +48,9 @@ const categories = [
 const stats = [
 	{ label: 'Items', value: summary.itemCount },
 	{ label: 'Blocks', value: summary.blockCount },
+	{ label: 'Block Models', value: summary.blockModelCount },
 	{ label: 'Recipes', value: summary.recipeCount },
+	{ label: 'Recipe Aliases', value: summary.recipeAliasCount },
 	{ label: 'Creatures', value: summary.creatureCount },
 	{ label: 'Effects', value: summary.effectCount },
 	{ label: 'Loot', value: summary.lootCount },
@@ -56,6 +64,9 @@ const Page = () => (
 		<section className="relative mx-auto flex w-full max-w-400 flex-col items-center gap-4 ns-dialog p-8 text-center">
 			<p className="text-sm font-semibold tracking-widest text-aqua uppercase">
 				{summary.gameVersion}
+			</p>
+			<p className="-mt-3 text-xs text-muted">
+				Data snapshot: {generatedAt} UTC
 			</p>
 			<h1 className="text-4xl font-bold pixel-shadow md:text-5xl">
 				AllumeriaDB
@@ -76,6 +87,7 @@ const Page = () => (
 			</p>
 
 			{/* Search */}
+			{/* TODO: Client to client side form so it doesn't trigger hard navigation */}
 			<form
 				action="/search"
 				className="flex w-full max-w-lg items-center gap-2"

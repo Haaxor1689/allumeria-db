@@ -126,10 +126,6 @@ const VirtualizedGrid = <T,>({
 		() => ({ maxHeight: visibleRowsHeight + contentPaddingY }),
 		[contentPaddingY, visibleRowsHeight]
 	);
-	const columnWidth =
-		columnCount > 1
-			? Math.floor((containerWidth - gap * (columnCount - 1)) / columnCount)
-			: Math.max(measuredWidth, containerWidth);
 	const getScrollElement = useCallback(() => viewportRef.current, []);
 	const estimateSize = useCallback(() => rowHeight, [rowHeight]);
 
@@ -199,11 +195,11 @@ const VirtualizedGrid = <T,>({
 					return (
 						<div
 							key={row.key}
-							className="absolute inset-x-0 top-0 grid items-start justify-start"
+							className="absolute inset-x-0 top-0 grid items-start justify-center"
 							style={{
 								transform: `translateY(${row.start}px)`,
 								height: measuredHeight,
-								gridTemplateColumns: `repeat(${columnCount}, ${columnWidth}px)`,
+								gridTemplateColumns: `repeat(${columnCount}, ${measuredWidth}px)`,
 								columnGap: `${gap}px`,
 								contain: 'layout paint style'
 							}}

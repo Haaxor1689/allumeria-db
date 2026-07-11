@@ -1,51 +1,45 @@
 [
-  {
-    "id": "empty",
-    "hidden": true
-  },
+  { "id": "empty", "hidden": true },
   {
     "id": "unknown",
     "material": "plant",
     "hidden": true,
     "solid": true,
-    "textures": [
-      "deprecated"
-    ]
+    "blocksLight": true,
+    "textures": ["deprecated"]
   },
   {
     "id": "worldBorder",
     "material": "unbreakable",
     "hidden": true,
-    "solid": true
+    "solid": true,
+    "blocksLight": true
   },
   {
     "id": "stone",
     "material": "stone",
     "spawn": "forest_underground",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "stone"
-    ]
+    "textures": ["stone"]
   },
   {
     "id": "core",
     "material": "unbreakable",
     "hidden": true,
     "solid": true,
-    "textures": [
-      "core"
-    ]
+    "blocksLight": true,
+    "textures": ["core"]
   },
   {
     "id": "dirt",
     "material": "dirt",
     "spawn": "forest_underground",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "dirt"
-    ]
+    "textures": ["dirt"]
   },
   {
     "id": "grass",
@@ -53,12 +47,9 @@
     "material": "dirt",
     "spawn": "forest_grass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "grass_top",
-      "grass_side",
-      "grass_bottom"
-    ],
+    "textures": ["grass_top", "grass_side", "grass_bottom"],
     "blockModel": "topBottom",
     "loot": "dirt"
   },
@@ -66,10 +57,9 @@
     "id": "sand",
     "material": "dirt",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "sand"
-    ]
+    "textures": ["sand"]
   },
   {
     "id": "log",
@@ -77,10 +67,8 @@
     "material": "trunk",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "oak_log_side",
-      "oak_log_top"
-    ],
+    "blocksLight": true,
+    "textures": ["oak_log_side", "oak_log_top"],
     "blockModel": "log"
   },
   {
@@ -89,10 +77,8 @@
     "material": "trunk",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "birch_log_side",
-      "birch_log_top"
-    ],
+    "blocksLight": true,
+    "textures": ["birch_log_side", "birch_log_top"],
     "blockModel": "log"
   },
   {
@@ -101,10 +87,8 @@
     "material": "trunk",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "maple_log_side",
-      "maple_log_top"
-    ],
+    "blocksLight": true,
+    "textures": ["maple_log_side", "maple_log_top"],
     "blockModel": "log"
   },
   {
@@ -113,10 +97,8 @@
     "material": "trunk",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "pine_log_side",
-      "pine_log_top"
-    ],
+    "blocksLight": true,
+    "textures": ["pine_log_side", "pine_log_top"],
     "blockModel": "log"
   },
   {
@@ -125,19 +107,17 @@
     "material": "trunk",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "palm_log_side",
-      "palm_log_top"
-    ],
+    "blocksLight": true,
+    "textures": ["palm_log_side", "palm_log_top"],
     "blockModel": "log"
   },
   {
     "id": "leaves",
     "type": "Leaves",
     "material": "plant",
-    "textures": [
-      "birch_leaves"
-    ],
+    "solid": true,
+    "blocksLight": false,
+    "textures": ["birch_leaves"],
     "blockModel": "fluffy_leaves",
     "particleType": "birch_leaf"
   },
@@ -145,9 +125,9 @@
     "id": "oak_leaves",
     "type": "Leaves",
     "material": "plant",
-    "textures": [
-      "oak_leaves"
-    ],
+    "solid": true,
+    "blocksLight": false,
+    "textures": ["oak_leaves"],
     "blockModel": "fluffy_leaves",
     "particleType": "oak_leaf",
     "loot": "oak_leaves"
@@ -156,9 +136,9 @@
     "id": "maple_leaves",
     "type": "Leaves",
     "material": "plant",
-    "textures": [
-      "maple_leaves"
-    ],
+    "solid": true,
+    "blocksLight": false,
+    "textures": ["maple_leaves"],
     "blockModel": "fluffy_leaves",
     "particleType": "maple_leaf",
     "loot": "maple_leaves"
@@ -167,18 +147,18 @@
     "id": "underground_bush",
     "type": "Leaves",
     "material": "plant",
-    "textures": [
-      "undergrowth_leaves"
-    ],
+    "solid": true,
+    "blocksLight": false,
+    "textures": ["undergrowth_leaves"],
     "blockModel": "fluffy_leaves"
   },
   {
     "id": "pine_leaves",
     "type": "Leaves",
     "material": "plant",
-    "textures": [
-      "pine_leaves"
-    ],
+    "solid": true,
+    "blocksLight": false,
+    "textures": ["pine_leaves"],
     "blockModel": "pine_leaves",
     "loot": "pine_leaves"
   },
@@ -187,19 +167,18 @@
     "material": "dirt",
     "spawn": "forest_underground",
     "solid": true,
-    "textures": [
-      "clay"
-    ]
+    "blocksLight": true,
+    "textures": ["clay"]
   },
   {
     "id": "flint",
     "type": "Pebble",
     "material": "plant",
+    "solid": true,
     "semiSolid": true,
-    "needSupport": true,
-    "textures": [
-      "flint"
-    ],
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["flint"],
     "blockModel": "pebble"
   },
   {
@@ -207,20 +186,18 @@
     "material": "dirt",
     "spawn": "forest_underground",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "packed_dirt"
-    ]
+    "textures": ["packed_dirt"]
   },
   {
     "id": "undergrowth_rock",
     "material": "undergrowth_rock",
     "spawn": "undergrowth",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "undergrowth_rock"
-    ]
+    "textures": ["undergrowth_rock"]
   },
   {
     "id": "snow",
@@ -228,46 +205,45 @@
     "material": "dirt",
     "spawn": "snow_surface",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "snow"
-    ]
+    "textures": ["snow"]
   },
   {
     "id": "ice",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "ice"
-    ]
+    "textures": ["ice"]
   },
   {
     "id": "frozen_stone",
     "material": "stone",
     "spawn": "snow_underground",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "frozen_stone"
-    ]
+    "textures": ["frozen_stone"]
   },
   {
     "id": "permafrost",
     "material": "stone",
     "solid": true,
-    "textures": [
-      "permafrost"
-    ],
+    "blocksLight": true,
+    "textures": ["permafrost"],
     "standOnEffect": "freezing"
   },
   {
     "id": "grass_tall_snowy",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "snowy_tall_grass"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["snowy_tall_grass"],
+    "blockModel": "small_plant",
     "loot": "grass_tall_snowy"
   },
   {
@@ -275,62 +251,79 @@
     "material": "stone",
     "spawn": "desert_underground",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "sandstone"
-    ]
+    "textures": ["sandstone"]
   },
   {
     "id": "grass_tall_dry",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "desert_grass"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["desert_grass"],
+    "blockModel": "small_plant",
     "loot": "grass_tall_dry"
   },
   {
     "id": "dead_bush",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "dead_bush"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["dead_bush"],
+    "blockModel": "small_plant",
     "loot": "dead_bush"
   },
   {
     "id": "desert_bush",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "desert_bush"
-    ]
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["desert_bush"],
+    "blockModel": "small_plant"
   },
   {
     "id": "agave",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "agave"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["agave"],
+    "blockModel": "small_plant",
     "loot": "agave"
   },
   {
     "id": "cactus_flower",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "cactus_flower"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["cactus_flower"],
+    "blockModel": "small_plant",
     "canBeFelled": true
   },
   {
     "id": "cactus_small",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "small_cactus"
-    ]
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["small_cactus"],
+    "blockModel": "small_plant"
   },
   {
     "id": "cactus",
@@ -338,46 +331,52 @@
     "material": "wood",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "cactus",
-      "cactus_top"
-    ],
+    "blocksLight": true,
+    "textures": ["cactus", "cactus_top"],
     "blockModel": "log"
   },
   {
     "id": "maple_sapling",
     "type": "Sapling",
     "material": "plant",
-    "textures": [
-      "maple_sapling"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["maple_sapling"],
+    "blockModel": "small_plant",
     "treeType": 2
   },
   {
     "id": "oak_sapling",
     "type": "Sapling",
     "material": "plant",
-    "textures": [
-      "oak_sapling"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["oak_sapling"],
+    "blockModel": "small_plant",
     "treeType": 3
   },
   {
     "id": "birch_sapling",
     "type": "Sapling",
     "material": "plant",
-    "textures": [
-      "birch_sapling"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["birch_sapling"],
+    "blockModel": "small_plant",
     "treeType": 1
   },
   {
     "id": "pine_sapling",
     "type": "Sapling",
     "material": "plant",
-    "textures": [
-      "pine_sapling"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["pine_sapling"],
+    "blockModel": "small_plant",
     "treeType": 0
   },
   {
@@ -386,12 +385,9 @@
     "material": "dirt",
     "spawn": "forest_grass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lush_grass_top",
-      "lush_grass_side",
-      "lush_grass_bottom"
-    ],
+    "textures": ["lush_grass_top", "lush_grass_side", "lush_grass_bottom"],
     "blockModel": "topBottom",
     "loot": "dirt"
   },
@@ -401,59 +397,57 @@
     "material": "dirt",
     "spawn": "forest_grass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "dry_grass_top",
-      "dry_grass_side",
-      "dry_grass_bottom"
-    ],
+    "textures": ["dry_grass_top", "dry_grass_side", "dry_grass_bottom"],
     "blockModel": "topBottom",
     "loot": "dirt"
   },
   {
     "id": "lava",
     "solid": true,
-    "textures": [
-      "deprecated"
-    ]
+    "blocksLight": true,
+    "textures": ["deprecated"]
   },
   {
     "id": "water",
     "solid": true,
-    "textures": [
-      "deprecated"
-    ]
+    "blocksLight": true,
+    "textures": ["deprecated"]
   },
   {
     "id": "grass_tall",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "tall_grass_1",
-      "tall_grass_2",
-      "tall_grass_3"
-    ]
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["tall_grass_1", "tall_grass_2", "tall_grass_3"],
+    "blockModel": "small_plant"
   },
   {
     "id": "grass_tall_autumn",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "dry_tall_grass_1",
-      "dry_tall_grass_2",
-      "dry_tall_grass_3"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["dry_tall_grass_1", "dry_tall_grass_2", "dry_tall_grass_3"],
+    "blockModel": "small_plant",
     "loot": "grass_tall_autumn"
   },
   {
     "id": "grass_tall_lush",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "lush_tall_grass_1",
-      "lush_tall_grass_2",
-      "lush_tall_grass_3"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["lush_tall_grass_1", "lush_tall_grass_2", "lush_tall_grass_3"],
+    "blockModel": "small_plant",
     "loot": "grass_tall_lush"
   },
   {
@@ -461,29 +455,26 @@
     "type": "Plant",
     "material": "plant",
     "hidden": true,
-    "textures": [
-      "glowing_mushroom"
-    ],
-    "lightEmission": [
-      4,
-      0,
-      8
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["glowing_mushroom"],
+    "blockModel": "small_plant",
+    "lightEmission": [4, 0, 8],
     "item": "glowing_mushroom_item"
   },
   {
     "id": "glow_worms",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "glow_worms"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["glow_worms"],
     "blockModel": "hanging_plant",
-    "lightEmission": [
-      0,
-      1,
-      3
-    ],
+    "lightEmission": [0, 1, 3],
     "floorBase": false,
     "ceilBase": true
   },
@@ -491,18 +482,22 @@
     "id": "hanging_vines",
     "type": "HangingVines",
     "material": "plant",
-    "textures": [
-      "hanging_vines"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["hanging_vines"],
     "blockModel": "hanging_plant"
   },
   {
     "id": "hanging_flowers",
     "type": "HangingVines",
     "material": "plant",
-    "textures": [
-      "hanging_flowers"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["hanging_flowers"],
     "blockModel": "hanging_plant"
   },
   {
@@ -510,75 +505,84 @@
     "type": "Plant",
     "material": "plant",
     "hidden": true,
-    "textures": [
-      "red_mushroom"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["red_mushroom"],
+    "blockModel": "small_plant",
     "item": "red_mushroom_item"
   },
   {
     "id": "rose",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "rose"
-    ]
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["rose"],
+    "blockModel": "small_plant"
   },
   {
     "id": "myosotis",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "myosotis"
-    ],
-    "lightEmission": [
-      0,
-      3,
-      7
-    ]
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["myosotis"],
+    "blockModel": "small_plant",
+    "lightEmission": [0, 3, 7]
   },
   {
     "id": "dandelion",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "dandelion"
-    ]
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["dandelion"],
+    "blockModel": "small_plant"
   },
   {
     "id": "heart_beet_block",
     "type": "Plant",
     "material": "plant",
     "hidden": true,
-    "textures": [
-      "heart_beet"
-    ],
-    "lightEmission": [
-      8,
-      0,
-      3
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["heart_beet"],
+    "blockModel": "small_plant",
+    "lightEmission": [8, 0, 3],
     "item": "heart_beet"
   },
   {
     "id": "forest_flower",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "forest_flower"
-    ],
-    "lightEmission": [
-      0,
-      6,
-      2
-    ]
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["forest_flower"],
+    "blockModel": "small_plant",
+    "lightEmission": [0, 6, 2]
   },
   {
     "id": "seaweed",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "seaweed"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["seaweed"],
+    "blockModel": "small_plant",
     "fluidOkay": true
   },
   {
@@ -587,9 +591,9 @@
     "material": "plant",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "pebbles"
-    ],
+    "needsSupport": true,
+    "blocksLight": true,
+    "textures": ["pebbles"],
     "blockModel": "flat",
     "fluidOkay": true
   },
@@ -599,30 +603,24 @@
     "material": "plant",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "frost_algae"
-    ],
+    "needsSupport": true,
+    "blocksLight": true,
+    "textures": ["frost_algae"],
     "blockModel": "flat",
-    "lightEmission": [
-      1,
-      3,
-      6
-    ],
+    "lightEmission": [1, 3, 6],
     "fluidOkay": true
   },
   {
     "id": "slime_algae",
     "type": "Plant",
     "material": "plant",
-    "textures": [
-      "forest_algae"
-    ],
+    "solid": true,
+    "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["forest_algae"],
     "blockModel": "flat",
-    "lightEmission": [
-      1,
-      6,
-      2
-    ]
+    "lightEmission": [1, 6, 2]
   },
   {
     "id": "lava_lily",
@@ -630,11 +628,9 @@
     "material": "plant",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "lava_lily_1",
-      "lava_lily_2",
-      "lava_lily_3"
-    ],
+    "needsSupport": true,
+    "blocksLight": true,
+    "textures": ["lava_lily_1", "lava_lily_2", "lava_lily_3"],
     "blockModel": "flat",
     "fluidOkay": true
   },
@@ -644,11 +640,9 @@
     "material": "plant",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "lilypad_1",
-      "lilypad_2",
-      "lilypad_3"
-    ],
+    "needsSupport": true,
+    "blocksLight": true,
+    "textures": ["lilypad_1", "lilypad_2", "lilypad_3"],
     "blockModel": "flat",
     "fluidOkay": true
   },
@@ -656,313 +650,281 @@
     "id": "cotton_plant",
     "type": "Cotton",
     "material": "plant",
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "cotton_plant",
-      "cotton_plant_grown"
-    ]
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["cotton_plant", "cotton_plant_grown"],
+    "blockModel": "small_plant"
   },
   {
     "id": "blueberry_bush",
     "type": "Cotton",
     "material": "plant",
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "blueberry_bush",
-      "blueberry_bush_grown"
-    ]
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["blueberry_bush", "blueberry_bush_grown"],
+    "blockModel": "small_plant"
   },
   {
     "id": "copper_ore",
     "material": "soft_ore",
     "solid": true,
-    "textures": [
-      "copper_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["copper_ore"]
   },
   {
     "id": "iron_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "iron_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["iron_ore"]
   },
   {
     "id": "coal_ore",
     "material": "soft_ore",
     "solid": true,
-    "textures": [
-      "coal_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["coal_ore"]
   },
   {
     "id": "silver_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "silver_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["silver_ore"]
   },
   {
     "id": "gold_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "gold_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["gold_ore"]
   },
   {
     "id": "cobalt_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "cobalt_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["cobalt_ore"]
   },
   {
     "id": "allumerium_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "allumerium_ore"
-    ],
-    "lightEmission": [
-      0,
-      2,
-      7
-    ]
+    "blocksLight": true,
+    "textures": ["allumerium_ore"],
+    "lightEmission": [0, 2, 7]
   },
   {
     "id": "amethyst_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "amethyst_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["amethyst_ore"]
   },
   {
     "id": "sapphire_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "sapphire_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["sapphire_ore"]
   },
   {
     "id": "diamond_ore",
     "material": "hard_ore",
     "solid": true,
-    "textures": [
-      "diamond_ore"
-    ]
+    "blocksLight": true,
+    "textures": ["diamond_ore"]
   },
   {
     "id": "planks",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "oak_planks"
-    ]
+    "textures": ["oak_planks"]
   },
   {
     "id": "birch_planks",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "birch_planks"
-    ]
+    "textures": ["birch_planks"]
   },
   {
     "id": "maple_planks",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "maple_planks"
-    ]
+    "textures": ["maple_planks"]
   },
   {
     "id": "pine_planks",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "pine_planks"
-    ]
+    "textures": ["pine_planks"]
   },
   {
     "id": "stone_brick",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "stone_bricks"
-    ]
+    "textures": ["stone_bricks"]
   },
   {
     "id": "glass",
     "type": "Glass",
     "material": "glass",
+    "solid": true,
+    "blocksLight": false,
     "canBeShaped": true,
-    "textures": [
-      "glass"
-    ]
+    "textures": ["glass"]
   },
   {
     "id": "framed_glass",
     "type": "Glass",
     "material": "glass",
+    "solid": true,
+    "blocksLight": false,
     "canBeShaped": true,
-    "textures": [
-      "framed_glass"
-    ]
+    "textures": ["framed_glass"]
   },
   {
     "id": "bubble_glass",
     "type": "Glass",
     "material": "glass",
+    "solid": true,
+    "blocksLight": false,
     "canBeShaped": true,
-    "textures": [
-      "bubble_glass"
-    ]
+    "textures": ["bubble_glass"]
   },
   {
     "id": "stone_brick_small",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "small_stone_bricks"
-    ]
+    "textures": ["small_stone_bricks"]
   },
   {
     "id": "clay_brick_small",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "bricks"
-    ]
+    "textures": ["bricks"]
   },
   {
     "id": "red_brick",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "red_bricks"
-    ]
+    "textures": ["red_bricks"]
   },
   {
     "id": "terracotta_tiles",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "terracotta_tiles"
-    ]
+    "textures": ["terracotta_tiles"]
   },
   {
     "id": "copper_plated_stone",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "copper_plated_stone"
-    ]
+    "textures": ["copper_plated_stone"]
   },
   {
     "id": "iron_plated_stone",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "iron_plated_stone"
-    ]
+    "textures": ["iron_plated_stone"]
   },
   {
     "id": "silver_plated_stone",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "silver_plated_stone"
-    ]
+    "textures": ["silver_plated_stone"]
   },
   {
     "id": "gold_plated_stone",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "gold_plated_stone"
-    ]
+    "textures": ["gold_plated_stone"]
   },
   {
     "id": "cobalt_plated_stone",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "cobalt_plated_stone"
-    ]
+    "textures": ["cobalt_plated_stone"]
   },
   {
     "id": "sandstone_brick",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "sandstone_brick"
-    ]
+    "textures": ["sandstone_brick"]
   },
   {
     "id": "sandstone_brick_small",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "sandstone_brick_small"
-    ]
+    "textures": ["sandstone_brick_small"]
   },
   {
     "id": "snow_brick",
     "material": "dirt",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "snow_bricks"
-    ]
+    "textures": ["snow_bricks"]
   },
   {
     "id": "stone_block",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "stone_block"
-    ]
+    "textures": ["stone_block"]
   },
   {
     "id": "cobblestone",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "cobblestone"
-    ]
+    "textures": ["cobblestone"]
   },
   {
     "id": "grassy_stone",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "grassy_stone"
-    ]
+    "textures": ["grassy_stone"]
   },
   {
     "id": "workbench",
@@ -970,11 +932,8 @@
     "material": "wood",
     "solid": true,
     "interactible": true,
-    "textures": [
-      "workbench_top",
-      "workbench_side",
-      "oak_planks"
-    ],
+    "blocksLight": true,
+    "textures": ["workbench_top", "workbench_side", "oak_planks"],
     "blockModel": "topBottom",
     "craftingType": "work_bench"
   },
@@ -984,6 +943,7 @@
     "material": "wood",
     "solid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "potion_station_top",
       "potion_station_side",
@@ -998,11 +958,8 @@
     "material": "wood",
     "solid": true,
     "interactible": true,
-    "textures": [
-      "alpha_shop_top",
-      "alpha_shop_side",
-      "alpha_shop_bottom"
-    ],
+    "blocksLight": true,
+    "textures": ["alpha_shop_top", "alpha_shop_side", "alpha_shop_bottom"],
     "blockModel": "topBottom"
   },
   {
@@ -1011,6 +968,7 @@
     "material": "wood",
     "solid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "decoration_station_top",
       "decoration_station_side",
@@ -1026,6 +984,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "cooking_station_top",
       "cooking_station_side",
@@ -1033,11 +992,7 @@
     ],
     "blockModel": "cooker",
     "craftingType": "work_bench",
-    "lightEmission": [
-      8,
-      3,
-      0
-    ]
+    "lightEmission": [8, 3, 0]
   },
   {
     "id": "furnace",
@@ -1045,194 +1000,136 @@
     "material": "stone",
     "solid": true,
     "interactible": true,
-    "textures": [
-      "furnace_top",
-      "furnace_side",
-      "furnace_top"
-    ],
+    "blocksLight": true,
+    "textures": ["furnace_top", "furnace_side", "furnace_top"],
     "blockModel": "topBottom",
     "craftingType": "furnace",
-    "lightEmission": [
-      8,
-      3,
-      0
-    ]
+    "lightEmission": [8, 3, 0]
   },
   {
     "id": "lamp_white",
     "material": "glass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lamp_white"
-    ],
+    "textures": ["lamp_white"],
     "decorationScore": 1,
-    "lightEmission": [
-      15,
-      15,
-      15
-    ]
+    "lightEmission": [15, 15, 15]
   },
   {
     "id": "lamp_red",
     "material": "glass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lamp_red"
-    ],
+    "textures": ["lamp_red"],
     "decorationScore": 1,
-    "lightEmission": [
-      15,
-      0,
-      0
-    ]
+    "lightEmission": [15, 0, 0]
   },
   {
     "id": "lamp_green",
     "material": "glass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lamp_green"
-    ],
+    "textures": ["lamp_green"],
     "decorationScore": 1,
-    "lightEmission": [
-      0,
-      15,
-      0
-    ]
+    "lightEmission": [0, 15, 0]
   },
   {
     "id": "lamp_blue",
     "material": "glass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lamp_blue"
-    ],
+    "textures": ["lamp_blue"],
     "decorationScore": 1,
-    "lightEmission": [
-      0,
-      0,
-      15
-    ]
+    "lightEmission": [0, 0, 15]
   },
   {
     "id": "lamp_cyan",
     "material": "glass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lamp_cyan"
-    ],
+    "textures": ["lamp_cyan"],
     "decorationScore": 1,
-    "lightEmission": [
-      0,
-      15,
-      15
-    ]
+    "lightEmission": [0, 15, 15]
   },
   {
     "id": "lamp_magenta",
     "material": "glass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lamp_magenta"
-    ],
+    "textures": ["lamp_magenta"],
     "decorationScore": 1,
-    "lightEmission": [
-      15,
-      0,
-      15
-    ]
+    "lightEmission": [15, 0, 15]
   },
   {
     "id": "lamp_yellow",
     "material": "glass",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "lamp_yellow"
-    ],
+    "textures": ["lamp_yellow"],
     "decorationScore": 1,
-    "lightEmission": [
-      15,
-      15,
-      0
-    ]
+    "lightEmission": [15, 15, 0]
   },
   {
     "id": "torch",
     "type": "Torch",
     "material": "torch",
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "torch",
-      "torch_holder_metal"
-    ],
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["torch", "torch_holder_metal"],
     "blockModel": "torch",
     "decorationScore": 0.5,
-    "lightEmission": [
-      15,
-      12,
-      9
-    ],
+    "lightEmission": [15, 12, 9],
     "useparticles": true
   },
   {
     "id": "white_torch",
     "type": "Torch",
     "material": "torch",
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "white_torch",
-      "torch_holder_metal"
-    ],
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["white_torch", "torch_holder_metal"],
     "blockModel": "torch",
     "decorationScore": 0.5,
-    "lightEmission": [
-      15,
-      15,
-      15
-    ],
+    "lightEmission": [15, 15, 15],
     "useparticles": false
   },
   {
     "id": "ice_torch",
     "type": "Torch",
     "material": "torch",
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "ice_torch",
-      "torch_holder_metal"
-    ],
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["ice_torch", "torch_holder_metal"],
     "blockModel": "torch",
     "decorationScore": 0.5,
-    "lightEmission": [
-      10,
-      11,
-      15
-    ],
+    "lightEmission": [10, 11, 15],
     "useparticles": false
   },
   {
     "id": "ritual_torch",
     "type": "Torch",
     "material": "torch",
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "ritual_torch",
-      "torch_holder_red"
-    ],
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["ritual_torch", "torch_holder_red"],
     "blockModel": "torch",
     "decorationScore": -4,
-    "lightEmission": [
-      8,
-      0,
-      0
-    ],
+    "lightEmission": [8, 0, 0],
     "useparticles": true,
     "spookyParticles": true
   },
@@ -1241,18 +1138,14 @@
     "type": "Torch",
     "material": "torch",
     "hidden": true,
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "glow_bean",
-      "empty"
-    ],
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["glow_bean", "empty"],
     "blockModel": "torch",
     "decorationScore": 0.5,
-    "lightEmission": [
-      6,
-      14,
-      2
-    ],
+    "lightEmission": [6, 14, 2],
     "useparticles": false,
     "item": "throwable_glow_bean"
   },
@@ -1261,9 +1154,8 @@
     "type": "Ladder",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "ladder"
-    ],
+    "blocksLight": true,
+    "textures": ["ladder"],
     "blockModel": "ladder"
   },
   {
@@ -1271,11 +1163,8 @@
     "type": "Dynamite",
     "solid": true,
     "interactible": true,
-    "textures": [
-      "dynamite_top",
-      "dynamite_side",
-      "dynamite_bottom"
-    ],
+    "blocksLight": true,
+    "textures": ["dynamite_top", "dynamite_side", "dynamite_bottom"],
     "blockModel": "topBottom"
   },
   {
@@ -1285,54 +1174,48 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "spawner"
-    ],
+    "blocksLight": true,
+    "textures": ["spawner"],
     "blockModel": "brazier"
   },
   {
     "id": "crate",
     "material": "torch",
     "solid": true,
-    "textures": [
-      "crate"
-    ],
+    "blocksLight": true,
+    "textures": ["crate"],
     "loot": "crate_base"
   },
   {
     "id": "toy_crate",
     "material": "torch",
     "solid": true,
-    "textures": [
-      "toybox"
-    ],
+    "blocksLight": true,
+    "textures": ["toybox"],
     "loot": "crate_toy"
   },
   {
     "id": "weapon_crate",
     "material": "torch",
     "solid": true,
-    "textures": [
-      "weapon_crate"
-    ],
+    "blocksLight": true,
+    "textures": ["weapon_crate"],
     "loot": "crate_weapon"
   },
   {
     "id": "undergrowth_crate",
     "material": "torch",
     "solid": true,
-    "textures": [
-      "forest_crate"
-    ],
+    "blocksLight": true,
+    "textures": ["forest_crate"],
     "loot": "crate_forest"
   },
   {
     "id": "ice_crate",
     "material": "torch",
     "solid": true,
-    "textures": [
-      "ice_crate"
-    ],
+    "blocksLight": true,
+    "textures": ["ice_crate"],
     "loot": "crate_ice"
   },
   {
@@ -1342,11 +1225,8 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "chest_top",
-      "chest_front",
-      "chest_side"
-    ],
+    "blocksLight": true,
+    "textures": ["chest_top", "chest_front", "chest_side"],
     "blockModel": "chest",
     "decorationScore": 1
   },
@@ -1357,11 +1237,8 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "iron_chest_top",
-      "iron_chest_front",
-      "iron_chest_side"
-    ],
+    "blocksLight": true,
+    "textures": ["iron_chest_top", "iron_chest_front", "iron_chest_side"],
     "blockModel": "chest",
     "decorationScore": 1
   },
@@ -1372,11 +1249,8 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "gold_chest_top",
-      "gold_chest_front",
-      "gold_chest_side"
-    ],
+    "blocksLight": true,
+    "textures": ["gold_chest_top", "gold_chest_front", "gold_chest_side"],
     "blockModel": "chest",
     "decorationScore": 1
   },
@@ -1387,11 +1261,8 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "forest_chest_top",
-      "forest_chest_front",
-      "forest_chest_side"
-    ],
+    "blocksLight": true,
+    "textures": ["forest_chest_top", "forest_chest_front", "forest_chest_side"],
     "blockModel": "chest",
     "decorationScore": 1
   },
@@ -1402,11 +1273,8 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "ice_chest_top",
-      "ice_chest_front",
-      "ice_chest_side"
-    ],
+    "blocksLight": true,
+    "textures": ["ice_chest_top", "ice_chest_front", "ice_chest_side"],
     "blockModel": "chest",
     "decorationScore": 1
   },
@@ -1417,6 +1285,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "wood_door_tl",
       "wood_door_bl",
@@ -1432,10 +1301,8 @@
     "material": "wood",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "wood_table_top",
-      "wood_table_side"
-    ],
+    "blocksLight": true,
+    "textures": ["wood_table_top", "wood_table_side"],
     "blockModel": "table",
     "decorationScore": 1
   },
@@ -1445,10 +1312,8 @@
     "material": "wood",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "wood_chair_top",
-      "wood_chair_side"
-    ],
+    "blocksLight": true,
+    "textures": ["wood_chair_top", "wood_chair_side"],
     "blockModel": "chair",
     "decorationScore": 1
   },
@@ -1459,6 +1324,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "large_sign_wall",
       "medium_sign_wall",
@@ -1479,6 +1345,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "large_sign_wall_glass",
       "medium_sign_wall_glass",
@@ -1499,6 +1366,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "large_sign_wall_screen",
       "medium_sign_wall_screen",
@@ -1520,6 +1388,7 @@
     "semiSolid": true,
     "transparent": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "large_sign_wall",
       "medium_sign_wall",
@@ -1540,21 +1409,11 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "lamp_top_on",
-      "lamp_side_on",
-      "lamp_base_on",
-      "lamp_top_off",
-      "lamp_side_off",
-      "lamp_base_off"
-    ],
+    "blocksLight": true,
+    "textures": ["lamp_top_onoff", "lamp_side_onoff", "lamp_base_onoff"],
     "blockModel": "table_lamp",
     "decorationScore": 1,
-    "lightEmission": [
-      9,
-      8,
-      6
-    ]
+    "lightEmission": [9, 8, 6]
   },
   {
     "id": "carved_pumpkin",
@@ -1563,13 +1422,30 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
+    "textures": [
+      "pumpkin_l_top_onoff",
+      "pumpkin_l_face_1_onoff",
+      "pumpkin_l_face_2_onoff",
+      "pumpkin_l_face_3_onoff",
+      "pumpkin_l_face_4_onoff",
+      "pumpkin_l_face_5_onoff",
+      "pumpkin_m_top_onoff",
+      "pumpkin_m_face_1_onoff",
+      "pumpkin_m_face_2_onoff",
+      "pumpkin_m_face_3_onoff",
+      "pumpkin_m_face_4_onoff",
+      "pumpkin_m_face_5_onoff",
+      "pumpkin_s_top_onoff",
+      "pumpkin_s_face_1_onoff",
+      "pumpkin_s_face_2_onoff",
+      "pumpkin_s_face_3_onoff",
+      "pumpkin_s_face_4_onoff",
+      "pumpkin_s_face_5_onoff"
+    ],
     "blockModel": "pumpkin_lantern",
     "decorationScore": 1,
-    "lightEmission": [
-      9,
-      5,
-      1
-    ]
+    "lightEmission": [9, 5, 1]
   },
   {
     "id": "bed",
@@ -1578,6 +1454,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "bed_front_top",
       "bed_front_side",
@@ -1602,7 +1479,8 @@
     "material": "wood",
     "solid": true,
     "semiSolid": true,
-    "interactible": true
+    "interactible": true,
+    "blocksLight": true
   },
   {
     "id": "dungeon_bricks",
@@ -1610,6 +1488,7 @@
     "spawn": "dungeon_bricks",
     "spawnRate": 101,
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
     "textures": [
       "dungeon_brick_top",
@@ -1625,50 +1504,37 @@
     "spawn": "dungeon_bricks",
     "spawnRate": 101,
     "solid": true,
-    "textures": [
-      "unstable_dungeon_bricks"
-    ]
+    "blocksLight": true,
+    "textures": ["unstable_dungeon_bricks"]
   },
   {
     "id": "dungeon_grate",
     "type": "Glass",
     "material": "dungeon_brick_forest",
+    "solid": true,
+    "blocksLight": false,
     "canBeShaped": true,
-    "textures": [
-      "dungeon_grate"
-    ]
+    "textures": ["dungeon_grate"]
   },
   {
     "id": "dungeon_lamp",
     "type": "ToggleLamp",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "dungeon_lamp_on",
-      "dungeon_lamp_off"
-    ],
+    "blocksLight": true,
+    "textures": ["dungeon_lamp_onoff"],
     "blockModel": "dungeon_lamp",
-    "lightEmission": [
-      12,
-      6,
-      2
-    ]
+    "lightEmission": [12, 6, 2]
   },
   {
     "id": "dungeon_lamp_blue",
     "type": "ToggleLamp",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "blue_dungeon_lamp_on",
-      "blue_dungeon_lamp_off"
-    ],
+    "blocksLight": true,
+    "textures": ["blue_dungeon_lamp_onoff"],
     "blockModel": "dungeon_lamp",
-    "lightEmission": [
-      2,
-      4,
-      12
-    ]
+    "lightEmission": [2, 4, 12]
   },
   {
     "id": "dungeon_pressure_plate",
@@ -1676,9 +1542,8 @@
     "material": "dungeon_brick_forest",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "dungeon_pressure_plate"
-    ],
+    "blocksLight": true,
+    "textures": ["dungeon_pressure_plate"],
     "blockModel": "pressure_plate"
   },
   {
@@ -1688,6 +1553,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "dungeon_door_tl",
       "dungeon_door_bl",
@@ -1701,9 +1567,7 @@
     "id": "forest_jelly",
     "material": "dungeon_brick_forest",
     "transparent": true,
-    "textures": [
-      "forest_jelly"
-    ]
+    "textures": ["forest_jelly"]
   },
   {
     "id": "snow_dungeon_bricks",
@@ -1711,6 +1575,7 @@
     "spawn": "snow_dungeon_bricks",
     "spawnRate": 101,
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
     "textures": [
       "snow_dungeon_bricks_top",
@@ -1724,16 +1589,10 @@
     "type": "ToggleLamp",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "snow_dungeon_lamp_on",
-      "snow_dungeon_lamp_off"
-    ],
+    "blocksLight": true,
+    "textures": ["snow_dungeon_lamp_onoff"],
     "blockModel": "dungeon_lamp",
-    "lightEmission": [
-      4,
-      8,
-      12
-    ]
+    "lightEmission": [4, 8, 12]
   },
   {
     "id": "pressure_plate",
@@ -1741,9 +1600,8 @@
     "material": "stone",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "stone_block"
-    ],
+    "blocksLight": true,
+    "textures": ["stone_block"],
     "blockModel": "pressure_plate"
   },
   {
@@ -1752,9 +1610,8 @@
     "material": "stone",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "stone_block"
-    ],
+    "blocksLight": true,
+    "textures": ["stone_block"],
     "blockModel": "pressure_plate_small"
   },
   {
@@ -1763,10 +1620,8 @@
     "material": "stone",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "spikes",
-      "spikes_base"
-    ],
+    "blocksLight": true,
+    "textures": ["spikes", "spikes_base"],
     "blockModel": "spike_trap"
   },
   {
@@ -1775,9 +1630,8 @@
     "material": "stone",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "icicle"
-    ],
+    "blocksLight": true,
+    "textures": ["icicle"],
     "blockModel": "hanging_plant",
     "projectileType": "IcycleProjectile"
   },
@@ -1785,23 +1639,22 @@
     "id": "button",
     "type": "Button",
     "material": "stone",
+    "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "stone_block"
-    ],
+    "blocksLight": false,
+    "textures": ["stone_block"],
     "blockModel": "button"
   },
   {
     "id": "switch",
     "type": "Switch",
     "material": "stone",
+    "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "switch_off",
-      "switch_on"
-    ],
+    "blocksLight": false,
+    "textures": ["switch_off", "switch_on"],
     "blockModel": "button"
   },
   {
@@ -1810,9 +1663,8 @@
     "material": "stone",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "missing"
-    ]
+    "blocksLight": true,
+    "textures": ["missing"]
   },
   {
     "id": "pulser",
@@ -1820,9 +1672,8 @@
     "material": "stone",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "missing"
-    ],
+    "blocksLight": true,
+    "textures": ["missing"],
     "blockModel": "pulser"
   },
   {
@@ -1830,9 +1681,8 @@
     "type": "DartTrap",
     "material": "dungeon_brick_forest",
     "solid": true,
-    "textures": [
-      "dart_trap"
-    ],
+    "blocksLight": true,
+    "textures": ["dart_trap"],
     "projectileType": "Dart"
   },
   {
@@ -1841,22 +1691,16 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
-    "textures": [
-      "spawner_base",
-      "spawner_flame",
-      "spawner_side"
-    ]
+    "blocksLight": true,
+    "textures": ["spawner_base", "spawner_flame", "spawner_side"]
   },
   {
     "id": "elevator",
     "type": "Elevator",
     "material": "stone",
     "solid": true,
-    "textures": [
-      "elevator_top",
-      "elevator_side",
-      "elevator_bottom"
-    ],
+    "blocksLight": true,
+    "textures": ["elevator_top", "elevator_side", "elevator_bottom"],
     "blockModel": "topBottom"
   },
   {
@@ -1865,10 +1709,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "wire_off",
-      "wire_on"
-    ],
+    "blocksLight": true,
+    "textures": ["wire_off", "wire_on"],
     "blockModel": "wire_base"
   },
   {
@@ -1878,6 +1720,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "logic_base",
       "logic_input",
@@ -1895,6 +1738,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "logic_repeater",
       "logic_input",
@@ -1912,6 +1756,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "logic_not",
       "logic_input",
@@ -1929,6 +1774,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "logic_and",
       "logic_input",
@@ -1946,6 +1792,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "logic_xor",
       "logic_input",
@@ -1963,6 +1810,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "logic_flip_flop",
       "logic_input",
@@ -1980,6 +1828,7 @@
     "solid": true,
     "semiSolid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "logic_memory_inactive",
       "logic_input",
@@ -1995,133 +1844,118 @@
     "type": "ToggleLamp",
     "material": "glass",
     "solid": true,
-    "textures": [
-      "logic_pixel_on",
-      "logic_pixel_off"
-    ]
+    "blocksLight": true,
+    "textures": ["logic_pixel_onoff"]
   },
   {
     "id": "copper_bars",
     "type": "Glass",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "copper_bars"
-    ]
+    "textures": ["copper_bars"]
   },
   {
     "id": "iron_bars",
     "type": "Glass",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "iron_bars"
-    ]
+    "textures": ["iron_bars"]
   },
   {
     "id": "silver_bars",
     "type": "Glass",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "silver_bars"
-    ]
+    "textures": ["silver_bars"]
   },
   {
     "id": "gold_bars",
     "type": "Glass",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "gold_bars"
-    ]
+    "textures": ["gold_bars"]
   },
   {
     "id": "cobalt_bars",
     "type": "Glass",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "cobalt_bars"
-    ]
+    "textures": ["cobalt_bars"]
   },
   {
     "id": "concrete",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "concrete"
-    ],
+    "textures": ["concrete"],
     "standOnEffect": "fast_walking"
   },
   {
     "id": "asphalt",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "asphalt"
-    ],
+    "textures": ["asphalt"],
     "standOnEffect": "fast_walking"
   },
   {
     "id": "thick_birch_log",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "birch_log_side"
-    ]
+    "textures": ["birch_log_side"]
   },
   {
     "id": "thick_maple_log",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "maple_log_side"
-    ]
+    "textures": ["maple_log_side"]
   },
   {
     "id": "thick_oak_log",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "oak_log_side"
-    ]
+    "textures": ["oak_log_side"]
   },
   {
     "id": "thick_pine_log",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "pine_log_side"
-    ]
+    "textures": ["pine_log_side"]
   },
   {
     "id": "trampoline",
     "material": "wood",
     "solid": true,
-    "textures": [
-      "trampoline"
-    ],
+    "blocksLight": true,
+    "textures": ["trampoline"],
     "standOnEffect": "trampoline"
   },
   {
     "id": "launch_pad",
     "material": "wood",
     "solid": true,
-    "textures": [
-      "launch_pad"
-    ],
+    "blocksLight": true,
+    "textures": ["launch_pad"],
     "standOnEffect": "bouncy"
   },
   {
@@ -2129,9 +1963,8 @@
     "type": "DryWall",
     "material": "soft_ore",
     "solid": true,
-    "textures": [
-      "drywall"
-    ],
+    "blocksLight": true,
+    "textures": ["drywall"],
     "blockModel": "model"
   },
   {
@@ -2139,9 +1972,8 @@
     "type": "DryWall",
     "material": "soft_ore",
     "solid": true,
-    "textures": [
-      "wallpaper_wood"
-    ],
+    "blocksLight": true,
+    "textures": ["wallpaper_wood"],
     "blockModel": "model"
   },
   {
@@ -2149,89 +1981,82 @@
     "type": "DryWall",
     "material": "soft_ore",
     "solid": true,
-    "textures": [
-      "wallpaper_stone"
-    ],
+    "blocksLight": true,
+    "textures": ["wallpaper_stone"],
     "blockModel": "model"
   },
   {
     "id": "cotton_candy",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "cotton_candy"
-    ]
+    "textures": ["cotton_candy"]
   },
   {
     "id": "arcade_carpet",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "arcade_carpet"
-    ]
+    "textures": ["arcade_carpet"]
   },
   {
     "id": "blank_block",
     "material": "torch",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "blank"
-    ]
+    "textures": ["blank"]
   },
   {
     "id": "grid_block",
     "material": "torch",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "grid"
-    ]
+    "textures": ["grid"]
   },
   {
     "id": "cloth",
     "material": "wood",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true
   },
   {
     "id": "amethyst_block",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "amethyst_block"
-    ]
+    "textures": ["amethyst_block"]
   },
   {
     "id": "sapphire_block",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "sapphire_block"
-    ]
+    "textures": ["sapphire_block"]
   },
   {
     "id": "diamond_block",
     "material": "stone",
     "solid": true,
+    "blocksLight": true,
     "canBeShaped": true,
-    "textures": [
-      "diamond_block"
-    ]
+    "textures": ["diamond_block"]
   },
   {
     "id": "sprinkler",
     "type": "Sprinkler",
     "material": "torch",
+    "solid": true,
     "semiSolid": true,
-    "textures": [
-      "sprinkler_top",
-      "sprinkler_side"
-    ],
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["sprinkler_top", "sprinkler_side"],
     "blockModel": "sprinkler"
   },
   {
@@ -2239,11 +2064,8 @@
     "type": "DrySoil",
     "material": "dirt",
     "solid": true,
-    "textures": [
-      "dry_soil_top",
-      "dry_soil_bottom",
-      "dry_soil_bottom"
-    ],
+    "blocksLight": true,
+    "textures": ["dry_soil_top", "dry_soil_bottom", "dry_soil_bottom"],
     "blockModel": "topBottom"
   },
   {
@@ -2251,23 +2073,19 @@
     "type": "WetSoil",
     "material": "dirt",
     "solid": true,
-    "textures": [
-      "wet_soil_top",
-      "wet_soil_bottom",
-      "wet_soil_bottom"
-    ],
+    "blocksLight": true,
+    "textures": ["wet_soil_top", "wet_soil_bottom", "wet_soil_bottom"],
     "blockModel": "topBottom"
   },
   {
     "id": "arrow_root_seed",
     "type": "Crop",
     "material": "plant",
-    "textures": [
-      "arrowroot_1",
-      "arrowroot_2",
-      "arrowroot_3",
-      "arrowroot_4"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["arrowroot_1", "arrowroot_2", "arrowroot_3", "arrowroot_4"],
+    "blockModel": "small_plant",
     "specialModel": false,
     "isMutated": true,
     "harvestLoot": "arrow_root"
@@ -2276,6 +2094,9 @@
     "id": "bomb_berry_seed",
     "type": "Crop",
     "material": "plant",
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
     "textures": [
       "bomb_berry_vine_1",
       "bomb_berry_vine_2",
@@ -2293,6 +2114,9 @@
     "id": "rock_melon_seed",
     "type": "Crop",
     "material": "plant",
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
     "textures": [
       "rock_melon_vine_1",
       "rock_melon_vine_2",
@@ -2310,6 +2134,9 @@
     "id": "watermelon_seed",
     "type": "Crop",
     "material": "plant",
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
     "textures": [
       "watermelon_vine_1",
       "watermelon_vine_2",
@@ -2326,12 +2153,11 @@
     "id": "tomato_seed",
     "type": "Crop",
     "material": "plant",
-    "textures": [
-      "tomato_1",
-      "tomato_2",
-      "tomato_3",
-      "tomato_4"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["tomato_1", "tomato_2", "tomato_3", "tomato_4"],
+    "blockModel": "small_plant",
     "specialModel": false,
     "harvestLoot": "tomato"
   },
@@ -2339,12 +2165,11 @@
     "id": "wheat_seed",
     "type": "Crop",
     "material": "plant",
-    "textures": [
-      "wheat_1",
-      "wheat_2",
-      "wheat_3",
-      "wheat_4"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["wheat_1", "wheat_2", "wheat_3", "wheat_4"],
+    "blockModel": "small_plant",
     "specialModel": false,
     "harvestLoot": "wheat"
   },
@@ -2352,12 +2177,11 @@
     "id": "mint_seed",
     "type": "Crop",
     "material": "plant",
-    "textures": [
-      "mint_1",
-      "mint_2",
-      "mint_3",
-      "mint_4"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["mint_1", "mint_2", "mint_3", "mint_4"],
+    "blockModel": "small_plant",
     "specialModel": false,
     "harvestLoot": "mint"
   },
@@ -2365,12 +2189,11 @@
     "id": "glow_bean_seed",
     "type": "Crop",
     "material": "plant",
-    "textures": [
-      "glow_bean_1",
-      "glow_bean_2",
-      "glow_bean_3",
-      "glow_bean_4"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["glow_bean_1", "glow_bean_2", "glow_bean_3", "glow_bean_4"],
+    "blockModel": "small_plant",
     "specialModel": false,
     "isMutated": true,
     "harvestLoot": "glow_beans"
@@ -2381,6 +2204,8 @@
     "material": "plant",
     "solid": true,
     "semiSolid": true,
+    "needsSupport": true,
+    "blocksLight": true,
     "textures": [
       "pumpkin_vine_1",
       "pumpkin_vine_2",
@@ -2400,12 +2225,11 @@
     "id": "weeds",
     "type": "Crop",
     "material": "plant",
-    "textures": [
-      "weeds_1",
-      "weeds_2",
-      "weeds_3",
-      "weeds_4"
-    ],
+    "solid": true,
+    "needsSupport": true,
+    "blocksLight": false,
+    "textures": ["weeds_1", "weeds_2", "weeds_3", "weeds_4"],
+    "blockModel": "small_plant",
     "specialModel": false
   },
   {
@@ -2414,9 +2238,8 @@
     "material": "plant",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "spider_web"
-    ],
+    "blocksLight": true,
+    "textures": ["spider_web"],
     "blockModel": "spider_web"
   },
   {
@@ -2424,17 +2247,17 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "hoop_top",
-      "hoop_side"
-    ],
+    "blocksLight": true,
+    "textures": ["hoop_top", "hoop_side"],
     "blockModel": "hoop"
   },
   {
     "id": "rail",
     "type": "Rail",
     "material": "torch",
+    "solid": true,
     "semiSolid": true,
+    "blocksLight": false,
     "textures": [
       "rail_left_down",
       "rail_down_right",
@@ -2456,6 +2279,7 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
+    "blocksLight": true,
     "blockModel": "painting_child"
   },
   {
@@ -2464,9 +2288,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_melon"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_melon"],
     "blockModel": "painting1x1",
     "sizeX": 1,
     "sizeY": 1
@@ -2477,9 +2300,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_triangle"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_triangle"],
     "blockModel": "painting1x1",
     "sizeX": 1,
     "sizeY": 1
@@ -2490,9 +2312,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_stars"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_stars"],
     "blockModel": "painting1x1",
     "sizeX": 1,
     "sizeY": 1
@@ -2503,9 +2324,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_pipes"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_pipes"],
     "blockModel": "painting1x1",
     "sizeX": 1,
     "sizeY": 1
@@ -2516,15 +2336,10 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_blue"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_blue"],
     "blockModel": "painting1x1",
-    "lightEmission": [
-      0,
-      0,
-      4
-    ],
+    "lightEmission": [0, 0, 4],
     "sizeX": 1,
     "sizeY": 1
   },
@@ -2534,9 +2349,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_wreath"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_wreath"],
     "blockModel": "painting1x1",
     "sizeX": 1,
     "sizeY": 1
@@ -2547,9 +2361,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_city"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_city"],
     "blockModel": "painting2x1",
     "sizeX": 2,
     "sizeY": 1
@@ -2560,9 +2373,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_desolate"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_desolate"],
     "blockModel": "painting2x1",
     "sizeX": 2,
     "sizeY": 1
@@ -2573,9 +2385,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_figure"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_figure"],
     "blockModel": "painting1x2",
     "sizeX": 1,
     "sizeY": 2
@@ -2586,9 +2397,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_bird"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_bird"],
     "blockModel": "painting1x2",
     "sizeX": 1,
     "sizeY": 2
@@ -2599,9 +2409,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_undergrowth"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_undergrowth"],
     "blockModel": "painting1x2",
     "sizeX": 1,
     "sizeY": 2
@@ -2612,9 +2421,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_snowman"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_snowman"],
     "blockModel": "painting1x2",
     "sizeX": 1,
     "sizeY": 2
@@ -2625,9 +2433,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_cloud"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_cloud"],
     "blockModel": "painting2x2",
     "sizeX": 2,
     "sizeY": 2
@@ -2638,9 +2445,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_waves"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_waves"],
     "blockModel": "painting2x2",
     "sizeX": 2,
     "sizeY": 2
@@ -2651,9 +2457,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_biome"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_biome"],
     "blockModel": "painting2x2",
     "sizeX": 2,
     "sizeY": 2
@@ -2664,9 +2469,8 @@
     "material": "torch",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "painting_deer"
-    ],
+    "blocksLight": true,
+    "textures": ["painting_deer"],
     "blockModel": "painting2x2",
     "sizeX": 2,
     "sizeY": 2
@@ -2677,6 +2481,7 @@
     "material": "stone",
     "solid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "spawn_pointer_top",
       "spawn_pointer_side",
@@ -2688,17 +2493,15 @@
     "id": "big_snowball",
     "material": "stone",
     "solid": true,
-    "textures": [
-      "giant_snowball"
-    ]
+    "blocksLight": true,
+    "textures": ["giant_snowball"]
   },
   {
     "id": "snow_boss_base",
     "material": "unbreakable",
     "solid": true,
-    "textures": [
-      "snow_boss_base"
-    ]
+    "blocksLight": true,
+    "textures": ["snow_boss_base"]
   },
   {
     "id": "evil_tophat",
@@ -2706,10 +2509,8 @@
     "material": "stone",
     "solid": true,
     "semiSolid": true,
-    "textures": [
-      "tophat_bottom",
-      "tophat_side"
-    ],
+    "blocksLight": true,
+    "textures": ["tophat_bottom", "tophat_side"],
     "blockModel": "top_hat"
   },
   {
@@ -2717,24 +2518,23 @@
     "type": "StructureSave",
     "solid": true,
     "interactible": true,
-    "textures": [
-      "structure_save"
-    ]
+    "blocksLight": true,
+    "textures": ["structure_save"]
   },
   {
     "id": "structure_load",
     "type": "StructureLoad",
     "solid": true,
     "interactible": true,
-    "textures": [
-      "structure_load"
-    ]
+    "blocksLight": true,
+    "textures": ["structure_load"]
   },
   {
     "id": "structure_latch",
     "type": "StructureLatch",
     "solid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "structure_latch_up",
       "structure_latch_down",
@@ -2750,6 +2550,7 @@
     "type": "StructureMarker",
     "solid": true,
     "interactible": true,
+    "blocksLight": true,
     "textures": [
       "structure_marker",
       "structure_marker_side",
@@ -2763,8 +2564,6 @@
   {
     "id": "structure_noreplace",
     "transparent": true,
-    "textures": [
-      "structure_noreplace"
-    ]
+    "textures": ["structure_noreplace"]
   }
 ]

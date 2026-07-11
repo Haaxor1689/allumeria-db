@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 import { type Item } from '#server/types.ts';
 import { getItemIcon, getTranslation } from '#utils/helpers.ts';
 
@@ -11,11 +13,12 @@ const ItemSlot = ({ item }: { item: Item }) => {
 	return (
 		<Tooltip tooltip={() => <ItemTooltip item={item} />}>
 			{props => (
-				<a
+				<Link
 					href={`/items/${item.id}`}
 					aria-label={name}
+					prefetch={false}
 					{...props}
-					className="group flex size-18 items-center justify-center bg-[url('/assets/icons/slot_empty.webp')] bg-cover hocus:bg-[url('/assets/icons/slot_hover.webp')] tooltip-only:bg-[url('/assets/icons/slot_empty.webp')]!"
+					className="group flex size-18 items-center justify-center ns-borderless-slot bg-cover hocus:ns-borderless-slot-hover tooltip-only:ns-borderless-slot!"
 				>
 					<img
 						src={getItemIcon(item)}
@@ -24,7 +27,7 @@ const ItemSlot = ({ item }: { item: Item }) => {
 						fetchPriority="low"
 						className="size-16 group-hocus:-translate-y-1 tooltip-only:translate-y-0!"
 					/>
-				</a>
+				</Link>
 			)}
 		</Tooltip>
 	);

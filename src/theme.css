@@ -221,6 +221,18 @@
 	--nsbottom-scroll-track: 3;
 	--nsleft-scroll-track: 3;
 
+	--nssource-slot: url('/assets/ui/slot.webp');
+	--nstop-slot: 3;
+	--nsright-slot: 2;
+	--nsbottom-slot: 2;
+	--nsleft-slot: 2;
+
+	--nssource-slot-hover: url('/assets/ui/slot_hover.webp');
+	--nstop-slot-hover: 2;
+	--nsright-slot-hover: 2;
+	--nsbottom-slot-hover: 2;
+	--nsleft-slot-hover: 2;
+
 	--spacing: 4px;
 }
 

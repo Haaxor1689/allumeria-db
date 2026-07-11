@@ -1,22 +1,24 @@
-export const metadata = {
+import { type Metadata } from 'next';
+import Link from 'next/link';
+
+import BlockFilters from './BlockFilters';
+import BlockGrid from './BlockGrid';
+
+export const metadata: Metadata = {
 	title: 'Blocks'
 };
 
 const Page = () => (
-	<section className="mx-auto flex w-full max-w-292 grow flex-col items-center justify-center gap-4 ns-dialog p-8 text-center">
-		<img
-			src="/assets/items/grass.webp"
-			alt="Blocks"
-			width={64}
-			height={64}
-			className="size-16"
-		/>
-		<h1 className="text-3xl font-bold pixel-shadow md:text-4xl">Blocks</h1>
-		<p className="max-w-xl text-base text-muted">
-			This page is coming soon. Block data and filters will be available here in
-			a future update.
-		</p>
-	</section>
+	<div className="mx-auto flex w-full max-w-292 flex-col gap-1">
+		<Link href="/" className="text-muted underline hocus:text-aqua">
+			&lt; Back to homepage
+		</Link>
+		<h1 className="mb-3 text-3xl font-bold pixel-shadow md:text-4xl">Blocks</h1>
+
+		<BlockFilters />
+
+		<BlockGrid />
+	</div>
 );
 
 export default Page;

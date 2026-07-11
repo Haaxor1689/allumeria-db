@@ -1,36 +1,27 @@
 'use client';
 
-import z from 'zod';
-
 import ItemSlot from '#components/ItemSlot.tsx';
 import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import items from '#data/items.json';
 import { getTranslation } from '#utils/helpers.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
 
+import { ItemFiltersSearchSchema } from './ItemFilters';
+
 const ItemGrid = () => {
-	const {
-		search = '',
-		category = 'all',
-		set
-	} = useSearchParams(
-		z.object({
-			search: z.string().optional(),
-			category: z.string().optional()
-		})
-	);
+	const params = useSearchParams(ItemFiltersSearchSchema);
 
 	// Filter items
 	const filteredItems = items.filter(item => {
 		const matchesSearch =
-			search === '' ||
-			item.id.toLowerCase().includes(search.toLowerCase()) ||
+			params.search === '' ||
+			item.id.toLowerCase().includes(params.search.toLowerCase()) ||
 			getTranslation(`item.${item.id}`)
 				.toLowerCase()
-				.includes(search.toLowerCase());
+				.includes(params.search.toLowerCase());
 
 		const matchesCategory =
-			category === 'all' || item.category?.includes(category);
+			params.category === 'all' || item.category?.includes(params.category);
 
 		return matchesSearch && matchesCategory;
 	});
@@ -40,8 +31,8 @@ const ItemGrid = () => {
 			<p className="text-lg pixel-shadow">No items found</p>
 			<button
 				onClick={() => {
-					set('search');
-					set('category');
+					params.set('search');
+					params.set('category');
 				}}
 				className="cursor-pointer ns-btn px-3 py-1 text-sm pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover"
 			>

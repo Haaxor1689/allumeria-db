@@ -1,24 +1,34 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { type ImgHTMLAttributes, useEffect, useState } from 'react';
 
-import { getTranslation } from '#utils/helpers.ts';
+type Props = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
+	src: string[];
+	alt?: (v?: string) => string;
+	fallback: string;
+};
 
-const RotatingSprite = ({ src }: { src: string[] }) => {
+const RotatingSprite = ({ src, alt, fallback, ...props }: Props) => {
 	const [current, setCurrent] = useState(0);
+	const [available, setAvailable] = useState<string[]>(src);
 	useEffect(() => {
+		if (src.length <= 1) return;
 		const interval = setInterval(
-			() => setCurrent(prev => (prev + 1) % src.length),
+			() => setCurrent(prev => (prev + 1) % available.length),
 			1000
 		);
 		return () => clearInterval(interval);
-	}, [src]);
+	}, [src, available.length]);
 
 	return (
 		<img
-			src={src[current]}
-			alt={getTranslation(`item.${src[current]}`)}
-			className="size-16"
+			src={available[current] ?? fallback}
+			alt={alt?.(available[current])}
+			onError={() => {
+				setAvailable(prev => prev.filter((_, i) => i !== current));
+				setCurrent(prev => prev % available.length);
+			}}
+			{...props}
 		/>
 	);
 };

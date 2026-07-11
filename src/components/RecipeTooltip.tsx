@@ -32,7 +32,12 @@ const RecipeTooltip = ({ item }: { item: string }) => {
 			<div className="flex gap-2 ns-borderless-ingredients p-4 text-xl">
 				{requirements.map(({ sprites, value }, idx) => (
 					<div key={idx} className="relative -m-1">
-						<RotatingSprite src={sprites} />
+						<RotatingSprite
+							src={sprites}
+							alt={s => getTranslation(`item.${s}`)}
+							fallback="/assets/items/missing.webp"
+							className="size-16"
+						/>
 						<div className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow">
 							{value}
 						</div>
