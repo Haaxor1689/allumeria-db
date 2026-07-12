@@ -6,9 +6,11 @@ import blockModels from '#data/block_models.json';
 import { type Block } from '#server/types.ts';
 import { getTranslation } from '#utils/helpers.ts';
 
+import RotatingSprite from '../RotatingSprite';
+import ButtonLink from '../styled/ButtonLink';
+import Tooltip from '../styled/Tooltip';
+import BlockMetaTooltip from './BlockMetaTooltip';
 import BlockTooltip from './BlockTooltip';
-import RotatingSprite from './RotatingSprite';
-import Tooltip from './styled/Tooltip';
 
 const BlockSlot = ({ block }: { block: Block }) => {
 	const name = getTranslation(`item.${block.id}`);
@@ -16,7 +18,17 @@ const BlockSlot = ({ block }: { block: Block }) => {
 		blockModels.find(m => m.id === block.blockModel)?.meshes.length ?? 1;
 
 	return (
-		<Tooltip tooltip={() => <BlockTooltip block={block} />}>
+		<Tooltip
+			tooltip={() => (
+				<div className="flex flex-col items-start gap-1">
+					<BlockTooltip block={block} />
+					<BlockMetaTooltip block={block} />
+				</div>
+			)}
+			actions={() => (
+				<ButtonLink href={`/blocks/${block.id}`}>Open detail</ButtonLink>
+			)}
+		>
 			{props => (
 				<Link
 					href={`/blocks/${block.id}`}

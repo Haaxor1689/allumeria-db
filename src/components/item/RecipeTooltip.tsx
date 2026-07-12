@@ -3,7 +3,7 @@ import recipeAliases from '#data/recipe_aliases.json';
 import recipes from '#data/recipes.json';
 import { getItemIcon, getTranslation } from '#utils/helpers.ts';
 
-import RotatingSprite from './RotatingSprite';
+import RotatingSprite from '../RotatingSprite';
 
 const RecipeTooltip = ({ item }: { item: string }) => {
 	const recipe = recipes.find(r => r.result === item);

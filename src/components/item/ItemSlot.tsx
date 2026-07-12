@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { type Item } from '#server/types.ts';
 import { getItemIcon, getTranslation } from '#utils/helpers.ts';
 
+import Tooltip from '../styled/Tooltip';
 import ItemTooltip from './ItemTooltip';
-import Tooltip from './styled/Tooltip';
 
 const ItemSlot = ({ item }: { item: Item }) => {
 	const name = getTranslation(`item.${item.id}`);

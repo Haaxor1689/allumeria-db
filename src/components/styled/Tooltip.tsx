@@ -8,7 +8,6 @@ import useIsMobile from '#utils/useIsMobile.tsx';
 
 import Button from './Button.tsx';
 import Dialog, { closeDialog } from './Dialog.tsx';
-import ScrollArea from './ScrollArea.tsx';
 
 const PADDING = 8;
 const OFFSET = 20;
@@ -39,15 +38,16 @@ const MobileTooltip = ({ children, tooltip, actions }: Props) => (
 				}
 			})
 		}
-		unstyled
-		className="flex flex-col items-center gap-3"
+		className="flex flex-col items-center gap-5"
 	>
 		<div className="group/tooltip pointer-events-none">{children({})}</div>
-		<ScrollArea contentClassName="p-5">{resolveContent(tooltip)}</ScrollArea>
-		{resolveContent(actions)}
-		<Button variant="negative" onClick={closeDialog}>
-			Close
-		</Button>
+		{resolveContent(tooltip)}
+		<div className="flex flex-col items-center gap-1">
+			{resolveContent(actions)}
+			<Button variant="negative" onClick={closeDialog}>
+				Close
+			</Button>
+		</div>
 	</Dialog>
 );
 

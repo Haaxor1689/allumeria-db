@@ -21,7 +21,7 @@ const Scrollbar = ({
 }) => (
 	<Base.Scrollbar
 		orientation={orientation}
-		className="group/scrollbar ns-borderless-scroll-track opacity-0 group-hover/scroll:opacity-100"
+		className="group/scrollbar ns-borderless-scroll-track opacity-100 group-hover/scroll:opacity-100 md:opacity-0"
 		style={
 			orientation === 'vertical'
 				? { transform: `translateX(${offset ?? 0}px)` }

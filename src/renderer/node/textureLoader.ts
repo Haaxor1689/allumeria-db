@@ -54,8 +54,8 @@ export const createNodeTextureLoader = (textureDir: string) => {
 			// Sharp outputs rows from top-to-bottom; flip on upload to match GL UV convention.
 			texture.flipY = true;
 			texture.needsUpdate = true;
-			texture.wrapS = THREE.RepeatWrapping;
-			texture.wrapT = THREE.RepeatWrapping;
+			texture.wrapS = THREE.ClampToEdgeWrapping;
+			texture.wrapT = THREE.ClampToEdgeWrapping;
 			texture.repeat.set(16 / metadata.width, 16 / metadata.height);
 			texture.magFilter = THREE.NearestFilter;
 			texture.minFilter = THREE.NearestFilter;

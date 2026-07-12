@@ -2,13 +2,13 @@
 
 import z from 'zod';
 
-import Button from '#components/styled/Button.tsx';
+import Select from '#components/styled/Select.tsx';
 import blocks from '#data/blocks.json';
 import useSearchParams from '#utils/useSearchParams.ts';
 
 const blockMaterialKeys = Array.from(
 	new Set(blocks.map(block => block.material).filter(material => !!material))
-);
+).filter(v => v !== undefined);
 
 export const BlockFiltersSearchSchema = z.object({
 	search: z.string().optional().default(''),
@@ -31,27 +31,14 @@ const BlockFilters = () => {
 			/>
 
 			{/* Material filter */}
-			<div className="flex shrink flex-wrap gap-1">
-				<Button
-					variant="teal"
-					onClick={() => params.set('category', 'all')}
-					active={params.category === 'all'}
-					className="text-xs"
-				>
-					ALL
-				</Button>
-				{blockMaterialKeys.map(material => (
-					<Button
-						key={material}
-						variant="teal"
-						onClick={() => params.set('category', material)}
-						active={params.category === material}
-						className="px-2 text-xs capitalize"
-					>
-						{material?.replaceAll('_', ' ')}
-					</Button>
-				))}
-			</div>
+			<Select
+				label="Material"
+				value={params.category}
+				onChange={value => params.set('category', value ?? 'all')}
+				options={['all', ...blockMaterialKeys]}
+				getKey={material => material}
+				getLabel={material => material.replaceAll('_', ' ')}
+			/>
 		</div>
 	);
 };

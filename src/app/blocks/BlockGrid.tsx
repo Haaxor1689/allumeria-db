@@ -5,7 +5,7 @@ import blocks from '#data/blocks.json';
 import { getTranslation } from '#utils/helpers.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
 
-import BlockSlot from '../../components/BlockSlot';
+import BlockSlot from '../../components/block/BlockSlot';
 import { BlockFiltersSearchSchema } from './BlockFilters';
 
 const BlockGrid = () => {

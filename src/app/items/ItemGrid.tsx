@@ -1,6 +1,6 @@
 'use client';
 
-import ItemSlot from '#components/ItemSlot.tsx';
+import ItemSlot from '#components/item/ItemSlot.tsx';
 import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import items from '#data/items.json';
 import { getTranslation } from '#utils/helpers.ts';

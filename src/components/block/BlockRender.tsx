@@ -6,7 +6,7 @@ import * as THREE from 'three';
 import { buildBlockGroup } from '#renderer/blockRenderer.ts';
 import { type Block } from '#server/types.ts';
 
-import Button from './styled/Button';
+import Button from '../styled/Button';
 
 type Props = {
 	block: Block;
@@ -31,9 +31,6 @@ const fitCameraToObject = ({
 }: FitCameraOptions) => {
 	const bounds = new THREE.Box3().setFromObject(object);
 	const size = bounds.getSize(new THREE.Vector3());
-	const center = bounds.getCenter(new THREE.Vector3());
-
-	object.position.sub(center);
 
 	const maxDim = Math.max(size.x, size.y, size.z, 1);
 	const paddedDim = maxDim * (1 + Math.max(-0.95, padding));
@@ -132,8 +129,8 @@ const createBrowserTextureLoader = () => {
 				const width = texture.image?.width ?? 16;
 				const height = texture.image?.height ?? 16;
 
-				texture.wrapS = THREE.RepeatWrapping;
-				texture.wrapT = THREE.RepeatWrapping;
+				texture.wrapS = THREE.ClampToEdgeWrapping;
+				texture.wrapT = THREE.ClampToEdgeWrapping;
 				texture.repeat.set(16 / width, 16 / height);
 				texture.magFilter = THREE.NearestFilter;
 				texture.minFilter = THREE.NearestFilter;
@@ -161,6 +158,16 @@ const BlockRender = ({ block }: Props) => {
 	const [currentMesh, setCurrentMesh] = useState(0);
 	const [showWireframe, setShowWireframe] = useState(false);
 
+	const zoomRef = useRef(1);
+	const rotationXRef = useRef(0);
+	const rotationYRef = useRef(0);
+
+	// Live THREE.js object refs — allow the swap effect to update the scene
+	// without reinitializing the renderer.
+	const rotationRootRef = useRef<THREE.Group | null>(null);
+	const activeGroupRef = useRef<THREE.Group | null>(null);
+	const fitGroupCameraRef = useRef<((group: THREE.Group) => void) | null>(null);
+
 	useEffect(() => {
 		groupsRef.current = groups;
 	}, [groups]);
@@ -179,6 +186,9 @@ const BlockRender = ({ block }: Props) => {
 	useEffect(() => {
 		let disposed = false;
 		const loadTexture = createBrowserTextureLoader();
+		zoomRef.current = 1;
+		rotationXRef.current = 0;
+		rotationYRef.current = 0;
 
 		void buildBlockGroup({ block, loadTexture }).then(nextGroups => {
 			if (disposed) {
@@ -201,11 +211,19 @@ const BlockRender = ({ block }: Props) => {
 		};
 	}, [block]);
 
+	// Main render effect — only reinitializes when the group set changes (new block).
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		const container = containerRef.current;
-		const activeGroup = groups[currentMesh];
-		if (!canvas || !container || !activeGroup) return;
+		if (!canvas || !container || groups.length === 0) return;
+
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+		const initialGroup = groups[0]!;
+
+		// Center the group in local space before any rotation is applied so the
+		// camera can always look at world (0,0,0).
+		const initBounds = new THREE.Box3().setFromObject(initialGroup);
+		initialGroup.position.sub(initBounds.getCenter(new THREE.Vector3()));
 
 		const renderer = new THREE.WebGLRenderer({
 			canvas,
@@ -217,26 +235,35 @@ const BlockRender = ({ block }: Props) => {
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
 		const scene = new THREE.Scene();
-		scene.add(activeGroup);
-
 		const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
-		let zoom = 1;
+
 		const rotationRoot = new THREE.Group();
-		rotationRoot.add(activeGroup);
+		rotationRoot.rotation.x = rotationXRef.current;
+		rotationRoot.rotation.y = rotationYRef.current;
+		rotationRoot.add(initialGroup);
 		scene.add(rotationRoot);
+
+		rotationRootRef.current = rotationRoot;
+		activeGroupRef.current = initialGroup;
+
+		fitGroupCameraRef.current = (group: THREE.Group) => {
+			const width = container.clientWidth;
+			const height = container.clientHeight;
+			if (!width || !height) return;
+			fitCameraToObject({ camera, object: group, aspect: width / height });
+			camera.zoom = zoomRef.current;
+			camera.updateProjectionMatrix();
+		};
 
 		const resize = () => {
 			const width = container.clientWidth;
 			const height = container.clientHeight;
 			if (!width || !height) return;
-
 			renderer.setSize(width, height, false);
-			fitCameraToObject({
-				camera,
-				object: activeGroup,
-				aspect: width / height
-			});
-			camera.zoom = zoom;
+			const group = activeGroupRef.current;
+			if (!group) return;
+			fitCameraToObject({ camera, object: group, aspect: width / height });
+			camera.zoom = zoomRef.current;
 			camera.updateProjectionMatrix();
 		};
 
@@ -276,6 +303,8 @@ const BlockRender = ({ block }: Props) => {
 				THREE.MathUtils.degToRad(-80),
 				THREE.MathUtils.degToRad(80)
 			);
+			rotationYRef.current = rotationRoot.rotation.y;
+			rotationXRef.current = rotationRoot.rotation.x;
 		};
 
 		const stopDragging = (event?: PointerEvent) => {
@@ -292,8 +321,13 @@ const BlockRender = ({ block }: Props) => {
 		const onWheel = (event: WheelEvent) => {
 			event.preventDefault();
 			const zoomFactor = Math.exp(-event.deltaY * 0.0015);
-			zoom = THREE.MathUtils.clamp(zoom * zoomFactor, 0.6, 4);
-			camera.zoom = zoom;
+			const newZoom = THREE.MathUtils.clamp(
+				zoomRef.current * zoomFactor,
+				0.6,
+				4
+			);
+			zoomRef.current = newZoom;
+			camera.zoom = newZoom;
 			camera.updateProjectionMatrix();
 		};
 
@@ -315,18 +349,43 @@ const BlockRender = ({ block }: Props) => {
 			canvas.removeEventListener('pointerleave', stopDragging);
 			canvas.removeEventListener('pointercancel', stopDragging);
 			canvas.removeEventListener('wheel', onWheel);
-			rotationRoot.remove(activeGroup);
+			const groupToRemove = activeGroupRef.current;
+			if (groupToRemove) rotationRoot.remove(groupToRemove);
 			scene.remove(rotationRoot);
 			renderer.dispose();
+			rotationRootRef.current = null;
+			activeGroupRef.current = null;
+			fitGroupCameraRef.current = null;
 		};
+	}, [groups]);
+
+	// Variant swap effect — swaps the active group in-place without reinitializing
+	// the renderer, scene, or camera.
+	useEffect(() => {
+		const rotationRoot = rotationRootRef.current;
+		const prevGroup = activeGroupRef.current;
+		const nextGroup = groups[currentMesh];
+
+		if (!rotationRoot || !nextGroup || prevGroup === nextGroup) return;
+
+		// Center the incoming group in its own local space (no parent rotation yet)
+		// so the camera always looks at world (0,0,0).
+		const initBounds = new THREE.Box3().setFromObject(nextGroup);
+		nextGroup.position.sub(initBounds.getCenter(new THREE.Vector3()));
+
+		if (prevGroup) rotationRoot.remove(prevGroup);
+		rotationRoot.add(nextGroup);
+		activeGroupRef.current = nextGroup;
+
+		fitGroupCameraRef.current?.(nextGroup);
 	}, [groups, currentMesh]);
 
 	return (
 		<div
 			ref={containerRef}
-			className="relative float-right aspect-square w-2/3 ns-dialog"
+			className="relative aspect-square ns-dialog md:float-right md:w-2/3"
 		>
-			<div className="absolute top-2 right-2 z-10">
+			<div className="absolute top-0 right-0 z-10 md:top-2 md:right-2">
 				<Button
 					variant={showWireframe ? 'positive' : 'negative'}
 					onClick={() => setShowWireframe(v => !v)}
@@ -335,7 +394,7 @@ const BlockRender = ({ block }: Props) => {
 				</Button>
 			</div>
 			{groups.length > 1 && (
-				<div className="absolute bottom-2 left-1/2 z-10 flex -translate-x-1/2 items-center gap-4 text-white">
+				<div className="absolute left-1/2 z-10 flex -translate-x-1/2 items-center gap-4 text-white md:bottom-2">
 					<Button
 						variant="purple"
 						onClick={() =>

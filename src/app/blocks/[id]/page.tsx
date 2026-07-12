@@ -2,8 +2,9 @@ import { type Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import BlockRender from '#components/BlockRender.tsx';
-import BlockTooltip from '#components/BlockTooltip.tsx';
+import BlockMetaTooltip from '#components/block/BlockMetaTooltip.tsx';
+import BlockRender from '#components/block/BlockRender.tsx';
+import BlockTooltip from '#components/block/BlockTooltip.tsx';
 import blocks from '#data/blocks.json';
 import { getTranslation } from '#utils/helpers.ts';
 
@@ -27,11 +28,14 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 
 	return (
 		<div className="mx-auto w-full max-w-292 space-y-4">
-			<BlockRender block={block} />
 			<Link href="/blocks" className="text-muted underline hocus:text-aqua">
 				&lt; Back to blocks
 			</Link>
-			<BlockTooltip block={block} />
+			<h1 className="text-3xl font-bold pixel-shadow md:text-4xl">
+				{getTranslation(`item.${block.id}`)}
+			</h1>
+			<BlockRender block={block} />
+			<BlockMetaTooltip block={block} />
 		</div>
 	);
 };
