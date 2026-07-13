@@ -10,12 +10,14 @@ import ItemSlot from '#components/item/ItemSlot.tsx';
 import ItemTooltip from '#components/item/ItemTooltip.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
 import ButtonLink from '#components/styled/ButtonLink.tsx';
+import ScrollArea from '#components/styled/ScrollArea.tsx';
 import blocks from '#data/blocks.json';
 import creatures from '#data/creatures.json';
 import effects from '#data/effects.json';
 import items from '#data/items.json';
 import loot from '#data/loot.json';
 import recipes from '#data/recipes.json';
+import structures from '#data/structures.json';
 import { getItemIcon, getTranslation } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
 
@@ -31,11 +33,27 @@ export const generateMetadata = async ({
 	return { title: getTranslation(`item.${item.id}`) };
 };
 
+const getLootItemIds = (entries: (typeof loot)[number]['entries']): string[] =>
+	entries.flatMap(entry => {
+		if ('item' in entry) return entry.item ? [entry.item] : [];
+		if ('ref' in entry) {
+			const refTable = loot.find(l => l.id === entry.ref);
+			return refTable ? getLootItemIds(refTable.entries) : [];
+		}
+		if ('entries' in entry)
+			return getLootItemIds(entry.entries as (typeof loot)[number]['entries']);
+		if ('oneOf' in entry)
+			return getLootItemIds(entry.oneOf as (typeof loot)[number]['entries']);
+		return [];
+	});
+
 const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 	const { id } = await params;
 	const item = items.find(item => item.id === id);
 
 	if (!item) notFound();
+
+	console.log(item);
 
 	const name = getTranslation(`item.${item.id}`);
 
@@ -54,37 +72,20 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 		.map(r => items.find(i => i.id === r.result))
 		.filter(i => i !== undefined);
 
-	const getLootItemIds = (
-		entries: (typeof loot)[number]['entries']
-	): string[] =>
-		entries.flatMap(entry => {
-			if ('item' in entry) return entry.item ? [entry.item] : [];
-			if ('ref' in entry) {
-				const refTable = loot.find(l => l.id === entry.ref);
-				return refTable ? getLootItemIds(refTable.entries) : [];
-			}
-			if ('entries' in entry)
-				return getLootItemIds(
-					entry.entries as (typeof loot)[number]['entries']
-				);
-			if ('oneOf' in entry)
-				return getLootItemIds(entry.oneOf as (typeof loot)[number]['entries']);
-			return [];
-		});
-
 	const lootTableIds = new Set(
 		loot.filter(l => getLootItemIds(l.entries).includes(item.id)).map(l => l.id)
 	);
 
-	const dropsFromBlocks = blocks.filter(
-		b => !b.hidden && lootTableIds.has(b.loot ?? b.item ?? b.id)
-	);
-	const dropsFromCreatures = creatures.filter(
-		c => c.loot && lootTableIds.has(c.loot)
-	);
+	const dropsFrom = {
+		blocks: blocks.filter(b => lootTableIds.has(b.loot ?? '')),
+		creatures: creatures.filter(c => lootTableIds.has(c.loot ?? '')),
+		structures: structures.filter(s =>
+			s.chests.some(c => lootTableIds.has(c.loot ?? ''))
+		)
+	};
 
 	return (
-		<div className="container mx-auto flex w-full max-w-292 grow flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
+		<div className="container mx-auto flex w-full max-w-292 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
 			{block && (
 				<div className="relative mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
 					<BlockRender block={block} />
@@ -175,37 +176,6 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 				</div>
 			)}
 
-			{(dropsFromBlocks.length > 0 || dropsFromCreatures.length > 0) && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Drops from:
-					</h2>
-
-					<p>{name} can be obtained from the following sources:</p>
-
-					{dropsFromBlocks.length > 0 && (
-						<div className="flex flex-wrap gap-2">
-							{dropsFromBlocks.map(block => (
-								<BlockSlot key={block.id} block={block} />
-							))}
-						</div>
-					)}
-
-					{dropsFromCreatures.length > 0 && (
-						<div className="flex flex-wrap gap-3">
-							{dropsFromCreatures.map(creature => (
-								<div
-									key={creature.id}
-									className="flex items-center gap-2 rounded border border-white/20 bg-white/5 px-3 py-2 text-sm"
-								>
-									{toDisplayName(creature.id)}
-								</div>
-							))}
-						</div>
-					)}
-				</div>
-			)}
-
 			{item.sellValue ? (
 				<div className="flex flex-col gap-4">
 					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
@@ -216,6 +186,62 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 					<CostTooltip value={item.sellValue} />
 				</div>
 			) : null}
+
+			{(dropsFrom.blocks.length > 0 ||
+				dropsFrom.creatures.length > 0 ||
+				dropsFrom.structures.length > 0) && (
+				<div className="flex flex-col gap-4">
+					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+						Drops from:
+					</h2>
+
+					<p>{name} can be obtained from the following sources:</p>
+
+					{dropsFrom.blocks.length > 0 && (
+						<ScrollArea offset={32} contentClassName="flex gap-2">
+							{dropsFrom.blocks.map(block => (
+								<BlockSlot key={block.id} block={block} />
+							))}
+						</ScrollArea>
+					)}
+
+					{dropsFrom.creatures.length > 0 && (
+						<ScrollArea offset={32} contentClassName="flex gap-2">
+							{dropsFrom.creatures.map(creature => (
+								<div
+									key={creature.id}
+									className="flex items-center gap-2 rounded border border-white/20 bg-white/5 px-3 py-2 text-sm"
+								>
+									{toDisplayName(creature.id)}
+								</div>
+							))}
+						</ScrollArea>
+					)}
+
+					{dropsFrom.structures.length > 0 && (
+						<ScrollArea offset={32} contentClassName="flex gap-2">
+							{dropsFrom.structures.map(s =>
+								s.chests.map(c => {
+									const chest = blocks.find(b => b.id === c.chest);
+									if (!chest) return null;
+									return (
+										<div
+											key={`${s.id}-${c.chest}`}
+											className="flex items-start"
+										>
+											<BlockSlot block={chest} />
+											<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-muted">
+												{toDisplayName(s.id)}
+												{'type' in c ? ` (${toDisplayName(c.type)})` : ''}
+											</div>
+										</div>
+									);
+								})
+							)}
+						</ScrollArea>
+					)}
+				</div>
+			)}
 		</div>
 	);
 };

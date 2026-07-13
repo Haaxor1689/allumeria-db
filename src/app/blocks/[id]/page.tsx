@@ -73,7 +73,7 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 		);
 
 	return (
-		<div className="mx-auto flex w-full max-w-292 grow flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
+		<div className="mx-auto flex w-full max-w-292 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
 			<div className="mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
 				<BlockRender block={block} />
 			</div>
