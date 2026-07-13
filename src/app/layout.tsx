@@ -5,9 +5,9 @@ import '../theme.css';
 import Link from 'next/link';
 import Script from 'next/script';
 
+import AutoBlur from '#components/AutoBlur.tsx';
 import Footer from '#components/layout/Footer.tsx';
 import NavLink from '#components/layout/NavLink.tsx';
-import ScrollArea from '#components/styled/ScrollArea.tsx';
 import { env } from '#env.js';
 import { NavigationLinks } from '#utils/constants.ts';
 import { MobileStateSync } from '#utils/useIsMobile.tsx';
@@ -56,14 +56,14 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 		</head>
 		<body className={`${atkinsonHyperlegible.className} text-white`}>
 			<div
-				className="flex min-h-screen flex-col gap-8 overflow-x-hidden p-2 lg:h-screen lg:flex-row lg:p-8"
+				className="flex min-h-screen flex-col gap-8 overflow-x-clip p-2 lg:flex-row lg:p-8"
 				style={{
 					backgroundImage: 'url(/night_sky.png)',
 					backgroundSize: 'cover',
 					backgroundPosition: 'center'
 				}}
 			>
-				<div className="flex w-full flex-col gap-8 lg:max-w-84">
+				<div className="flex max-h-[calc(100vh-4rem)] w-full flex-col gap-8 lg:sticky lg:top-8 lg:max-w-84 lg:flex-none">
 					<header className="contents">
 						<Link href="/" className="-m-4 p-4">
 							<img
@@ -88,6 +88,7 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 				<main className="flex w-full shrink grow flex-col gap-8">
 					{children}
 				</main>
+				<AutoBlur />
 				<Footer className="px-4 pb-6 lg:hidden" />
 			</div>
 			<MobileStateSync />

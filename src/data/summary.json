@@ -1,14 +1,16 @@
 {
-  "generatedAtUtc": "2026-07-11T09:17:42.7186995+00:00",
-  "gameVersion": "Demo 0.14.9",
-  "itemCount": 439,
-  "recipeCount": 180,
-  "recipeAliasCount": 3,
-  "blockCount": 235,
-  "creatureCount": 19,
-  "lootCount": 39,
-  "spawnCount": 8,
-  "effectCount": 44,
-  "itemTagCount": 17,
-  "blockModelCount": 56
+	"generatedAtUtc": "2026-07-13T20:58:52.4738299+00:00",
+	"gameVersion": "Demo 0.14.9",
+	"itemCount": 439,
+	"recipeCount": 180,
+	"recipeAliasCount": 3,
+	"blockCount": 235,
+	"creatureCount": 19,
+	"lootCount": 41,
+	"spawnCount": 8,
+	"effectCount": 44,
+	"itemTagCount": 17,
+	"blockMaterialCount": 14,
+	"structureCount": 5,
+	"blockModelCount": 56
 }

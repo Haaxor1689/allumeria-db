@@ -8,9 +8,7 @@ import { type Block } from '#server/types.ts';
 
 import Button from '../styled/Button';
 
-type Props = {
-	block: Block;
-};
+type Props = { block: Block };
 
 type FitCameraOptions = {
 	camera: THREE.OrthographicCamera;
@@ -129,8 +127,8 @@ const createBrowserTextureLoader = () => {
 				const width = texture.image?.width ?? 16;
 				const height = texture.image?.height ?? 16;
 
-				texture.wrapS = THREE.ClampToEdgeWrapping;
-				texture.wrapT = THREE.ClampToEdgeWrapping;
+				texture.wrapS = THREE.RepeatWrapping;
+				texture.wrapT = THREE.RepeatWrapping;
 				texture.repeat.set(16 / width, 16 / height);
 				texture.magFilter = THREE.NearestFilter;
 				texture.minFilter = THREE.NearestFilter;
@@ -381,11 +379,8 @@ const BlockRender = ({ block }: Props) => {
 	}, [groups, currentMesh]);
 
 	return (
-		<div
-			ref={containerRef}
-			className="relative aspect-square ns-dialog md:float-right md:w-2/3"
-		>
-			<div className="absolute top-0 right-0 z-10 md:top-2 md:right-2">
+		<div ref={containerRef} className="relative aspect-square w-full ns-slot">
+			<div className="absolute -top-2 -right-2 z-10 md:top-0 md:right-0">
 				<Button
 					variant={showWireframe ? 'positive' : 'negative'}
 					onClick={() => setShowWireframe(v => !v)}
@@ -394,7 +389,7 @@ const BlockRender = ({ block }: Props) => {
 				</Button>
 			</div>
 			{groups.length > 1 && (
-				<div className="absolute left-1/2 z-10 flex -translate-x-1/2 items-center gap-4 text-white md:bottom-2">
+				<div className="absolute -bottom-2 left-1/2 z-10 flex -translate-x-1/2 items-center gap-4 text-white md:bottom-0">
 					<Button
 						variant="purple"
 						onClick={() =>

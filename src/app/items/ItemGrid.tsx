@@ -11,6 +11,19 @@ import { ItemFiltersSearchSchema } from './ItemFilters';
 const ItemGrid = () => {
 	const params = useSearchParams(ItemFiltersSearchSchema);
 
+	console.log(
+		items.reduce(
+			(acc, next) => {
+				Object.entries(next).forEach(([key, value]) => {
+					acc[key] ??= new Set();
+					acc[key].add(value);
+				});
+				return acc;
+			},
+			{} as Record<string, Set<any>>
+		)
+	);
+
 	// Filter items
 	const filteredItems = items.filter(item => {
 		const matchesSearch =
@@ -30,10 +43,7 @@ const ItemGrid = () => {
 		<div className="flex flex-col items-center justify-center gap-2 ns-dialog p-8">
 			<p className="text-lg pixel-shadow">No items found</p>
 			<button
-				onClick={() => {
-					params.set('search');
-					params.set('category');
-				}}
+				onClick={() => params.reset()}
 				className="cursor-pointer ns-btn px-3 py-1 text-sm pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover"
 			>
 				Clear filters

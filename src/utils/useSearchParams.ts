@@ -27,6 +27,14 @@ const useSearchParams = <T extends z.ZodObject<any>>(schema: T) => {
 			}
 			const newUrl = `${window.location.pathname}?${newSearchParams.toString()}`;
 			window.history.replaceState(null, '', newUrl);
+		},
+		reset: () => {
+			const newSearchParams = new URLSearchParams(searchParams.toString());
+			Object.keys(schema.shape).forEach(key => {
+				newSearchParams.delete(key);
+			});
+			const newUrl = `${window.location.pathname}?${newSearchParams.toString()}`;
+			window.history.replaceState(null, '', newUrl);
 		}
 	};
 };

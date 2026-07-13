@@ -1,0 +1,152 @@
+[
+	{
+		"id": "unbreakable",
+		"miningLevel": 10,
+		"punchesRequired": 5,
+		"overcharge": 40,
+		"swingMultiplier": 1,
+		"soundId": "stone",
+		"canBeBlownUp": false,
+		"hammerLevel": 1,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "stone",
+		"miningLevel": 2,
+		"punchesRequired": 4,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"soundId": "stone",
+		"canBeBlownUp": true,
+		"hammerLevel": 1,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "dirt",
+		"miningLevel": 1,
+		"punchesRequired": 3,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"soundId": "soil",
+		"canBeBlownUp": true,
+		"hammerLevel": 1,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "wood",
+		"miningLevel": 1,
+		"punchesRequired": 2,
+		"overcharge": 6,
+		"swingMultiplier": 1,
+		"soundId": "wood",
+		"canBeBlownUp": true,
+		"hammerLevel": 1,
+		"preferredTool": "axe"
+	},
+	{
+		"id": "trunk",
+		"miningLevel": 1,
+		"punchesRequired": 10,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"soundId": "wood",
+		"canBeBlownUp": true,
+		"hammerLevel": 1,
+		"preferredTool": "axe"
+	},
+	{
+		"id": "soft_ore",
+		"miningLevel": 2,
+		"punchesRequired": 3,
+		"overcharge": 2,
+		"swingMultiplier": 1,
+		"soundId": "stone",
+		"canBeBlownUp": true,
+		"hammerLevel": 1,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "hard_ore",
+		"miningLevel": 2,
+		"punchesRequired": 4,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"soundId": "stone",
+		"canBeBlownUp": true,
+		"hammerLevel": 1,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "dungeon_brick_forest",
+		"miningLevel": 4,
+		"punchesRequired": 4,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"soundId": "stone",
+		"canBeBlownUp": false,
+		"hammerLevel": 2,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "undergrowth_rock",
+		"miningLevel": 4,
+		"punchesRequired": 4,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"soundId": "stone",
+		"canBeBlownUp": false,
+		"hammerLevel": 2,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "spawner",
+		"miningLevel": 4,
+		"punchesRequired": 15,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"soundId": "stone",
+		"canBeBlownUp": false,
+		"hammerLevel": 1,
+		"preferredTool": "pickaxe"
+	},
+	{
+		"id": "plant",
+		"miningLevel": 1,
+		"punchesRequired": 1,
+		"overcharge": 1,
+		"swingMultiplier": 0.5,
+		"soundId": "soil",
+		"canBeBlownUp": true,
+		"hammerLevel": 1
+	},
+	{
+		"id": "glass",
+		"miningLevel": 1,
+		"punchesRequired": 1,
+		"overcharge": 1,
+		"swingMultiplier": 0.5,
+		"soundId": "glass",
+		"canBeBlownUp": true,
+		"hammerLevel": 1
+	},
+	{
+		"id": "torch",
+		"miningLevel": 1,
+		"punchesRequired": 1,
+		"overcharge": 1,
+		"swingMultiplier": 0.5,
+		"soundId": "wood",
+		"canBeBlownUp": true,
+		"hammerLevel": 1
+	},
+	{
+		"id": "fluid",
+		"miningLevel": 10,
+		"punchesRequired": 5,
+		"overcharge": 40,
+		"swingMultiplier": 0.5,
+		"soundId": "stone",
+		"canBeBlownUp": false,
+		"hammerLevel": 1
+	}
+]

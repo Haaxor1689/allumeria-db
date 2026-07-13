@@ -14,16 +14,18 @@ type Props = {
 	trigger: (open: (...args: unknown[]) => void) => React.ReactNode;
 	children: React.ReactNode;
 	defaultOpen?: boolean;
-	className?: string;
 	onOpenChange?: (open: boolean) => void;
+	containerClassName?: string;
+	contentClassName?: string;
 };
 
 const Dialog = ({
 	trigger,
 	children,
 	defaultOpen,
-	className,
-	onOpenChange
+	onOpenChange,
+	containerClassName,
+	contentClassName
 }: Props) => {
 	const ref = useRef<HTMLDivElement>(null);
 	const cbRef = useRef<((e: Event) => void) | null>(null);
@@ -59,10 +61,8 @@ const Dialog = ({
 					>
 						<ScrollArea
 							offset={32}
-							containerClassName={cls(
-								'max-h-[calc(100vh-24px)] w-max max-w-[min(calc(100vw-64px),var(--container-3xl))]'
-							)}
-							contentClassName={className}
+							containerClassName={cls('dialog-sizing', containerClassName)}
+							contentClassName={contentClassName}
 						>
 							{children}
 						</ScrollArea>

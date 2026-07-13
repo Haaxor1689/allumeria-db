@@ -4,8 +4,9 @@ import Link from 'next/link';
 
 import blockModels from '#data/block_models.json';
 import { type Block } from '#server/types.ts';
-import { getTranslation } from '#utils/helpers.ts';
+import { getBlockName } from '#utils/helpers.ts';
 
+import LootTooltip from '../LootTooltip';
 import RotatingSprite from '../RotatingSprite';
 import ButtonLink from '../styled/ButtonLink';
 import Tooltip from '../styled/Tooltip';
@@ -13,15 +14,17 @@ import BlockMetaTooltip from './BlockMetaTooltip';
 import BlockTooltip from './BlockTooltip';
 
 const BlockSlot = ({ block }: { block: Block }) => {
-	const name = getTranslation(`item.${block.id}`);
+	const name = getBlockName(block);
 	const numMeshes =
 		blockModels.find(m => m.id === block.blockModel)?.meshes.length ?? 1;
 
 	return (
-		<Tooltip
+		<Tooltip<HTMLAnchorElement>
 			tooltip={() => (
 				<div className="flex flex-col items-start gap-1">
 					<BlockTooltip block={block} />
+					<LootTooltip id={block.loot} fallbackItem={block.item ?? block.id} />
+					<LootTooltip id={block.harvestLoot} variant="harvest" />
 					<BlockMetaTooltip block={block} />
 				</div>
 			)}

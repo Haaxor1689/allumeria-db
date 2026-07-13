@@ -287,7 +287,18 @@ const createQuadGeometry = (quad: QuadMesh): THREE.BufferGeometry => {
 		...quad.vertices[3]
 	]);
 	const [u0, v0, u1, v1] = quad.uvs ?? [0, 0, 1, 1];
-	const uvs = new Float32Array([u0, v0, u0, v1, u1, v1, u1, v0]);
+	// Inset the UVs slightly to avoid texture bleeding
+	const uvInset = 0.005;
+	const uvs = new Float32Array([
+		u0 + uvInset,
+		v0 + uvInset,
+		u0 + uvInset,
+		v1 - uvInset,
+		u1 - uvInset,
+		v1 - uvInset,
+		u1 - uvInset,
+		v0 + uvInset
+	]);
 
 	geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 	geometry.setAttribute('uv', new THREE.BufferAttribute(uvs, 2));

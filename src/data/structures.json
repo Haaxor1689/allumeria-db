@@ -1,0 +1,33 @@
+[
+	{
+		"id": "ForestDungeon",
+		"chests": [
+			{ "chest": "iron_chest", "loot": "iron_chest", "type": "chest" },
+			{ "chest": "iron_chest", "loot": "iron_chest", "type": "chest_chance" },
+			{
+				"chest": "forest_chest",
+				"loot": "forest_dungeon_chest",
+				"type": "end_chest"
+			}
+		]
+	},
+	{
+		"id": "Mineshaft",
+		"chests": [{ "chest": "chest", "loot": "station_loot" }]
+	},
+	{
+		"id": "SnowCabin",
+		"chests": [{ "chest": "chest", "loot": "snow_station_loot" }]
+	},
+	{
+		"id": "SnowDungeon",
+		"chests": [
+			{ "chest": "ice_chest", "loot": "frozen_chest", "type": "chest" },
+			{ "chest": "ice_chest", "loot": "frozen_chest", "type": "chest_chance" }
+		]
+	},
+	{
+		"id": "TinyForestChest",
+		"chests": [{ "chest": "chest", "loot": "station_loot" }]
+	}
+]

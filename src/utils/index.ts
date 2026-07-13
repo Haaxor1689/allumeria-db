@@ -43,3 +43,17 @@ export const invoke = <T>(value: Promise<ProcedureResult<T>>) =>
 		if (!res.ok) throw res.error;
 		return res.data;
 	});
+
+export const toDisplayName = (str: string) =>
+	// oxlint-disable-next-line typescript/no-misused-spread
+	[...str].reduce((acc, char, index, arr) => {
+		if (index === 0) return char.toUpperCase();
+
+		if (char === '_') return `${acc} `;
+
+		const isUppercase = char.toLocaleUpperCase() === char;
+		const isPrevSpace = arr[index - 1] === ' ';
+		if (isUppercase && !isPrevSpace) return `${acc} ${char}`;
+		if (!isUppercase && isPrevSpace) return `${acc}${char.toUpperCase()}`;
+		return acc + char;
+	}, '');

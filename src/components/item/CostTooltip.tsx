@@ -19,7 +19,7 @@ const CostTooltip = ({ value }: { value: number }) => {
 		[] as { item: (typeof coins)[number]; count: number }[]
 	);
 	return (
-		<div className="flex gap-2 ns-dialog-positive text-xl">
+		<div className="flex gap-2 self-start ns-dialog-positive text-xl">
 			{split.map(({ item, count }) => (
 				<div key={item.id} className="relative -m-1">
 					<img

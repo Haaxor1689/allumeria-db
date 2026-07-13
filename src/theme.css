@@ -10,6 +10,8 @@
 	--color-dark-aqua: #1869a1;
 	--color-tooltip: #c7b3fcb3;
 	--color-icon: #e6f2ffe6;
+	--color-alert: #ff8e30;
+	--color-black: #000000;
 
 	--nssource-btn-active: url('/assets/ui/btn_active.webp');
 	--nstop-btn-active: 3;
@@ -258,6 +260,10 @@
 		calc(var(--nsbottom-btn) * var(--spacing))
 		calc(var(--nsleft-btn) * var(--spacing));
 	border-color: transparent;
+}
+
+@utility dialog-sizing {
+	@apply max-h-[calc(100vh-24px)] w-max max-w-[min(calc(100vw-64px),var(--container-3xl))];
 }
 
 @utility ns-* {

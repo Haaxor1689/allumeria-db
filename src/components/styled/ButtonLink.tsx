@@ -30,7 +30,7 @@ const ButtonLink = ({
 	<Link
 		href={href}
 		className={cn(
-			'h-full cursor-pointer select-none font-bold pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover',
+			'cursor-pointer select-none font-bold pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover',
 			{
 				'px-3': !size,
 				'ns-btn': !variant,

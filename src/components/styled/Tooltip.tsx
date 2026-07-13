@@ -1,6 +1,7 @@
 'use client';
 
-import { useLayoutEffect, useRef, useSyncExternalStore } from 'react';
+import { usePathname } from 'next/navigation';
+import { useId, useLayoutEffect, useRef, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import { createRoot, type Root } from 'react-dom/client';
 
@@ -12,14 +13,15 @@ import Dialog, { closeDialog } from './Dialog.tsx';
 const PADDING = 8;
 const OFFSET = 20;
 
-type TriggerProps = {
-	onClick?: (e: React.MouseEvent) => void;
-	onMouseMove?: (e: React.MouseEvent) => void;
+type TriggerProps<T extends HTMLElement = HTMLElement> = {
+	ref?: React.Ref<T>;
+	onClick?: (e: React.MouseEvent<T>) => void;
+	onMouseMove?: (e: React.MouseEvent<T>) => void;
 	onMouseLeave?: () => void;
 };
 
-type Props = {
-	children: (props: TriggerProps) => React.ReactElement;
+type Props<T extends HTMLElement = HTMLElement> = {
+	children: (props: TriggerProps<T>) => React.ReactElement;
 	tooltip: React.ReactNode | (() => React.ReactNode);
 	actions?: React.ReactNode | (() => React.ReactNode);
 	hidden?: boolean;
@@ -28,7 +30,11 @@ type Props = {
 const resolveContent = (content?: React.ReactNode | (() => React.ReactNode)) =>
 	typeof content === 'function' ? content() : content;
 
-const MobileTooltip = ({ children, tooltip, actions }: Props) => (
+const MobileTooltip = <T extends HTMLElement>({
+	children,
+	tooltip,
+	actions
+}: Props<T>) => (
 	<Dialog
 		trigger={open =>
 			children({
@@ -38,7 +44,7 @@ const MobileTooltip = ({ children, tooltip, actions }: Props) => (
 				}
 			})
 		}
-		className="flex flex-col items-center gap-5"
+		contentClassName="flex flex-col items-center gap-5"
 	>
 		<div className="group/tooltip pointer-events-none">{children({})}</div>
 		{resolveContent(tooltip)}
@@ -51,10 +57,7 @@ const MobileTooltip = ({ children, tooltip, actions }: Props) => (
 	</Dialog>
 );
 
-type Position = {
-	top: number;
-	left: number;
-};
+type Position = { top: number; left: number };
 
 type DesktopTooltipSnapshot = {
 	visible: boolean;
@@ -73,7 +76,11 @@ let desktopLayerRoot: Root | null = null;
 let desktopLayerHost: HTMLDivElement | null = null;
 let desktopTooltipElement: HTMLDivElement | null = null;
 let desktopPointer: { x: number; y: number } | null = null;
+let desktopLastMousePoint: { x: number; y: number } | null = null;
+let desktopPointerListenerCount = 0;
 let desktopLastPosition: Position | null = null;
+let desktopActiveOwnerId: string | null = null;
+let desktopPathname: string | null = null;
 
 const emitDesktopTooltip = () => {
 	for (const listener of desktopListeners) {
@@ -83,9 +90,7 @@ const emitDesktopTooltip = () => {
 
 const subscribeDesktopTooltip = (listener: () => void) => {
 	desktopListeners.add(listener);
-	return () => {
-		desktopListeners.delete(listener);
-	};
+	return () => desktopListeners.delete(listener);
 };
 
 const getDesktopTooltipSnapshot = () => desktopSnapshot;
@@ -93,9 +98,8 @@ const getDesktopTooltipSnapshot = () => desktopSnapshot;
 const updateDesktopTooltipPosition = () => {
 	desktopMoveRaf = null;
 
-	if (!desktopSnapshot.visible || !desktopTooltipElement || !desktopPointer) {
+	if (!desktopSnapshot.visible || !desktopTooltipElement || !desktopPointer)
 		return;
-	}
 
 	const { width: tooltipWidth, height: tooltipHeight } =
 		desktopTooltipElement.getBoundingClientRect();
@@ -125,51 +129,66 @@ const updateDesktopTooltipPosition = () => {
 };
 
 const scheduleDesktopTooltipMove = () => {
-	if (desktopMoveRaf !== null) {
-		return;
-	}
-
+	if (desktopMoveRaf !== null) return;
 	desktopMoveRaf = window.requestAnimationFrame(updateDesktopTooltipPosition);
 };
 
 const showDesktopTooltip = ({
+	ownerId,
 	tooltip,
 	container
 }: {
+	ownerId: string;
 	tooltip: Props['tooltip'];
 	container: HTMLElement | null;
 }) => {
 	if (
 		desktopSnapshot.visible &&
+		desktopActiveOwnerId === ownerId &&
 		desktopSnapshot.tooltip === tooltip &&
 		desktopSnapshot.container === container
-	) {
+	)
 		return;
-	}
 
-	desktopSnapshot = {
-		visible: true,
-		tooltip,
-		container
-	};
+	desktopActiveOwnerId = ownerId;
+	desktopSnapshot = { visible: true, tooltip, container };
 	desktopLastPosition = null;
 	emitDesktopTooltip();
 };
 
 const moveDesktopTooltip = (x: number, y: number) => {
+	desktopLastMousePoint = { x, y };
 	desktopPointer = { x, y };
 	scheduleDesktopTooltipMove();
 };
 
-const hideDesktopTooltip = () => {
-	if (!desktopSnapshot.visible) {
-		return;
+const handleDesktopPointerMove = (event: PointerEvent) => {
+	if (event.pointerType !== 'mouse') return;
+	desktopLastMousePoint = { x: event.clientX, y: event.clientY };
+};
+
+const addDesktopPointerListener = () => {
+	if (desktopPointerListenerCount === 0) {
+		window.addEventListener('pointermove', handleDesktopPointerMove, {
+			passive: true
+		});
 	}
 
-	desktopSnapshot = {
-		visible: false,
-		container: null
-	};
+	desktopPointerListenerCount += 1;
+};
+
+const removeDesktopPointerListener = () => {
+	if (desktopPointerListenerCount === 0) return;
+	desktopPointerListenerCount -= 1;
+	if (desktopPointerListenerCount === 0)
+		window.removeEventListener('pointermove', handleDesktopPointerMove);
+};
+
+const resetDesktopTooltip = () => {
+	if (!desktopSnapshot.visible && desktopActiveOwnerId === null) return;
+
+	desktopSnapshot = { visible: false, container: null };
+	desktopActiveOwnerId = null;
 	desktopPointer = null;
 	desktopLastPosition = null;
 
@@ -179,6 +198,11 @@ const hideDesktopTooltip = () => {
 	}
 
 	emitDesktopTooltip();
+};
+
+const hideDesktopTooltip = (ownerId: string) => {
+	if (desktopActiveOwnerId !== ownerId) return;
+	resetDesktopTooltip();
 };
 
 const DesktopTooltipLayer = () => {
@@ -245,29 +269,135 @@ const ensureDesktopTooltipLayer = () => {
 	desktopLayerRoot.render(<DesktopTooltipLayer />);
 };
 
-const DesktopTooltip = ({ children, tooltip, hidden }: Props) => (
-	<>
-		{children({
-			onMouseMove: e => {
-				if (hidden) {
-					return;
+const findHoveredElementWithin = (element: HTMLElement) => {
+	const point = desktopLastMousePoint;
+	if (point) {
+		const pointedElement = document.elementFromPoint(point.x, point.y);
+		if (
+			pointedElement instanceof HTMLElement &&
+			element.contains(pointedElement)
+		) {
+			return pointedElement;
+		}
+	}
+
+	const hoveredElements = Array.from(document.querySelectorAll(':hover'));
+	for (let i = hoveredElements.length - 1; i >= 0; i -= 1) {
+		const candidate = hoveredElements[i];
+		if (candidate instanceof HTMLElement && element.contains(candidate)) {
+			return candidate;
+		}
+	}
+
+	return null;
+};
+
+const showDesktopTooltipFromCurrentHover = ({
+	ownerId,
+	tooltip,
+	element
+}: {
+	ownerId: string;
+	tooltip: Props['tooltip'];
+	element: HTMLElement;
+}) => {
+	const hoveredElement = findHoveredElementWithin(element);
+	const isCursorOverElement =
+		element.matches(':hover') || hoveredElement !== null;
+	if (!isCursorOverElement) {
+		return;
+	}
+
+	const hoveredRect = hoveredElement?.getBoundingClientRect();
+	const point =
+		desktopLastMousePoint ??
+		(hoveredRect
+			? {
+					x: hoveredRect.left + hoveredRect.width / 2,
+					y: hoveredRect.top + hoveredRect.height / 2
 				}
+			: null);
 
-				ensureDesktopTooltipLayer();
-				showDesktopTooltip({
-					tooltip,
-					container: e.currentTarget.closest('dialog')
-				});
-				moveDesktopTooltip(e.clientX, e.clientY);
-			},
-			onMouseLeave: () => {
-				hideDesktopTooltip();
-			}
-		})}
-	</>
-);
+	if (!point) return;
 
-const Tooltip = (props: Props) =>
+	ensureDesktopTooltipLayer();
+	showDesktopTooltip({
+		ownerId,
+		tooltip,
+		container: element.closest('dialog')
+	});
+	moveDesktopTooltip(point.x, point.y);
+};
+
+const DesktopTooltip = <T extends HTMLElement>({
+	children,
+	tooltip,
+	hidden
+}: Props<T>) => {
+	const ref = useRef<T>(null);
+	const ownerId = useId();
+	const pathname = usePathname();
+
+	useLayoutEffect(() => {
+		if (desktopPathname === null) {
+			desktopPathname = pathname;
+			return;
+		}
+
+		if (desktopPathname !== pathname) {
+			desktopPathname = pathname;
+			resetDesktopTooltip();
+		}
+	}, [pathname]);
+
+	useLayoutEffect(() => {
+		addDesktopPointerListener();
+
+		return () => {
+			removeDesktopPointerListener();
+			hideDesktopTooltip(ownerId);
+		};
+	}, [ownerId]);
+
+	useLayoutEffect(() => {
+		if (hidden) {
+			hideDesktopTooltip(ownerId);
+			return;
+		}
+
+		const element = ref.current;
+		if (!element) return;
+
+		showDesktopTooltipFromCurrentHover({
+			ownerId,
+			tooltip,
+			element
+		});
+	}, [hidden, ownerId, tooltip]);
+
+	return (
+		<>
+			{children({
+				ref,
+				onMouseMove: e => {
+					if (hidden) return;
+					ensureDesktopTooltipLayer();
+					showDesktopTooltip({
+						ownerId,
+						tooltip,
+						container: e.currentTarget.closest('dialog')
+					});
+					moveDesktopTooltip(e.clientX, e.clientY);
+				},
+				onMouseLeave: () => {
+					hideDesktopTooltip(ownerId);
+				}
+			})}
+		</>
+	);
+};
+
+const Tooltip = <T extends HTMLElement>(props: Props<T>) =>
 	useIsMobile() ? <MobileTooltip {...props} /> : <DesktopTooltip {...props} />;
 
 export default Tooltip;

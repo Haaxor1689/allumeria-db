@@ -1,5 +1,13 @@
 {
-  "chat.tools.terminal.autoApprove": {
-    "bunx": true
-  }
+	"chat.tools.terminal.autoApprove": {
+		"bunx": true
+	},
+	"tailwindCSS.classAttributes": [
+		"class",
+		"className",
+		"ngClass",
+		"class:list",
+		"containerClassName",
+		"contentClassName"
+	]
 }

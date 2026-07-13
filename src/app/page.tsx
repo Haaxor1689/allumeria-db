@@ -49,13 +49,15 @@ const stats = [
 	{ label: 'Items', value: summary.itemCount },
 	{ label: 'Blocks', value: summary.blockCount },
 	{ label: 'Block Models', value: summary.blockModelCount },
+	{ label: 'Block Materials', value: summary.blockMaterialCount },
 	{ label: 'Recipes', value: summary.recipeCount },
 	{ label: 'Recipe Aliases', value: summary.recipeAliasCount },
 	{ label: 'Creatures', value: summary.creatureCount },
 	{ label: 'Effects', value: summary.effectCount },
-	{ label: 'Loot', value: summary.lootCount },
+	{ label: 'Loot Tables', value: summary.lootCount },
 	{ label: 'Spawns', value: summary.spawnCount },
-	{ label: 'Item Tags', value: summary.itemTagCount }
+	{ label: 'Item Tags', value: summary.itemTagCount },
+	{ label: 'Structures', value: summary.structureCount }
 ];
 
 const Page = () => (
