@@ -2,6 +2,7 @@ import { type Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import BlockLink from '#components/block/BlockLink.tsx';
 import BlockRender from '#components/block/BlockRender.tsx';
 import BlockSlot from '#components/block/BlockSlot.tsx';
 import EffectLink from '#components/effect/EffectLink.tsx';
@@ -9,7 +10,6 @@ import CostTooltip from '#components/item/CostTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
 import ItemTooltip from '#components/item/ItemTooltip.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
-import ButtonLink from '#components/styled/ButtonLink.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import blocks from '#data/blocks.json';
 import creatures from '#data/creatures.json';
@@ -53,8 +53,6 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 
 	if (!item) notFound();
 
-	console.log(item);
-
 	const name = getTranslation(`item.${item.id}`);
 
 	const block = blocks.find(b => b.id === item.block);
@@ -89,12 +87,6 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 			{block && (
 				<div className="relative mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
 					<BlockRender block={block} />
-					<ButtonLink
-						href={`/blocks/${block.id}`}
-						className="absolute top-1 left-1 z-10 md:top-3 md:left-3"
-					>
-						View Block
-					</ButtonLink>
 				</div>
 			)}
 
@@ -124,6 +116,14 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 			<div className="flex flex-col gap-4">
 				<p>No community description available yet.</p>
 			</div>
+
+			{block && (
+				<p>
+					This item is also a <BlockLink block={block} /> block. For more
+					information about its material, drops, and other properties, please
+					visit the block's detail page.
+				</p>
+			)}
 
 			{(!!primaryEffect || !!secondaryEffect) && (
 				<div className="flex flex-col gap-4">

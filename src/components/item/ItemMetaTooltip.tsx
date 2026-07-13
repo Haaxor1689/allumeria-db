@@ -23,7 +23,7 @@ const ItemMetaTooltip = ({ item }: { item: Item }) => {
 				{categories}
 			</div>
 			<TooltipEntry>Stack size: {item.stackSize ?? 512}</TooltipEntry>
-			{item.type && <TooltipEntry>Type: {item.type}</TooltipEntry>}
+			{item.type && <TooltipEntry>Class: {item.type}</TooltipEntry>}
 			{item.rarity && <TooltipEntry>Rarity: {rarity}</TooltipEntry>}
 			{item.hidden && <TooltipEntry>Hidden</TooltipEntry>}
 			{item.sweeping && <TooltipEntry>Sweeping</TooltipEntry>}

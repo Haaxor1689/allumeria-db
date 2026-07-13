@@ -11,19 +11,6 @@ import { ItemFiltersSearchSchema } from './ItemFilters';
 const ItemGrid = () => {
 	const params = useSearchParams(ItemFiltersSearchSchema);
 
-	console.log(
-		items.reduce(
-			(acc, next) => {
-				Object.entries(next).forEach(([key, value]) => {
-					acc[key] ??= new Set();
-					acc[key].add(value);
-				});
-				return acc;
-			},
-			{} as Record<string, Set<any>>
-		)
-	);
-
 	// Filter items
 	const filteredItems = items.filter(item => {
 		const matchesSearch =

@@ -1,52 +1,25 @@
-import { type ReactNode } from 'react';
-
+import TooltipEntry from '#components/TooltipEntry.tsx';
 import { type Block } from '#server/types.ts';
+import { toDisplayName } from '#utils/index.ts';
 
-const TooltipEntry = ({
-	label,
-	children
-}: {
-	label: string;
-	children: ReactNode;
-}) => (
-	<div className="flex shrink items-start gap-2 text-tooltip">
-		<span className="font-bold text-muted">{label}:</span>
-		<span className="shrink">{children}</span>
-	</div>
-);
+type Props = {
+	block: Block;
+};
 
-const toReadableText = (value: string) => value.replaceAll('_', ' ');
-
-const BlockMetaTooltip = ({ block }: { block: Block }) => (
+const BlockMetaTooltip = ({ block }: Props) => (
 	<div className="ns-dialog px-2 py-1 text-lg">
-		<TooltipEntry label="ID">{block.id}</TooltipEntry>
-		{block.type && <TooltipEntry label="Type">{block.type}</TooltipEntry>}
+		{block.class && <TooltipEntry>Class: {block.class}</TooltipEntry>}
 		{block.material && (
-			<TooltipEntry label="Material">
-				{toReadableText(block.material)}
-			</TooltipEntry>
+			<TooltipEntry>Material: {toDisplayName(block.material)}</TooltipEntry>
 		)}
 		{block.spawn && (
-			<TooltipEntry label="Spawn">{toReadableText(block.spawn)}</TooltipEntry>
+			<TooltipEntry>Spawns: {toDisplayName(block.spawn)}</TooltipEntry>
 		)}
 		{block.blockModel && (
-			<TooltipEntry label="Model">
-				{toReadableText(block.blockModel)}
-			</TooltipEntry>
+			<TooltipEntry>Model: {toDisplayName(block.blockModel)}</TooltipEntry>
 		)}
-		{block.loot && <TooltipEntry label="Loot">{block.loot}</TooltipEntry>}
-		{block.textures && block.textures.length > 0 && (
-			<TooltipEntry label="Textures">{block.textures.join(', ')}</TooltipEntry>
-		)}
-		{block.hidden && <TooltipEntry label="Flag">Hidden</TooltipEntry>}
-		{block.solid && <TooltipEntry label="Flag">Solid</TooltipEntry>}
-		{block.semiSolid && <TooltipEntry label="Flag">Semi-solid</TooltipEntry>}
-		{block.canBeShaped && (
-			<TooltipEntry label="Flag">Can be shaped</TooltipEntry>
-		)}
-		{block.needsSupport && (
-			<TooltipEntry label="Flag">Needs support</TooltipEntry>
-		)}
+		{block.loot && <TooltipEntry>Loot: {block.loot}</TooltipEntry>}
+		{block.hidden && <TooltipEntry>Hidden</TooltipEntry>}
 	</div>
 );
 
