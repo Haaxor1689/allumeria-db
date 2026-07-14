@@ -691,6 +691,7 @@
 		"class": "Shop",
 		"material": "wood",
 		"interactible": true,
+		"catalogue": "shop_alpha",
 		"textures": ["alpha_shop_top", "alpha_shop_side", "alpha_shop_bottom"],
 		"blockModel": "topBottom"
 	},

@@ -57,7 +57,8 @@ const stats = [
 	{ label: 'Loot Tables', value: summary.lootCount },
 	{ label: 'Spawns', value: summary.spawnCount },
 	{ label: 'Item Tags', value: summary.itemTagCount },
-	{ label: 'Structures', value: summary.structureCount }
+	{ label: 'Structures', value: summary.structureCount },
+	{ label: 'Shops', value: summary.catalogueCount }
 ];
 
 const Page = () => (
@@ -87,25 +88,6 @@ const Page = () => (
 				dungeon crawling and boss battles. Discover weapons, abilities,
 				resources, enemies, structures and more.
 			</p>
-
-			{/* Search */}
-			{/* TODO: Client to client side form so it doesn't trigger hard navigation */}
-			<form
-				action="/search"
-				className="flex w-full max-w-lg items-center gap-2"
-			>
-				{/* oxlint-disable-next-line jsx-a11y/control-has-associated-label */}
-				<input
-					type="search"
-					name="q"
-					placeholder="Search items, blocks, creatures…"
-					autoComplete="off"
-					className="grow ns-input px-2 py-3 placeholder:text-muted hover:ns-input-hover focus:ns-input-active"
-				/>
-				<Button type="submit" variant="purple">
-					Search
-				</Button>
-			</form>
 
 			{/* Stats bar */}
 			<div className="mt-2 flex flex-wrap justify-center gap-6">

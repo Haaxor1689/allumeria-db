@@ -1,5 +1,7 @@
 'use client';
 
+import BlockMetaTooltip from '#components/block/BlockMetaTooltip.tsx';
+import LootTooltip from '#components/LootTooltip.tsx';
 import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import blocks from '#data/blocks.json';
 import { getBlockName } from '#utils/helpers.ts';
@@ -50,7 +52,24 @@ const BlockGrid = () => {
 			gap={8}
 			overscan={0}
 			variant="rarity5"
-			renderItem={block => <BlockSlot block={block} />}
+			renderItem={block => (
+				<BlockSlot
+					block={block}
+					tooltipExtra={[
+						<LootTooltip
+							key="loot"
+							id={block.loot}
+							fallbackItem={block.item ?? block.id}
+						/>,
+						<LootTooltip
+							key="harvest"
+							id={block.harvestLoot}
+							variant="harvest"
+						/>,
+						<BlockMetaTooltip key="meta" block={block} />
+					]}
+				/>
+			)}
 		/>
 	);
 };

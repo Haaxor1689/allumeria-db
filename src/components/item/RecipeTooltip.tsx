@@ -1,19 +1,30 @@
-import LootItem from '#components/LootItem.tsx';
 import RotatingElements from '#components/RotatingElements.tsx';
+import items from '#data/items.json';
 import recipeAliases from '#data/recipe_aliases.json';
 import { type Recipe } from '#server/types.ts';
 import { getTranslation } from '#utils/helpers.ts';
+
+import ItemSlot from './ItemSlot';
 
 type Props = {
 	recipe: Recipe;
 };
 
 const RecipeTooltip = ({ recipe }: Props) => {
-	const requirements = Object.entries(recipe.requirements)
+	const requirements = (
+		Object.entries(recipe.requirements) as [string, number?][]
+	)
 		.map(([key, value]) => {
 			const alias = recipeAliases.find(a => a.id === key);
-			if (alias) return { items: alias.entries, value };
-			return { items: [key], value };
+			if (alias)
+				return {
+					items: alias.entries
+						.map(e => items.find(i => i.id === e))
+						.filter(v => v !== undefined),
+					value
+				};
+			const item = items.find(i => i.id === key);
+			return { items: [item].filter(v => v !== undefined), value };
 		})
 		.filter(v => v !== null);
 
@@ -24,17 +35,15 @@ const RecipeTooltip = ({ recipe }: Props) => {
 					<RotatingElements
 						key={idx}
 						entries={items.map(item => (
-							<LootItem
-								key={item}
-								id={item}
-								attachments={[
-									<div
-										key="value"
-										className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow"
-									>
+							<ItemSlot
+								key={item?.id}
+								item={item}
+								overlay={
+									<div className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow">
 										{value}
 									</div>
-								]}
+								}
+								transparent
 							/>
 						))}
 					/>

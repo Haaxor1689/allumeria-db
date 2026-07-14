@@ -44,7 +44,7 @@ const Page = async ({ params }: PageProps<'/effects/[id]'>) => {
 	);
 
 	return (
-		<div className="mx-auto flex w-full max-w-292 flex-col gap-10 ns-dialog p-4">
+		<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4">
 			<Link
 				href="/effects"
 				className="-mb-8 block self-start text-muted underline hocus:text-aqua"

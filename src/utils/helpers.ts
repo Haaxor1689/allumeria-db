@@ -1,4 +1,5 @@
 import itemTags from '#data/item_tags.json';
+import items from '#data/items.json';
 import translations from '#data/translations.json';
 
 export const getTranslation = (key: string, fallback?: string) =>
@@ -33,3 +34,6 @@ export const getTool = (tool: string) => {
 		icon: tag.icon
 	};
 };
+
+export const getCreatureIcon = (creature: string) =>
+	getItemIcon(items.find(i => i.entityType === creature));

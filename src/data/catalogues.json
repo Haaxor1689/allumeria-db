@@ -1,0 +1,40 @@
+[
+	{
+		"id": "shop_alpha",
+		"entries": [
+			{ "item": "wallpaper", "amount": 8, "price": 20 },
+			{ "item": "wallpaper_stone", "amount": 8, "price": 20 },
+			{ "item": "wallpaper_wood", "amount": 8, "price": 20 },
+			{ "item": "paint_roller", "amount": 1, "price": 100 },
+			{ "item": "paint_roller_earthy", "amount": 1, "price": 1000 },
+			{ "item": "paint_roller_pastel", "amount": 1, "price": 1000 },
+			{ "item": "arrow", "amount": 32, "price": 10 },
+			{ "item": "basketball", "amount": 8, "price": 100 },
+			{ "item": "basket_hoop", "amount": 1, "price": 50 },
+			{ "item": "dynamite", "amount": 1, "price": 500 },
+			{ "item": "weak_health_potion", "amount": 1, "price": 300 },
+			{ "item": "red_mushroom_item", "amount": 4, "price": 100 },
+			{ "item": "glowing_mushroom_item", "amount": 4, "price": 200 },
+			{ "item": "flint", "amount": 8, "price": 50 },
+			{ "item": "pebbles", "amount": 8, "price": 50 },
+			{ "item": "drywall", "amount": 8, "price": 10 },
+			{ "item": "wallpaperable_stone", "amount": 8, "price": 10 },
+			{ "item": "wallpaperable_wood", "amount": 8, "price": 10 },
+			{ "item": "grid_block", "amount": 8, "price": 10 },
+			{ "item": "blank_block", "amount": 8, "price": 10 },
+			{ "item": "elevator", "amount": 8, "price": 100 },
+			{ "item": "carving_knife", "amount": 1, "price": 100 },
+			{ "item": "logic_wire", "amount": 5, "price": 1 },
+			{ "item": "logic_repeater", "amount": 1, "price": 5 },
+			{ "item": "logic_and", "amount": 1, "price": 5 },
+			{ "item": "logic_not", "amount": 1, "price": 5 },
+			{ "item": "logic_xor", "amount": 1, "price": 5 },
+			{ "item": "logic_memory", "amount": 1, "price": 5 },
+			{ "item": "logic_toggle", "amount": 1, "price": 5 },
+			{ "item": "logic_pixel", "amount": 1, "price": 2 },
+			{ "item": "bug_bait", "amount": 1, "price": 30 },
+			{ "item": "magnetic_bait", "amount": 1, "price": 30 },
+			{ "item": "rage_bait", "amount": 1, "price": 30 }
+		]
+	}
+]

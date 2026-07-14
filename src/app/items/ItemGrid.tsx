@@ -1,8 +1,12 @@
 'use client';
 
+import CostTooltip from '#components/item/CostTooltip.tsx';
+import ItemMetaTooltip from '#components/item/ItemMetaTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
+import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
 import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import items from '#data/items.json';
+import recipes from '#data/recipes.json';
 import { getTranslation } from '#utils/helpers.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
 
@@ -45,7 +49,22 @@ const ItemGrid = () => {
 			gap={8}
 			overscan={0}
 			variant="rarity5"
-			renderItem={item => <ItemSlot item={item} />}
+			renderItem={item => (
+				<ItemSlot
+					item={item}
+					tooltipExtra={
+						<>
+							{recipes
+								.filter(r => r.result === item.id)
+								.map((recipe, idx) => (
+									<RecipeTooltip key={idx} recipe={recipe} />
+								))}
+							<CostTooltip value={item.sellValue ?? 0} />
+							<ItemMetaTooltip item={item} />
+						</>
+					}
+				/>
+			)}
 		/>
 	);
 };

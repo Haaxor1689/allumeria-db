@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+import Img from '#components/Img.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Effect } from '#server/types.ts';
 import { getTranslation } from '#utils/helpers.ts';
@@ -25,9 +26,10 @@ const EffectLink = ({ effect }: Props) => {
 					className="text-aqua underline hocus:text-white"
 					{...props}
 				>
-					<img
+					<Img
 						src={`/assets/effects/${effect.textureX}x${effect.textureY}.webp`}
 						alt={name}
+						fallback="/assets/items/missing.webp"
 						className="-my-1 mr-0.5 inline size-8 -translate-y-0.5"
 					/>
 					{name}

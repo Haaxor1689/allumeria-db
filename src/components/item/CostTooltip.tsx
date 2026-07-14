@@ -1,3 +1,5 @@
+import cn from 'classnames';
+
 import items from '#data/items.json';
 import { getTranslation } from '#utils/helpers.ts';
 
@@ -5,7 +7,12 @@ const coins = items
 	.filter(item => item.currencyAmmount)
 	.toSorted((a, b) => b.currencyAmmount! - a.currencyAmmount!);
 
-const CostTooltip = ({ value }: { value: number }) => {
+type Props = {
+	value: number;
+	className?: string;
+};
+
+const CostTooltip = ({ value, className = 'ns-dialog-positive' }: Props) => {
 	if (!value) return null;
 	const split = coins.reduce(
 		(acc, coin) => {
@@ -19,7 +26,7 @@ const CostTooltip = ({ value }: { value: number }) => {
 		[] as { item: (typeof coins)[number]; count: number }[]
 	);
 	return (
-		<div className="flex gap-2 self-start ns-dialog-positive text-xl">
+		<div className={cn('flex gap-2 self-start text-xl', className)}>
 			{split.map(({ item, count }) => (
 				<div key={item.id} className="relative -m-1">
 					<img

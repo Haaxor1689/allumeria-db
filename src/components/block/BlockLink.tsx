@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+import Img from '#components/Img.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Block } from '#server/types.ts';
 import { getBlockName } from '#utils/helpers.ts';
@@ -22,12 +23,10 @@ const BlockLink = ({ block }: Props) => {
 					className="text-aqua underline hocus:text-white"
 					{...props}
 				>
-					<img
+					<Img
 						src={`/previews/blocks/${block.id}.webp`}
 						alt={name}
-						onError={e =>
-							(e.currentTarget.src = '/previews/blocks/missing.webp')
-						}
+						fallback="/previews/blocks/missing.webp"
 						className="mr-1 inline size-6 -translate-y-0.5"
 					/>
 					{name}

@@ -3,6 +3,7 @@
 import cn from 'classnames';
 import Link from 'next/link';
 
+import Img from '#components/Img.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Effect } from '#server/types.ts';
 import { getTranslation } from '#utils/helpers.ts';
@@ -35,10 +36,10 @@ const EffectSlot = ({ effect }: Props) => {
 						effect.effectType === 'Passive' && 'before:grayscale-50'
 					)}
 				>
-					<img
+					<Img
 						src={`/assets/effects/${effect.textureX}x${effect.textureY}.webp`}
-						onError={e => (e.currentTarget.src = '/assets/items/missing.webp')}
 						alt={name}
+						fallback="/assets/items/missing.webp"
 						className="z-0 size-16 group-hocus:-translate-y-1 tooltip-only:translate-y-0!"
 					/>
 				</Link>

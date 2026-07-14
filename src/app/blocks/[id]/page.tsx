@@ -4,24 +4,26 @@ import { notFound } from 'next/navigation';
 import { Fragment } from 'react/jsx-runtime';
 
 import BlockRender from '#components/block/BlockRender.tsx';
+import CreatureSlot from '#components/creature/CreatureSlot.tsx';
 import EffectLink from '#components/effect/EffectLink.tsx';
+import Img from '#components/Img.tsx';
+import CostTooltip from '#components/item/CostTooltip.tsx';
+import ItemSlot from '#components/item/ItemSlot.tsx';
+import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
 import AlertMessage from '#components/styled/AlertMessage.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import TooltipEntry from '#components/TooltipEntry.tsx';
 import blockMaterials from '#data/block_materials.json';
 import blocks from '#data/blocks.json';
+import catalogues from '#data/catalogues.json';
 import creatures from '#data/creatures.json';
 import effects from '#data/effects.json';
 import items from '#data/items.json';
+import recipes from '#data/recipes.json';
 import spawn from '#data/spawn.json';
 import structures from '#data/structures.json';
-import {
-	getBlockName,
-	getItemIcon,
-	getTool,
-	getTranslation
-} from '#utils/helpers.ts';
+import { getBlockName, getTool, getTranslation } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
 
 import ItemLink from '../../../components/item/ItemLink';
@@ -46,7 +48,6 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 
 	const name = getBlockName(block);
 
-	const item = items.find(item => item.id === (block.item ?? block.id));
 	const keyItem = items.find(item => item.id === block.keyItem);
 
 	const material = blockMaterials.find(mat => mat.id === block.material);
@@ -57,7 +58,14 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 		? effects.find(e => e.id === block.standOnEffect)
 		: null;
 
-	const spawnTable = spawn.find(s => s.id === block.spawn);
+	const spawnTable = spawn
+		.find(s => s.id === block.spawn)
+		?.entries.map(s => {
+			const monster = creatures.find(c => c.id === s.monster);
+			if (!monster) return null;
+			return { ...s, monster };
+		})
+		.filter(v => v !== null);
 
 	const canContain = structures
 		.flatMap(s =>
@@ -72,8 +80,26 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 				) === i
 		);
 
+	const catalogue = catalogues
+		.find(c => c.id === block.catalogue)
+		?.entries.map(entry => {
+			const item = items.find(i => i.id === entry.item);
+			if (!item) return null;
+			return { item, amount: entry.amount, price: entry.price };
+		})
+		.filter(v => v !== null);
+
+	const canCraft = recipes
+		.filter(r => r.station === block.craftingStation)
+		.map(r => {
+			const item = items.find(i => i.id === r.result);
+			if (!item) return null;
+			return { ...r, item };
+		})
+		.filter(v => v !== null);
+
 	return (
-		<div className="mx-auto flex w-full max-w-292 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
+		<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
 			<div className="mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
 				<BlockRender block={block} />
 			</div>
@@ -86,11 +112,10 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 			</Link>
 			<h1 className="-order-1 flex items-center gap-2 pb-4 text-4xl font-bold pixel-shadow md:text-5xl">
 				<div className="flex size-18 items-center justify-center ns-borderless-slot">
-					<img
-						src={getItemIcon(item)}
-						alt={block.id}
-						loading="lazy"
-						fetchPriority="low"
+					<Img
+						src={`/previews/blocks/${block.id}.webp`}
+						alt={name}
+						fallback="/previews/blocks/missing.webp"
 						className="size-16"
 					/>
 				</div>
@@ -233,12 +258,14 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 					{block.harvestLoot ? ' or harvested' : ''}:
 				</p>
 
-				<ScrollArea offset={32}>
+				<ScrollArea offset={24}>
 					<LootTooltip id={block.loot} fallbackItem={block.item ?? block.id} />
 				</ScrollArea>
 
 				{block.harvestLoot && (
-					<LootTooltip id={block.harvestLoot} variant="harvest" />
+					<ScrollArea offset={24}>
+						<LootTooltip id={block.harvestLoot} variant="harvest" />
+					</ScrollArea>
 				)}
 			</div>
 
@@ -279,25 +306,82 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 					</p>
 
 					<ScrollArea offset={32} contentClassName="flex gap-2">
-						{spawnTable.entries.map(entry => (
-							<div
-								key={entry.monster}
-								className="relative flex aspect-1/2 w-full max-w-66 items-center justify-center ns-slot"
-							>
-								{toDisplayName(entry.monster)}
-								<div className="absolute -top-4 -left-4">
-									{'loot' in entry ? (
-										<LootTooltip id={entry.loot} variant="monster-override" />
+						{spawnTable.map(e => (
+							<CreatureSlot
+								key={e.monster.id}
+								creature={e.monster}
+								tooltipExtra={
+									'loot' in e ? (
+										<LootTooltip id={e.loot} variant="monster-override" />
 									) : (
-										<LootTooltip
-											id={creatures.find(c => c.id === entry.monster)?.loot}
-											variant="monster"
-										/>
-									)}
-								</div>
-							</div>
+										<LootTooltip id={e.monster.loot} variant="monster" />
+									)
+								}
+							/>
 						))}
 					</ScrollArea>
+				</div>
+			)}
+
+			{catalogue && (
+				<div className="flex flex-col gap-4">
+					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+						Sells:
+					</h2>
+
+					<p>You can buy following items at the {name} block:</p>
+
+					<div className="flex flex-wrap gap-2">
+						{catalogue.map(entry => (
+							<ItemSlot
+								key={entry.item.id}
+								item={entry.item}
+								overlay={
+									entry.amount > 1 ? (
+										<div
+											key="amount"
+											className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow"
+										>
+											{entry.amount}
+										</div>
+									) : undefined
+								}
+								tooltipExtra={
+									<CostTooltip value={entry.price} className="ns-btn-teal" />
+								}
+							/>
+						))}
+					</div>
+				</div>
+			)}
+
+			{canCraft.length > 0 && (
+				<div className="flex flex-col gap-4">
+					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+						Can craft:
+					</h2>
+
+					<p>{name} block can be used to craft the following items:</p>
+
+					<div className="flex flex-wrap gap-2">
+						{canCraft.map(r => (
+							<ItemSlot
+								key={r.item.id}
+								item={r.item}
+								tooltipExtra={<RecipeTooltip recipe={r} />}
+								overlay={
+									r.amount > 1 ? (
+										<div
+											key="amount"
+											className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow"
+										>
+											{r.amount}
+										</div>
+									) : undefined
+								}
+							/>
+						))}
+					</div>
 				</div>
 			)}
 		</div>

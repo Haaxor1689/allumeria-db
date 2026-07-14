@@ -19,7 +19,9 @@ const BlockMetaTooltip = ({ block }: Props) => (
 			<TooltipEntry>Model: {toDisplayName(block.blockModel)}</TooltipEntry>
 		)}
 		{block.loot && <TooltipEntry>Loot: {block.loot}</TooltipEntry>}
-		{block.hidden && <TooltipEntry>Hidden</TooltipEntry>}
+		{block.hidden && (
+			<TooltipEntry icon="/custom/eye.webp">Hidden</TooltipEntry>
+		)}
 	</div>
 );
 

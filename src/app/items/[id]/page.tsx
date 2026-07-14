@@ -5,17 +5,21 @@ import { notFound } from 'next/navigation';
 import BlockLink from '#components/block/BlockLink.tsx';
 import BlockRender from '#components/block/BlockRender.tsx';
 import BlockSlot from '#components/block/BlockSlot.tsx';
+import CreatureSlot from '#components/creature/CreatureSlot.tsx';
 import EffectLink from '#components/effect/EffectLink.tsx';
 import CostTooltip from '#components/item/CostTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
 import ItemTooltip from '#components/item/ItemTooltip.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
+import LootTooltip from '#components/LootTooltip.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import blocks from '#data/blocks.json';
+import catalogues from '#data/catalogues.json';
 import creatures from '#data/creatures.json';
 import effects from '#data/effects.json';
 import items from '#data/items.json';
 import loot from '#data/loot.json';
+import recipeAliases from '#data/recipe_aliases.json';
 import recipes from '#data/recipes.json';
 import structures from '#data/structures.json';
 import { getItemIcon, getTranslation } from '#utils/helpers.ts';
@@ -57,16 +61,53 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 
 	const block = blocks.find(b => b.id === item.block);
 
-	const primaryEffect = item.effect
-		? effects.find(e => e.id === item.effect)
-		: null;
-	const secondaryEffect = item.secondaryEffect
-		? effects.find(e => e.id === item.secondaryEffect)
-		: null;
+	const itemEffecs = [
+		{
+			effect: item.effect,
+			ticks: item.ticks,
+			action: item.type === 'MeleeEffect' ? 'Applies' : 'Grants'
+		},
+		{
+			effect: item.secondaryEffect,
+			ticks: item.secondaryTicks,
+			action: 'Grants'
+		},
+		{ effect: item.passiveEffect, ticks: -1, action: 'Grants' }
+	]
+		.map((v, idx) => {
+			const effect = effects.find(e => e.id === v.effect);
+			if (!effect) return undefined;
+			if (!v.ticks || v.ticks === 1)
+				return (
+					<p key={idx} className="text-muted">
+						{v.action} <EffectLink effect={effect} /> instantly.
+					</p>
+				);
+			if (v.ticks > 1)
+				return (
+					<p key={idx} className="text-muted">
+						{v.action} <EffectLink effect={effect} /> for {v.ticks} ticks.
+					</p>
+				);
+			return (
+				<p key={idx} className="text-muted">
+					{v.action} <EffectLink effect={effect} /> passively.
+				</p>
+			);
+		})
+		.filter(v => v !== undefined);
 
 	const itemRecipes = recipes.filter(r => r.result === item.id);
+
+	const inAliases = recipeAliases
+		.filter(r => r.entries?.includes(item.id))
+		.map(r => r.id);
 	const ingredientFor = recipes
-		.filter(r => Object.keys(r.requirements).includes(item.id))
+		.filter(r =>
+			[item.id, ...inAliases].some(id =>
+				Object.keys(r.requirements).includes(id)
+			)
+		)
 		.map(r => items.find(i => i.id === r.result))
 		.filter(i => i !== undefined);
 
@@ -82,8 +123,18 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 		)
 	};
 
+	const soldBy = catalogues
+		.flatMap(c => {
+			const entry = c.entries.find(e => e.item === item.id);
+			if (!entry) return null;
+			return blocks
+				.filter(b => b.catalogue === c.id)
+				.map(block => ({ block, price: entry.price, amount: entry.amount }));
+		})
+		.filter(v => v !== null);
+
 	return (
-		<div className="container mx-auto flex w-full max-w-292 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
+		<div className="container mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
 			{block && (
 				<div className="relative mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
 					<BlockRender block={block} />
@@ -115,35 +166,37 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 
 			<div className="flex flex-col gap-4">
 				<p>No community description available yet.</p>
+
+				{block && (
+					<p>
+						This item is also a <BlockLink block={block} /> block. For more
+						information about its material, drops, and other properties, please
+						visit the block's detail page.
+					</p>
+				)}
+
+				{item.slotType && (
+					<p>
+						{name} can be equipped in the{' '}
+						<span className="text-aqua">
+							<img
+								src={`/assets/icons/slot_${item.slotType.toLocaleLowerCase()}.webp`}
+								alt={item.slotType}
+								className="-m-1.5 inline size-8"
+							/>{' '}
+							{item.slotType}
+						</span>{' '}
+						slot.
+					</p>
+				)}
 			</div>
 
-			{block && (
-				<p>
-					This item is also a <BlockLink block={block} /> block. For more
-					information about its material, drops, and other properties, please
-					visit the block's detail page.
-				</p>
-			)}
-
-			{(!!primaryEffect || !!secondaryEffect) && (
+			{itemEffecs.length > 0 && (
 				<div className="flex flex-col gap-4">
 					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
 						Effects:
 					</h2>
-					<div className="flex flex-wrap gap-4">
-						{primaryEffect && (
-							<p className="text-muted">
-								Grants <EffectLink effect={primaryEffect} />
-								{item.ticks ? ` for ${item.ticks} ticks` : ''}
-							</p>
-						)}
-						{secondaryEffect && (
-							<p className="text-muted">
-								Also grants <EffectLink effect={secondaryEffect} />
-								{item.secondaryTicks ? ` for ${item.secondaryTicks} ticks` : ''}
-							</p>
-						)}
-					</div>
+					{itemEffecs}
 				</div>
 			)}
 
@@ -170,7 +223,15 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 					<p>{name} is used to craft the following items:</p>
 					<div className="flex flex-wrap gap-2">
 						{ingredientFor.map((item, idx) => (
-							<ItemSlot key={idx} item={item} />
+							<ItemSlot
+								key={idx}
+								item={item}
+								tooltipExtra={recipes
+									.filter(r => r.result === item.id)
+									.map((recipe, idx) => (
+										<RecipeTooltip key={idx} recipe={recipe} />
+									))}
+							/>
 						))}
 					</div>
 				</div>
@@ -197,49 +258,86 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 
 					<p>{name} can be obtained from the following sources:</p>
 
-					{dropsFrom.blocks.length > 0 && (
-						<ScrollArea offset={32} contentClassName="flex gap-2">
+					{(dropsFrom.blocks.length > 0 || dropsFrom.structures.length > 0) && (
+						<div className="flex flex-wrap gap-2">
 							{dropsFrom.blocks.map(block => (
-								<BlockSlot key={block.id} block={block} />
+								<BlockSlot
+									key={block.id}
+									block={block}
+									tooltipExtra={[
+										<LootTooltip
+											key="loot"
+											id={block.loot}
+											fallbackItem={block.item ?? block.id}
+										/>,
+										<LootTooltip
+											key="harvest"
+											id={block.harvestLoot}
+											variant="harvest"
+										/>
+									]}
+								/>
 							))}
-						</ScrollArea>
-					)}
-
-					{dropsFrom.creatures.length > 0 && (
-						<ScrollArea offset={32} contentClassName="flex gap-2">
-							{dropsFrom.creatures.map(creature => (
-								<div
-									key={creature.id}
-									className="flex items-center gap-2 rounded border border-white/20 bg-white/5 px-3 py-2 text-sm"
-								>
-									{toDisplayName(creature.id)}
-								</div>
-							))}
-						</ScrollArea>
-					)}
-
-					{dropsFrom.structures.length > 0 && (
-						<ScrollArea offset={32} contentClassName="flex gap-2">
 							{dropsFrom.structures.map(s =>
 								s.chests.map(c => {
 									const chest = blocks.find(b => b.id === c.chest);
 									if (!chest) return null;
 									return (
-										<div
+										<BlockSlot
 											key={`${s.id}-${c.chest}`}
-											className="flex items-start"
-										>
-											<BlockSlot block={chest} />
-											<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-muted">
-												{toDisplayName(s.id)}
-												{'type' in c ? ` (${toDisplayName(c.type)})` : ''}
-											</div>
-										</div>
+											block={chest}
+											tooltipExtra={
+												<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-muted">
+													{toDisplayName(s.id)}
+													{'type' in c ? ` (${toDisplayName(c.type)})` : ''}
+												</div>
+											}
+										/>
 									);
 								})
 							)}
+						</div>
+					)}
+
+					{dropsFrom.creatures.length > 0 && (
+						<ScrollArea offset={32} contentClassName="flex gap-2">
+							{dropsFrom.creatures.map(creature => (
+								<CreatureSlot key={creature.id} creature={creature} />
+							))}
 						</ScrollArea>
 					)}
+				</div>
+			)}
+
+			{soldBy.length > 0 && (
+				<div className="flex flex-col gap-4">
+					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+						Sold by:
+					</h2>
+
+					<p>{name} can be purchased from the following blocks:</p>
+
+					<div className="flex flex-wrap gap-2">
+						{soldBy.map(({ block, price, amount }) => (
+							<BlockSlot
+								key={block.id}
+								block={block}
+								overlay={
+									amount > 1 ? (
+										<div
+											key="amount"
+											className="absolute right-0 -bottom-1 text-2xl font-bold pixel-shadow"
+										>
+											{amount}
+										</div>
+									) : undefined
+								}
+								tooltipExtra={
+									<CostTooltip value={price} className="ns-btn-teal" />
+								}
+							/>
+						))}
+					</div>
 				</div>
 			)}
 		</div>

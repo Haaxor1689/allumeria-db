@@ -1,16 +1,14 @@
 'use client';
 
 import cn from 'classnames';
-import Link from 'next/link';
 import { type JSX, type ReactNode } from 'react';
 
 import items from '#data/items.json';
 import loot from '#data/loot.json';
-import { getItemIcon, getTool, getTranslation } from '#utils/helpers.ts';
+import { getTool } from '#utils/helpers.ts';
 
-import ItemTooltip from './item/ItemTooltip';
+import ItemSlot from './item/ItemSlot';
 import RotatingElements from './RotatingElements';
-import Tooltip from './styled/Tooltip';
 
 type LootEntry =
 	| {
@@ -37,47 +35,19 @@ type LootEntry =
 			ref: string;
 	  };
 
-const LootItem = ({
-	id,
-	attachments
-}: {
-	id: string;
-	attachments: ReactNode[];
-}) => {
-	const item = items.find(i => i.id === id);
-	if (!item) return null;
-	return (
-		<Tooltip<HTMLAnchorElement> tooltip={() => <ItemTooltip item={item} />}>
-			{props => (
-				<Link
-					href={`/items/${item.id}`}
-					prefetch={false}
-					{...props}
-					className="relative block size-16 select-none"
-				>
-					<img
-						src={getItemIcon(item)}
-						alt={getTranslation(`item.${item.id}`)}
-						className="size-16"
-					/>
-					{attachments}
-				</Link>
-			)}
-		</Tooltip>
-	);
-};
-
 const renderLootEntries = (
 	entries: LootEntry[],
 	attachments: ReactNode[] = []
 ) =>
 	entries.reduce((acc, entry, i) => {
 		if ('amount' in entry) {
+			const item = items.find(i => i.id === entry.item);
+			if (!item) return acc;
 			acc.push(
-				<LootItem
+				<ItemSlot
 					key={`${i}_${entry.item}_amount`}
-					id={entry.item}
-					attachments={[
+					item={item}
+					overlay={[
 						...attachments,
 						entry.amount > 1 ? (
 							<div
@@ -91,11 +61,13 @@ const renderLootEntries = (
 				/>
 			);
 		} else if ('min' in entry && 'max' in entry) {
+			const item = items.find(i => i.id === entry.item);
+			if (!item) return acc;
 			acc.push(
-				<LootItem
+				<ItemSlot
 					key={`${i}_${entry.item}_range`}
-					id={entry.item}
-					attachments={[
+					item={item}
+					overlay={[
 						...attachments,
 						<div
 							key={`${i}_${entry.item}_range`}
@@ -158,10 +130,11 @@ const LootTooltip = ({ id, fallbackItem, variant }: Props) => {
 
 	const dropTable = loot.find(r => r.id === id);
 
+	const fallback = items.find(i => i.id === fallbackItem);
 	const entries = dropTable
 		? renderLootEntries(dropTable.entries as never)
-		: fallbackItem
-			? [<LootItem key="item" id={fallbackItem} attachments={[]} />]
+		: fallback
+			? [<ItemSlot key="item" item={fallback} />]
 			: [];
 
 	if (entries.length === 0) return null;
@@ -183,14 +156,13 @@ const LootTooltip = ({ id, fallbackItem, variant }: Props) => {
 				</div>
 			) : variant?.startsWith('monster') ? (
 				<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-2xl text-muted hue-rotate-150">
-					{dropTable?.group}
-					{variant === 'monster-override' ? ' (Override)' : ''}
+					{variant === 'monster-override' ? 'Spawn specific' : 'Standard Loot'}
 				</div>
-			) : dropTable?.group ? (
+			) : (
 				<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-2xl text-muted">
-					{dropTable.group}
+					Standard Loot
 				</div>
-			) : null}
+			)}
 		</div>
 	);
 };

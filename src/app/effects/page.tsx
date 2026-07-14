@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const Page = () => (
-	<div className="mx-auto flex w-full max-w-292 flex-col gap-1">
+	<div className="mx-auto flex w-full max-w-294 flex-col gap-1">
 		<Link href="/" className="self-start text-muted underline hocus:text-aqua">
 			&lt; Back to homepage
 		</Link>

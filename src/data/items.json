@@ -292,7 +292,7 @@
 		"block": "glowing_mushroom",
 		"tags": { "can_consume": true },
 		"category": ["blocks", "natural"],
-		"type": "Potion",
+		"class": "Potion",
 		"effect": "poison",
 		"ticks": 120
 	},
@@ -319,7 +319,7 @@
 		"block": "red_mushroom",
 		"tags": { "can_consume": true },
 		"category": ["blocks", "natural"],
-		"type": "Potion",
+		"class": "Potion",
 		"effect": "super_weak_heal",
 		"ticks": 1,
 		"secondaryEffect": "healcooldown",
@@ -346,7 +346,7 @@
 	{
 		"id": "heart_beet",
 		"block": "heart_beet_block",
-		"type": "HeartBeet",
+		"class": "HeartBeet",
 		"category": ["blocks", "natural"],
 		"sellValue": 500,
 		"tags": { "can_consume": true }
@@ -726,7 +726,7 @@
 	{
 		"id": "throwable_glow_bean",
 		"block": "placed_glow_bean",
-		"type": "Throwable",
+		"class": "Throwable",
 		"category": ["blocks", "decoration"],
 		"itemModel": "item.dynamite",
 		"itemTexture": "item.glowing_bean",
@@ -1694,7 +1694,7 @@
 	},
 	{
 		"id": "thorn_blade",
-		"type": "MeleeEffect",
+		"class": "MeleeEffect",
 		"stackSize": 1,
 		"sweeping": true,
 		"swingAnim": 3,
@@ -1714,7 +1714,7 @@
 	},
 	{
 		"id": "arctic_blade",
-		"type": "MeleeEffect",
+		"class": "MeleeEffect",
 		"stackSize": 1,
 		"sweeping": true,
 		"swingAnim": 3,
@@ -1734,7 +1734,7 @@
 	},
 	{
 		"id": "melon_slicer",
-		"type": "Throwable",
+		"class": "Throwable",
 		"stackSize": 1,
 		"sweeping": true,
 		"swingAnim": 3,
@@ -1753,7 +1753,7 @@
 	},
 	{
 		"id": "frying_pan",
-		"type": "MeleeEffect",
+		"class": "MeleeEffect",
 		"stackSize": 1,
 		"sweeping": true,
 		"swingAnim": 3,
@@ -1773,7 +1773,7 @@
 	},
 	{
 		"id": "big_sword",
-		"type": "MeleeEffect",
+		"class": "MeleeEffect",
 		"stackSize": 1,
 		"sweeping": true,
 		"swingAnim": 3,
@@ -1809,7 +1809,7 @@
 	},
 	{
 		"id": "boomerang",
-		"type": "Boomerang",
+		"class": "Boomerang",
 		"stackSize": 1,
 		"itemModel": "item.boomerang",
 		"itemTexture": "item.boomerang",
@@ -1819,7 +1819,7 @@
 	},
 	{
 		"id": "frosted_boomerang",
-		"type": "Boomerang",
+		"class": "Boomerang",
 		"stackSize": 1,
 		"itemModel": "item.boomerang",
 		"itemTexture": "item.boomerang_snow",
@@ -1900,192 +1900,211 @@
 	},
 	{
 		"id": "copper_helmet",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 1 },
 		"armourType": "Helmet",
 		"modelName": "player.helmet",
 		"textureName": "player.copper_armour",
+		"slotType": "Helmet",
 		"category": ["items"]
 	},
 	{
 		"id": "iron_helmet",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 2 },
 		"armourType": "Helmet",
 		"modelName": "player.helmet",
 		"textureName": "player.iron_armour",
+		"slotType": "Helmet",
 		"category": ["items"]
 	},
 	{
 		"id": "silver_helmet",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 2 },
 		"armourType": "Helmet",
 		"modelName": "player.helmet",
 		"textureName": "player.silver_armour",
+		"slotType": "Helmet",
 		"category": ["items"]
 	},
 	{
 		"id": "gold_helmet",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 3 },
 		"armourType": "Helmet",
 		"modelName": "player.helmet",
 		"textureName": "player.gold_armour",
+		"slotType": "Helmet",
 		"category": ["items"]
 	},
 	{
 		"id": "forest_helmet",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 4 },
 		"armourType": "Helmet",
 		"modelName": "player.helmet",
 		"textureName": "player.forest_armour",
+		"slotType": "Helmet",
 		"category": ["items"]
 	},
 	{
 		"id": "cobalt_helmet",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 4 },
 		"armourType": "Helmet",
 		"modelName": "player.helmet",
 		"textureName": "player.cobalt_armour",
+		"slotType": "Helmet",
 		"category": ["items"]
 	},
 	{
 		"id": "copper_chestplate",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 1 },
 		"armourType": "Chestplate",
 		"modelName": "player.chestplate",
 		"textureName": "player.copper_armour",
+		"slotType": "Chestplate",
 		"category": ["items"]
 	},
 	{
 		"id": "iron_chestplate",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 2 },
 		"armourType": "Chestplate",
 		"modelName": "player.chestplate",
 		"textureName": "player.iron_armour",
+		"slotType": "Chestplate",
 		"category": ["items"]
 	},
 	{
 		"id": "silver_chestplate",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 3 },
 		"armourType": "Chestplate",
 		"modelName": "player.chestplate",
 		"textureName": "player.silver_armour",
+		"slotType": "Chestplate",
 		"category": ["items"]
 	},
 	{
 		"id": "gold_chestplate",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 4 },
 		"armourType": "Chestplate",
 		"modelName": "player.chestplate",
 		"textureName": "player.gold_armour",
+		"slotType": "Chestplate",
 		"category": ["items"]
 	},
 	{
 		"id": "forest_chestplate",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 4 },
 		"armourType": "Chestplate",
 		"modelName": "player.chestplate",
 		"textureName": "player.forest_armour",
+		"slotType": "Chestplate",
 		"category": ["items"]
 	},
 	{
 		"id": "cobalt_chestplate",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 5 },
 		"armourType": "Chestplate",
 		"modelName": "player.chestplate",
 		"textureName": "player.cobalt_armour",
+		"slotType": "Chestplate",
 		"category": ["items"]
 	},
 	{
 		"id": "copper_greaves",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 1 },
 		"armourType": "Greaves",
 		"modelName": "player.greaves",
 		"textureName": "player.copper_armour",
+		"slotType": "Greaves",
 		"category": ["items"]
 	},
 	{
 		"id": "iron_greaves",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 2 },
 		"armourType": "Greaves",
 		"modelName": "player.greaves",
 		"textureName": "player.iron_armour",
+		"slotType": "Greaves",
 		"category": ["items"]
 	},
 	{
 		"id": "silver_greaves",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 2 },
 		"armourType": "Greaves",
 		"modelName": "player.greaves",
 		"textureName": "player.silver_armour",
+		"slotType": "Greaves",
 		"category": ["items"]
 	},
 	{
 		"id": "gold_greaves",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 3 },
 		"armourType": "Greaves",
 		"modelName": "player.greaves",
 		"textureName": "player.gold_armour",
+		"slotType": "Greaves",
 		"category": ["items"]
 	},
 	{
 		"id": "forest_greaves",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 4 },
 		"armourType": "Greaves",
 		"modelName": "player.greaves",
 		"textureName": "player.forest_armour",
+		"slotType": "Greaves",
 		"category": ["items"]
 	},
 	{
 		"id": "cobalt_greaves",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"tags": { "defence": 4 },
 		"armourType": "Greaves",
 		"modelName": "player.greaves",
 		"textureName": "player.cobalt_armour",
+		"slotType": "Greaves",
 		"category": ["items"]
 	},
 	{
 		"id": "wood_bow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.bow",
 		"itemTexture": "item.bow",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Arrow",
 		"baseDamage": 1,
 		"allowAiming": true,
 		"allowRapid": false,
@@ -2094,12 +2113,13 @@
 	},
 	{
 		"id": "copper_bow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.bow",
 		"itemTexture": "item.copper_bow",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Arrow",
 		"baseDamage": 1,
 		"allowAiming": true,
 		"allowRapid": false,
@@ -2108,12 +2128,13 @@
 	},
 	{
 		"id": "iron_bow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.bow",
 		"itemTexture": "item.iron_bow",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Arrow",
 		"baseDamage": 2,
 		"allowAiming": true,
 		"allowRapid": false,
@@ -2122,12 +2143,13 @@
 	},
 	{
 		"id": "silver_bow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.bow",
 		"itemTexture": "item.silver_bow",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Arrow",
 		"baseDamage": 3,
 		"allowAiming": true,
 		"allowRapid": false,
@@ -2136,12 +2158,13 @@
 	},
 	{
 		"id": "gold_bow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.bow",
 		"itemTexture": "item.gold_bow",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Arrow",
 		"baseDamage": 4,
 		"allowAiming": true,
 		"allowRapid": false,
@@ -2149,12 +2172,13 @@
 	},
 	{
 		"id": "cobalt_bow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.bow",
 		"itemTexture": "item.cobalt_bow",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Arrow",
 		"baseDamage": 4,
 		"allowAiming": true,
 		"allowRapid": false,
@@ -2163,12 +2187,13 @@
 	},
 	{
 		"id": "copper_crossbow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 8,
 		"itemModel": "item.crossbow",
 		"itemTexture": "item.copper_bow",
 		"tags": { "cant_mine": true, "swing_speed": 40 },
+		"type": "Arrow",
 		"baseDamage": 1,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2176,12 +2201,13 @@
 	},
 	{
 		"id": "iron_crossbow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 8,
 		"itemModel": "item.crossbow",
 		"itemTexture": "item.iron_bow",
 		"tags": { "cant_mine": true, "swing_speed": 35 },
+		"type": "Arrow",
 		"baseDamage": 2,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2189,12 +2215,13 @@
 	},
 	{
 		"id": "silver_crossbow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 8,
 		"itemModel": "item.crossbow",
 		"itemTexture": "item.silver_bow",
 		"tags": { "cant_mine": true, "swing_speed": 35 },
+		"type": "Arrow",
 		"baseDamage": 3,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2202,12 +2229,13 @@
 	},
 	{
 		"id": "gold_crossbow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 8,
 		"itemModel": "item.crossbow",
 		"itemTexture": "item.gold_bow",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Arrow",
 		"baseDamage": 3,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2215,12 +2243,13 @@
 	},
 	{
 		"id": "cobalt_crossbow",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 8,
 		"itemModel": "item.crossbow",
 		"itemTexture": "item.cobalt_bow",
 		"tags": { "cant_mine": true, "swing_speed": 25 },
+		"type": "Arrow",
 		"baseDamage": 3,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2228,12 +2257,13 @@
 	},
 	{
 		"id": "snowball_cannon",
-		"type": "Snowball",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.snowball_cannon",
 		"itemTexture": "item.snowball_cannon",
 		"tags": { "cant_mine": true, "swing_speed": 35 },
+		"type": "Snowball",
 		"baseDamage": 5,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2241,12 +2271,13 @@
 	},
 	{
 		"id": "snowball_splitter",
-		"type": "Snowball",
+		"class": "MultiShoot",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.snowball_cannon",
 		"itemTexture": "item.snowball_splitter",
 		"tags": { "cant_mine": true, "swing_speed": 50 },
+		"type": "Snowball",
 		"baseDamage": 9,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2255,7 +2286,7 @@
 	},
 	{
 		"id": "flamethrower",
-		"type": "Throwable",
+		"class": "Throwable",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.flamethrower",
@@ -2269,7 +2300,7 @@
 	},
 	{
 		"id": "fart_gun",
-		"type": "Throwable",
+		"class": "Throwable",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.snowball_cannon",
@@ -2285,12 +2316,13 @@
 	},
 	{
 		"id": "raygun_death",
-		"type": "Arrow",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 8,
 		"itemModel": "item.flamethrower",
 		"itemTexture": "item.flamethrower",
 		"tags": { "cant_mine": true, "swing_speed": 25 },
+		"type": "Arrow",
 		"baseDamage": 1000,
 		"allowAiming": false,
 		"allowRapid": true,
@@ -2298,12 +2330,13 @@
 	},
 	{
 		"id": "slingshot",
-		"type": "Rock",
+		"class": "Bow",
 		"stackSize": 1,
 		"swingAnim": 7,
 		"itemModel": "item.slingshot",
 		"itemTexture": "item.slingshot",
 		"tags": { "cant_mine": true, "swing_speed": 30 },
+		"type": "Rock",
 		"baseDamage": 1,
 		"allowAiming": true,
 		"allowRapid": true,
@@ -2311,84 +2344,100 @@
 	},
 	{
 		"id": "arrow",
-		"type": "Arrow",
+		"class": "Ammo",
 		"itemModel": "item.arrow",
 		"itemTexture": "item.arrow2",
 		"tags": { "ammo": "ammo.arrow" },
+		"type": "Arrow",
 		"rangedDamage": 1,
 		"projectileType": "Arrow",
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "reinforced_arrow",
-		"type": "Arrow",
+		"class": "Ammo",
 		"itemModel": "item.arrow",
 		"itemTexture": "item.arrow2",
 		"tags": { "ammo": "ammo.arrow" },
+		"type": "Arrow",
 		"rangedDamage": 2,
 		"projectileType": "Arrow",
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "flaming_arrow",
-		"type": "Arrow",
+		"class": "Ammo",
 		"itemModel": "item.arrow",
 		"itemTexture": "item.arrow2",
 		"tags": { "ammo": "ammo.arrow" },
+		"type": "Arrow",
 		"rangedDamage": 1,
 		"projectileType": "FlamingArrow",
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "explosive_arrow",
-		"type": "Arrow",
+		"class": "Ammo",
 		"itemModel": "item.arrow",
 		"itemTexture": "item.arrow2",
 		"tags": { "ammo": "ammo.arrow" },
+		"type": "Arrow",
 		"rangedDamage": 1,
 		"projectileType": "ExplosiveArrow",
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "root_arrow",
-		"type": "Arrow",
+		"class": "Ammo",
 		"itemModel": "item.arrow",
 		"itemTexture": "item.arrow2",
 		"tags": { "ammo": "ammo.arrow" },
+		"type": "Arrow",
 		"rangedDamage": 2,
 		"projectileType": "Arrow",
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "rock",
-		"type": "Rock",
+		"class": "Ammo",
 		"tags": { "ammo": "ammo.rock" },
+		"type": "Rock",
 		"rangedDamage": 1,
 		"projectileType": "RockProjectile",
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "snowball",
-		"type": "Snowball",
+		"class": "Ammo",
 		"itemModel": "item.rock",
 		"itemTexture": "item.snowball",
 		"tags": { "ammo": "ammo.snowball" },
+		"type": "Snowball",
 		"rangedDamage": 1,
 		"projectileType": "SnowballProjectile",
 		"canThrow": true,
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "rock_melon",
-		"type": "Rock",
+		"class": "Ammo",
 		"tags": { "ammo": "ammo.rock" },
+		"type": "Rock",
 		"rangedDamage": 4,
 		"projectileType": "RockMelonProjectile",
+		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
 	{
 		"id": "shuriken",
-		"type": "Throwable",
+		"class": "Throwable",
 		"itemModel": "item.shuriken",
 		"itemTexture": "item.shuriken",
 		"tags": { "can_consume": true },
@@ -2398,7 +2447,7 @@
 	},
 	{
 		"id": "dart",
-		"type": "Throwable",
+		"class": "Throwable",
 		"itemModel": "item.arrow",
 		"itemTexture": "item.dart",
 		"tags": { "can_consume": true },
@@ -2408,7 +2457,7 @@
 	},
 	{
 		"id": "watermelon",
-		"type": "Throwable",
+		"class": "Throwable",
 		"itemModel": "item.watermelon",
 		"itemTexture": "item.watermelon",
 		"tags": { "can_consume": true },
@@ -2418,7 +2467,7 @@
 	},
 	{
 		"id": "brick",
-		"type": "Throwable",
+		"class": "Throwable",
 		"itemModel": "item.brick",
 		"itemTexture": "item.brick",
 		"tags": { "can_consume": true },
@@ -2428,7 +2477,7 @@
 	},
 	{
 		"id": "throwable_torch",
-		"type": "Throwable",
+		"class": "Throwable",
 		"itemModel": "item.dynamite",
 		"itemTexture": "item.torch",
 		"tags": { "can_consume": true },
@@ -2438,7 +2487,7 @@
 	},
 	{
 		"id": "basic_rod",
-		"type": "FishingRod",
+		"class": "FishingRod",
 		"itemModel": "item.fishing_rod",
 		"itemTexture": "item.fishing_rod",
 		"projectileType": "FishingBobber",
@@ -2447,7 +2496,7 @@
 	},
 	{
 		"id": "sturdy_rod",
-		"type": "FishingRod",
+		"class": "FishingRod",
 		"itemModel": "item.fishing_rod",
 		"itemTexture": "item.sturdy_rod",
 		"projectileType": "FishingBobber",
@@ -2456,7 +2505,7 @@
 	},
 	{
 		"id": "obsidian_rod",
-		"type": "FishingRod",
+		"class": "FishingRod",
 		"itemModel": "item.fishing_rod",
 		"itemTexture": "item.obsidian_rod",
 		"projectileType": "FishingBobber",
@@ -2465,7 +2514,7 @@
 	},
 	{
 		"id": "flint_hammer",
-		"type": "Hammer",
+		"class": "Hammer",
 		"stackSize": 1,
 		"itemModel": "item.hammer",
 		"itemTexture": "hammer",
@@ -2474,7 +2523,7 @@
 	},
 	{
 		"id": "forest_hammer",
-		"type": "Hammer",
+		"class": "Hammer",
 		"stackSize": 1,
 		"itemModel": "item.hammer",
 		"itemTexture": "item.forest_hammer",
@@ -2483,7 +2532,7 @@
 	},
 	{
 		"id": "watering_can",
-		"type": "WateringCan",
+		"class": "WateringCan",
 		"stackSize": 1,
 		"itemModel": "item.watering_can",
 		"itemTexture": "item.watering_can",
@@ -2492,7 +2541,7 @@
 	},
 	{
 		"id": "hoe",
-		"type": "Hoe",
+		"class": "Hoe",
 		"stackSize": 1,
 		"itemModel": "item.hammer",
 		"itemTexture": "hammer",
@@ -2507,31 +2556,35 @@
 	{ "id": "cobalt_ingot", "sellValue": 100, "category": ["items"] },
 	{
 		"id": "copper_coin",
-		"type": "Currency",
+		"class": "Currency",
 		"currencyAmmount": 1,
+		"slotType": "Currency",
 		"category": ["items"]
 	},
 	{
 		"id": "silver_coin",
-		"type": "Currency",
+		"class": "Currency",
 		"currencyAmmount": 100,
+		"slotType": "Currency",
 		"category": ["items"]
 	},
 	{
 		"id": "gold_coin",
-		"type": "Currency",
+		"class": "Currency",
 		"currencyAmmount": 10000,
+		"slotType": "Currency",
 		"category": ["items"]
 	},
 	{
 		"id": "allumerium_coin",
-		"type": "Currency",
+		"class": "Currency",
 		"currencyAmmount": 1000000,
+		"slotType": "Currency",
 		"category": ["items"]
 	},
 	{
 		"id": "health_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "health_potion",
 		"ticks": 1,
@@ -2541,7 +2594,7 @@
 	},
 	{
 		"id": "weak_health_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "weak_health_potion",
 		"ticks": 1,
@@ -2551,7 +2604,7 @@
 	},
 	{
 		"id": "poison_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "poison",
 		"ticks": 240,
@@ -2559,7 +2612,7 @@
 	},
 	{
 		"id": "speed_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "fast",
 		"ticks": 18000,
@@ -2567,7 +2620,7 @@
 	},
 	{
 		"id": "regen_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "regen_potion",
 		"ticks": 18000,
@@ -2575,7 +2628,7 @@
 	},
 	{
 		"id": "armour_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "armoured",
 		"ticks": 18000,
@@ -2583,7 +2636,7 @@
 	},
 	{
 		"id": "respawn_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "returning",
 		"ticks": 1,
@@ -2591,7 +2644,7 @@
 	},
 	{
 		"id": "flight_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "flight",
 		"ticks": 3600,
@@ -2599,7 +2652,7 @@
 	},
 	{
 		"id": "mining_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "fast_mining",
 		"ticks": 18000,
@@ -2607,7 +2660,7 @@
 	},
 	{
 		"id": "water_walking_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "water_walking",
 		"ticks": 18000,
@@ -2615,7 +2668,7 @@
 	},
 	{
 		"id": "crate_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "crate_potion",
 		"ticks": 18000,
@@ -2623,7 +2676,7 @@
 	},
 	{
 		"id": "boimp_potion",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "poison",
 		"ticks": 600,
@@ -2631,7 +2684,7 @@
 	},
 	{
 		"id": "wand",
-		"type": "Wand",
+		"class": "Wand",
 		"stackSize": 1,
 		"rarity": 4,
 		"category": ["items", "technical", "tools"],
@@ -2639,7 +2692,7 @@
 	},
 	{
 		"id": "door_locker",
-		"type": "DoorLocker",
+		"class": "DoorLocker",
 		"stackSize": 1,
 		"rarity": 4,
 		"category": ["items", "technical", "tools"],
@@ -2647,7 +2700,7 @@
 	},
 	{
 		"id": "entwiner",
-		"type": "Entwiner",
+		"class": "Entwiner",
 		"stackSize": 1,
 		"rarity": 3,
 		"category": ["items", "technical", "tools"],
@@ -2655,28 +2708,28 @@
 	},
 	{
 		"id": "carving_knife",
-		"type": "CarvingKnife",
+		"class": "CarvingKnife",
 		"stackSize": 1,
 		"category": ["items", "tools"],
 		"tags": { "cant_mine": true }
 	},
 	{
 		"id": "forest_key",
-		"type": "Key",
+		"class": "Key",
 		"sellValue": 500,
 		"tags": { "can_consume": true },
 		"category": ["items"]
 	},
 	{
 		"id": "iron_key",
-		"type": "Key",
+		"class": "Key",
 		"sellValue": 1,
 		"tags": { "can_consume": true },
 		"category": ["items"]
 	},
 	{
 		"id": "bagel",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "small_meal",
 		"ticks": 18000,
@@ -2684,7 +2737,7 @@
 	},
 	{
 		"id": "everything_bagel",
-		"type": "Potion",
+		"class": "Potion",
 		"rarity": 1,
 		"tags": { "can_consume": true },
 		"effect": "small_meal",
@@ -2693,7 +2746,7 @@
 	},
 	{
 		"id": "blueberry",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "snack",
 		"ticks": 3600,
@@ -2701,7 +2754,7 @@
 	},
 	{
 		"id": "tomato",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "snack",
 		"ticks": 18000,
@@ -2709,7 +2762,7 @@
 	},
 	{
 		"id": "bread",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "small_meal",
 		"ticks": 18000,
@@ -2720,7 +2773,7 @@
 	{ "id": "red_meat", "category": ["items"] },
 	{
 		"id": "steak",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "super_weak_heal",
 		"ticks": 1,
@@ -2730,7 +2783,7 @@
 	},
 	{
 		"id": "fish_fillet",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "super_weak_heal",
 		"ticks": 1,
@@ -2740,7 +2793,7 @@
 	},
 	{
 		"id": "gormet_fish_fillet",
-		"type": "Potion",
+		"class": "Potion",
 		"tags": { "can_consume": true },
 		"effect": "weak_health_potion",
 		"ticks": 1,
@@ -2750,7 +2803,7 @@
 	},
 	{
 		"id": "dynamite",
-		"type": "Throwable",
+		"class": "Throwable",
 		"itemModel": "item.dynamite",
 		"itemTexture": "item.dynamite",
 		"category": ["items", "tools", "weapons"],
@@ -2760,7 +2813,7 @@
 	},
 	{
 		"id": "bomb_berry",
-		"type": "Throwable",
+		"class": "Throwable",
 		"itemModel": "item.watermelon",
 		"itemTexture": "item.bomberry",
 		"category": ["items", "tools", "weapons"],
@@ -2770,134 +2823,148 @@
 	},
 	{
 		"id": "regen_charm",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "regen",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "jet_boots",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "short_flight",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "spring_boots",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "spring_boots",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "paraglider",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "glide",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "jumping_bean",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "jumping_bean",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "sneakers",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 10,
 		"passiveEffect": "sneaky",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "gecko_gloves",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "wall_jumping",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "speed_boots",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "speed_boots",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "cure_cube",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "poison_immunity",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "magnet",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "magnetism",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "scuba_helmet",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "scuba_helmet",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "curse_of_core",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"hidden": true,
 		"passiveEffect": "curse_of_core",
+		"slotType": "Trinket",
 		"sprite": "missing"
 	},
 	{
 		"id": "cosmic_radiation",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"hidden": true,
-		"passiveEffect": "cosmic_radiation"
+		"passiveEffect": "cosmic_radiation",
+		"slotType": "Trinket"
 	},
 	{
 		"id": "jelly_spoon",
-		"type": "Trinket",
+		"class": "Trinket",
 		"sellValue": 200,
 		"passiveEffect": "jelly_spoon",
+		"slotType": "Trinket",
 		"category": ["items"]
 	},
 	{
 		"id": "squeaky_toy",
-		"type": "SoundPlayer",
+		"class": "SoundPlayer",
 		"sellValue": 200,
 		"sound": "effects.squeaky",
 		"category": ["items"]
 	},
 	{
 		"id": "whoopee_cushion",
-		"type": "SoundPlayer",
+		"class": "SoundPlayer",
 		"sellValue": 200,
 		"sound": "effects.fart",
 		"category": ["items"]
 	},
 	{
 		"id": "air_horn",
-		"type": "SoundPlayer",
+		"class": "SoundPlayer",
 		"sellValue": 200,
 		"sound": "effects.honk",
 		"category": ["items"]
 	},
 	{
 		"id": "eightball",
-		"type": "EightBall",
+		"class": "EightBall",
 		"sellValue": 200,
 		"category": ["items"]
 	},
-	{ "id": "dice", "type": "Dice", "sellValue": 200, "category": ["items"] },
+	{ "id": "dice", "class": "Dice", "sellValue": 200, "category": ["items"] },
 	{
 		"id": "basketball",
-		"type": "Throwable",
+		"class": "Throwable",
 		"sellValue": 20,
 		"itemModel": "item.watermelon",
 		"itemTexture": "item.basketball",
@@ -2909,7 +2976,7 @@
 	},
 	{
 		"id": "bucket",
-		"type": "Bucket",
+		"class": "Bucket",
 		"targetLiquid": true,
 		"category": ["items", "tools"],
 		"full": false,
@@ -2917,7 +2984,7 @@
 	},
 	{
 		"id": "water_bucket",
-		"type": "Bucket",
+		"class": "Bucket",
 		"targetLiquid": true,
 		"category": ["items", "tools"],
 		"full": true,
@@ -2925,7 +2992,7 @@
 	},
 	{
 		"id": "lava_bucket",
-		"type": "Bucket",
+		"class": "Bucket",
 		"targetLiquid": true,
 		"category": ["items", "tools"],
 		"full": true,
@@ -2933,7 +3000,7 @@
 	},
 	{
 		"id": "sponge",
-		"type": "Sponge",
+		"class": "Sponge",
 		"targetLiquid": true,
 		"category": ["items", "tools"],
 		"tags": { "swing_speed": 15 },
@@ -2941,7 +3008,7 @@
 	},
 	{
 		"id": "lava_sponge",
-		"type": "Sponge",
+		"class": "Sponge",
 		"targetLiquid": true,
 		"category": ["items", "tools"],
 		"tags": { "swing_speed": 15 },
@@ -2949,14 +3016,14 @@
 	},
 	{
 		"id": "forest_blessing",
-		"type": "ForestBlessing",
+		"class": "ForestBlessing",
 		"sellValue": 400,
 		"tags": { "can_consume": true },
 		"category": ["items"]
 	},
 	{
 		"id": "ominous_deer_skull",
-		"type": "BossSummon",
+		"class": "BossSummon",
 		"sellValue": 100,
 		"tags": { "can_consume": true },
 		"category": ["items"]
@@ -2964,13 +3031,13 @@
 	{ "id": "skull_fragment", "category": ["items"] },
 	{
 		"id": "minecart",
-		"type": "Minecart",
+		"class": "Minecart",
 		"stackSize": 1,
 		"category": ["items", "tools"]
 	},
 	{
 		"id": "paint_roller",
-		"type": "PaintRoller",
+		"class": "PaintRoller",
 		"stackSize": 1,
 		"category": ["decoration", "items", "tools"],
 		"tags": { "cant_mine": true, "swing_speed": 1 },
@@ -2979,7 +3046,7 @@
 	},
 	{
 		"id": "paint_roller_earthy",
-		"type": "PaintRoller",
+		"class": "PaintRoller",
 		"stackSize": 1,
 		"category": ["decoration", "items", "tools"],
 		"tags": { "cant_mine": true, "swing_speed": 1 },
@@ -2988,7 +3055,7 @@
 	},
 	{
 		"id": "paint_roller_pastel",
-		"type": "PaintRoller",
+		"class": "PaintRoller",
 		"stackSize": 1,
 		"category": ["decoration", "items", "tools"],
 		"tags": { "cant_mine": true, "swing_speed": 1 },
@@ -2997,7 +3064,7 @@
 	},
 	{
 		"id": "wallpaper",
-		"type": "Wallpaper",
+		"class": "Wallpaper",
 		"stackSize": 1,
 		"category": ["decoration", "items"],
 		"tags": { "cant_mine": true, "swing_speed": 1 },
@@ -3006,7 +3073,7 @@
 	},
 	{
 		"id": "wallpaper_wood",
-		"type": "Wallpaper",
+		"class": "Wallpaper",
 		"stackSize": 1,
 		"category": ["decoration", "items"],
 		"tags": { "cant_mine": true, "swing_speed": 1 },
@@ -3015,7 +3082,7 @@
 	},
 	{
 		"id": "wallpaper_stone",
-		"type": "Wallpaper",
+		"class": "Wallpaper",
 		"stackSize": 1,
 		"category": ["decoration", "items"],
 		"tags": { "cant_mine": true, "swing_speed": 1 },
@@ -3024,102 +3091,107 @@
 	},
 	{
 		"id": "spawn_fuzzy",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Fluffy",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_fuzzy_green",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "FluffyGreen",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_fuzzy_ice",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "FuzzyIce",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_hog",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Hog",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_skeleton",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Skeleton",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_wizard",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Wizard",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_wizard_ice",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "SnowWizard",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_mushroomer",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Shroomer",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_nightflyer",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "NightFlyer",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_snowman",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Snowman",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_stone_golem",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "StoneMonster",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_yeti",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Yeti",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_zombie",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Zombie",
 		"category": ["items"]
 	},
 	{
 		"id": "spawn_pukeko",
-		"type": "SpawnEntity",
+		"class": "SpawnEntity",
 		"entityType": "Pukeko",
 		"category": ["items"]
 	},
 	{ "id": "poo_gem", "category": ["items"] },
 	{ "id": "unobtainable_melon", "hidden": true },
-	{ "id": "worm", "type": "Bait", "baitPower": 50, "category": ["items"] },
-	{ "id": "bug_bait", "type": "Bait", "baitPower": 150, "category": ["items"] },
+	{ "id": "worm", "class": "Bait", "baitPower": 50, "category": ["items"] },
+	{
+		"id": "bug_bait",
+		"class": "Bait",
+		"baitPower": 150,
+		"category": ["items"]
+	},
 	{
 		"id": "rage_bait",
-		"type": "Bait",
+		"class": "Bait",
 		"baitPower": 200,
 		"enrage": true,
 		"category": ["items"]
 	},
 	{
 		"id": "magnetic_bait",
-		"type": "Bait",
+		"class": "Bait",
 		"baitPower": 40,
 		"crateModifier": 2.5,
 		"category": ["items"]
@@ -3133,7 +3205,7 @@
 	{ "id": "fish_herring", "category": ["items"] },
 	{
 		"id": "fish_minnow",
-		"type": "Bait",
+		"class": "Bait",
 		"baitPower": 100,
 		"category": ["items"]
 	},
@@ -3149,21 +3221,23 @@
 	{ "id": "spoon_fragment", "category": ["items"] },
 	{
 		"id": "merchant_hat",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"armourType": "Helmet",
 		"modelName": "vanity.merchant_hat",
 		"textureName": "vanity.merchant_hat",
+		"slotType": "Helmet",
 		"category": ["items"],
 		"sprite": "missing"
 	},
 	{
 		"id": "merchant_backpack",
-		"type": "Armour",
+		"class": "Armour",
 		"stackSize": 1,
 		"armourType": "Chestplate",
 		"modelName": "vanity.merchant_backpack",
 		"textureName": "vanity.merchant_backpack",
+		"slotType": "Chestplate",
 		"category": ["items"],
 		"sprite": "missing"
 	}
