@@ -11,12 +11,6 @@ type Mat4 = [
 	[number, number, number, number]
 ];
 
-type Block = {
-	id: string;
-	textures?: string[];
-	blockModel?: string;
-};
-
 type CuboidMesh = {
 	type: 'cuboid';
 	min: Vec3;
@@ -330,13 +324,14 @@ const meshMatrixToThreeMatrix = (matrix: Mat4): THREE.Matrix4 =>
 		.transpose();
 
 export const buildBlockGroup = async ({
-	block,
+	model,
+	textures = [],
 	loadTexture
 }: {
-	block: Block;
+	model?: string;
+	textures?: string[];
 	loadTexture: (name: string) => Promise<THREE.Texture>;
 }) => {
-	const textures = block.textures ?? [];
 	const textureCache = new Map<string, THREE.Material>();
 
 	const resolveMaterial = async (
@@ -354,7 +349,7 @@ export const buildBlockGroup = async ({
 		return material;
 	};
 
-	const meshes = (blockModels.find(m => m.id === block.blockModel)
+	const meshes = (blockModels.find(m => m.id === model)
 		?.meshes as MeshDef[][]) ?? [defaultBlockMesh];
 
 	return await Promise.all(

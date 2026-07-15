@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Fragment } from 'react/jsx-runtime';
 
-import BlockRender from '#components/block/BlockRender.tsx';
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
 import EffectLink from '#components/effect/EffectLink.tsx';
 import Img from '#components/Img.tsx';
@@ -11,14 +10,15 @@ import CostTooltip from '#components/item/CostTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
+import BlockRender from '#components/renderer/BlockRender.tsx';
 import AlertMessage from '#components/styled/AlertMessage.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import TooltipEntry from '#components/TooltipEntry.tsx';
 import blockMaterials from '#data/block_materials.json';
 import blocks from '#data/blocks.json';
 import catalogues from '#data/catalogues.json';
-import creatures from '#data/creatures.json';
 import effects from '#data/effects.json';
+import entities from '#data/entities.json';
 import items from '#data/items.json';
 import recipes from '#data/recipes.json';
 import spawn from '#data/spawn.json';
@@ -61,7 +61,7 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 	const spawnTable = spawn
 		.find(s => s.id === block.spawn)
 		?.entries.map(s => {
-			const monster = creatures.find(c => c.id === s.monster);
+			const monster = entities.find(c => c.id === s.monster);
 			if (!monster) return null;
 			return { ...s, monster };
 		})

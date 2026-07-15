@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import Button from '#components/styled/Button.tsx';
 import summary from '#data/summary.json';
 import { SocialLinks } from '#utils/constants.ts';
 
@@ -32,7 +31,7 @@ const categories = [
 		label: 'Creatures',
 		description: 'Enemies, animals and NPCs that roam Allumeria.',
 		icon: '/assets/items/ominous_deer_skull.webp',
-		count: summary.creatureCount,
+		count: summary.entityCount,
 		unit: 'creatures'
 	},
 	{
@@ -52,7 +51,7 @@ const stats = [
 	{ label: 'Block Materials', value: summary.blockMaterialCount },
 	{ label: 'Recipes', value: summary.recipeCount },
 	{ label: 'Recipe Aliases', value: summary.recipeAliasCount },
-	{ label: 'Creatures', value: summary.creatureCount },
+	{ label: 'Creatures', value: summary.entityCount },
 	{ label: 'Effects', value: summary.effectCount },
 	{ label: 'Loot Tables', value: summary.lootCount },
 	{ label: 'Spawns', value: summary.spawnCount },

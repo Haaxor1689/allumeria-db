@@ -1,0 +1,71 @@
+{
+	"name": "deer_shield",
+	"resolution": { "width": 64, "height": 64 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-9, 0, -3],
+			"to": [9, 20, 3],
+			"origin": [0, 8, 2],
+			"faces": {
+				"north": { "uv": [0, 0, 18, 20], "texture": 0 },
+				"east": { "uv": [0, 20, 6, 40], "texture": 0 },
+				"south": { "uv": [18, 0, 36, 20], "texture": 0 },
+				"west": { "uv": [6, 20, 12, 40], "texture": 0 },
+				"up": { "uv": [30, 26, 12, 20], "texture": 0 },
+				"down": { "uv": [30, 26, 12, 32], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "f9ad1369-c590-26cd-a721-c7b063f356aa"
+		}
+	],
+	"outliner": [
+		{
+			"name": "root",
+			"origin": [0, 8, 0],
+			"uuid": "eb6676b9-03ac-a815-51f0-6d1c99381be0",
+			"mirror_uv": false,
+			"children": ["f9ad1369-c590-26cd-a721-c7b063f356aa"]
+		}
+	],
+	"animations": [
+		{
+			"uuid": "0f5edef3-70eb-fc9e-4773-aefe226caf30",
+			"name": "animation",
+			"loop": "once",
+			"override": false,
+			"length": 1,
+			"snapping": 24,
+			"selected": true,
+			"anim_time_update": "",
+			"blend_weight": "",
+			"start_delay": "",
+			"loop_delay": "",
+			"animators": {
+				"eb6676b9-03ac-a815-51f0-6d1c99381be0": {
+					"name": "root",
+					"type": "bone",
+					"keyframes": [
+						{
+							"channel": "rotation",
+							"data_points": [{ "x": "0", "y": "0", "z": "0" }],
+							"uuid": "83a90acf-e92c-6a4b-a9d1-0652861b877b",
+							"time": 0
+						},
+						{
+							"channel": "rotation",
+							"data_points": [{ "x": "0", "y": "0", "z": "360\n" }],
+							"uuid": "c2125869-1b61-288e-fe4b-ef4fa0522fc5",
+							"time": 1
+						}
+					]
+				}
+			}
+		}
+	]
+}

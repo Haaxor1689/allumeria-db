@@ -1,0 +1,74 @@
+{
+	"name": "cross",
+	"resolution": { "width": 16, "height": 16 },
+	"elements": [
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 8, 0],
+			"rotation": [90, 0, 0],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"unif": [8, 0, 8],
+				"ZCHA": [8, 0, -8],
+				"61bT": [-8, 0, 8],
+				"FiRm": [-8, 0, -8]
+			},
+			"faces": {
+				"bLBePdlU": {
+					"uv": {
+						"61bT": [0, 16],
+						"FiRm": [0, 0],
+						"ZCHA": [16, 0],
+						"unif": [16, 16]
+					},
+					"vertices": ["unif", "ZCHA", "FiRm", "61bT"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "18b25537-fb20-1215-4b26-3316b84270d9"
+		},
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 8, 0],
+			"rotation": [90, 0, 90],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"unif": [8, 0, 8],
+				"ZCHA": [8, 0, -8],
+				"61bT": [-8, 0, 8],
+				"FiRm": [-8, 0, -8]
+			},
+			"faces": {
+				"bLBePdlU": {
+					"uv": {
+						"61bT": [0, 16],
+						"FiRm": [0, 0],
+						"ZCHA": [16, 0],
+						"unif": [16, 16]
+					},
+					"vertices": ["unif", "ZCHA", "FiRm", "61bT"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "557e6633-e597-e286-c8cd-072d0f5374bf"
+		}
+	],
+	"outliner": [
+		{
+			"name": "bone",
+			"origin": [0, 8, 0],
+			"uuid": "b79d98b2-fc5e-7319-4a1f-0c6f378431a5",
+			"mirror_uv": false,
+			"children": [
+				"18b25537-fb20-1215-4b26-3316b84270d9",
+				"557e6633-e597-e286-c8cd-072d0f5374bf"
+			]
+		}
+	]
+}

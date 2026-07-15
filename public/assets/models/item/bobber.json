@@ -1,0 +1,97 @@
+{
+	"name": "bobber",
+	"resolution": { "width": 16, "height": 16 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2, -1, -2],
+			"to": [2, 3, 2],
+			"color": 8,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": { "uv": [0, 8, 4, 12], "texture": 0 },
+				"east": { "uv": [4, 8, 8, 12], "texture": 0 },
+				"south": { "uv": [8, 8, 12, 12], "texture": 0 },
+				"west": { "uv": [0, 12, 4, 16], "texture": 0 },
+				"up": { "uv": [16, 4, 12, 0], "texture": 0 },
+				"down": { "uv": [8, 12, 4, 16], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "65fa7dd6-c9b8-3f08-f382-afcc5c296e86"
+		},
+		{
+			"name": "plane",
+			"color": 8,
+			"origin": [0, 1, 0],
+			"rotation": [0, 0, -90],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"pN2n": [6, 0, 2],
+				"hLQ5": [6, 0, -2],
+				"1V6w": [-6, 0, 2],
+				"LjjV": [-6, 0, -2]
+			},
+			"faces": {
+				"3dxg8Rzr": {
+					"uv": {
+						"1V6w": [0, 8],
+						"LjjV": [0, 4],
+						"hLQ5": [12, 4],
+						"pN2n": [12, 8]
+					},
+					"vertices": ["pN2n", "hLQ5", "LjjV", "1V6w"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "24a8f5c0-ebec-7bd0-7f2f-e19f8a7d37b8"
+		},
+		{
+			"name": "plane",
+			"color": 8,
+			"origin": [0, 1, 0],
+			"rotation": [-90, 90, 0],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"pN2n": [6, 0, 2],
+				"hLQ5": [6, 0, -2],
+				"1V6w": [-6, 0, 2],
+				"LjjV": [-6, 0, -2]
+			},
+			"faces": {
+				"3dxg8Rzr": {
+					"uv": {
+						"1V6w": [0, 4],
+						"LjjV": [0, 0],
+						"hLQ5": [12, 0],
+						"pN2n": [12, 4]
+					},
+					"vertices": ["pN2n", "hLQ5", "LjjV", "1V6w"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "4c2ea5b5-df7e-e712-f1f4-f4c901e3cd0c"
+		}
+	],
+	"outliner": [
+		{
+			"name": "base",
+			"origin": [0, 0, 0],
+			"uuid": "7d3761e9-ac3e-fa85-e96e-74227b4caabf",
+			"mirror_uv": false,
+			"children": [
+				"65fa7dd6-c9b8-3f08-f382-afcc5c296e86",
+				"24a8f5c0-ebec-7bd0-7f2f-e19f8a7d37b8",
+				"4c2ea5b5-df7e-e712-f1f4-f4c901e3cd0c"
+			]
+		}
+	]
+}

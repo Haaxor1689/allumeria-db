@@ -2,30 +2,29 @@
 
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
 import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
-import creatures from '#data/creatures.json';
+import entities from '#data/entities.json';
 import { toDisplayName } from '#utils/index.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
 
 import { CreatureFiltersSearchSchema } from './CreatureFilters';
 
+const creatures = entities.filter(e =>
+	['creature', 'boss'].includes(e.category)
+);
+
 const CreatureGrid = () => {
 	const params = useSearchParams(CreatureFiltersSearchSchema);
 
-	const filteredCreatures = creatures.filter(creature => {
-		const matchesSearch =
+	const filteredCreatures = creatures.filter(e =>
+		[
 			params.search === '' ||
-			creature.id.toLowerCase().includes(params.search.toLowerCase()) ||
-			toDisplayName(creature.id)
-				.toLowerCase()
-				.includes(params.search.toLowerCase());
-
-		const matchesCategory =
+				e.id.toLowerCase().includes(params.search.toLowerCase()) ||
+				toDisplayName(e.id).toLowerCase().includes(params.search.toLowerCase()),
 			params.category === 'all' ||
-			(params.category === 'boss' && creature.boss === true) ||
-			(params.category === 'regular' && !creature.boss);
-
-		return matchesSearch && matchesCategory;
-	});
+				(params.category === 'boss' && e.category === 'boss') ||
+				(params.category === 'regular' && e.category !== 'boss')
+		].every(Boolean)
+	);
 
 	return filteredCreatures.length === 0 ? (
 		<div className="flex flex-col items-center justify-center gap-2 ns-dialog p-8">

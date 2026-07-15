@@ -1,0 +1,103 @@
+{
+	"name": "arrow",
+	"resolution": { "width": 16, "height": 16 },
+	"elements": [
+		{
+			"name": "plane",
+			"color": 5,
+			"origin": [0, 0, 6],
+			"rotation": [0, -90, 0],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"EtFM": [8, 0, 2.5],
+				"kxbC": [8, 0, -2.5],
+				"s3he": [-8, 0, 2.5],
+				"06uK": [-8, 0, -2.5]
+			},
+			"faces": {
+				"Jt2I7bXB": {
+					"uv": {
+						"s3he": [0, 5],
+						"06uK": [0, 0],
+						"kxbC": [16, 0],
+						"EtFM": [16, 5]
+					},
+					"vertices": ["EtFM", "kxbC", "06uK", "s3he"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "6abdb638-1064-3052-6394-518af6b3b457"
+		},
+		{
+			"name": "plane",
+			"color": 5,
+			"origin": [0, 0, 6],
+			"rotation": [90, 0, 90],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"EtFM": [8, 0, 2.5],
+				"kxbC": [8, 0, -2.5],
+				"s3he": [-8, 0, 2.5],
+				"06uK": [-8, 0, -2.5]
+			},
+			"faces": {
+				"Jt2I7bXB": {
+					"uv": {
+						"s3he": [0, 5],
+						"06uK": [0, 0],
+						"kxbC": [16, 0],
+						"EtFM": [16, 5]
+					},
+					"vertices": ["EtFM", "kxbC", "06uK", "s3he"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "4b7edd41-52b8-0556-ee5f-f93cbefd1192"
+		},
+		{
+			"name": "plane",
+			"color": 8,
+			"origin": [0, 0, 13],
+			"rotation": [90, 0, 0],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"DRtl": [2.5, 0, 2.5],
+				"Jw2F": [2.5, 0, -2.5],
+				"zkjs": [-2.5, 0, 2.5],
+				"mUSM": [-2.5, 0, -2.5]
+			},
+			"faces": {
+				"SYOD0l87": {
+					"uv": {
+						"zkjs": [11, 10],
+						"mUSM": [11, 5],
+						"Jw2F": [16, 5],
+						"DRtl": [16, 10]
+					},
+					"vertices": ["DRtl", "Jw2F", "mUSM", "zkjs"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "baa30418-94be-a571-a28d-1cc10cf0a90a"
+		}
+	],
+	"outliner": [
+		{
+			"name": "bone",
+			"origin": [0, 0, 0],
+			"uuid": "a4ead9f7-ee7e-bbe6-8a95-6b5f5e499b8b",
+			"mirror_uv": false,
+			"children": [
+				"6abdb638-1064-3052-6394-518af6b3b457",
+				"4b7edd41-52b8-0556-ee5f-f93cbefd1192",
+				"baa30418-94be-a571-a28d-1cc10cf0a90a"
+			]
+		}
+	]
+}

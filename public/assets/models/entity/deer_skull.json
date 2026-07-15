@@ -1,0 +1,91 @@
+{
+	"name": "deer_skull",
+	"resolution": { "width": 32, "height": 32 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4, 0, -4],
+			"to": [4, 8, 4],
+			"color": 6,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": { "uv": [0, 16, 8, 24], "texture": 0 },
+				"east": { "uv": [16, 0, 24, 8], "texture": 0 },
+				"south": { "uv": [8, 16, 16, 24], "texture": 0 },
+				"west": { "uv": [16, 8, 24, 16], "texture": 0 },
+				"up": { "uv": [24, 24, 16, 16], "texture": 0 },
+				"down": { "uv": [8, 24, 0, 32], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "6d2cfa48-7424-fe25-801d-5f24b3a26b76"
+		},
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-3, 0, -10],
+			"to": [3, 6, -4],
+			"color": 4,
+			"origin": [0, 0, -5],
+			"faces": {
+				"north": { "uv": [24, 0, 30, 6], "texture": 0 },
+				"east": { "uv": [24, 6, 30, 12], "texture": 0 },
+				"south": { "uv": [8, 24, 14, 30], "texture": 0 },
+				"west": { "uv": [24, 12, 30, 18], "texture": 0 },
+				"up": { "uv": [20, 30, 14, 24], "texture": 0 },
+				"down": { "uv": [30, 18, 24, 24], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "129a5d7a-82d3-b15c-4152-2674204c3e50"
+		},
+		{
+			"name": "plane",
+			"color": 8,
+			"origin": [0, 8, 8],
+			"rotation": [-32.5, 0, 0],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"gGMm": [8, 0, 8],
+				"KLV0": [8, 0, -8],
+				"tZ9N": [-8, 0, 8],
+				"o8Eu": [-8, 0, -8]
+			},
+			"faces": {
+				"lLCrFeGK": {
+					"uv": {
+						"tZ9N": [0, 16],
+						"o8Eu": [0, 0],
+						"KLV0": [16, 0],
+						"gGMm": [16, 16]
+					},
+					"vertices": ["gGMm", "KLV0", "o8Eu", "tZ9N"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "430a85fb-2e34-8157-e782-3989cf6c2da1"
+		}
+	],
+	"outliner": [
+		{
+			"name": "bone",
+			"origin": [0, 8, 8],
+			"uuid": "7d38f35b-75d2-18d9-20b5-f704cc8c26b0",
+			"mirror_uv": false,
+			"children": [
+				"6d2cfa48-7424-fe25-801d-5f24b3a26b76",
+				"129a5d7a-82d3-b15c-4152-2674204c3e50",
+				"430a85fb-2e34-8157-e782-3989cf6c2da1"
+			]
+		}
+	]
+}

@@ -1,0 +1,155 @@
+{
+	"name": "snowman_body",
+	"resolution": { "width": 128, "height": 128 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-16, 0, -16],
+			"to": [16, 32, 16],
+			"color": 3,
+			"origin": [-6, 0, -6],
+			"faces": {
+				"north": { "uv": [0, 32, 32, 64], "texture": 0 },
+				"east": { "uv": [0, 32, 32, 64], "texture": 0 },
+				"south": { "uv": [0, 32, 32, 64], "texture": 0 },
+				"west": { "uv": [32, 0, 64, 32], "texture": 0 },
+				"up": { "uv": [32, 64, 0, 32], "texture": 0 },
+				"down": { "uv": [32, 32, 0, 64], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "49b7c49f-5548-690c-e82a-4664b0c1d286"
+		},
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 16, -32],
+			"rotation": [0, 0, 0],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"6G5R": [8, 0, 16],
+				"GQHd": [8, 0, -16],
+				"cRGF": [-8, 0, 16],
+				"imXn": [-8, 0, -16]
+			},
+			"faces": {
+				"K0rwqegH": {
+					"uv": {
+						"cRGF": [0, 128],
+						"imXn": [0, 96],
+						"GQHd": [16, 96],
+						"6G5R": [16, 128]
+					},
+					"vertices": ["6G5R", "GQHd", "imXn", "cRGF"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "1572f6d8-942f-e451-80bb-d7945bd3fb42"
+		},
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 16, -32],
+			"rotation": [0, 0, 92.5],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"6G5R": [8, 0, 16],
+				"GQHd": [8, 0, -16],
+				"cRGF": [-8, 0, 16],
+				"imXn": [-8, 0, -16]
+			},
+			"faces": {
+				"K0rwqegH": {
+					"uv": {
+						"cRGF": [0, 128],
+						"imXn": [0, 96],
+						"GQHd": [16, 96],
+						"6G5R": [16, 128]
+					},
+					"vertices": ["6G5R", "GQHd", "imXn", "cRGF"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "4a82e9d4-eabc-1399-8867-1b6e262381df"
+		},
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 16, 32],
+			"rotation": [180, 0, -87.5],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"6G5R": [8, 0, 16],
+				"GQHd": [8, 0, -16],
+				"cRGF": [-8, 0, 16],
+				"imXn": [-8, 0, -16]
+			},
+			"faces": {
+				"K0rwqegH": {
+					"uv": {
+						"cRGF": [0, 128],
+						"imXn": [0, 96],
+						"GQHd": [16, 96],
+						"6G5R": [16, 128]
+					},
+					"vertices": ["6G5R", "GQHd", "imXn", "cRGF"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "b688c3cb-f550-e780-a943-f033e78b6015"
+		},
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 16, 32],
+			"rotation": [-180, 0, -180],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"6G5R": [8, 0, 16],
+				"GQHd": [8, 0, -16],
+				"cRGF": [-8, 0, 16],
+				"imXn": [-8, 0, -16]
+			},
+			"faces": {
+				"K0rwqegH": {
+					"uv": {
+						"cRGF": [0, 128],
+						"imXn": [0, 96],
+						"GQHd": [16, 96],
+						"6G5R": [16, 128]
+					},
+					"vertices": ["6G5R", "GQHd", "imXn", "cRGF"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "08385d2e-bc76-ff24-9eed-047be183303d"
+		}
+	],
+	"outliner": [
+		{
+			"name": "bone",
+			"origin": [-6, 0, -6],
+			"uuid": "8c24c124-ef31-05b0-9a40-d074dc99bc1b",
+			"mirror_uv": false,
+			"children": [
+				"49b7c49f-5548-690c-e82a-4664b0c1d286",
+				"1572f6d8-942f-e451-80bb-d7945bd3fb42",
+				"4a82e9d4-eabc-1399-8867-1b6e262381df",
+				"08385d2e-bc76-ff24-9eed-047be183303d",
+				"b688c3cb-f550-e780-a943-f033e78b6015"
+			]
+		}
+	]
+}

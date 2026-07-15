@@ -1,0 +1,38 @@
+{
+	"name": "watermelon",
+	"resolution": { "width": 32, "height": 32 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-4, 0, -4],
+			"to": [4, 8, 4],
+			"color": 3,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": { "uv": [0, 0, 8, 8], "texture": 0 },
+				"east": { "uv": [0, 8, 8, 16], "texture": 0 },
+				"south": { "uv": [8, 0, 16, 8], "texture": 0 },
+				"west": { "uv": [8, 8, 16, 16], "texture": 0 },
+				"up": { "uv": [8, 24, 0, 16], "texture": 0 },
+				"down": { "uv": [24, 0, 16, 8], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "c1c1fc8c-cea9-0641-b41c-97fd4e4bd3b3"
+		}
+	],
+	"outliner": [
+		{
+			"name": "root",
+			"origin": [0, 0, 0],
+			"uuid": "77984f6f-8edd-246b-5d62-33e476b72915",
+			"mirror_uv": false,
+			"selected": true,
+			"children": ["c1c1fc8c-cea9-0641-b41c-97fd4e4bd3b3"]
+		}
+	]
+}

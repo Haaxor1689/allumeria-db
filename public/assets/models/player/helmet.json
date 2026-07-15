@@ -1,0 +1,89 @@
+{
+	"name": "helmet",
+	"resolution": { "width": 64, "height": 64 },
+	"elements": [
+		{
+			"name": "helmet_head",
+			"box_uv": true,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-3.5, 23.5, -3.5],
+			"to": [3.5, 30.5, 3.5],
+			"color": 8,
+			"origin": [0, 24, 0],
+			"faces": {
+				"north": { "uv": [7, 7, 14, 14], "texture": 1 },
+				"east": { "uv": [0, 7, 7, 14], "texture": 1 },
+				"south": { "uv": [21, 7, 28, 14], "texture": 1 },
+				"west": { "uv": [14, 7, 21, 14], "texture": 1 },
+				"up": { "uv": [14, 7, 7, 0], "texture": 1 },
+				"down": { "uv": [21, 0, 14, 7], "texture": 1 }
+			},
+			"type": "cube",
+			"uuid": "b7a2980f-26cf-7dbb-0c33-0ba328f62527"
+		}
+	],
+	"outliner": [
+		{
+			"name": "base",
+			"origin": [0, 12, 0],
+			"uuid": "8ca94225-45a4-b182-75be-180d01b8ff58",
+			"mirror_uv": false,
+			"children": [
+				{
+					"name": "torso",
+					"origin": [0, 12, 0],
+					"uuid": "585246fe-43b3-31b7-aa97-87deac626b86",
+					"mirror_uv": false,
+					"children": [
+						{
+							"name": "neck",
+							"origin": [0, 23, 0],
+							"uuid": "e85d9046-ab73-8bb6-8471-d75750fb6733",
+							"mirror_uv": false,
+							"children": ["b7a2980f-26cf-7dbb-0c33-0ba328f62527"]
+						},
+						{
+							"name": "arm_r",
+							"origin": [-3, 22, 0],
+							"uuid": "d0a4ba94-29ed-da7d-79b7-8bc923328665",
+							"mirror_uv": false,
+							"children": []
+						},
+						{
+							"name": "arm_l",
+							"origin": [3, 22, 0],
+							"uuid": "4d4b7a2b-c724-b962-f02b-7ca48cc533b1",
+							"mirror_uv": false,
+							"children": [
+								{
+									"name": "held",
+									"origin": [3, 12.5, -1],
+									"uuid": "9d7558a3-99cc-09e2-82e7-4b4bf048c071",
+									"mirror_uv": false,
+									"children": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "leg_l",
+					"origin": [1, 12, 0],
+					"uuid": "e89d55fd-8c20-7315-67b0-e2db6b22c294",
+					"mirror_uv": false,
+					"children": []
+				},
+				{
+					"name": "leg_r",
+					"origin": [-2, 12, 0],
+					"uuid": "2cc83c58-9c0c-bb38-f0d1-a2d2ea540b74",
+					"mirror_uv": false,
+					"children": []
+				}
+			]
+		}
+	]
+}

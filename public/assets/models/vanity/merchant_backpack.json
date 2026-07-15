@@ -1,0 +1,212 @@
+{
+	"meta": { "format_version": "4.10", "model_format": "free", "box_uv": true },
+	"name": "merchant_backpack",
+	"model_identifier": "",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
+	"resolution": { "width": 16, "height": 16 },
+	"elements": [
+		{
+			"name": "chestplate_torso",
+			"box_uv": true,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-3, 15.5, 2],
+			"to": [3, 22.5, 4],
+			"autouv": 0,
+			"color": 8,
+			"origin": [0, 20, 3],
+			"faces": {
+				"north": { "uv": [2, 2, 8, 9], "texture": 0 },
+				"east": { "uv": [0, 2, 2, 9], "texture": 0 },
+				"south": { "uv": [10, 2, 16, 9], "texture": 0 },
+				"west": { "uv": [8, 2, 10, 9], "texture": 0 },
+				"up": { "uv": [8, 2, 2, 0], "texture": 0 },
+				"down": { "uv": [14, 0, 8, 2], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "4379bbb0-4a1e-3a33-1718-91761ae20e49"
+		},
+		{
+			"name": "chestplate_torso",
+			"box_uv": true,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-3, 15.5, 4],
+			"to": [3, 19.5, 5],
+			"autouv": 0,
+			"color": 8,
+			"origin": [0, 20, 5],
+			"uv_offset": [0, 9],
+			"faces": {
+				"north": { "uv": [1, 10, 7, 14], "texture": 0 },
+				"east": { "uv": [0, 10, 1, 14], "texture": 0 },
+				"south": { "uv": [8, 10, 14, 14], "texture": 0 },
+				"west": { "uv": [7, 10, 8, 14], "texture": 0 },
+				"up": { "uv": [7, 10, 1, 9], "texture": 0 },
+				"down": { "uv": [13, 9, 7, 10], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "e3bbf94a-93cc-53f7-ef44-ef7dc4fdeb9a"
+		}
+	],
+	"outliner": [
+		{
+			"name": "base",
+			"origin": [0, 12, 0],
+			"color": 0,
+			"uuid": "8ca94225-45a4-b182-75be-180d01b8ff58",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
+			"children": [
+				{
+					"name": "torso",
+					"origin": [0, 12, 0],
+					"color": 0,
+					"uuid": "585246fe-43b3-31b7-aa97-87deac626b86",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"selected": false,
+					"children": [
+						"4379bbb0-4a1e-3a33-1718-91761ae20e49",
+						"e3bbf94a-93cc-53f7-ef44-ef7dc4fdeb9a",
+						{
+							"name": "neck",
+							"origin": [0, 23, 0],
+							"color": 0,
+							"uuid": "e85d9046-ab73-8bb6-8471-d75750fb6733",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": true,
+							"locked": false,
+							"visibility": true,
+							"autouv": 0,
+							"selected": false,
+							"children": []
+						},
+						{
+							"name": "arm_r",
+							"origin": [-3, 22, 0],
+							"color": 0,
+							"uuid": "d0a4ba94-29ed-da7d-79b7-8bc923328665",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": true,
+							"locked": false,
+							"visibility": true,
+							"autouv": 0,
+							"selected": false,
+							"children": []
+						},
+						{
+							"name": "arm_l",
+							"origin": [3, 22, 0],
+							"color": 0,
+							"uuid": "4d4b7a2b-c724-b962-f02b-7ca48cc533b1",
+							"export": true,
+							"mirror_uv": false,
+							"isOpen": true,
+							"locked": false,
+							"visibility": true,
+							"autouv": 0,
+							"selected": false,
+							"children": [
+								{
+									"name": "held",
+									"origin": [3, 12.5, -1],
+									"color": 0,
+									"uuid": "9d7558a3-99cc-09e2-82e7-4b4bf048c071",
+									"export": true,
+									"mirror_uv": false,
+									"isOpen": true,
+									"locked": false,
+									"visibility": true,
+									"autouv": 0,
+									"selected": false,
+									"children": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "leg_l",
+					"origin": [1, 12, 0],
+					"color": 0,
+					"uuid": "e89d55fd-8c20-7315-67b0-e2db6b22c294",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"selected": false,
+					"children": []
+				},
+				{
+					"name": "leg_r",
+					"origin": [-2, 12, 0],
+					"color": 0,
+					"uuid": "2cc83c58-9c0c-bb38-f0d1-a2d2ea540b74",
+					"export": true,
+					"mirror_uv": false,
+					"isOpen": true,
+					"locked": false,
+					"visibility": true,
+					"autouv": 0,
+					"selected": false,
+					"children": []
+				}
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "C:\\Documents\\Blockbench\\vanity\\merchant_backpack.png",
+			"name": "merchant_backpack.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "0",
+			"group": "",
+			"width": 16,
+			"height": 16,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "2af51a04-8cd2-b622-48d4-9f4eac8f44c9",
+			"relative_path": "merchant_backpack.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAALdJREFUOE9jLPLW+c+ABFJiVcG8OYtvg+nL998jS8PZuoqCYDYjzACQQpggTBUuzSB5FAPwKURWDGI7afGAzd937QvEBa5a0ihewOpeqCA2F5JkADbDwWFAihfQDaHcAGLDAN3/MJcQHQY4DYClA1gCgpkMSkiwsIFpRuejJCR80QeKeyVjSbCSe2efw9MASQYgWwBLRPCEhMt/yE5GToHIyR4ciIQMQE7O6OEAz0z4wgCfHMUGAADhVlnT+THNBwAAAABJRU5ErkJggg=="
+		}
+	]
+}

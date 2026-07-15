@@ -1,0 +1,37 @@
+{
+	"name": "spell",
+	"resolution": { "width": 32, "height": 32 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2, -2, -2],
+			"to": [2, 2, 8],
+			"color": 6,
+			"origin": [0, -1, 0],
+			"faces": {
+				"north": { "uv": [8, 8, 12, 12], "texture": 0 },
+				"east": { "uv": [0, 0, 10, 4], "texture": 0 },
+				"south": { "uv": [10, 0, 14, 4], "texture": 0 },
+				"west": { "uv": [0, 4, 10, 8], "texture": 0 },
+				"up": { "uv": [4, 18, 0, 8], "texture": 0 },
+				"down": { "uv": [8, 8, 4, 18], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "47ab37e8-cce9-5268-6a2f-e20aacc69e98"
+		}
+	],
+	"outliner": [
+		{
+			"name": "bone",
+			"origin": [0, -1, 0],
+			"uuid": "da1fc554-5b38-e683-c222-724a77a6b8e6",
+			"mirror_uv": false,
+			"children": ["47ab37e8-cce9-5268-6a2f-e20aacc69e98"]
+		}
+	]
+}

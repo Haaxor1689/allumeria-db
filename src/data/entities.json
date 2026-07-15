@@ -1,0 +1,434 @@
+[
+	{
+		"id": "BossSnow",
+		"category": "boss",
+		"walkSpeed": 0.6,
+		"health": 200,
+		"defence": 2,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.1, 0.1, 0.1],
+		"model": "entity.forest_spirit",
+		"flying": true,
+		"texture": "entity.forest_spirit"
+	},
+	{
+		"id": "DeerShield",
+		"category": "boss",
+		"walkSpeed": 0.03,
+		"health": 20,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [2, 2, 2],
+		"model": "entity.deer_shield",
+		"flying": true,
+		"texture": "entity.deer_shield"
+	},
+	{
+		"id": "DeerSkull",
+		"category": "projectile",
+		"model": "entity.deer_skull",
+		"texture": "entity.deer_skull",
+		"hasGravity": false
+	},
+	{
+		"id": "SnowCloudProjectile",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.ice_cube",
+		"hasGravity": false
+	},
+	{
+		"id": "SnowmanPart",
+		"category": "boss",
+		"walkSpeed": 0.6,
+		"health": 50,
+		"defence": 2,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [2, 2, 2],
+		"model": [
+			"entity.snowman_head",
+			"entity.snowman_basic",
+			"entity.snowman_body",
+			"entity.snowman_hat"
+		],
+		"texture": "entity.snowman_part"
+	},
+	{
+		"id": "MinecartRegular",
+		"category": "vehicle",
+		"model": "entity.minecart",
+		"texture": "entity.minecart"
+	},
+	{
+		"id": "DamnBird",
+		"category": "creature",
+		"walkSpeed": 0.04,
+		"health": 20,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.damnbird",
+		"texture": "uvtest2"
+	},
+	{
+		"id": "Fluffy",
+		"category": "creature",
+		"spawn": "forest_grass",
+		"walkSpeed": 0.1,
+		"canSpawnInSunlight": true,
+		"health": 4,
+		"baseDamage": 2,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1, 0.6],
+		"model": "entity.creature",
+		"loot": "fuzzy",
+		"texture": "entity.creature"
+	},
+	{
+		"id": "FluffyGreen",
+		"category": "creature",
+		"spawn": "undergrowth",
+		"walkSpeed": 0.1,
+		"health": 4,
+		"baseDamage": 6,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1, 0.6],
+		"model": "entity.creature",
+		"loot": "fuzzy",
+		"texture": "entity.creature_green"
+	},
+	{
+		"id": "FuzzyIce",
+		"category": "creature",
+		"spawn": "snow_underground",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"baseDamage": 30,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1, 0.6],
+		"model": "entity.creature",
+		"loot": "fuzzy",
+		"texture": "entity.ice_fuzzy"
+	},
+	{
+		"id": "Hog",
+		"category": "creature",
+		"spawn": "forest_grass",
+		"walkSpeed": 0.1,
+		"canSpawnInSunlight": true,
+		"health": 4,
+		"baseDamage": 2,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.hog",
+		"loot": "hog",
+		"texture": "entity.hog"
+	},
+	{
+		"id": "NightFlyer",
+		"category": "creature",
+		"spawn": "forest_grass",
+		"walkSpeed": 0.1,
+		"health": 5,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.nightflyer",
+		"loot": "forest_enemy_loot",
+		"flying": true,
+		"texture": "entity.nightflyer"
+	},
+	{
+		"id": "Pukeko",
+		"category": "creature",
+		"walkSpeed": 0.03,
+		"health": 20,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.damnbird",
+		"texture": "entity.damnbird"
+	},
+	{
+		"id": "Shroomer",
+		"category": "creature",
+		"spawn": "undergrowth",
+		"walkSpeed": 0.04,
+		"health": 20,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.mushroomer",
+		"loot": "forest_enemy_loot",
+		"texture": "entity.mushroomer"
+	},
+	{
+		"id": "Skeleton",
+		"category": "creature",
+		"spawn": "forest_underground",
+		"walkSpeed": 0.28,
+		"health": 7,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.skeleton",
+		"loot": "skeleton_loot",
+		"texture": "entity.skeleton"
+	},
+	{
+		"id": "Snowman",
+		"category": "creature",
+		"spawn": "snow_underground",
+		"walkSpeed": 0.04,
+		"health": 40,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.snowman",
+		"loot": "snowman",
+		"texture": "entity.snowman"
+	},
+	{
+		"id": "SnowWizard",
+		"category": "creature",
+		"spawn": "snow_underground",
+		"walkSpeed": 0.08,
+		"health": 40,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.wizard",
+		"loot": "forest_enemy_loot",
+		"texture": "entity.ice_wizard"
+	},
+	{
+		"id": "StoneMonster",
+		"category": "creature",
+		"spawn": "forest_underground",
+		"walkSpeed": 0.2,
+		"health": 20,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.rockmonster",
+		"loot": "forest_enemy_loot",
+		"texture": "entity.rockmonster"
+	},
+	{
+		"id": "Wizard",
+		"category": "creature",
+		"spawn": "forest_underground",
+		"walkSpeed": 0.04,
+		"health": 20,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.wizard",
+		"loot": "forest_enemy_loot",
+		"texture": "entity.wizard"
+	},
+	{
+		"id": "Yeti",
+		"category": "creature",
+		"spawn": "snow_underground",
+		"walkSpeed": 0.08,
+		"health": 40,
+		"baseDamage": 30,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.yeti",
+		"loot": "forest_enemy_loot",
+		"texture": "entity.yeti"
+	},
+	{
+		"id": "Zombie",
+		"category": "creature",
+		"spawn": "forest_grass",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"scale": [0.6, 1.8, 0.6],
+		"model": "entity.zombie",
+		"loot": "forest_enemy_loot",
+		"texture": "zombie"
+	},
+	{
+		"id": "Arrow",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.arrow2"
+	},
+	{ "id": "ArrowBase", "category": "projectile" },
+	{
+		"id": "BasketBall",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.basketball"
+	},
+	{
+		"id": "Bomberry",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.bomberry"
+	},
+	{
+		"id": "BoomerangFrozen",
+		"category": "projectile",
+		"model": "item.boomerang",
+		"texture": "item.boomerang",
+		"hasGravity": false
+	},
+	{
+		"id": "BoomerangProjectile",
+		"category": "projectile",
+		"model": "item.boomerang",
+		"texture": "item.boomerang",
+		"hasGravity": false
+	},
+	{
+		"id": "BrickProjectile",
+		"category": "projectile",
+		"model": "item.brick",
+		"texture": "item.brick"
+	},
+	{
+		"id": "Dart",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.dart"
+	},
+	{
+		"id": "Dynamite",
+		"category": "projectile",
+		"model": "item.dynamite",
+		"texture": "item.dynamite"
+	},
+	{
+		"id": "ExplosiveArrow",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.arrow2"
+	},
+	{
+		"id": "Fireball",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.arrow2",
+		"hasGravity": false
+	},
+	{
+		"id": "FishingBobber",
+		"category": "projectile",
+		"model": "item.bobber",
+		"texture": "item.bobber",
+		"maxTicks": 60000
+	},
+	{
+		"id": "FlamingArrow",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.arrow2"
+	},
+	{
+		"id": "GlowBeanProjectile",
+		"category": "projectile",
+		"model": "item.dynamite",
+		"texture": "item.glowing_bean"
+	},
+	{
+		"id": "IceSpell",
+		"category": "projectile",
+		"model": "projectile.spell",
+		"texture": "projectile.spell",
+		"hasGravity": false
+	},
+	{
+		"id": "IcycleProjectile",
+		"category": "projectile",
+		"model": "projectile.cross",
+		"texture": "projectile.icycle"
+	},
+	{
+		"id": "Poisonball",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.dart",
+		"hasGravity": false
+	},
+	{
+		"id": "PoisonSpell",
+		"category": "projectile",
+		"model": "projectile.spell",
+		"texture": "projectile.spell_green"
+	},
+	{
+		"id": "RockMelonProjectile",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.rockmelon"
+	},
+	{
+		"id": "RockProjectile",
+		"category": "projectile",
+		"model": "item.rock",
+		"texture": "item.rock"
+	},
+	{
+		"id": "Shuriken",
+		"category": "projectile",
+		"model": "item.shuriken",
+		"texture": "item.shuriken"
+	},
+	{
+		"id": "SnowballProjectile",
+		"category": "projectile",
+		"model": "item.rock",
+		"texture": "item.snowball"
+	},
+	{
+		"id": "Spell",
+		"category": "projectile",
+		"model": "projectile.spell",
+		"texture": "projectile.spell",
+		"hasGravity": false
+	},
+	{
+		"id": "TorchProjectile",
+		"category": "projectile",
+		"model": "item.dynamite",
+		"texture": "item.torch"
+	},
+	{
+		"id": "WatermelonProjectile",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.watermelon"
+	},
+	{
+		"id": "WatermelonSeed",
+		"category": "projectile",
+		"model": "item.rock",
+		"texture": "item.watermelon_seed"
+	}
+]

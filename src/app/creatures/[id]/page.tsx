@@ -5,13 +5,21 @@ import { notFound } from 'next/navigation';
 import BlockSlot from '#components/block/BlockSlot.tsx';
 import CreatureTooltip from '#components/creature/CreatureTooltip.tsx';
 import Img from '#components/Img.tsx';
+import ItemLink from '#components/item/ItemLink.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
+import EntityRenderer from '#components/renderer/EntityRenderer.tsx';
+import AlertMessage from '#components/styled/AlertMessage.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import blocks from '#data/blocks.json';
-import creatures from '#data/creatures.json';
+import entities from '#data/entities.json';
+import items from '#data/items.json';
 import spawn from '#data/spawn.json';
 import { getCreatureIcon } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
+
+const creatures = entities.filter(e =>
+	['creature', 'boss'].includes(e.category)
+);
 
 export const generateStaticParams = () =>
 	creatures.map(creature => ({ id: creature.id }));
@@ -46,14 +54,20 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 		})
 		.filter(v => v !== null);
 
+	const spawnedBy = items.find(i => i.entityType === creature.id);
+
 	return (
 		<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
 			<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
-				<div className="flex aspect-2/3 w-full items-center ns-slot">
-					<p className="font bold mx-auto w-min text-center text-4xl text-tooltip/50 select-none pixel-shadow">
-						Preview coming soon
-					</p>
-				</div>
+				{creature.model && creature.texture ? (
+					<EntityRenderer model={creature.model} texture={creature.texture} />
+				) : (
+					<div className="flex aspect-2/3 w-full items-center ns-slot">
+						<p className="font bold mx-auto w-min text-center text-4xl text-tooltip/50 select-none pixel-shadow">
+							Preview unavailable
+						</p>
+					</div>
+				)}
 			</div>
 
 			<Link
@@ -80,6 +94,13 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 
 			<div className="flex flex-col gap-4">
 				<p>No community description available yet.</p>
+
+				{spawnedBy && (
+					<AlertMessage>
+						{name} can also be spawned using <ItemLink item={spawnedBy} /> in
+						creative mode.
+					</AlertMessage>
+				)}
 			</div>
 
 			{creature.loot && (

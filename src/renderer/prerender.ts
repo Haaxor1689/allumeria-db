@@ -1,17 +1,82 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import sharp from 'sharp';
 import * as THREE from 'three';
 
 import blocks from '#data/blocks.json';
+import entities from '#data/entities.json';
 
 import { buildBlockGroup } from './blockRenderer.ts';
+import { buildEntityGroup } from './entityRenderer.ts';
 import {
 	createNodeThreeRenderer,
 	type HeadlessGLContext
 } from './node/renderer.ts';
 import { createNodeTextureLoader } from './node/textureLoader.ts';
+
+const createNodeAssetTextureLoader = (textureRootDir: string) => {
+	const cache = new Map<string, Promise<THREE.Texture>>();
+
+	return async (textureRef: string) => {
+		const cached = cache.get(textureRef);
+		if (cached) return await cached;
+
+		const pending = (async () => {
+			const raw = await readFile(
+				resolve(textureRootDir, `${textureRef.replace('.', '/')}.webp`)
+			);
+			const image = sharp(raw);
+			const metadata = await image.metadata();
+
+			if (!metadata.width || !metadata.height) {
+				throw new Error(
+					`Texture ${textureRef} is missing width or height metadata`
+				);
+			}
+
+			const rgba = await image.ensureAlpha().raw().toBuffer();
+			const texture = new THREE.DataTexture(
+				rgba,
+				metadata.width,
+				metadata.height,
+				THREE.RGBAFormat,
+				THREE.UnsignedByteType
+			);
+
+			texture.flipY = true;
+			texture.needsUpdate = true;
+			texture.wrapS = THREE.ClampToEdgeWrapping;
+			texture.wrapT = THREE.ClampToEdgeWrapping;
+			texture.magFilter = THREE.NearestFilter;
+			texture.minFilter = THREE.NearestFilter;
+			texture.generateMipmaps = false;
+			return texture;
+		})();
+
+		cache.set(textureRef, pending);
+		return await pending;
+	};
+};
+
+const createNodeModelLoader = (modelRootDir: string) => {
+	const cache = new Map<string, Promise<any>>();
+
+	return async (modelRef: string) => {
+		const cached = cache.get(modelRef);
+		if (cached) return await cached;
+
+		const pending = (async () => {
+			const raw = await readFile(
+				resolve(modelRootDir, `${modelRef.replace('.', '/')}.json`)
+			);
+			return JSON.parse(raw.toString('utf8'));
+		})();
+
+		cache.set(modelRef, pending);
+		return await pending;
+	};
+};
 type FitCameraOptions = {
 	camera: THREE.OrthographicCamera;
 	object: THREE.Object3D;
@@ -88,8 +153,8 @@ export const prerenderBlockPreviews = async ({
 	textureDir = resolve(process.cwd(), 'public/assets/blocks'),
 	outputDir = resolve(process.cwd(), 'public/previews/blocks'),
 	onlyBlockId,
-	width = 256,
-	height = 256
+	width = 96,
+	height = 96
 }: PrerenderBlocksOptions = {}) => {
 	const loadTexture = createNodeTextureLoader(textureDir);
 	const halfHeight = 1;
@@ -109,12 +174,16 @@ export const prerenderBlockPreviews = async ({
 	await mkdir(outputDir, { recursive: true });
 
 	for (const block of [
-		{ id: 'missing', textures: ['missing'] },
+		{ id: 'missing', blockModel: undefined, textures: ['missing'] },
 		...blocks
 	].filter(
 		b => !!b.textures?.length && (!onlyBlockId || b.id === onlyBlockId)
 	)) {
-		const groups = await buildBlockGroup({ block, loadTexture });
+		const groups = await buildBlockGroup({
+			model: block.blockModel,
+			textures: block.textures,
+			loadTexture
+		});
 		for (const [idx, group] of groups.entries()) {
 			scene.add(group);
 
@@ -142,6 +211,95 @@ export const prerenderBlockPreviews = async ({
 					}
 				}
 			});
+		}
+	}
+
+	try {
+		renderer.dispose();
+	} catch {
+		// headless-gl under Node does not expose browser animation APIs used by dispose
+	}
+};
+
+type PrerenderEntityLikeOptions = {
+	outputDir?: string;
+	modelDir?: string;
+	textureDir?: string;
+	width?: number;
+	height?: number;
+};
+
+export const prerenderModelPreviews = async ({
+	outputDir = resolve(process.cwd(), 'public/previews/entities'),
+	modelDir = resolve(process.cwd(), 'public/assets/models'),
+	textureDir = resolve(process.cwd(), 'public/assets/textures'),
+	width = 208,
+	height = 312
+}: PrerenderEntityLikeOptions) => {
+	const loadTexture = createNodeAssetTextureLoader(textureDir);
+	const loadModel = createNodeModelLoader(modelDir);
+	const halfHeight = 1;
+	const halfWidth = halfHeight * (width / height);
+	const camera = new THREE.OrthographicCamera(
+		-halfWidth,
+		halfWidth,
+		halfHeight,
+		-halfHeight,
+		0.1,
+		100
+	);
+	const aspect = width / height;
+	const { renderer, glContext } = createNodeThreeRenderer({ width, height });
+	const scene = new THREE.Scene();
+
+	await mkdir(outputDir, { recursive: true });
+
+	for (const entry of entities) {
+		if (!entry.model || !entry.texture) {
+			console.warn(`Skipping entity ${entry.id}: missing model or texture`);
+			continue;
+		}
+
+		try {
+			const groups = await buildEntityGroup({
+				model: entry.model,
+				texture: entry.texture,
+				loadTexture,
+				loadModel
+			});
+
+			for (const [idx, group] of groups.entries()) {
+				scene.add(group);
+
+				fitCameraToObject({ camera, object: group, aspect });
+
+				renderer.render(scene, camera);
+
+				await renderToFile(
+					glContext,
+					width,
+					height,
+					resolve(outputDir, `${entry.id}${idx ? `_${idx}` : ''}.webp`)
+				);
+
+				console.log(`Rendered entity ${entry.id}${idx ? `_${idx}` : ''}`);
+
+				scene.remove(group);
+				group.traverse(object => {
+					if (object instanceof THREE.Mesh) {
+						object.geometry.dispose();
+						if (Array.isArray(object.material)) {
+							for (const material of object.material) material.dispose();
+						} else {
+							object.material.dispose();
+						}
+					}
+				});
+			}
+		} catch (err) {
+			console.warn(
+				`Skipping entity ${entry.id}: ${err instanceof Error ? err.message : String(err)}`
+			);
 		}
 	}
 

@@ -1,0 +1,62 @@
+{
+	"name": "snowman_hat",
+	"resolution": { "width": 128, "height": 128 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-12, 4, -12],
+			"to": [12, 32, 12],
+			"color": 6,
+			"origin": [-11, 4, -11],
+			"faces": {
+				"north": { "uv": [104, 0, 128, 28], "texture": 0 },
+				"east": { "uv": [104, 0, 128, 28], "texture": 0 },
+				"south": { "uv": [104, 0, 128, 28], "texture": 0 },
+				"west": { "uv": [104, 0, 128, 28], "texture": 0 },
+				"up": { "uv": [104, 28, 128, 52], "texture": 0 },
+				"down": { "uv": [104, 28, 128, 52], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "51a83a1a-11e3-b336-171a-4e93f06301b7"
+		},
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-17, 0, -17],
+			"to": [17, 4, 17],
+			"color": 7,
+			"origin": [-15, 0, -16],
+			"faces": {
+				"north": { "uv": [94, 86, 128, 90], "texture": 0 },
+				"east": { "uv": [94, 86, 128, 90], "texture": 0 },
+				"south": { "uv": [94, 86, 128, 90], "texture": 0 },
+				"west": { "uv": [94, 86, 128, 90], "texture": 0 },
+				"up": { "uv": [94, 52, 128, 86], "texture": 0 },
+				"down": { "uv": [94, 52, 128, 86], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "6c1a64b5-2043-49c7-d9e1-a8bba53c85fb"
+		}
+	],
+	"outliner": [
+		{
+			"name": "bone",
+			"origin": [-6, 0, -6],
+			"uuid": "8c24c124-ef31-05b0-9a40-d074dc99bc1b",
+			"mirror_uv": false,
+			"children": [
+				"51a83a1a-11e3-b336-171a-4e93f06301b7",
+				"6c1a64b5-2043-49c7-d9e1-a8bba53c85fb"
+			]
+		}
+	]
+}

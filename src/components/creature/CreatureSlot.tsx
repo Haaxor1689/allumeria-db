@@ -4,8 +4,7 @@ import Link from 'next/link';
 import { type ReactNode } from 'react';
 
 import Img from '#components/Img.tsx';
-import { type Creature } from '#server/types.ts';
-import { getCreatureIcon } from '#utils/helpers.ts';
+import { type Entity } from '#server/types.ts';
 import { toDisplayName } from '#utils/index.ts';
 
 import ButtonLink from '../styled/ButtonLink';
@@ -13,7 +12,7 @@ import Tooltip from '../styled/Tooltip';
 import CreatureTooltip from './CreatureTooltip';
 
 type Props = {
-	creature: Creature;
+	creature: Entity;
 	overlay?: ReactNode;
 	tooltipExtra?: ReactNode;
 };
@@ -42,12 +41,12 @@ const CreatureSlot = ({ creature, overlay, tooltipExtra }: Props) => {
 					className="group relative flex aspect-2/3 w-54 items-center justify-center ns-borderless-slot bg-cover hocus:ns-borderless-slot-hover tooltip-only:ns-borderless-slot!"
 				>
 					<Img
-						src={getCreatureIcon(creature.id)}
+						src={`/previews/entities/${creature.id}.webp`}
 						alt={name}
 						loading="lazy"
 						fetchPriority="low"
 						fallback="/previews/blocks/missing.webp"
-						className="size-24 group-hocus:-translate-y-1 tooltip-only:translate-y-0!"
+						className="w-52 group-hocus:-translate-y-1 tooltip-only:translate-y-0!"
 					/>
 					{overlay}
 				</Link>

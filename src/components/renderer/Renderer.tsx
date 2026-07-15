@@ -3,12 +3,20 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-import { buildBlockGroup } from '#renderer/blockRenderer.ts';
-import { type Block } from '#server/types.ts';
+import Button from '#components/styled/Button.tsx';
 
-import Button from '../styled/Button';
+export type BuildGroupsOptions = {
+	loadTexture: (textureName: string) => Promise<THREE.Texture>;
+};
 
-type Props = { block: Block };
+type Props = {
+	buildGroups: (options: BuildGroupsOptions) => Promise<THREE.Group[]>;
+	ariaLabel?: string;
+	className?: string;
+	showWireframeButton?: boolean;
+	showVariantControls?: boolean;
+	getVariantLabel?: (index: number, total: number) => string;
+};
 
 type FitCameraOptions = {
 	camera: THREE.OrthographicCamera;
@@ -124,8 +132,11 @@ const createBrowserTextureLoader = () => {
 				const texture = await loader.loadAsync(
 					`/assets/blocks/${textureName}.webp`
 				);
-				const width = texture.image?.width ?? 16;
-				const height = texture.image?.height ?? 16;
+				const image = texture.image as
+					| { width?: number; height?: number }
+					| undefined;
+				const width = image?.width ?? 16;
+				const height = image?.height ?? 16;
 
 				texture.wrapS = THREE.RepeatWrapping;
 				texture.wrapT = THREE.RepeatWrapping;
@@ -148,7 +159,14 @@ const createBrowserTextureLoader = () => {
 	return loadTexture;
 };
 
-const BlockRender = ({ block }: Props) => {
+const Renderer = ({
+	buildGroups,
+	ariaLabel = 'Interactive preview',
+	className = 'relative aspect-square w-full ns-slot',
+	showWireframeButton = true,
+	showVariantControls = true,
+	getVariantLabel = (index: number) => `Variant ${index + 1}`
+}: Props) => {
 	const containerRef = useRef<HTMLDivElement | null>(null);
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const groupsRef = useRef<THREE.Group[]>([]);
@@ -159,9 +177,6 @@ const BlockRender = ({ block }: Props) => {
 	const zoomRef = useRef(1);
 	const rotationXRef = useRef(0);
 	const rotationYRef = useRef(0);
-
-	// Live THREE.js object refs — allow the swap effect to update the scene
-	// without reinitializing the renderer.
 	const rotationRootRef = useRef<THREE.Group | null>(null);
 	const activeGroupRef = useRef<THREE.Group | null>(null);
 	const fitGroupCameraRef = useRef<((group: THREE.Group) => void) | null>(null);
@@ -188,7 +203,7 @@ const BlockRender = ({ block }: Props) => {
 		rotationXRef.current = 0;
 		rotationYRef.current = 0;
 
-		void buildBlockGroup({ block, loadTexture }).then(nextGroups => {
+		void buildGroups({ loadTexture }).then(nextGroups => {
 			if (disposed) {
 				for (const group of nextGroups) disposeGroup(group);
 				return undefined;
@@ -207,9 +222,8 @@ const BlockRender = ({ block }: Props) => {
 		return () => {
 			disposed = true;
 		};
-	}, [block]);
+	}, [buildGroups]);
 
-	// Main render effect — only reinitializes when the group set changes (new block).
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		const container = containerRef.current;
@@ -217,9 +231,6 @@ const BlockRender = ({ block }: Props) => {
 
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		const initialGroup = groups[0]!;
-
-		// Center the group in local space before any rotation is applied so the
-		// camera can always look at world (0,0,0).
 		const initBounds = new THREE.Box3().setFromObject(initialGroup);
 		initialGroup.position.sub(initBounds.getCenter(new THREE.Vector3()));
 
@@ -357,8 +368,6 @@ const BlockRender = ({ block }: Props) => {
 		};
 	}, [groups]);
 
-	// Variant swap effect — swaps the active group in-place without reinitializing
-	// the renderer, scene, or camera.
 	useEffect(() => {
 		const rotationRoot = rotationRootRef.current;
 		const prevGroup = activeGroupRef.current;
@@ -366,8 +375,6 @@ const BlockRender = ({ block }: Props) => {
 
 		if (!rotationRoot || !nextGroup || prevGroup === nextGroup) return;
 
-		// Center the incoming group in its own local space (no parent rotation yet)
-		// so the camera always looks at world (0,0,0).
 		const initBounds = new THREE.Box3().setFromObject(nextGroup);
 		nextGroup.position.sub(initBounds.getCenter(new THREE.Vector3()));
 
@@ -379,16 +386,18 @@ const BlockRender = ({ block }: Props) => {
 	}, [groups, currentMesh]);
 
 	return (
-		<div ref={containerRef} className="relative aspect-square w-full ns-slot">
-			<div className="absolute -top-2 -right-2 z-10 md:top-0 md:right-0">
-				<Button
-					variant={showWireframe ? 'positive' : 'negative'}
-					onClick={() => setShowWireframe(v => !v)}
-				>
-					Wireframe
-				</Button>
-			</div>
-			{groups.length > 1 && (
+		<div ref={containerRef} className={className}>
+			{showWireframeButton && (
+				<div className="absolute -top-2 -right-2 z-10 md:top-0 md:right-0">
+					<Button
+						variant={showWireframe ? 'positive' : 'negative'}
+						onClick={() => setShowWireframe(v => !v)}
+					>
+						Wireframe
+					</Button>
+				</div>
+			)}
+			{showVariantControls && groups.length > 1 && (
 				<div className="absolute -bottom-2 left-1/2 z-10 flex -translate-x-1/2 items-center gap-4 text-white md:bottom-0">
 					<Button
 						variant="purple"
@@ -399,7 +408,7 @@ const BlockRender = ({ block }: Props) => {
 						{'<'}
 					</Button>
 					<p className="text-xl font-bold select-none">
-						Variant {currentMesh + 1}
+						{getVariantLabel(currentMesh, groups.length)}
 					</p>
 					<Button
 						variant="purple"
@@ -410,7 +419,7 @@ const BlockRender = ({ block }: Props) => {
 				</div>
 			)}
 			<canvas
-				aria-label="Interactive block preview"
+				aria-label={ariaLabel}
 				ref={canvasRef}
 				className="block h-full w-full cursor-grab touch-none active:cursor-grabbing"
 			/>
@@ -418,4 +427,4 @@ const BlockRender = ({ block }: Props) => {
 	);
 };
 
-export default BlockRender;
+export default Renderer;

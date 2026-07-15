@@ -1,0 +1,38 @@
+{
+	"name": "dynamite",
+	"resolution": { "width": 16, "height": 16 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": false,
+			"rescale": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-5, 0, -1],
+			"to": [5, 2, 1],
+			"color": 8,
+			"origin": [0, 0, 0],
+			"faces": {
+				"north": { "uv": [0, 0, 10, 2], "texture": 0 },
+				"east": { "uv": [0, 8, 2, 10], "texture": 0 },
+				"south": { "uv": [0, 2, 10, 4], "texture": 0 },
+				"west": { "uv": [2, 8, 4, 10], "texture": 0 },
+				"up": { "uv": [10, 6, 0, 4], "texture": 0 },
+				"down": { "uv": [10, 6, 0, 8], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "65fa7dd6-c9b8-3f08-f382-afcc5c296e86"
+		}
+	],
+	"outliner": [
+		{
+			"name": "base",
+			"origin": [0, 0, 0],
+			"uuid": "7d3761e9-ac3e-fa85-e96e-74227b4caabf",
+			"mirror_uv": false,
+			"selected": true,
+			"children": ["65fa7dd6-c9b8-3f08-f382-afcc5c296e86"]
+		}
+	]
+}

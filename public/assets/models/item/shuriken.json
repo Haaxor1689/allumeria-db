@@ -1,0 +1,103 @@
+{
+	"name": "shuriken",
+	"resolution": { "width": 16, "height": 16 },
+	"elements": [
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 0, 0],
+			"rotation": [0, 0, 0],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"qQ7S": [3.5, 0, 3.5],
+				"FTHu": [3.5, 0, -3.5],
+				"P8mM": [-3.5, 0, 3.5],
+				"WmUH": [-3.5, 0, -3.5]
+			},
+			"faces": {
+				"dprsn4E4": {
+					"uv": {
+						"P8mM": [0, 7],
+						"WmUH": [0, 0],
+						"FTHu": [7, 0],
+						"qQ7S": [7, 7]
+					},
+					"vertices": ["qQ7S", "FTHu", "WmUH", "P8mM"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "2017a1e7-e11b-d441-f72e-fd3c8cda34b3"
+		},
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 0, 0],
+			"rotation": [0, -20, 90],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"Yjts": [0.5, 0, 4],
+				"7m7f": [0.5, 0, -4],
+				"Zg8h": [-0.5, 0, 4],
+				"g9ab": [-0.5, 0, -4]
+			},
+			"faces": {
+				"x3ify28n": {
+					"uv": {
+						"Zg8h": [7, 7],
+						"g9ab": [7, 0],
+						"7m7f": [8, 0],
+						"Yjts": [8, 7]
+					},
+					"vertices": ["Yjts", "7m7f", "g9ab", "Zg8h"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "b7baa0fb-c9bd-a16c-6a10-70bb9faa13ca"
+		},
+		{
+			"name": "plane",
+			"color": 1,
+			"origin": [0, 0, 0],
+			"rotation": [0, 70, 90],
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"Yjts": [0.5, 0, 4],
+				"7m7f": [0.5, 0, -4],
+				"Zg8h": [-0.5, 0, 4],
+				"g9ab": [-0.5, 0, -4]
+			},
+			"faces": {
+				"x3ify28n": {
+					"uv": {
+						"Zg8h": [7, 7],
+						"g9ab": [7, 0],
+						"7m7f": [8, 0],
+						"Yjts": [8, 7]
+					},
+					"vertices": ["Yjts", "7m7f", "g9ab", "Zg8h"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "79acf294-a287-7dd6-3e21-ca6afd23e086"
+		}
+	],
+	"outliner": [
+		{
+			"name": "bone",
+			"origin": [0, 0, 0],
+			"uuid": "bc95c086-8374-dd66-3160-7d283f8d6072",
+			"mirror_uv": false,
+			"children": [
+				"2017a1e7-e11b-d441-f72e-fd3c8cda34b3",
+				"b7baa0fb-c9bd-a16c-6a10-70bb9faa13ca",
+				"79acf294-a287-7dd6-3e21-ca6afd23e086"
+			]
+		}
+	]
+}

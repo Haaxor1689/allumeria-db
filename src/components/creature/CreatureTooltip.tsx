@@ -1,5 +1,5 @@
 import TooltipEntry from '#components/TooltipEntry.tsx';
-import { type Creature } from '#server/types.ts';
+import { type Entity } from '#server/types.ts';
 import { toDisplayName } from '#utils/index.ts';
 
 const heartIcons = [
@@ -45,7 +45,7 @@ const HealthBar = ({ health }: { health: number }) => {
 };
 
 type Props = {
-	creature: Creature;
+	creature: Entity;
 };
 
 const CreatureTooltip = ({ creature }: Props) => (
@@ -53,7 +53,7 @@ const CreatureTooltip = ({ creature }: Props) => (
 		<p className="font-bold">{toDisplayName(creature.id)}</p>
 
 		<TooltipEntry icon="/assets/icons/small_heart.webp">
-			Health: <HealthBar health={creature.health} />
+			Health: <HealthBar health={creature.health ?? 0} />
 		</TooltipEntry>
 		<TooltipEntry icon="/custom/damage.webp">
 			Base damage: {creature.baseDamage}

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import BlockLink from '#components/block/BlockLink.tsx';
-import BlockRender from '#components/block/BlockRender.tsx';
 import BlockSlot from '#components/block/BlockSlot.tsx';
+import CreatureLink from '#components/creature/CreatureLink.tsx';
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
 import EffectLink from '#components/effect/EffectLink.tsx';
 import CostTooltip from '#components/item/CostTooltip.tsx';
@@ -12,11 +12,13 @@ import ItemSlot from '#components/item/ItemSlot.tsx';
 import ItemTooltip from '#components/item/ItemTooltip.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
+import BlockRender from '#components/renderer/BlockRender.tsx';
+import EntityRenderer from '#components/renderer/EntityRenderer.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import blocks from '#data/blocks.json';
 import catalogues from '#data/catalogues.json';
-import creatures from '#data/creatures.json';
 import effects from '#data/effects.json';
+import creatures from '#data/entities.json';
 import items from '#data/items.json';
 import loot from '#data/loot.json';
 import recipeAliases from '#data/recipe_aliases.json';
@@ -123,6 +125,17 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 		)
 	};
 
+	const creature = creatures.find(c => c.id === item.entityType);
+
+	const joinedEffects = [
+		...itemEffecs,
+		creature ? (
+			<p key="creature">
+				Spawns a <CreatureLink creature={creature} /> creature.
+			</p>
+		) : null
+	].filter(v => v !== null);
+
 	const soldBy = catalogues
 		.flatMap(c => {
 			const entry = c.entries.find(e => e.item === item.id);
@@ -135,11 +148,19 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 
 	return (
 		<div className="container mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
-			{block && (
+			{item.model && item.texture ? (
+				<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
+					<EntityRenderer model={item.model} texture={item.texture} />
+				</div>
+			) : creature?.model && creature?.texture ? (
+				<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
+					<EntityRenderer model={creature.model} texture={creature.texture} />
+				</div>
+			) : block ? (
 				<div className="relative mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
 					<BlockRender block={block} />
 				</div>
-			)}
+			) : null}
 
 			<Link
 				href="/items"
@@ -191,12 +212,12 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 				)}
 			</div>
 
-			{itemEffecs.length > 0 && (
+			{joinedEffects.length > 0 && (
 				<div className="flex flex-col gap-4">
 					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
 						Effects:
 					</h2>
-					{itemEffecs}
+					{joinedEffects}
 				</div>
 			)}
 
@@ -284,7 +305,7 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 									if (!chest) return null;
 									return (
 										<BlockSlot
-											key={`${s.id}-${c.chest}`}
+											key={`${s.id}-${c.chest}-${'type' in c ? c.type : 'base'}`}
 											block={chest}
 											tooltipExtra={
 												<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-muted">
