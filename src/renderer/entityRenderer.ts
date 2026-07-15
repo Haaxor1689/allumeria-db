@@ -232,7 +232,7 @@ const createCubeGeometry = ({
 		geometry.addGroup(
 			indexOffset,
 			6,
-			resolveMaterialIndex(parseTextureSlot(face.texture), false)
+			resolveMaterialIndex(parseTextureSlot(face.texture), true)
 		);
 		vertexOffset += 4;
 		indexOffset += 6;
@@ -251,10 +251,10 @@ const createCubeGeometry = ({
 
 	pushFace({
 		vertices: [
-			[minX, minY, minZ],
 			[minX, minY, maxZ],
-			[maxX, minY, maxZ],
-			[maxX, minY, minZ]
+			[minX, minY, minZ],
+			[maxX, minY, minZ],
+			[maxX, minY, maxZ]
 		],
 		expectedNormal: [0, -1, 0],
 		face: getCubeFace('down')
