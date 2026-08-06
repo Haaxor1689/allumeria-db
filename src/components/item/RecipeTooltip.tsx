@@ -18,7 +18,7 @@ const RecipeTooltip = ({ recipe }: Props) => {
 			const alias = recipeAliases.find(a => a.id === key);
 			if (alias)
 				return {
-					items: alias.entries
+					items: alias.items
 						.map(e => items.find(i => i.id === e))
 						.filter(v => v !== undefined),
 					value

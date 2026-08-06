@@ -36,6 +36,8 @@ type BbModel = {
 
 const MODEL_SCALE = 1 / 16;
 const UV_INSET = 0;
+const CUBE_ROTATION_ORDER: THREE.EulerOrder = 'ZYX';
+const MESH_ROTATION_ORDER: THREE.EulerOrder = 'XYZ';
 
 const createTextureMaterial = (texture: THREE.Texture, doubleSided = false) =>
 	new THREE.MeshBasicMaterial({
@@ -510,12 +512,13 @@ export const buildEntityGroup = async ({
 	const groups = [];
 	for (const modelRef of Array.isArray(model) ? model : [model]) {
 		const bbModel = await loadModel(modelRef);
+		const modelElements = bbModel.elements ?? [];
 
 		const resolutionWidth = Math.max(1, bbModel.resolution?.width ?? 16);
 		const resolutionHeight = Math.max(1, bbModel.resolution?.height ?? 16);
 		const group = new THREE.Group();
 
-		for (const element of bbModel.elements ?? []) {
+		for (const element of modelElements) {
 			const geometry =
 				element.type === 'mesh'
 					? createMeshGeometry({
@@ -535,6 +538,8 @@ export const buildEntityGroup = async ({
 
 			const mesh = new THREE.Mesh(geometry, materials);
 			if (element.rotation && element.origin) {
+				const rotationOrder =
+					element.type === 'mesh' ? MESH_ROTATION_ORDER : CUBE_ROTATION_ORDER;
 				const pivot = new THREE.Vector3(
 					element.origin[0] * MODEL_SCALE,
 					element.origin[1] * MODEL_SCALE,
@@ -544,7 +549,7 @@ export const buildEntityGroup = async ({
 					THREE.MathUtils.degToRad(element.rotation[0]),
 					THREE.MathUtils.degToRad(element.rotation[1]),
 					THREE.MathUtils.degToRad(element.rotation[2]),
-					'XYZ'
+					rotationOrder
 				);
 				mesh.applyMatrix4(
 					new THREE.Matrix4()

@@ -1,128 +1,48 @@
 [
 	{
-		"id": "dirt",
-		"group": "Misc",
-		"entries": [{ "item": "dirt", "amount": 1 }]
-	},
-	{
-		"id": "grassTall",
-		"group": "Misc",
-		"entries": [
-			{ "needs": "axe", "entries": [{ "item": "grassTall", "amount": 1 }] }
-		]
-	},
-	{
-		"id": "grass_tall_autumn",
-		"group": "Misc",
-		"entries": [
-			{
-				"needs": "axe",
-				"entries": [{ "item": "grass_tall_autumn", "amount": 1 }]
-			}
-		]
-	},
-	{
-		"id": "grass_tall_lush",
-		"group": "Misc",
-		"entries": [
-			{
-				"needs": "axe",
-				"entries": [{ "item": "grass_tall_lush", "amount": 1 }]
-			}
-		]
-	},
-	{
-		"id": "grass_tall_snowy",
-		"group": "Misc",
-		"entries": [
-			{
-				"needs": "axe",
-				"entries": [{ "item": "grass_tall_snowy", "amount": 1 }]
-			}
-		]
-	},
-	{
-		"id": "grass_tall_dry",
-		"group": "Misc",
-		"entries": [
-			{ "needs": "axe", "entries": [{ "item": "grass_tall_dry", "amount": 1 }] }
-		]
-	},
-	{
-		"id": "dead_bush",
-		"group": "Misc",
-		"entries": [
-			{ "needs": "axe", "entries": [{ "item": "dead_bush", "amount": 1 }] }
-		]
-	},
-	{
-		"id": "agave",
-		"group": "Misc",
-		"entries": [
-			{ "needs": "axe", "entries": [{ "item": "agave", "amount": 1 }] }
-		]
-	},
-	{
-		"id": "allPaintings",
-		"entries": [
-			{
-				"oneOf": [
-					{ "item": "painting_biome", "amount": 1 },
-					{ "item": "painting_cloud", "amount": 1 },
-					{ "item": "painting_deer", "amount": 1 },
-					{ "item": "painting_waves", "amount": 1 },
-					{ "item": "painting_pipes", "amount": 1 },
-					{ "item": "painting_melon", "amount": 1 },
-					{ "item": "painting_triangle", "amount": 1 },
-					{ "item": "painting_stars", "amount": 1 },
-					{ "item": "painting_bird", "amount": 1 },
-					{ "item": "painting_blue", "amount": 1 },
-					{ "item": "painting_city", "amount": 1 },
-					{ "item": "painting_desolate", "amount": 1 },
-					{ "item": "painting_undergrowth", "amount": 1 },
-					{ "item": "painting_figure", "amount": 1 }
-				]
-			}
-		]
-	},
-	{
 		"id": "fuzzy",
 		"group": "EarlyForest",
-		"entries": [{ "item": "cotton_candy", "min": 1, "max": 4 }]
+		"item": "cotton_candy",
+		"min": 1,
+		"max": 4
 	},
 	{
 		"id": "birch_leaves",
 		"group": "EarlyForest",
 		"entries": [
-			{ "chance": 0.05, "entries": [{ "item": "birch_sapling", "amount": 1 }] },
-			{ "needs": "axe", "entries": [{ "item": "birch_leaves", "amount": 1 }] }
+			{ "item": "birch_sapling", "amount": 1, "chance": 0.05 },
+			{ "item": "leaves", "amount": 1, "needs": "axe_power" }
 		]
 	},
 	{
 		"id": "pine_leaves",
 		"group": "EarlySnow",
 		"entries": [
-			{ "chance": 0.05, "entries": [{ "item": "pine_sapling", "amount": 1 }] },
-			{ "needs": "axe", "entries": [{ "item": "pine_leaves", "amount": 1 }] }
+			{ "item": "pine_sapling", "amount": 1, "chance": 0.05 },
+			{ "item": "pine_leaves", "amount": 1, "needs": "axe_power" }
 		]
 	},
 	{
 		"id": "oak_leaves",
 		"group": "EarlyForest",
 		"entries": [
-			{ "chance": 0.05, "entries": [{ "item": "oak_sapling", "amount": 1 }] },
-			{ "needs": "axe", "entries": [{ "item": "oak_leaves", "amount": 1 }] }
+			{ "item": "oak_sapling", "amount": 1, "chance": 0.05 },
+			{ "item": "oak_leaves", "amount": 1, "needs": "axe_power" }
 		]
 	},
 	{
 		"id": "cotton",
 		"group": "EarlyForest",
-		"entries": [{ "item": "cotton_plant", "min": 1, "max": 4 }]
+		"item": "cotton_plant",
+		"min": 1,
+		"max": 4
 	},
 	{
 		"id": "hog",
 		"group": "EarlyForest",
-		"entries": [{ "item": "red_meat", "min": 1, "max": 2 }]
+		"item": "red_meat",
+		"min": 1,
+		"max": 2
 	},
 	{
 		"id": "arrow_root",
@@ -200,18 +120,15 @@
 		"id": "maple_leaves",
 		"group": "EarlyForest",
 		"entries": [
-			{ "chance": 0.05, "entries": [{ "item": "maple_sapling", "amount": 1 }] },
-			{ "needs": "axe", "entries": [{ "item": "maple_leaves", "amount": 1 }] }
+			{ "item": "maple_sapling", "amount": 1, "chance": 0.05 },
+			{ "item": "maple_leaves", "amount": 1, "needs": "axe_power" }
 		]
 	},
 	{
 		"id": "snowman",
 		"group": "Misc",
 		"entries": [
-			{
-				"chance": 0.2,
-				"entries": [{ "item": "snowball_cannon", "amount": 1 }]
-			},
+			{ "item": "snowball_cannon", "amount": 1, "chance": 0.2 },
 			{ "item": "snowball", "min": 1, "max": 20 }
 		]
 	},
@@ -220,7 +137,8 @@
 		"group": "ForestCaves",
 		"entries": [
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "coal_ore", "min": 3, "max": 8 },
 					{ "item": "planks", "min": 3, "max": 8 },
 					{ "item": "copper_ore", "min": 1, "max": 3 },
@@ -229,16 +147,14 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "weak_health_potion", "amount": 1 },
 					{ "item": "torch", "min": 3, "max": 8 }
 				]
 			},
-			{
-				"chance": 0.25,
-				"entries": [{ "item": "cotton_plant", "min": 1, "max": 3 }]
-			},
-			{ "chance": 0.1, "entries": [{ "item": "respawn_potion", "amount": 1 }] }
+			{ "item": "cotton_plant", "min": 1, "max": 3, "chance": 0.25 },
+			{ "item": "respawn_potion", "amount": 1, "chance": 0.1 }
 		]
 	},
 	{
@@ -246,7 +162,8 @@
 		"group": "SnowCaves",
 		"entries": [
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "coal_ore", "min": 3, "max": 8 },
 					{ "item": "planks", "min": 3, "max": 8 },
 					{ "item": "silver_ore", "min": 1, "max": 2 },
@@ -256,7 +173,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "weak_health_potion", "amount": 1 },
 					{ "item": "ice_torch", "min": 3, "max": 8 }
 				]
@@ -266,30 +184,24 @@
 	{
 		"id": "crate_toy",
 		"group": "Misc",
+		"oneOf": true,
 		"entries": [
-			{
-				"oneOf": [
-					{ "item": "air_horn", "amount": 1 },
-					{ "item": "squeaky_toy", "amount": 1 },
-					{ "item": "whoopee_cushion", "amount": 1 },
-					{ "item": "eightball", "amount": 1 },
-					{ "item": "dice", "amount": 1 },
-					{ "item": "basketball", "amount": 10 }
-				]
-			}
+			{ "item": "air_horn", "amount": 1 },
+			{ "item": "squeaky_toy", "amount": 1 },
+			{ "item": "whoopee_cushion", "amount": 1 },
+			{ "item": "eightball", "amount": 1 },
+			{ "item": "dice", "amount": 1 },
+			{ "item": "basketball", "amount": 10 }
 		]
 	},
 	{
 		"id": "crate_weapon",
 		"group": "EarlyForest",
+		"oneOf": true,
 		"entries": [
-			{
-				"oneOf": [
-					{ "item": "boomerang", "amount": 1 },
-					{ "item": "slingshot", "amount": 1 },
-					{ "item": "frying_pan", "amount": 1 }
-				]
-			}
+			{ "item": "boomerang", "amount": 1 },
+			{ "item": "slingshot", "amount": 1 },
+			{ "item": "frying_pan", "amount": 1 }
 		]
 	},
 	{
@@ -297,20 +209,18 @@
 		"group": "ForestUndergrowth",
 		"entries": [
 			{
-				"chance": 0.2,
+				"oneOf": true,
 				"entries": [
-					{
-						"oneOf": [
-							{ "item": "melon_slicer", "amount": 1 },
-							{ "item": "snowball_cannon", "amount": 1 },
-							{ "item": "pizza_cutter", "amount": 1 },
-							{ "item": "crowbar", "amount": 1 }
-						]
-					}
-				]
+					{ "item": "melon_slicer", "amount": 1 },
+					{ "item": "snowball_cannon", "amount": 1 },
+					{ "item": "pizza_cutter", "amount": 1 },
+					{ "item": "crowbar", "amount": 1 }
+				],
+				"chance": 0.2
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "health_potion", "amount": 1 },
 					{ "item": "torch", "min": 3, "max": 8 },
 					{ "item": "gold_ingot", "amount": 1 },
@@ -318,41 +228,41 @@
 					{ "item": "lava_bucket", "min": 1, "max": 3 }
 				]
 			},
-			{ "chance": 0.1, "entries": [{ "item": "lava_sponge", "amount": 1 }] },
-			{ "chance": 0.2, "entries": [{ "item": "spoon_fragment", "amount": 1 }] }
-		]
-	},
-	{
-		"id": "forest_enemy_base",
-		"entries": [
-			{
-				"chance": 0.3,
-				"entries": [
-					{
-						"oneOf": [
-							{ "item": "torch", "min": 3, "max": 8 },
-							{ "item": "reinforced_arrow", "min": 3, "max": 8 },
-							{ "item": "weak_health_potion", "amount": 1 },
-							{ "item": "shuriken", "min": 3, "max": 8 },
-							{ "item": "skull_fragment", "amount": 1 },
-							{ "item": "flint", "min": 1, "max": 3 }
-						]
-					}
-				]
-			}
+			{ "item": "lava_sponge", "amount": 1, "chance": 0.1 },
+			{ "item": "spoon_fragment", "amount": 1, "chance": 0.2 }
 		]
 	},
 	{
 		"id": "forest_enemy_loot",
 		"group": "EarlyForest",
-		"entries": [{ "ref": "forest_enemy_base" }]
+		"oneOf": true,
+		"entries": [
+			{ "item": "torch", "min": 3, "max": 8 },
+			{ "item": "reinforced_arrow", "min": 3, "max": 8 },
+			{ "item": "weak_health_potion", "amount": 1 },
+			{ "item": "shuriken", "min": 3, "max": 8 },
+			{ "item": "skull_fragment", "amount": 1 },
+			{ "item": "flint", "min": 1, "max": 3 }
+		],
+		"chance": 0.3
 	},
 	{
 		"id": "skeleton_loot",
 		"group": "EarlyForest",
 		"entries": [
-			{ "ref": "forest_enemy_base" },
-			{ "chance": 0.03, "entries": [{ "item": "bone_club", "amount": 1 }] }
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "torch", "min": 3, "max": 8 },
+					{ "item": "reinforced_arrow", "min": 3, "max": 8 },
+					{ "item": "weak_health_potion", "amount": 1 },
+					{ "item": "shuriken", "min": 3, "max": 8 },
+					{ "item": "skull_fragment", "amount": 1 },
+					{ "item": "flint", "min": 1, "max": 3 }
+				],
+				"chance": 0.3
+			},
+			{ "item": "bone_club", "amount": 1, "chance": 0.03 }
 		]
 	},
 	{
@@ -369,17 +279,14 @@
 		"group": "ForestDungeon",
 		"entries": [
 			{
-				"chance": 0.4,
+				"oneOf": true,
 				"entries": [
-					{
-						"oneOf": [
-							{ "item": "dart", "min": 3, "max": 8 },
-							{ "item": "weak_health_potion", "amount": 1 }
-						]
-					}
-				]
+					{ "item": "dart", "min": 3, "max": 8 },
+					{ "item": "weak_health_potion", "amount": 1 }
+				],
+				"chance": 0.4
 			},
-			{ "chance": 0.2, "entries": [{ "item": "forest_key", "amount": 1 }] }
+			{ "item": "forest_key", "amount": 1, "chance": 0.2 }
 		]
 	},
 	{
@@ -387,7 +294,8 @@
 		"group": "SnowDungeon",
 		"entries": [
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "big_sword", "amount": 1 },
 					{ "item": "snowball_splitter", "amount": 1 },
 					{ "item": "fart_gun", "amount": 1 },
@@ -397,7 +305,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "jet_boots", "amount": 1 },
 					{ "item": "speed_boots", "amount": 1 },
 					{ "item": "gecko_gloves", "amount": 1 },
@@ -406,7 +315,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "health_potion", "amount": 1 },
 					{ "item": "speed_potion", "amount": 1 },
 					{ "item": "regen_potion", "amount": 1 },
@@ -414,21 +324,41 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "dynamite", "min": 1, "max": 3 },
 					{ "item": "gold_ingot", "min": 1, "max": 3 },
 					{ "item": "cobalt_ore", "min": 2, "max": 6 }
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "flaming_arrow", "min": 20, "max": 60 },
 					{ "item": "reinforced_arrow", "min": 20, "max": 60 }
 				]
 			},
 			{ "item": "evil_tophat", "amount": 5 },
 			{ "item": "big_snowball", "amount": 5 },
-			{ "ref": "allPaintings" }
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "painting_biome", "amount": 1 },
+					{ "item": "painting_cloud", "amount": 1 },
+					{ "item": "painting_deer", "amount": 1 },
+					{ "item": "painting_waves", "amount": 1 },
+					{ "item": "painting_pipes", "amount": 1 },
+					{ "item": "painting_melon", "amount": 1 },
+					{ "item": "painting_triangle", "amount": 1 },
+					{ "item": "painting_stars", "amount": 1 },
+					{ "item": "painting_bird", "amount": 1 },
+					{ "item": "painting_blue", "amount": 1 },
+					{ "item": "painting_city", "amount": 1 },
+					{ "item": "painting_desolate", "amount": 1 },
+					{ "item": "painting_undergrowth", "amount": 1 },
+					{ "item": "painting_figure", "amount": 1 }
+				]
+			}
 		]
 	},
 	{
@@ -436,7 +366,8 @@
 		"group": "ForestDungeon",
 		"entries": [
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "speed_boots", "amount": 1 },
 					{ "item": "paraglider", "amount": 1 },
 					{ "item": "sneakers", "amount": 1 },
@@ -447,7 +378,8 @@
 			},
 			{ "item": "spoon_fragment", "min": 2, "max": 3 },
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "weak_health_potion", "amount": 1 },
 					{ "item": "speed_potion", "amount": 1 },
 					{ "item": "regen_potion", "amount": 1 },
@@ -455,7 +387,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "dynamite", "min": 1, "max": 3 },
 					{ "item": "copper_ingot", "min": 3, "max": 8 },
 					{ "item": "iron_ingot", "min": 3, "max": 8 },
@@ -464,28 +397,42 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "shuriken", "min": 20, "max": 60 },
 					{ "item": "dart", "min": 20, "max": 60 },
 					{ "item": "arrow", "min": 20, "max": 60 }
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "bagel", "min": 1, "max": 2 },
 					{ "item": "blueberry", "min": 5, "max": 10 },
 					{ "item": "cotton_plant", "min": 1, "max": 5 }
 				]
 			},
+			{ "item": "ominous_deer_skull", "amount": 1, "chance": 0.2 },
+			{ "item": "skull_fragment", "min": 1, "max": 3, "chance": 0.25 },
 			{
-				"chance": 0.2,
-				"entries": [{ "item": "ominous_deer_skull", "amount": 1 }]
-			},
-			{
-				"chance": 0.25,
-				"entries": [{ "item": "skull_fragment", "min": 1, "max": 3 }]
-			},
-			{ "ref": "allPaintings" }
+				"oneOf": true,
+				"entries": [
+					{ "item": "painting_biome", "amount": 1 },
+					{ "item": "painting_cloud", "amount": 1 },
+					{ "item": "painting_deer", "amount": 1 },
+					{ "item": "painting_waves", "amount": 1 },
+					{ "item": "painting_pipes", "amount": 1 },
+					{ "item": "painting_melon", "amount": 1 },
+					{ "item": "painting_triangle", "amount": 1 },
+					{ "item": "painting_stars", "amount": 1 },
+					{ "item": "painting_bird", "amount": 1 },
+					{ "item": "painting_blue", "amount": 1 },
+					{ "item": "painting_city", "amount": 1 },
+					{ "item": "painting_desolate", "amount": 1 },
+					{ "item": "painting_undergrowth", "amount": 1 },
+					{ "item": "painting_figure", "amount": 1 }
+				]
+			}
 		]
 	},
 	{
@@ -493,17 +440,23 @@
 		"group": "ForestCaves",
 		"entries": [
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "dynamite", "amount": 3 },
 					{ "item": "iron_crossbow", "amount": 1 },
 					{ "item": "iron_bow", "amount": 1 },
-					{ "item": "basic_rod", "amount": 1 },
-					{ "item": "worm", "amount": 15 },
-					{ "item": "crate_potion", "amount": 1 }
+					{
+						"entries": [
+							{ "item": "basic_rod", "amount": 1 },
+							{ "item": "worm", "amount": 15 },
+							{ "item": "crate_potion", "amount": 1 }
+						]
+					}
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "paraglider", "amount": 1 },
 					{ "item": "jumping_bean", "amount": 1 },
 					{ "item": "magnet", "amount": 1 },
@@ -516,7 +469,8 @@
 			{ "item": "weak_health_potion", "amount": 1 },
 			{ "item": "respawn_potion", "amount": 1 },
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "speed_potion", "amount": 1 },
 					{ "item": "regen_potion", "amount": 1 },
 					{ "item": "poison_potion", "amount": 1 },
@@ -524,7 +478,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "copper_ingot", "min": 3, "max": 8 },
 					{ "item": "iron_ingot", "min": 3, "max": 8 },
 					{ "item": "silver_ingot", "min": 3, "max": 8 },
@@ -532,7 +487,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "shuriken", "min": 20, "max": 60 },
 					{ "item": "dart", "min": 20, "max": 60 },
 					{ "item": "brick", "min": 5, "max": 10 },
@@ -540,13 +496,15 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "throwable_torch", "min": 20, "max": 60 },
 					{ "item": "torch", "min": 20, "max": 60 }
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "arrow", "min": 20, "max": 60 },
 					{ "item": "reinforced_arrow", "min": 10, "max": 20 },
 					{ "item": "flaming_arrow", "min": 10, "max": 20 },
@@ -554,7 +512,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "bagel", "min": 1, "max": 2 },
 					{ "item": "blueberry", "min": 5, "max": 10 },
 					{ "item": "cotton_plant", "min": 1, "max": 5 },
@@ -563,23 +522,36 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "arrow_root_seed", "min": 1, "max": 5 },
 					{ "item": "tomato_seed", "min": 1, "max": 5 },
 					{ "item": "glow_bean_seed", "min": 1, "max": 5 },
 					{ "item": "blueberry_bush", "min": 1, "max": 2 }
 				]
 			},
+			{ "item": "ominous_deer_skull", "amount": 1, "chance": 0.2 },
+			{ "item": "skull_fragment", "min": 1, "max": 3, "chance": 0.25 },
+			{ "item": "spawn_pointer", "amount": 1, "chance": 0.9 },
 			{
-				"chance": 0.2,
-				"entries": [{ "item": "ominous_deer_skull", "amount": 1 }]
-			},
-			{
-				"chance": 0.25,
-				"entries": [{ "item": "skull_fragment", "min": 1, "max": 3 }]
-			},
-			{ "chance": 0.9, "entries": [{ "item": "spawn_pointer", "amount": 1 }] },
-			{ "ref": "allPaintings" }
+				"oneOf": true,
+				"entries": [
+					{ "item": "painting_biome", "amount": 1 },
+					{ "item": "painting_cloud", "amount": 1 },
+					{ "item": "painting_deer", "amount": 1 },
+					{ "item": "painting_waves", "amount": 1 },
+					{ "item": "painting_pipes", "amount": 1 },
+					{ "item": "painting_melon", "amount": 1 },
+					{ "item": "painting_triangle", "amount": 1 },
+					{ "item": "painting_stars", "amount": 1 },
+					{ "item": "painting_bird", "amount": 1 },
+					{ "item": "painting_blue", "amount": 1 },
+					{ "item": "painting_city", "amount": 1 },
+					{ "item": "painting_desolate", "amount": 1 },
+					{ "item": "painting_undergrowth", "amount": 1 },
+					{ "item": "painting_figure", "amount": 1 }
+				]
+			}
 		]
 	},
 	{
@@ -587,7 +559,8 @@
 		"group": "SnowCaves",
 		"entries": [
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "dynamite", "amount": 3 },
 					{ "item": "gold_crossbow", "amount": 1 },
 					{ "item": "gold_bow", "amount": 1 }
@@ -595,7 +568,8 @@
 			},
 			{ "item": "health_potion", "amount": 1 },
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "speed_potion", "amount": 1 },
 					{ "item": "regen_potion", "amount": 1 },
 					{ "item": "poison_potion", "amount": 1 },
@@ -607,7 +581,8 @@
 			},
 			{ "item": "respawn_potion", "amount": 1 },
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "copper_ingot", "min": 3, "max": 8 },
 					{ "item": "iron_ingot", "min": 1, "max": 5 },
 					{ "item": "silver_ingot", "min": 1, "max": 5 },
@@ -615,26 +590,30 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "snowball", "min": 20, "max": 60 },
 					{ "item": "dart", "min": 20, "max": 60 }
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "throwable_torch", "min": 20, "max": 60 },
 					{ "item": "ice_torch", "min": 20, "max": 60 }
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "reinforced_arrow", "min": 10, "max": 20 },
 					{ "item": "flaming_arrow", "min": 10, "max": 20 },
 					{ "item": "explosive_arrow", "min": 2, "max": 5 }
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "bagel", "min": 1, "max": 2 },
 					{ "item": "blueberry", "min": 5, "max": 10 },
 					{ "item": "cotton_plant", "min": 1, "max": 5 },
@@ -642,7 +621,25 @@
 					{ "item": "sponge", "amount": 1 }
 				]
 			},
-			{ "ref": "allPaintings" }
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "painting_biome", "amount": 1 },
+					{ "item": "painting_cloud", "amount": 1 },
+					{ "item": "painting_deer", "amount": 1 },
+					{ "item": "painting_waves", "amount": 1 },
+					{ "item": "painting_pipes", "amount": 1 },
+					{ "item": "painting_melon", "amount": 1 },
+					{ "item": "painting_triangle", "amount": 1 },
+					{ "item": "painting_stars", "amount": 1 },
+					{ "item": "painting_bird", "amount": 1 },
+					{ "item": "painting_blue", "amount": 1 },
+					{ "item": "painting_city", "amount": 1 },
+					{ "item": "painting_desolate", "amount": 1 },
+					{ "item": "painting_undergrowth", "amount": 1 },
+					{ "item": "painting_figure", "amount": 1 }
+				]
+			}
 		]
 	},
 	{
@@ -659,7 +656,8 @@
 			{ "item": "cotton_plant", "min": 1, "max": 5 },
 			{ "item": "respawn_potion", "amount": 1 },
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "magnet", "amount": 1 },
 					{ "item": "spring_boots", "amount": 1 },
 					{ "item": "speed_boots", "amount": 1 },
@@ -671,7 +669,8 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "dynamite", "min": 1, "max": 3 },
 					{ "item": "copper_ingot", "min": 3, "max": 8 },
 					{ "item": "iron_ingot", "min": 3, "max": 8 },
@@ -679,17 +678,83 @@
 				]
 			},
 			{
-				"oneOf": [
+				"oneOf": true,
+				"entries": [
 					{ "item": "shuriken", "min": 20, "max": 60 },
 					{ "item": "dart", "min": 20, "max": 60 },
 					{ "item": "arrow", "min": 20, "max": 60 }
 				]
 			},
+			{ "item": "skull_fragment", "min": 1, "max": 3, "chance": 0.25 },
 			{
-				"chance": 0.25,
-				"entries": [{ "item": "skull_fragment", "min": 1, "max": 3 }]
-			},
-			{ "ref": "allPaintings" }
+				"oneOf": true,
+				"entries": [
+					{ "item": "painting_biome", "amount": 1 },
+					{ "item": "painting_cloud", "amount": 1 },
+					{ "item": "painting_deer", "amount": 1 },
+					{ "item": "painting_waves", "amount": 1 },
+					{ "item": "painting_pipes", "amount": 1 },
+					{ "item": "painting_melon", "amount": 1 },
+					{ "item": "painting_triangle", "amount": 1 },
+					{ "item": "painting_stars", "amount": 1 },
+					{ "item": "painting_bird", "amount": 1 },
+					{ "item": "painting_blue", "amount": 1 },
+					{ "item": "painting_city", "amount": 1 },
+					{ "item": "painting_desolate", "amount": 1 },
+					{ "item": "painting_undergrowth", "amount": 1 },
+					{ "item": "painting_figure", "amount": 1 }
+				]
+			}
 		]
-	}
+	},
+	{
+		"id": "grassTall",
+		"group": "Misc",
+		"item": "grass_tall",
+		"amount": 1,
+		"needs": "axe_power"
+	},
+	{
+		"id": "grass_tall_autumn",
+		"group": "Misc",
+		"item": "grass_tall_autumn",
+		"amount": 1,
+		"needs": "axe_power"
+	},
+	{
+		"id": "grass_tall_lush",
+		"group": "Misc",
+		"item": "grass_tall_lush",
+		"amount": 1,
+		"needs": "axe_power"
+	},
+	{
+		"id": "grass_tall_snowy",
+		"group": "Misc",
+		"item": "grass_tall_snowy",
+		"amount": 1,
+		"needs": "axe_power"
+	},
+	{
+		"id": "grass_tall_dry",
+		"group": "Misc",
+		"item": "grass_tall_dry",
+		"amount": 1,
+		"needs": "axe_power"
+	},
+	{
+		"id": "dead_bush",
+		"group": "Misc",
+		"item": "dead_bush",
+		"amount": 1,
+		"needs": "axe_power"
+	},
+	{
+		"id": "agave",
+		"group": "Misc",
+		"item": "agave",
+		"amount": 1,
+		"needs": "axe_power"
+	},
+	{ "id": "dirt", "group": "Misc", "item": "dirt", "amount": 1 }
 ]

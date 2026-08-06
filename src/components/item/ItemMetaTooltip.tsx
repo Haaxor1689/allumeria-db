@@ -28,8 +28,24 @@ const ItemMetaTooltip = ({ item }: { item: Item }) => {
 			{item.hidden && (
 				<TooltipEntry icon="/custom/eye.webp">Hidden</TooltipEntry>
 			)}
+			{item.rangeStart && item.rangeEnd && (
+				<TooltipEntry>
+					Range: {item.rangeStart} - {item.rangeEnd}
+				</TooltipEntry>
+			)}
+			{item.paintMode && (
+				<TooltipEntry>Paint mode: {item.paintMode}</TooltipEntry>
+			)}
 			{item.sweeping && <TooltipEntry>Sweeping</TooltipEntry>}
+			{item.ammoType && <TooltipEntry>Ammo type: {item.ammoType}</TooltipEntry>}
+			{item.tags?.cant_mine && <TooltipEntry>Can't mine</TooltipEntry>}
 			{item.targetLiquid && <TooltipEntry>Target liquid</TooltipEntry>}
+			{item.baitPower && (
+				<TooltipEntry>Bait power: {item.baitPower}</TooltipEntry>
+			)}
+			{item.crateModifier && item.crateModifier !== 1 && (
+				<TooltipEntry>Crate modifier: {item.crateModifier}</TooltipEntry>
+			)}
 			{item.slotType && (
 				<TooltipEntry
 					icon={`/assets/icons/slot_${item.slotType.toLocaleLowerCase()}.webp`}

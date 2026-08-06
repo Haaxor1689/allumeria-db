@@ -12,12 +12,8 @@ type Props = { block: Block };
 const BlockRender = ({ block }: Props) => {
 	const buildGroups = useCallback(
 		({ loadTexture }: BuildGroupsOptions) =>
-			buildBlockGroup({
-				model: block.blockModel,
-				textures: block.textures,
-				loadTexture
-			}),
-		[block.blockModel, block.textures]
+			buildBlockGroup(block, loadTexture),
+		[block]
 	);
 
 	return (

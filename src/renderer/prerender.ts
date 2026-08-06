@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, unlink, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 import sharp from 'sharp';
@@ -171,19 +171,18 @@ export const prerenderBlockPreviews = async ({
 	const { renderer, glContext } = createNodeThreeRenderer({ width, height });
 	const scene = new THREE.Scene();
 
+	await unlink(outputDir).catch(() => {
+		// ignore if directory does not exist
+	});
 	await mkdir(outputDir, { recursive: true });
 
 	for (const block of [
-		{ id: 'missing', blockModel: undefined, textures: ['missing'] },
+		{ id: 'missing', textures: ['missing'] },
 		...blocks
 	].filter(
 		b => !!b.textures?.length && (!onlyBlockId || b.id === onlyBlockId)
 	)) {
-		const groups = await buildBlockGroup({
-			model: block.blockModel,
-			textures: block.textures,
-			loadTexture
-		});
+		const groups = await buildBlockGroup(block, loadTexture);
 		for (const [idx, group] of groups.entries()) {
 			scene.add(group);
 
@@ -252,9 +251,12 @@ export const prerenderModelPreviews = async ({
 	const { renderer, glContext } = createNodeThreeRenderer({ width, height });
 	const scene = new THREE.Scene();
 
+	await unlink(outputDir).catch(() => {
+		// ignore if directory does not exist
+	});
 	await mkdir(outputDir, { recursive: true });
 
-	for (const entry of entities) {
+	for (const entry of entities.filter(e => e.category === 'creature')) {
 		if (!entry.model || !entry.texture) {
 			console.warn(`Skipping entity ${entry.id}: missing model or texture`);
 			continue;

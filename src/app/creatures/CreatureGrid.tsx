@@ -8,9 +8,7 @@ import useSearchParams from '#utils/useSearchParams.ts';
 
 import { CreatureFiltersSearchSchema } from './CreatureFilters';
 
-const creatures = entities.filter(e =>
-	['creature', 'boss'].includes(e.category)
-);
+const creatures = entities.filter(e => e.category === 'creature');
 
 const CreatureGrid = () => {
 	const params = useSearchParams(CreatureFiltersSearchSchema);
@@ -19,10 +17,7 @@ const CreatureGrid = () => {
 		[
 			params.search === '' ||
 				e.id.toLowerCase().includes(params.search.toLowerCase()) ||
-				toDisplayName(e.id).toLowerCase().includes(params.search.toLowerCase()),
-			params.category === 'all' ||
-				(params.category === 'boss' && e.category === 'boss') ||
-				(params.category === 'regular' && e.category !== 'boss')
+				toDisplayName(e.id).toLowerCase().includes(params.search.toLowerCase())
 		].every(Boolean)
 	);
 

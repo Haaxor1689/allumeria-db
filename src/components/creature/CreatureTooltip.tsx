@@ -52,28 +52,34 @@ const CreatureTooltip = ({ creature }: Props) => (
 	<div className="ns-dialog-negative px-2 py-1 text-2xl">
 		<p className="font-bold">{toDisplayName(creature.id)}</p>
 
-		<TooltipEntry icon="/assets/icons/small_heart.webp">
-			Health: <HealthBar health={creature.health ?? 0} />
-		</TooltipEntry>
-		<TooltipEntry icon="/custom/damage.webp">
-			Base damage: {creature.baseDamage}
-		</TooltipEntry>
-		{creature.defence !== undefined && (
-			<TooltipEntry icon="/assets/icons/small_defence.webp">
-				Defence: {creature.defence}
-			</TooltipEntry>
-		)}
-		<TooltipEntry icon="/custom/speed.webp">
-			Walk speed: {creature.walkSpeed}
-		</TooltipEntry>
-		<TooltipEntry icon="/assets/icons/small_coin.webp">
-			Coin drop: {creature.minCoinDrop} – {creature.maxCoinDrop}
-		</TooltipEntry>
-		{creature.flying && (
-			<TooltipEntry icon="/custom/flight.webp">Flying</TooltipEntry>
-		)}
-		{creature.canSpawnInSunlight && (
-			<TooltipEntry icon="/custom/sun.webp">Can spawn in sunlight</TooltipEntry>
+		{creature.category === 'creature' && (
+			<>
+				<TooltipEntry icon="/assets/icons/small_heart.webp">
+					Health: <HealthBar health={creature.health ?? 0} />
+				</TooltipEntry>
+				<TooltipEntry icon="/custom/damage.webp">
+					Base damage: {creature.baseDamage}
+				</TooltipEntry>
+				{creature.defence !== undefined && (
+					<TooltipEntry icon="/assets/icons/small_defence.webp">
+						Defence: {creature.defence}
+					</TooltipEntry>
+				)}
+				<TooltipEntry icon="/custom/speed.webp">
+					Walk speed: {creature.walkSpeed}
+				</TooltipEntry>
+				<TooltipEntry icon="/assets/icons/small_coin.webp">
+					Coin drop: {creature.minCoinDrop} – {creature.maxCoinDrop}
+				</TooltipEntry>
+				{creature.flying && (
+					<TooltipEntry icon="/custom/flight.webp">Flying</TooltipEntry>
+				)}
+				{creature.canSpawnInSunlight && (
+					<TooltipEntry icon="/custom/sun.webp">
+						Can spawn in sunlight
+					</TooltipEntry>
+				)}
+			</>
 		)}
 	</div>
 );

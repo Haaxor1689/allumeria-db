@@ -1,11 +1,11 @@
 [
 	{
 		"id": "any_planks",
-		"entries": ["planks", "maple_planks", "birch_planks", "pine_planks"]
+		"items": ["planks", "maple_planks", "birch_planks", "pine_planks"]
 	},
 	{
 		"id": "common_fish",
-		"entries": [
+		"items": [
 			"fish_catfish",
 			"fish_carp",
 			"fish_tuna",
@@ -17,7 +17,7 @@
 	},
 	{
 		"id": "gourmet_fish",
-		"entries": [
+		"items": [
 			"fish_murray_cod",
 			"fish_herring",
 			"fish_lanternfish",

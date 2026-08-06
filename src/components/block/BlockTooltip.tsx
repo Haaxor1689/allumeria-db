@@ -1,9 +1,9 @@
+import EffectLink from '#components/effect/EffectLink.tsx';
 import TooltipEntry from '#components/TooltipEntry.tsx';
 import blockMaterials from '#data/block_materials.json';
 import effects from '#data/effects.json';
 import { type Block } from '#server/types.ts';
 import { getBlockName, getTool, getTranslation } from '#utils/helpers.ts';
-import { toDisplayName } from '#utils/index.ts';
 
 const BlockTooltip = ({ block }: { block: Block }) => {
 	const material = blockMaterials.find(mat => mat.id === block.material);
@@ -68,15 +68,7 @@ const BlockTooltip = ({ block }: { block: Block }) => {
 			)}
 			{effect && (
 				<p className="text-muted">
-					Causes{' '}
-					<span className="text-white pixel-shadow">
-						<img
-							src={`/assets/effects/${effect.textureX}x${effect.textureY}.webp`}
-							alt={toDisplayName(effect.id)}
-							className="-my-1 mr-0.5 inline size-8 -translate-y-0.5"
-						/>
-						{getTranslation(`effect.${effect.id}`, toDisplayName(effect.id))}
-					</span>
+					Causes <EffectLink effect={effect} />
 				</p>
 			)}
 			{block.craftingStation && (

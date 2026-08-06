@@ -37,7 +37,10 @@ const Page = async ({ params }: PageProps<'/effects/[id]'>) => {
 	const name = getTranslation(`effect.${effect.id}`, toDisplayName(effect.id));
 
 	const sourceItems = items.filter(
-		item => item.effect === effect.id || item.secondaryEffect === effect.id
+		item =>
+			item.effect === effect.id ||
+			item.secondaryEffect === effect.id ||
+			item.passiveEffect === effect.id
 	);
 	const sourceBlocks = blocks.filter(
 		block => block.standOnEffect === effect.id
@@ -86,6 +89,15 @@ const Page = async ({ params }: PageProps<'/effects/[id]'>) => {
 
 				{effect.speedModifier !== undefined && (
 					<TooltipEntry>Speed modifier: {effect.speedModifier}x</TooltipEntry>
+				)}
+				{effect.modifier !== undefined && (
+					<TooltipEntry>Modifier: {effect.modifier}x</TooltipEntry>
+				)}
+				{effect.amount !== undefined && (
+					<TooltipEntry>Amount: {effect.amount}</TooltipEntry>
+				)}
+				{effect.strength !== undefined && (
+					<TooltipEntry>Strength: {effect.strength}</TooltipEntry>
 				)}
 				{effect.delay !== undefined && (
 					<TooltipEntry>Delay: {effect.delay} ticks</TooltipEntry>

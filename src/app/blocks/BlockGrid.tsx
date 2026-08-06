@@ -60,11 +60,13 @@ const BlockGrid = () => {
 							key="loot"
 							id={block.loot}
 							fallbackItem={block.item ?? block.id}
+							title="Drops"
 						/>,
 						<LootTooltip
 							key="harvest"
 							id={block.harvestLoot}
-							variant="harvest"
+							variant="green"
+							title="Harvest"
 						/>,
 						<BlockMetaTooltip key="meta" block={block} />
 					]}

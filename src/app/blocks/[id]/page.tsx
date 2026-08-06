@@ -1,7 +1,6 @@
 import { type Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { Fragment } from 'react/jsx-runtime';
 
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
 import EffectLink from '#components/effect/EffectLink.tsx';
@@ -250,7 +249,7 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 
 			<div className="flex flex-col gap-4">
 				<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-					Drops:
+					Loot:
 				</h2>
 
 				<p>
@@ -259,12 +258,20 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 				</p>
 
 				<ScrollArea offset={24}>
-					<LootTooltip id={block.loot} fallbackItem={block.item ?? block.id} />
+					<LootTooltip
+						id={block.loot}
+						fallbackItem={block.item ?? block.id}
+						title="Drops"
+					/>
 				</ScrollArea>
 
 				{block.harvestLoot && (
 					<ScrollArea offset={24}>
-						<LootTooltip id={block.harvestLoot} variant="harvest" />
+						<LootTooltip
+							id={block.harvestLoot}
+							variant="green"
+							title="Harvest"
+						/>
 					</ScrollArea>
 				)}
 			</div>
@@ -281,14 +288,12 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 					</p>
 
 					{canContain.map(entry => (
-						<Fragment key={`${entry.structure}_${entry.loot}`}>
-							<p className="mt-2 -mb-2 text-2xl font-bold text-aqua pixel-shadow">
-								{toDisplayName(entry.structure)}
-							</p>
-							<ScrollArea offset={24}>
-								<LootTooltip id={entry.loot} />
-							</ScrollArea>
-						</Fragment>
+						<ScrollArea key={`${entry.structure}_${entry.loot}`} offset={24}>
+							<LootTooltip
+								id={entry.loot}
+								title={toDisplayName(entry.structure)}
+							/>
+						</ScrollArea>
 					))}
 				</div>
 			)}
@@ -312,9 +317,17 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 								creature={e.monster}
 								tooltipExtra={
 									'loot' in e ? (
-										<LootTooltip id={e.loot} variant="monster-override" />
+										<LootTooltip
+											id={e.loot}
+											variant="red"
+											title={toDisplayName(e.loot)}
+										/>
 									) : (
-										<LootTooltip id={e.monster.loot} variant="monster" />
+										<LootTooltip
+											id={e.monster.loot}
+											variant="red"
+											title="Drops"
+										/>
 									)
 								}
 							/>

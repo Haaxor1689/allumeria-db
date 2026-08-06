@@ -9,20 +9,6 @@ const ItemTooltip = ({ item }: { item: Item }) => {
 
 	const description = getTranslation(`item.${item.id}.desc`);
 
-	const tags = itemTagsExt.map(tag => {
-		const value = item.tags?.[tag.id as keyof typeof item.tags];
-		if (value === undefined || !tag.icon) return null;
-		return (
-			<TooltipEntry key={tag.id} icon={tag.icon}>
-				{typeof value === 'boolean'
-					? tag.label
-					: typeof value === 'string'
-						? getTranslation(value)
-						: `${tag.label}: ${value}`}
-			</TooltipEntry>
-		);
-	});
-
 	return (
 		<div
 			className={cn('px-2 py-1 text-2xl', {
@@ -35,7 +21,17 @@ const ItemTooltip = ({ item }: { item: Item }) => {
 			})}
 		>
 			<p className="font-bold">{name}</p>
-			{tags}
+
+			{itemTagsExt.map(tag => {
+				const value = item.tags?.[tag.id as keyof typeof item.tags];
+				if (value === undefined || !tag.icon) return null;
+				return (
+					<TooltipEntry key={tag.id} icon={tag.icon}>
+						{tag.render(value)}
+					</TooltipEntry>
+				);
+			})}
+
 			{description !== `item.${item.id}.desc` && (
 				<p className="text-muted">{description}</p>
 			)}

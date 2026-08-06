@@ -1,7 +1,9 @@
 import { type Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Fragment } from 'react/jsx-runtime';
 
+import BlockLink from '#components/block/BlockLink.tsx';
 import BlockSlot from '#components/block/BlockSlot.tsx';
 import CreatureTooltip from '#components/creature/CreatureTooltip.tsx';
 import Img from '#components/Img.tsx';
@@ -17,9 +19,7 @@ import spawn from '#data/spawn.json';
 import { getCreatureIcon } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
 
-const creatures = entities.filter(e =>
-	['creature', 'boss'].includes(e.category)
-);
+const creatures = entities.filter(e => e.category === 'creature');
 
 export const generateStaticParams = () =>
 	creatures.map(creature => ({ id: creature.id }));
@@ -45,16 +45,29 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 		.flatMap(c => {
 			const entry = c.entries.find(e => e.monster === creature.id);
 			if (!entry) return null;
-			return blocks
-				.filter(b => b.spawn === c.id)
-				.map(block => ({
-					block,
-					loot: 'loot' in entry ? (entry.loot as string) : undefined
-				}));
+			return blocks.filter(b => b.spawn === c.id);
 		})
 		.filter(v => v !== null);
 
 	const spawnedBy = items.find(i => i.entityType === creature.id);
+
+	const lootOverrides = spawn
+		.flatMap(c => {
+			const entry = c.entries.flat().find(e => e.monster === creature.id);
+			if (!entry || !('loot' in entry)) return null;
+			return blocks
+				.filter(b => b.spawn === c.id)
+				.map(b => [entry.loot, b] as const);
+		})
+		.filter(v => v !== null)
+		.reduce(
+			(acc, [loot, block]) => {
+				acc[loot] ??= [];
+				acc[loot].push(block);
+				return acc;
+			},
+			{} as Record<string, typeof blocks>
+		);
 
 	return (
 		<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
@@ -111,8 +124,40 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 
 					<p>{name} normally drops following items when killed:</p>
 					<ScrollArea>
-						<LootTooltip id={creature.loot} variant="monster" />
+						<LootTooltip id={creature.loot} variant="red" />
 					</ScrollArea>
+				</div>
+			)}
+
+			{Object.entries(lootOverrides).length > 0 && (
+				<div className="flex flex-col gap-4">
+					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+						Loot overrides:
+					</h2>
+
+					<p>
+						{name} can drop different loot when spawned on certain blocks. The
+						following blocks override the normal loot table:
+					</p>
+
+					{Object.entries(lootOverrides).map(([loot, blocks]) => (
+						<Fragment key={loot}>
+							<p>
+								Blocks:{' '}
+								{blocks.flatMap((block, i) => [
+									i > 0 && ', ',
+									<BlockLink key={block.id} block={block} />
+								])}
+							</p>
+							<ScrollArea>
+								<LootTooltip
+									id={loot}
+									variant="red"
+									title={toDisplayName(loot)}
+								/>
+							</ScrollArea>
+						</Fragment>
+					))}
 				</div>
 			)}
 
@@ -127,16 +172,8 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 						what loot is dropped:
 					</p>
 					<div className="flex flex-wrap gap-2">
-						{spawnsOn.map(s => (
-							<BlockSlot
-								key={s.block.id}
-								block={s.block}
-								tooltipExtra={
-									s.loot ? (
-										<LootTooltip id={s.loot} variant="monster-override" />
-									) : undefined
-								}
-							/>
+						{spawnsOn.map(b => (
+							<BlockSlot key={b.id} block={b} />
 						))}
 					</div>
 				</div>

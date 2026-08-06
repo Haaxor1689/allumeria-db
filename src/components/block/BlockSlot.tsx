@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { type ReactNode } from 'react';
 
-import blockModels from '#data/block_models.json';
+import { getBlockVariants } from '#renderer/blockRenderer.ts';
 import { type Block } from '#server/types.ts';
 import { getBlockName } from '#utils/helpers.ts';
 
@@ -20,8 +20,7 @@ type Props = {
 
 const BlockSlot = ({ block, overlay, tooltipExtra }: Props) => {
 	const name = getBlockName(block);
-	const numMeshes =
-		blockModels.find(m => m.id === block.blockModel)?.meshes.length ?? 1;
+	const numVariants = getBlockVariants(block).length;
 
 	return (
 		<Tooltip<HTMLAnchorElement>
@@ -44,8 +43,7 @@ const BlockSlot = ({ block, overlay, tooltipExtra }: Props) => {
 					className="group relative flex size-26 items-center justify-center ns-borderless-slot bg-cover hocus:ns-borderless-slot-hover tooltip-only:ns-borderless-slot!"
 				>
 					<RotatingSprite
-						src={Array.from(
-							{ length: numMeshes },
+						src={[...Array(numVariants).keys()].map(
 							(_, i) =>
 								`/previews/blocks/${block.id}${i === 0 ? '' : `_${i}`}.webp`
 						)}

@@ -1,99 +1,93 @@
 [
 	{
-		"result": "new Block($\u0022{this.strID}_{Block.colourNames[index]}\u0022).MakeSolid().MakeCopy(this, false)",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "cotton_plant": 1 }
-	},
-	{
 		"result": "copper_pickaxe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "copper_ingot": 5 }
+		"requirements": { "copper_ingot": 5, "any_planks": 5 }
 	},
 	{
 		"result": "copper_sword",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "copper_ingot": 7 }
+		"requirements": { "copper_ingot": 7, "any_planks": 5 }
 	},
 	{
 		"result": "copper_axe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "copper_ingot": 5 }
+		"requirements": { "copper_ingot": 5, "any_planks": 5 }
 	},
 	{
 		"result": "flint_pickaxe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "flint": 3 }
+		"requirements": { "flint": 3, "any_planks": 5 }
 	},
 	{
 		"result": "flint_sword",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "flint": 5 }
+		"requirements": { "flint": 5, "any_planks": 5 }
 	},
 	{
 		"result": "flint_axe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "flint": 3 }
+		"requirements": { "flint": 3, "any_planks": 5 }
 	},
 	{
 		"result": "iron_pickaxe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "iron_ingot": 10 }
+		"requirements": { "iron_ingot": 10, "any_planks": 5 }
 	},
 	{
 		"result": "iron_sword",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "iron_ingot": 10 }
+		"requirements": { "iron_ingot": 10, "any_planks": 5 }
 	},
 	{
 		"result": "iron_axe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "iron_ingot": 10 }
+		"requirements": { "iron_ingot": 10, "any_planks": 5 }
 	},
 	{
 		"result": "silver_pickaxe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "silver_ingot": 10 }
+		"requirements": { "silver_ingot": 10, "any_planks": 5 }
 	},
 	{
 		"result": "silver_sword",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "silver_ingot": 10 }
+		"requirements": { "silver_ingot": 10, "any_planks": 5 }
 	},
 	{
 		"result": "silver_axe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "silver_ingot": 10 }
+		"requirements": { "silver_ingot": 10, "any_planks": 5 }
 	},
 	{
 		"result": "gold_pickaxe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "gold_ingot": 12 }
+		"requirements": { "gold_ingot": 12, "any_planks": 5 }
 	},
 	{
 		"result": "gold_sword",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "gold_ingot": 12 }
+		"requirements": { "gold_ingot": 12, "any_planks": 5 }
 	},
 	{
 		"result": "gold_axe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "gold_ingot": 12 }
+		"requirements": { "gold_ingot": 12, "any_planks": 5 }
 	},
 	{
 		"result": "copper_helmet",
@@ -195,7 +189,7 @@
 		"result": "torch",
 		"amount": 4,
 		"station": "inventory",
-		"requirements": { "coal_ore": 1, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "coal_ore": 1 }
 	},
 	{
 		"result": "iron_ingot",
@@ -243,25 +237,25 @@
 		"result": "copper_plated_stone",
 		"amount": 1,
 		"station": "decorations",
-		"requirements": { "copper_ingot": 1, "stone": 1 }
+		"requirements": { "stone": 1, "copper_ingot": 1 }
 	},
 	{
 		"result": "iron_plated_stone",
 		"amount": 1,
 		"station": "decorations",
-		"requirements": { "iron_ingot": 1, "stone": 1 }
+		"requirements": { "stone": 1, "iron_ingot": 1 }
 	},
 	{
 		"result": "silver_plated_stone",
 		"amount": 1,
 		"station": "decorations",
-		"requirements": { "silver_ingot": 1, "stone": 1 }
+		"requirements": { "stone": 1, "silver_ingot": 1 }
 	},
 	{
 		"result": "gold_plated_stone",
 		"amount": 1,
 		"station": "decorations",
-		"requirements": { "gold_ingot": 1, "stone": 1 }
+		"requirements": { "stone": 1, "gold_ingot": 1 }
 	},
 	{
 		"result": "glass",
@@ -405,13 +399,13 @@
 		"result": "concrete",
 		"amount": 2,
 		"station": "decorations",
-		"requirements": { "sand": 1, "stone": 1 }
+		"requirements": { "stone": 1, "sand": 1 }
 	},
 	{
 		"result": "asphalt",
 		"amount": 2,
 		"station": "decorations",
-		"requirements": { "sand": 1, "stone": 1 }
+		"requirements": { "stone": 1, "sand": 1 }
 	},
 	{
 		"result": "trampoline",
@@ -441,7 +435,7 @@
 		"result": "chest",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "iron_ingot": 1, "any_planks": 8 }
+		"requirements": { "any_planks": 8, "iron_ingot": 1 }
 	},
 	{
 		"result": "bagel",
@@ -454,18 +448,18 @@
 		"amount": 1,
 		"station": "inventory",
 		"requirements": {
-			"gold_ingot": 1,
-			"silver_ingot": 1,
-			"iron_ingot": 1,
+			"bagel": 1,
 			"copper_ingot": 1,
-			"bagel": 1
+			"iron_ingot": 1,
+			"silver_ingot": 1,
+			"gold_ingot": 1
 		}
 	},
 	{
 		"result": "dynamite",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "flint": 1, "iron_ore": 2 }
+		"requirements": { "iron_ore": 2, "flint": 1 }
 	},
 	{
 		"result": "dynamite_block",
@@ -477,7 +471,7 @@
 		"result": "cactus_sword",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "cactus": 16, "any_planks": 2 }
+		"requirements": { "any_planks": 2, "cactus": 16 }
 	},
 	{
 		"result": "shuriken",
@@ -501,13 +495,13 @@
 		"result": "flint_hammer",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "flint": 5 }
+		"requirements": { "flint": 5, "any_planks": 5 }
 	},
 	{
 		"result": "forest_hammer",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "forest_ingot": 5 }
+		"requirements": { "forest_ingot": 5, "any_planks": 5 }
 	},
 	{
 		"result": "pressure_plate",
@@ -522,10 +516,106 @@
 		"requirements": { "stone": 1 }
 	},
 	{
+		"result": "cloth_light_grey",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_dark_grey",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_black",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_red",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_orange",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_yellow",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_lime",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_green",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_cyan",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_blue",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_dark_blue",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_purple",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_pink",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_light_pink",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth_brown",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
+		"result": "cloth",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "cotton_plant": 1 }
+	},
+	{
 		"result": "furnace",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "coal_ore": 2, "stone": 8 }
+		"requirements": { "stone": 8, "coal_ore": 2 }
 	},
 	{
 		"result": "workbench",
@@ -537,55 +627,55 @@
 		"result": "decoration_station",
 		"amount": 1,
 		"station": "inventory",
-		"requirements": { "cotton_plant": 1, "any_planks": 5 }
+		"requirements": { "any_planks": 5, "cotton_plant": 1 }
 	},
 	{
 		"result": "potion_station",
 		"amount": 1,
 		"station": "inventory",
-		"requirements": { "glass": 1, "any_planks": 5 }
+		"requirements": { "any_planks": 5, "glass": 1 }
 	},
 	{
 		"result": "alpha_shop",
 		"amount": 1,
 		"station": "inventory",
-		"requirements": { "copper_coin": 5, "any_planks": 5 }
+		"requirements": { "any_planks": 5, "copper_coin": 5 }
 	},
 	{
 		"result": "health_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "allumerium_ore": 1, "red_mushroom_item": 1 }
+		"requirements": { "red_mushroom_item": 1, "allumerium_ore": 1 }
 	},
 	{
 		"result": "health_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "allumerium_ore": 1, "blueberry": 1 }
+		"requirements": { "blueberry": 1, "allumerium_ore": 1 }
 	},
 	{
 		"result": "weak_health_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "iron_ore": 1, "red_mushroom_item": 1 }
+		"requirements": { "red_mushroom_item": 1, "iron_ore": 1 }
 	},
 	{
 		"result": "weak_health_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "iron_ore": 1, "blueberry": 1 }
+		"requirements": { "blueberry": 1, "iron_ore": 1 }
 	},
 	{
 		"result": "regen_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "silver_ore": 1, "red_mushroom_item": 1 }
+		"requirements": { "red_mushroom_item": 1, "silver_ore": 1 }
 	},
 	{
 		"result": "regen_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "silver_ore": 1, "blueberry": 1 }
+		"requirements": { "blueberry": 1, "silver_ore": 1 }
 	},
 	{
 		"result": "poison_potion",
@@ -597,91 +687,91 @@
 		"result": "speed_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "mint": 1, "frost_algae": 1 }
+		"requirements": { "frost_algae": 1, "mint": 1 }
 	},
 	{
 		"result": "armour_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "iron_ore": 1, "blueberry": 1 }
+		"requirements": { "blueberry": 1, "iron_ore": 1 }
 	},
 	{
 		"result": "flight_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "silver_ore": 1, "blueberry": 1 }
+		"requirements": { "blueberry": 1, "silver_ore": 1 }
 	},
 	{
 		"result": "respawn_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "gold_ore": 1, "blueberry": 1 }
+		"requirements": { "blueberry": 1, "gold_ore": 1 }
 	},
 	{
 		"result": "mining_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "cobalt_ore": 1, "mint": 1 }
+		"requirements": { "mint": 1, "cobalt_ore": 1 }
 	},
 	{
 		"result": "water_walking_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "fish_fillet": 3, "fish_crystalfin": 1 }
+		"requirements": { "fish_crystalfin": 1, "fish_fillet": 3 }
 	},
 	{
 		"result": "crate_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "gormet_fish_fillet": 3, "fish_carp": 1 }
+		"requirements": { "fish_carp": 1, "gormet_fish_fillet": 3 }
 	},
 	{
 		"result": "arrow",
 		"amount": 16,
 		"station": "inventory",
-		"requirements": { "flint": 1, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "flint": 1 }
 	},
 	{
 		"result": "arrow",
 		"amount": 32,
 		"station": "inventory",
-		"requirements": { "iron_ingot": 1, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "iron_ingot": 1 }
 	},
 	{
 		"result": "arrow",
 		"amount": 64,
 		"station": "inventory",
-		"requirements": { "silver_ingot": 1, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "silver_ingot": 1 }
 	},
 	{
 		"result": "reinforced_arrow",
 		"amount": 16,
 		"station": "inventory",
-		"requirements": { "iron_ingot": 4, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "iron_ingot": 4 }
 	},
 	{
 		"result": "reinforced_arrow",
 		"amount": 32,
 		"station": "inventory",
-		"requirements": { "silver_ingot": 4, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "silver_ingot": 4 }
 	},
 	{
 		"result": "reinforced_arrow",
 		"amount": 64,
 		"station": "inventory",
-		"requirements": { "gold_ingot": 4, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "gold_ingot": 4 }
 	},
 	{
 		"result": "flaming_arrow",
 		"amount": 4,
 		"station": "inventory",
-		"requirements": { "coal_ore": 1, "any_planks": 1 }
+		"requirements": { "any_planks": 1, "coal_ore": 1 }
 	},
 	{
 		"result": "explosive_arrow",
 		"amount": 1,
 		"station": "inventory",
-		"requirements": { "dynamite": 1, "arrow": 1 }
+		"requirements": { "arrow": 1, "dynamite": 1 }
 	},
 	{
 		"result": "brick",
@@ -699,7 +789,7 @@
 		"result": "throwable_torch",
 		"amount": 4,
 		"station": "inventory",
-		"requirements": { "cotton_candy": 4, "torch": 4 }
+		"requirements": { "torch": 4, "cotton_candy": 4 }
 	},
 	{
 		"result": "snowball",
@@ -729,7 +819,7 @@
 		"result": "hoe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "iron_ingot": 3 }
+		"requirements": { "iron_ingot": 3, "any_planks": 5 }
 	},
 	{
 		"result": "bread",
@@ -741,7 +831,7 @@
 		"result": "sprinkler",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "gold_ingot": 1, "silver_ingot": 4 }
+		"requirements": { "silver_ingot": 4, "gold_ingot": 1 }
 	},
 	{
 		"result": "basic_rod",
@@ -753,16 +843,16 @@
 		"result": "sturdy_rod",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "fish_fillet": 20, "silver_ingot": 10, "basic_rod": 1 }
+		"requirements": { "basic_rod": 1, "silver_ingot": 10, "fish_fillet": 20 }
 	},
 	{
 		"result": "obsidian_rod",
 		"amount": 1,
 		"station": "work_bench",
 		"requirements": {
-			"gormet_fish_fillet": 20,
+			"sturdy_rod": 1,
 			"cobalt_ingot": 10,
-			"sturdy_rod": 1
+			"gormet_fish_fillet": 20
 		}
 	},
 	{
@@ -799,31 +889,31 @@
 		"result": "copper_crossbow",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "copper_ingot": 4 }
+		"requirements": { "copper_ingot": 4, "any_planks": 5 }
 	},
 	{
 		"result": "iron_crossbow",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "iron_ingot": 7 }
+		"requirements": { "iron_ingot": 7, "any_planks": 5 }
 	},
 	{
 		"result": "silver_crossbow",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "silver_ingot": 12 }
+		"requirements": { "silver_ingot": 12, "any_planks": 5 }
 	},
 	{
 		"result": "gold_crossbow",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "any_planks": 5, "gold_ingot": 15 }
+		"requirements": { "gold_ingot": 15, "any_planks": 5 }
 	},
 	{
 		"result": "forest_ingot",
 		"amount": 1,
 		"station": "furnace",
-		"requirements": { "forest_flower": 1, "gold_ingot": 1 }
+		"requirements": { "gold_ingot": 1, "forest_flower": 1 }
 	},
 	{
 		"result": "forest_pickaxe",
@@ -865,7 +955,7 @@
 		"result": "cobalt_ingot",
 		"amount": 1,
 		"station": "furnace",
-		"requirements": { "cobalt_ore": 3, "silver_ingot": 1 }
+		"requirements": { "silver_ingot": 1, "cobalt_ore": 3 }
 	},
 	{
 		"result": "cobalt_pickaxe",
@@ -925,7 +1015,7 @@
 		"result": "spawn_pointer",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "allumerium_ore": 3, "forest_ingot": 5 }
+		"requirements": { "forest_ingot": 5, "allumerium_ore": 3 }
 	},
 	{
 		"result": "ominous_deer_skull",
@@ -1063,7 +1153,7 @@
 		"result": "ice_torch",
 		"amount": 4,
 		"station": "decorations",
-		"requirements": { "torch": 4, "ice": 1 }
+		"requirements": { "ice": 1, "torch": 4 }
 	},
 	{
 		"result": "unobtainable_melon",
@@ -1082,11 +1172,5 @@
 		"amount": 1,
 		"station": "inventory",
 		"requirements": { "gourmet_fish": 1 }
-	},
-	{
-		"result": "cloth",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "cotton_plant": 1 }
 	}
 ]

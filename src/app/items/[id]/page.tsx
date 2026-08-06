@@ -23,8 +23,9 @@ import items from '#data/items.json';
 import loot from '#data/loot.json';
 import recipeAliases from '#data/recipe_aliases.json';
 import recipes from '#data/recipes.json';
+import spawn from '#data/spawn.json';
 import structures from '#data/structures.json';
-import { getItemIcon, getTranslation } from '#utils/helpers.ts';
+import { getItemIcon, getTranslation, type LootEntry } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
 
 export const generateStaticParams = () =>
@@ -39,26 +40,17 @@ export const generateMetadata = async ({
 	return { title: getTranslation(`item.${item.id}`) };
 };
 
-const getLootItemIds = (entries: (typeof loot)[number]['entries']): string[] =>
-	entries.flatMap(entry => {
-		if ('item' in entry) return entry.item ? [entry.item] : [];
-		if ('ref' in entry) {
-			const refTable = loot.find(l => l.id === entry.ref);
-			return refTable ? getLootItemIds(refTable.entries) : [];
-		}
-		if ('entries' in entry)
-			return getLootItemIds(entry.entries as (typeof loot)[number]['entries']);
-		if ('oneOf' in entry)
-			return getLootItemIds(entry.oneOf as (typeof loot)[number]['entries']);
-		return [];
-	});
+const getLootItemIds = (entry: LootEntry): string[] => {
+	const ret = entry.entries?.flatMap(getLootItemIds) ?? [];
+	if (entry.item) ret.push(entry.item);
+	return ret;
+};
 
 const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 	const { id } = await params;
 	const item = items.find(item => item.id === id);
 
 	if (!item) notFound();
-
 	const name = getTranslation(`item.${item.id}`);
 
 	const block = blocks.find(b => b.id === item.block);
@@ -67,7 +59,7 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 		{
 			effect: item.effect,
 			ticks: item.ticks,
-			action: item.type === 'MeleeEffect' ? 'Applies' : 'Grants'
+			action: item.class === 'ItemMeleeEffect' ? 'Applies' : 'Grants'
 		},
 		{
 			effect: item.secondaryEffect,
@@ -88,7 +80,8 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 			if (v.ticks > 1)
 				return (
 					<p key={idx} className="text-muted">
-						{v.action} <EffectLink effect={effect} /> for {v.ticks} ticks.
+						{v.action} <EffectLink effect={effect} /> for{' '}
+						{(v.ticks / 60).toFixed(2)}s.
 					</p>
 				);
 			return (
@@ -102,7 +95,7 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 	const itemRecipes = recipes.filter(r => r.result === item.id);
 
 	const inAliases = recipeAliases
-		.filter(r => r.entries?.includes(item.id))
+		.filter(r => r.items?.includes(item.id))
 		.map(r => r.id);
 	const ingredientFor = recipes
 		.filter(r =>
@@ -114,12 +107,24 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 		.filter(i => i !== undefined);
 
 	const lootTableIds = new Set(
-		loot.filter(l => getLootItemIds(l.entries).includes(item.id)).map(l => l.id)
+		loot.filter(l => getLootItemIds(l).includes(item.id)).map(l => l.id)
 	);
 
 	const dropsFrom = {
 		blocks: blocks.filter(b => lootTableIds.has(b.loot ?? '')),
+		harvesting: blocks.filter(b => lootTableIds.has(b.harvestLoot ?? '')),
 		creatures: creatures.filter(c => lootTableIds.has(c.loot ?? '')),
+		spawns: spawn
+			.map(s =>
+				s.entries
+					.map(e =>
+						'loot' in e && lootTableIds.has(e.loot ?? '')
+							? creatures.find(c => c.id === e.monster)
+							: undefined
+					)
+					.filter(l => l !== undefined)
+			)
+			.flat(),
 		structures: structures.filter(s =>
 			s.chests.some(c => lootTableIds.has(c.loot ?? ''))
 		)
@@ -146,19 +151,32 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 		})
 		.filter(v => v !== null);
 
+	const models = [
+		item.model && item.texture ? (
+			<EntityRenderer key="item" model={item.model} texture={item.texture} />
+		) : null,
+		creature?.model && creature?.texture ? (
+			<EntityRenderer
+				key="creature"
+				model={creature.model}
+				texture={creature.texture}
+			/>
+		) : null,
+		block ? <BlockRender key="block" block={block} /> : null,
+		item.projectileModel && item.projectileTexture ? (
+			<EntityRenderer
+				key="ammo"
+				model={item.projectileModel}
+				texture={item.projectileTexture}
+			/>
+		) : null
+	].filter(v => v !== null);
+
 	return (
 		<div className="container mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
-			{item.model && item.texture ? (
+			{models.length > 0 ? (
 				<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
-					<EntityRenderer model={item.model} texture={item.texture} />
-				</div>
-			) : creature?.model && creature?.texture ? (
-				<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
-					<EntityRenderer model={creature.model} texture={creature.texture} />
-				</div>
-			) : block ? (
-				<div className="relative mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
-					<BlockRender block={block} />
+					{models}
 				</div>
 			) : null}
 
@@ -269,9 +287,7 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 				</div>
 			) : null}
 
-			{(dropsFrom.blocks.length > 0 ||
-				dropsFrom.creatures.length > 0 ||
-				dropsFrom.structures.length > 0) && (
+			{Object.values(dropsFrom).some(arr => arr.length > 0) && (
 				<div className="flex flex-col gap-4">
 					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
 						Drops from:
@@ -279,7 +295,9 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 
 					<p>{name} can be obtained from the following sources:</p>
 
-					{(dropsFrom.blocks.length > 0 || dropsFrom.structures.length > 0) && (
+					{(dropsFrom.blocks.length > 0 ||
+						dropsFrom.harvesting.length > 0 ||
+						dropsFrom.structures.length > 0) && (
 						<div className="flex flex-wrap gap-2">
 							{dropsFrom.blocks.map(block => (
 								<BlockSlot
@@ -290,11 +308,21 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 											key="loot"
 											id={block.loot}
 											fallbackItem={block.item ?? block.id}
-										/>,
+											title="Drops"
+										/>
+									]}
+								/>
+							))}
+							{dropsFrom.harvesting.map(block => (
+								<BlockSlot
+									key={block.id}
+									block={block}
+									tooltipExtra={[
 										<LootTooltip
 											key="harvest"
 											id={block.harvestLoot}
-											variant="harvest"
+											variant="green"
+											title="Harvest"
 										/>
 									]}
 								/>
@@ -305,12 +333,11 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 									if (!chest) return null;
 									return (
 										<BlockSlot
-											key={`${s.id}-${c.chest}-${'type' in c ? c.type : 'base'}`}
+											key={`${s.id}-${c.chest}`}
 											block={chest}
 											tooltipExtra={
 												<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-muted">
 													{toDisplayName(s.id)}
-													{'type' in c ? ` (${toDisplayName(c.type)})` : ''}
 												</div>
 											}
 										/>
@@ -320,10 +347,13 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 						</div>
 					)}
 
-					{dropsFrom.creatures.length > 0 && (
+					{(dropsFrom.creatures.length > 0 || dropsFrom.spawns.length > 0) && (
 						<ScrollArea offset={32} contentClassName="flex gap-2">
 							{dropsFrom.creatures.map(creature => (
 								<CreatureSlot key={creature.id} creature={creature} />
+							))}
+							{dropsFrom.spawns.map(spawn => (
+								<CreatureSlot key={spawn.id} creature={spawn} />
 							))}
 						</ScrollArea>
 					)}

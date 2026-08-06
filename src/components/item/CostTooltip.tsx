@@ -4,8 +4,8 @@ import items from '#data/items.json';
 import { getTranslation } from '#utils/helpers.ts';
 
 const coins = items
-	.filter(item => item.currencyAmmount)
-	.toSorted((a, b) => b.currencyAmmount! - a.currencyAmmount!);
+	.filter(item => item.currencyAmount)
+	.toSorted((a, b) => b.currencyAmount! - a.currencyAmount!);
 
 type Props = {
 	value: number;
@@ -16,10 +16,10 @@ const CostTooltip = ({ value, className = 'ns-dialog-positive' }: Props) => {
 	if (!value) return null;
 	const split = coins.reduce(
 		(acc, coin) => {
-			const count = Math.floor(value / coin.currencyAmmount!);
+			const count = Math.floor(value / coin.currencyAmount!);
 			if (count > 0) {
 				acc.push({ item: coin, count });
-				value -= count * coin.currencyAmmount!;
+				value -= count * coin.currencyAmount!;
 			}
 			return acc;
 		},

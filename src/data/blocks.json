@@ -1,12 +1,22 @@
 [
-	{ "id": "empty", "material": "dirt", "hidden": true },
+	{
+		"id": "empty",
+		"material": "dirt",
+		"hidden": true,
+		"textures": ["missing"]
+	},
 	{
 		"id": "unknown",
 		"material": "plant",
 		"hidden": true,
 		"textures": ["deprecated"]
 	},
-	{ "id": "worldBorder", "material": "unbreakable", "hidden": true },
+	{
+		"id": "worldBorder",
+		"material": "unbreakable",
+		"hidden": true,
+		"textures": ["missing"]
+	},
 	{
 		"id": "stone",
 		"material": "stone",
@@ -89,7 +99,8 @@
 		"material": "plant",
 		"canBeFelled": true,
 		"textures": ["birch_leaves"],
-		"blockModel": "fluffy_leaves"
+		"blockModel": "fluffy_leaves",
+		"loot": "birch_leaves"
 	},
 	{
 		"id": "oak_leaves",
@@ -236,10 +247,10 @@
 		"id": "cactus_flower",
 		"class": "Plant",
 		"material": "plant",
+		"canBeFelled": true,
 		"needsSupport": true,
 		"textures": ["cactus_flower"],
-		"blockModel": "small_plant",
-		"canBeFelled": true
+		"blockModel": "small_plant"
 	},
 	{
 		"id": "cactus_small",
@@ -263,8 +274,7 @@
 		"material": "plant",
 		"needsSupport": true,
 		"textures": ["maple_sapling"],
-		"blockModel": "small_plant",
-		"treeType": 2
+		"blockModel": "small_plant"
 	},
 	{
 		"id": "oak_sapling",
@@ -272,8 +282,7 @@
 		"material": "plant",
 		"needsSupport": true,
 		"textures": ["oak_sapling"],
-		"blockModel": "small_plant",
-		"treeType": 3
+		"blockModel": "small_plant"
 	},
 	{
 		"id": "birch_sapling",
@@ -281,8 +290,7 @@
 		"material": "plant",
 		"needsSupport": true,
 		"textures": ["birch_sapling"],
-		"blockModel": "small_plant",
-		"treeType": 1
+		"blockModel": "small_plant"
 	},
 	{
 		"id": "pine_sapling",
@@ -290,8 +298,7 @@
 		"material": "plant",
 		"needsSupport": true,
 		"textures": ["pine_sapling"],
-		"blockModel": "small_plant",
-		"treeType": 0
+		"blockModel": "small_plant"
 	},
 	{
 		"id": "lush_grass",
@@ -321,7 +328,8 @@
 		"material": "plant",
 		"needsSupport": true,
 		"textures": ["tall_grass_1", "tall_grass_2", "tall_grass_3"],
-		"blockModel": "small_plant"
+		"blockModel": "small_plant",
+		"loot": "grassTall"
 	},
 	{
 		"id": "grass_tall_autumn",
@@ -736,7 +744,7 @@
 		"id": "lamp_white",
 		"material": "glass",
 		"canBeShaped": true,
-		"textures": ["lamp_white"],
+		"textures": ["lamp_white_both"],
 		"decorationScore": 1,
 		"lightEmission": [15, 15, 15]
 	},
@@ -744,7 +752,7 @@
 		"id": "lamp_red",
 		"material": "glass",
 		"canBeShaped": true,
-		"textures": ["lamp_red"],
+		"textures": ["lamp_red_both"],
 		"decorationScore": 1,
 		"lightEmission": [15, 0, 0]
 	},
@@ -752,7 +760,7 @@
 		"id": "lamp_green",
 		"material": "glass",
 		"canBeShaped": true,
-		"textures": ["lamp_green"],
+		"textures": ["lamp_green_both"],
 		"decorationScore": 1,
 		"lightEmission": [0, 15, 0]
 	},
@@ -760,7 +768,7 @@
 		"id": "lamp_blue",
 		"material": "glass",
 		"canBeShaped": true,
-		"textures": ["lamp_blue"],
+		"textures": ["lamp_blue_both"],
 		"decorationScore": 1,
 		"lightEmission": [0, 0, 15]
 	},
@@ -768,7 +776,7 @@
 		"id": "lamp_cyan",
 		"material": "glass",
 		"canBeShaped": true,
-		"textures": ["lamp_cyan"],
+		"textures": ["lamp_cyan_both"],
 		"decorationScore": 1,
 		"lightEmission": [0, 15, 15]
 	},
@@ -776,7 +784,7 @@
 		"id": "lamp_magenta",
 		"material": "glass",
 		"canBeShaped": true,
-		"textures": ["lamp_magenta"],
+		"textures": ["lamp_magenta_both"],
 		"decorationScore": 1,
 		"lightEmission": [15, 0, 15]
 	},
@@ -784,7 +792,7 @@
 		"id": "lamp_yellow",
 		"material": "glass",
 		"canBeShaped": true,
-		"textures": ["lamp_yellow"],
+		"textures": ["lamp_yellow_both"],
 		"decorationScore": 1,
 		"lightEmission": [15, 15, 0]
 	},
@@ -1106,13 +1114,13 @@
 		"id": "npc_sign",
 		"class": "NPCSign",
 		"material": "wood",
-		"interactible": true
+		"interactible": true,
+		"textures": ["missing"]
 	},
 	{
 		"id": "dungeon_bricks",
 		"material": "dungeon_brick_forest",
 		"spawn": "dungeon_bricks",
-		"spawnRate": 101,
 		"canBeShaped": true,
 		"textures": [
 			"dungeon_brick_top",
@@ -1126,7 +1134,6 @@
 		"class": "Unstable",
 		"material": "dungeon_brick_forest",
 		"spawn": "dungeon_bricks",
-		"spawnRate": 101,
 		"textures": ["unstable_dungeon_bricks"]
 	},
 	{
@@ -1142,6 +1149,7 @@
 		"material": "dirt",
 		"textures": ["dungeon_lamp_onoff"],
 		"blockModel": "dungeon_lamp",
+		"decorationScore": 1,
 		"lightEmission": [12, 6, 2]
 	},
 	{
@@ -1150,6 +1158,7 @@
 		"material": "dirt",
 		"textures": ["blue_dungeon_lamp_onoff"],
 		"blockModel": "dungeon_lamp",
+		"decorationScore": 1,
 		"lightEmission": [2, 4, 12]
 	},
 	{
@@ -1171,6 +1180,7 @@
 			"dungeon_door_br"
 		],
 		"blockModel": "door",
+		"decorationScore": 1,
 		"keyItem": "forest_key"
 	},
 	{
@@ -1182,7 +1192,6 @@
 		"id": "snow_dungeon_bricks",
 		"material": "dungeon_brick_forest",
 		"spawn": "snow_dungeon_bricks",
-		"spawnRate": 101,
 		"canBeShaped": true,
 		"textures": [
 			"snow_dungeon_bricks_top",
@@ -1197,6 +1206,7 @@
 		"material": "dirt",
 		"textures": ["snow_dungeon_lamp_onoff"],
 		"blockModel": "dungeon_lamp",
+		"decorationScore": 1,
 		"lightEmission": [4, 8, 12]
 	},
 	{
@@ -1391,7 +1401,8 @@
 		"id": "logic_pixel",
 		"class": "ToggleLamp",
 		"material": "glass",
-		"textures": ["logic_pixel_onoff"]
+		"textures": ["logic_pixel_on", "logic_pixel_off"],
+		"decorationScore": 1
 	},
 	{
 		"id": "copper_bars",
@@ -1523,7 +1534,102 @@
 		"canBeShaped": true,
 		"textures": ["grid"]
 	},
-	{ "id": "cloth", "material": "wood", "canBeShaped": true },
+	{
+		"id": "cloth",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth"]
+	},
+	{
+		"id": "cloth_light_grey",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_light_grey"]
+	},
+	{
+		"id": "cloth_dark_grey",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_dark_grey"]
+	},
+	{
+		"id": "cloth_black",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_black"]
+	},
+	{
+		"id": "cloth_red",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_red"]
+	},
+	{
+		"id": "cloth_orange",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_orange"]
+	},
+	{
+		"id": "cloth_yellow",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_yellow"]
+	},
+	{
+		"id": "cloth_lime",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_lime"]
+	},
+	{
+		"id": "cloth_green",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_green"]
+	},
+	{
+		"id": "cloth_cyan",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_cyan"]
+	},
+	{
+		"id": "cloth_blue",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_blue"]
+	},
+	{
+		"id": "cloth_dark_blue",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_dark_blue"]
+	},
+	{
+		"id": "cloth_purple",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_purple"]
+	},
+	{
+		"id": "cloth_pink",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_pink"]
+	},
+	{
+		"id": "cloth_light_pink",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_light_pink"]
+	},
+	{
+		"id": "cloth_brown",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["cloth_brown"]
+	},
 	{
 		"id": "amethyst_block",
 		"material": "stone",
@@ -1697,9 +1803,9 @@
 		"material": "plant",
 		"interactible": true,
 		"needsSupport": true,
-		"spreadsSelf": true,
 		"textures": ["weeds_1", "weeds_2", "weeds_3", "weeds_4"],
-		"blockModel": "small_plant"
+		"blockModel": "small_plant",
+		"spreadsSelf": true
 	},
 	{
 		"id": "spider_web",
@@ -1737,6 +1843,7 @@
 		"id": "painting_child",
 		"class": "PaintingChild",
 		"material": "torch",
+		"textures": ["missing"],
 		"blockModel": "painting_child"
 	},
 	{
@@ -1744,28 +1851,32 @@
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_melon"],
-		"blockModel": "painting1x1"
+		"blockModel": "painting1x1",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_triangle",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_triangle"],
-		"blockModel": "painting1x1"
+		"blockModel": "painting1x1",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_stars",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_stars"],
-		"blockModel": "painting1x1"
+		"blockModel": "painting1x1",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_pipes",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_pipes"],
-		"blockModel": "painting1x1"
+		"blockModel": "painting1x1",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_blue",
@@ -1773,6 +1884,7 @@
 		"material": "torch",
 		"textures": ["painting_blue"],
 		"blockModel": "painting1x1",
+		"decorationScore": 1,
 		"lightEmission": [0, 0, 4]
 	},
 	{
@@ -1780,77 +1892,88 @@
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_wreath"],
-		"blockModel": "painting1x1"
+		"blockModel": "painting1x1",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_city",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_city"],
-		"blockModel": "painting2x1"
+		"blockModel": "painting2x1",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_desolate",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_desolate"],
-		"blockModel": "painting2x1"
+		"blockModel": "painting2x1",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_figure",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_figure"],
-		"blockModel": "painting1x2"
+		"blockModel": "painting1x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_bird",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_bird"],
-		"blockModel": "painting1x2"
+		"blockModel": "painting1x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_undergrowth",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_undergrowth"],
-		"blockModel": "painting1x2"
+		"blockModel": "painting1x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_snowman",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_snowman"],
-		"blockModel": "painting1x2"
+		"blockModel": "painting1x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_cloud",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_cloud"],
-		"blockModel": "painting2x2"
+		"blockModel": "painting2x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_waves",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_waves"],
-		"blockModel": "painting2x2"
+		"blockModel": "painting2x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_biome",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_biome"],
-		"blockModel": "painting2x2"
+		"blockModel": "painting2x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "painting_deer",
 		"class": "Painting",
 		"material": "torch",
 		"textures": ["painting_deer"],
-		"blockModel": "painting2x2"
+		"blockModel": "painting2x2",
+		"decorationScore": 1
 	},
 	{
 		"id": "spawn_pointer",

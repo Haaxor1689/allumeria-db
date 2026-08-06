@@ -1,169 +1,183 @@
 'use client';
 
 import cn from 'classnames';
-import { type JSX, type ReactNode } from 'react';
+import { type CSSProperties, type ReactNode } from 'react';
 
 import items from '#data/items.json';
 import loot from '#data/loot.json';
+import type { LootEntry } from '#utils/helpers.ts';
 import { getTool } from '#utils/helpers.ts';
 
 import ItemSlot from './item/ItemSlot';
-import RotatingElements from './RotatingElements';
 
-type LootEntry =
-	| {
-			amount: number;
-			item: string;
-	  }
-	| {
-			min: number;
-			max: number;
-			item: string;
-	  }
-	| {
-			chance: number;
-			entries: LootEntry[];
-	  }
-	| {
-			oneOf: LootEntry[];
-	  }
-	| {
-			needs: string;
-			entries: LootEntry[];
-	  }
-	| {
-			ref: string;
-	  };
+type LootVariant = 'green' | 'red';
 
-const renderLootEntries = (
-	entries: LootEntry[],
-	attachments: ReactNode[] = []
-) =>
-	entries.reduce((acc, entry, i) => {
-		if ('amount' in entry) {
-			const item = items.find(i => i.id === entry.item);
-			if (!item) return acc;
-			acc.push(
-				<ItemSlot
-					key={`${i}_${entry.item}_amount`}
-					item={item}
-					overlay={[
-						...attachments,
-						entry.amount > 1 ? (
-							<div
-								key={`${i}_${entry.item}_amount`}
-								className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow"
-							>
-								{entry.amount}
-							</div>
-						) : null
-					]}
-				/>
-			);
-		} else if ('min' in entry && 'max' in entry) {
-			const item = items.find(i => i.id === entry.item);
-			if (!item) return acc;
-			acc.push(
-				<ItemSlot
-					key={`${i}_${entry.item}_range`}
-					item={item}
-					overlay={[
-						...attachments,
+const LootEntries = ({
+	entry,
+	depth,
+	variant
+}: {
+	entry: LootEntry;
+	depth: number;
+	variant?: LootVariant;
+}) => {
+	if (!entry) return null;
+
+	const chanceRibbon = entry.chance ? (
+		<div
+			className={cn(
+				'z-1 ns-borderless-ribbon p-3.5 pr-6 pl-2 pixel-shadow font-bold',
+				variant === 'green' && 'hue-rotate-260',
+				variant === 'red' && 'hue-rotate-150'
+			)}
+		>
+			{Math.round(entry.chance * 100)}%
+		</div>
+	) : null;
+
+	const item = items.find(i => i.id === entry.item);
+	if (item) {
+		const component = (
+			<ItemSlot
+				key={entry.item}
+				item={item}
+				overlay={[
+					(entry.amount ?? 0) > 1 ? (
 						<div
-							key={`${i}_${entry.item}_range`}
+							key={`${entry.item}_amount`}
+							className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow"
+						>
+							{entry.amount}
+						</div>
+					) : entry.min && entry.max ? (
+						<div
+							key={`${entry.item}_range`}
 							className="absolute -right-1 -bottom-2 text-2xl font-bold pixel-shadow"
 						>
 							{entry.min}-{entry.max}
 						</div>
-					]}
-				/>
-			);
-		} else if ('ref' in entry) {
-			const refTable = loot.find(l => l.id === entry.ref);
-			if (refTable) {
-				acc.push(...renderLootEntries(refTable.entries as never, attachments));
-			}
-		} else if ('chance' in entry) {
-			acc.push(
-				...renderLootEntries(entry.entries, [
-					...attachments,
-					<div
-						key={`${i}_chance`}
-						className="absolute -top-2 -right-1 font-bold pixel-shadow"
-					>
-						{Math.round(entry.chance * 100)}%
-					</div>
-				])
-			);
-		} else if ('needs' in entry) {
-			const tool = getTool(entry.needs);
-			acc.push(
-				...renderLootEntries(entry.entries, [
-					...attachments,
-					<img
-						key={`${i}_${entry.needs}_needs`}
-						src={tool.icon}
-						alt={tool.label}
-						className="absolute -top-4 -right-4 size-10 ns-borderless-card-negative p-1"
-					/>
-				])
-			);
-		} else if ('oneOf' in entry) {
-			acc.push(
-				<RotatingElements
-					key={`${i}_oneOf`}
-					entries={renderLootEntries(entry.oneOf, attachments)}
-				/>
-			);
-		}
-		return acc;
-	}, [] as JSX.Element[]);
+					) : null,
+					entry.needs ? (
+						<img
+							key={`${entry.item}_needs`}
+							src={getTool(entry.needs).icon}
+							alt={getTool(entry.needs).label}
+							className="absolute -top-2 -right-2 size-8 ns-borderless-card-negative"
+						/>
+					) : null
+				]}
+			/>
+		);
+		return (
+			<div className="z-1 flex flex-row items-start">
+				{depth > 0 ? (
+					component
+				) : (
+					<LootRow variant={variant}>{component}</LootRow>
+				)}
+				{chanceRibbon}
+			</div>
+		);
+	}
+
+	const count = entry.entries?.length ?? 0;
+	const rows = Math.ceil(count / 7);
+	const cols = Math.ceil(count / rows);
+	const isLeafRoot = entry.entries?.every(e => !e.entries?.length) ?? true;
+	return (
+		<div className="flex flex-col items-start">
+			{entry.oneOf && (
+				<div className="z-0 -mb-5 ml-2 ns-btn-orange font-bold pixel-shadow">
+					One Of
+				</div>
+			)}
+			<div className="flex items-start">
+				<LootRow
+					variant={variant}
+					style={
+						isLeafRoot
+							? {
+									gridTemplateColumns: [...Array(cols).keys()]
+										.map(() => 'min-content')
+										.join(' ')
+								}
+							: undefined
+					}
+				>
+					{(entry.entries ?? []).flatMap((e, i) => (
+						<LootEntries
+							key={i}
+							entry={e}
+							depth={depth + 1}
+							variant={variant}
+						/>
+					))}
+				</LootRow>
+				{chanceRibbon}
+			</div>
+		</div>
+	);
+};
+
+const LootRow = ({
+	variant,
+	style,
+	children
+}: {
+	variant?: LootVariant;
+	style?: CSSProperties;
+	children: ReactNode;
+}) => (
+	<div
+		className={cn('relative p-4 grid items-start gap-2 flex-col self-start')}
+		style={style}
+	>
+		<div
+			className={cn(
+				'absolute inset-0',
+				variant === 'green'
+					? 'ns-borderless-dialog-positive'
+					: variant === 'red'
+						? 'ns-borderless-dialog-negative'
+						: 'ns-borderless-dialog'
+			)}
+		/>
+		{children}
+	</div>
+);
 
 type Props = {
 	id?: string;
 	fallbackItem?: string;
-	variant?: 'harvest' | 'monster' | 'monster-override';
+	title?: string;
+	variant?: 'green' | 'red';
 };
 
-const LootTooltip = ({ id, fallbackItem, variant }: Props) => {
+const LootTooltip = ({ id, fallbackItem, title, variant }: Props) => {
 	if (!id && !fallbackItem) return null;
 
 	const dropTable = loot.find(r => r.id === id);
-
-	const fallback = items.find(i => i.id === fallbackItem);
-	const entries = dropTable
-		? renderLootEntries(dropTable.entries as never)
-		: fallback
-			? [<ItemSlot key="item" item={fallback} />]
-			: [];
-
-	if (entries.length === 0) return null;
+	if (!dropTable && !fallbackItem) return null;
 
 	return (
-		<div className="flex items-start">
-			<div
-				className={cn(
-					'flex gap-4 ns-borderless-ingredients items-center p-4 text-xl',
-					variant === 'harvest' && 'hue-rotate-260 *:-hue-rotate-260',
-					variant?.startsWith('monster') && 'hue-rotate-150 *:-hue-rotate-150'
-				)}
-			>
-				{entries}
-			</div>
-			{variant === 'harvest' ? (
-				<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-2xl text-muted hue-rotate-260">
-					Harvest
-				</div>
-			) : variant?.startsWith('monster') ? (
-				<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-2xl text-muted hue-rotate-150">
-					{variant === 'monster-override' ? 'Spawn specific' : 'Standard Loot'}
-				</div>
-			) : (
-				<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-2xl text-muted">
-					Standard Loot
+		<>
+			{title && (
+				<div
+					className={cn(
+						'-mb-5 ml-2 ns-btn-teal font-bold pixel-shadow w-fit',
+						variant === 'green' && 'hue-rotate-260',
+						variant === 'red' && 'hue-rotate-150'
+					)}
+				>
+					{title}
 				</div>
 			)}
-		</div>
+			<LootEntries
+				entry={dropTable ?? ({ item: fallbackItem } as never)}
+				depth={0}
+				variant={variant}
+			/>
+		</>
 	);
 };
 
