@@ -1,7 +1,8 @@
+import { Analytics } from '@vercel/analytics/next';
 import { type Metadata } from 'next';
-import { Atkinson_Hyperlegible } from 'next/font/google';
 
 import '../theme.css';
+import { Atkinson_Hyperlegible } from 'next/font/google';
 import Link from 'next/link';
 import Script from 'next/script';
 
@@ -92,6 +93,7 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 				<Footer className="px-4 pb-6 lg:hidden" />
 			</div>
 			<MobileStateSync />
+			<Analytics />
 		</body>
 	</html>
 );
