@@ -135,7 +135,8 @@
 		"material": "plant",
 		"canBeFelled": true,
 		"textures": ["palm_leaves"],
-		"blockModel": "fluffy_leaves"
+		"blockModel": "fluffy_leaves",
+		"loot": "palm_leaves"
 	},
 	{
 		"id": "sakura_leaves",
@@ -1004,14 +1005,14 @@
 	{
 		"id": "ladder",
 		"class": "Ladder",
-		"material": "stone",
+		"material": "torch",
 		"textures": ["ladder"],
 		"blockModel": "ladder"
 	},
 	{
 		"id": "dynamite_block",
 		"class": "Dynamite",
-		"material": "stone",
+		"material": "spawner",
 		"interactible": true,
 		"textures": ["dynamite_top", "dynamite_side", "dynamite_bottom"],
 		"blockModel": "topBottom"
@@ -1050,7 +1051,7 @@
 	},
 	{
 		"id": "ice_crate",
-		"material": "torch",
+		"material": "snow_crate",
 		"textures": ["ice_crate"],
 		"loot": "crate_ice"
 	},
@@ -1411,7 +1412,7 @@
 	{
 		"id": "sand_dungeon_spawner",
 		"class": "SandSpawner",
-		"material": "dungeon_brick_forest",
+		"material": "dungeon_brick_sand",
 		"textures": [
 			"sand_spawner_top_on",
 			"sand_spawner_side_on",
@@ -1712,6 +1713,12 @@
 		"material": "wood",
 		"canBeShaped": true,
 		"textures": ["pine_log_side"]
+	},
+	{
+		"id": "thick_palm_log",
+		"material": "wood",
+		"canBeShaped": true,
+		"textures": ["palm_log_side"]
 	},
 	{
 		"id": "trampoline",

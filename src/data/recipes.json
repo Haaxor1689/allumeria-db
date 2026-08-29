@@ -186,6 +186,12 @@
 		"requirements": { "pine_log": 1 }
 	},
 	{
+		"result": "palm_planks",
+		"amount": 5,
+		"station": "inventory",
+		"requirements": { "palm_log": 1 }
+	},
+	{
 		"result": "torch",
 		"amount": 4,
 		"station": "inventory",
@@ -370,6 +376,12 @@
 		"amount": 1,
 		"station": "decorations",
 		"requirements": { "pine_log": 1 }
+	},
+	{
+		"result": "thick_palm_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "palm_log": 1 }
 	},
 	{
 		"result": "copper_bars",

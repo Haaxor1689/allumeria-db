@@ -153,8 +153,7 @@
 		"overcharge": 1,
 		"swingMultiplier": 1,
 		"canBeBlownUp": false,
-		"hammerLevel": 2,
-		"preferredTool": "pickaxe_power"
+		"hammerLevel": 2
 	},
 	{
 		"id": "fluid",

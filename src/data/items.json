@@ -1329,6 +1329,13 @@
 		"category": ["blocks", "natural"]
 	},
 	{
+		"id": "thick_palm_log",
+		"block": "thick_palm_log",
+		"tags": { "can_place": true },
+		"category": ["blocks", "natural"],
+		"sprite": "missing"
+	},
+	{
 		"id": "trampoline",
 		"block": "trampoline",
 		"sellValue": 2,

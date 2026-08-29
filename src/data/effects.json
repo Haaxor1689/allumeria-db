@@ -277,7 +277,7 @@
 		"effectType": "Buff",
 		"textureX": 208,
 		"textureY": 368,
-		"amount": 4,
+		"amount": 10,
 		"incompatibilityID": -1
 	},
 	{
