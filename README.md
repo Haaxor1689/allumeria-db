@@ -2,7 +2,7 @@
 
 ## Disclaimer
 
-AllumeriaDB is a fan-made database and is not affiliated with the official Allumeria developers.
+AllumeriaDB is a fan-made database and is not affiliated with Infinimelon studio.
 
 All game rights, trademarks, and assets (including images, names, and descriptions) belong to Allumeria and its developer.
 

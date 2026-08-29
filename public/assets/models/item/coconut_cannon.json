@@ -1,0 +1,145 @@
+{
+	"meta": { "format_version": "4.10", "model_format": "free", "box_uv": true },
+	"name": "coconut_cannon",
+	"model_identifier": "",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
+	"resolution": { "width": 32, "height": 32 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": true,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-2.5, 0, -7],
+			"to": [1.5, 4, 1],
+			"autouv": 0,
+			"color": 0,
+			"origin": [0.5, 0, 0],
+			"faces": {
+				"north": { "uv": [8, 8, 12, 12], "texture": 0 },
+				"east": { "uv": [0, 8, 8, 12], "texture": 0 },
+				"south": { "uv": [20, 8, 24, 12], "texture": 0 },
+				"west": { "uv": [12, 8, 20, 12], "texture": 0 },
+				"up": { "uv": [12, 8, 8, 0], "texture": 0 },
+				"down": { "uv": [16, 0, 12, 8], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "4646645e-7ceb-2aa7-6bad-4e1e839ce6a3"
+		},
+		{
+			"name": "cube",
+			"box_uv": true,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-1, -2, 0],
+			"to": [0, 2, 2],
+			"autouv": 0,
+			"color": 2,
+			"rotation": [-22.5, 0, 0],
+			"origin": [0, 0, 1],
+			"uv_offset": [0, 1],
+			"faces": {
+				"north": { "uv": [2, 3, 3, 7], "texture": 0 },
+				"east": { "uv": [0, 3, 2, 7], "texture": 0 },
+				"south": { "uv": [5, 3, 6, 7], "texture": 0 },
+				"west": { "uv": [3, 3, 5, 7], "texture": 0 },
+				"up": { "uv": [3, 3, 2, 1], "texture": 0 },
+				"down": { "uv": [4, 1, 3, 3], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "cacc5386-49d8-932b-a070-a1308b07f680"
+		},
+		{
+			"name": "plane",
+			"color": 7,
+			"origin": [2.25, 5, -4],
+			"rotation": [90, 0, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"vz7P": [2.5, 0, 2.5],
+				"tN5b": [2.5, 0, -2.5],
+				"Fa4m": [-2.5, 0, 2.5],
+				"mIL4": [-2.5, 0, -2.5]
+			},
+			"faces": {
+				"khFEtoEa": {
+					"uv": {
+						"Fa4m": [0, 22],
+						"mIL4": [0, 17],
+						"tN5b": [5, 17],
+						"vz7P": [5, 22]
+					},
+					"vertices": ["vz7P", "tN5b", "mIL4", "Fa4m"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "d96319e5-8645-3a0e-6042-960ba3318161"
+		}
+	],
+	"outliner": [
+		{
+			"name": "root",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"uuid": "e8afb2dd-70d5-bf11-e30a-a04822960004",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
+			"children": [
+				"4646645e-7ceb-2aa7-6bad-4e1e839ce6a3",
+				"cacc5386-49d8-932b-a070-a1308b07f680",
+				"d96319e5-8645-3a0e-6042-960ba3318161"
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "C:\\Documents\\Blockbench\\items\\coconut_cannon.png",
+			"name": "coconut_cannon.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "0",
+			"group": "",
+			"width": 32,
+			"height": 32,
+			"uv_width": 32,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "6a5447ec-75d9-3450-00c0-8fe0207bc49b",
+			"relative_path": "coconut_cannon.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAYZJREFUWEdjZCAAtpRa/FcylgSrunf2OcO+a18YLt9/D+brKgoy9G29wkjIDHzyKJrV5aX/33z4FEXs2orA/8gGzFl8e5g5oMhb5z9yMIL4Tlo8DD7dJ8AhQfMQAFkIitNHXxkY5Lgh8TqoHIAtESKnCYoToauWNDiRwUIAZvjua5DECIsSEBs5B6CrIzcnEMxC2NIAVUMAOYhhBsPyOygtgAByOQALCZAcTBxZH7p6WGLGFUKM6D5ENgxmQWD5KbDw+k4zeIGEbjkuC7Qi1uMNZUZCIQCyCNkByKFDlRBATmQwX8ASGyxLYiuK871lMTwN0gcCsKgD8QnlEnjwbLny8H/x1jcMN8uNCSZMclM8Nn2M6p1n/8vEH2CQuJLOMPPUJAZjZnewOno5BOwAbC4bdQDdQoCaCYocs+Apvv+C0X9Txe8MNvzX6ZsLQK4GWX7pKi+DnvZnhkKDc/R3QOJS+/8DYTnI84wgy+dHH6Srr5HTyoBZDHPEqANGQ2A0BEZDYMBDAACy5P4h8vv/JgAAAABJRU5ErkJggg=="
+		}
+	]
+}

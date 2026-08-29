@@ -13,7 +13,8 @@
 		"entries": [
 			{ "monster": "StoneMonster" },
 			{ "monster": "Skeleton" },
-			{ "monster": "Wizard" }
+			{ "monster": "Wizard" },
+			{ "monster": "FacelessMiner" }
 		]
 	},
 	{
@@ -22,7 +23,9 @@
 			{ "monster": "Shroomer" },
 			{ "monster": "Skeleton" },
 			{ "monster": "Wizard" },
-			{ "monster": "FluffyGreen" }
+			{ "monster": "FluffyGreen" },
+			{ "monster": "MossyStoneMonster" },
+			{ "monster": "FacelessMiner" }
 		]
 	},
 	{
@@ -32,7 +35,8 @@
 			{ "monster": "Skeleton" },
 			{ "monster": "SnowWizard" },
 			{ "monster": "Snowman" },
-			{ "monster": "FuzzyIce" }
+			{ "monster": "FuzzyIce" },
+			{ "monster": "FacelessMiner" }
 		]
 	},
 	{
@@ -42,10 +46,25 @@
 	{
 		"id": "desert_underground",
 		"entries": [
-			{ "monster": "StoneMonster" },
-			{ "monster": "Skeleton" },
-			{ "monster": "Wizard" }
+			{ "monster": "Mummy" },
+			{ "monster": "PoisonBulb" },
+			{ "monster": "SandSkeleton" },
+			{ "monster": "SandGhost" },
+			{ "monster": "FacelessMiner" }
 		]
+	},
+	{
+		"id": "desert_dungeon",
+		"entries": [
+			{ "monster": "Mummy", "loot": "sand_enemy" },
+			{ "monster": "SandGhost", "loot": "sand_enemy" },
+			{ "monster": "PoisonBulb", "loot": "sand_enemy" },
+			{ "monster": "SandSkeleton", "loot": "sand_enemy" }
+		]
+	},
+	{
+		"id": "sand",
+		"entries": [{ "monster": "Tumbleweed" }, { "monster": "Mummy" }]
 	},
 	{
 		"id": "snow_dungeon_bricks",
@@ -60,6 +79,7 @@
 		"id": "dungeon_bricks",
 		"entries": [
 			{ "monster": "Skeleton", "loot": "forest_dungeon_enemy_loot" },
+			{ "monster": "MossyStoneMonster", "loot": "forest_dungeon_enemy_loot" },
 			{ "monster": "Wizard", "loot": "forest_dungeon_enemy_loot" },
 			{ "monster": "NightFlyer", "loot": "forest_dungeon_enemy_loot" },
 			{ "monster": "Shroomer", "loot": "forest_dungeon_enemy_loot" },

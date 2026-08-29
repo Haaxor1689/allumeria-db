@@ -1,0 +1,177 @@
+{
+	"meta": { "format_version": "4.10", "model_format": "free", "box_uv": true },
+	"name": "coconut_splitter",
+	"model_identifier": "",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
+	"resolution": { "width": 32, "height": 32 },
+	"elements": [
+		{
+			"name": "cube",
+			"box_uv": true,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-3, -0.5, -7],
+			"to": [2, 4.5, 1],
+			"autouv": 0,
+			"color": 0,
+			"origin": [0, -0.5, 0],
+			"faces": {
+				"north": { "uv": [8, 8, 13, 13], "texture": 0 },
+				"east": { "uv": [0, 8, 8, 13], "texture": 0 },
+				"south": { "uv": [21, 8, 26, 13], "texture": 0 },
+				"west": { "uv": [13, 8, 21, 13], "texture": 0 },
+				"up": { "uv": [13, 8, 8, 0], "texture": 0 },
+				"down": { "uv": [18, 0, 13, 8], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "4646645e-7ceb-2aa7-6bad-4e1e839ce6a3"
+		},
+		{
+			"name": "cube",
+			"box_uv": true,
+			"rescale": false,
+			"locked": false,
+			"light_emission": 0,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"from": [-1, -2, 0],
+			"to": [0, 2, 2],
+			"autouv": 0,
+			"color": 2,
+			"rotation": [-22.5, 0, 0],
+			"origin": [0, 0, 1],
+			"uv_offset": [0, 1],
+			"faces": {
+				"north": { "uv": [2, 3, 3, 7], "texture": 0 },
+				"east": { "uv": [0, 3, 2, 7], "texture": 0 },
+				"south": { "uv": [5, 3, 6, 7], "texture": 0 },
+				"west": { "uv": [3, 3, 5, 7], "texture": 0 },
+				"up": { "uv": [3, 3, 2, 1], "texture": 0 },
+				"down": { "uv": [4, 1, 3, 3], "texture": 0 }
+			},
+			"type": "cube",
+			"uuid": "cacc5386-49d8-932b-a070-a1308b07f680"
+		},
+		{
+			"name": "plane",
+			"color": 7,
+			"origin": [4.25, 3, -4],
+			"rotation": [128.28761, -22.22485, 16.62484],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"vz7P": [2.5, 0, 2.5],
+				"tN5b": [2.5, 0, -2.5],
+				"Fa4m": [-2.5, 0, 2.5],
+				"mIL4": [-2.5, 0, -2.5]
+			},
+			"faces": {
+				"khFEtoEa": {
+					"uv": {
+						"Fa4m": [0, 22],
+						"mIL4": [0, 17],
+						"tN5b": [5, 17],
+						"vz7P": [5, 22]
+					},
+					"vertices": ["vz7P", "tN5b", "mIL4", "Fa4m"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "d96319e5-8645-3a0e-6042-960ba3318161"
+		},
+		{
+			"name": "plane",
+			"color": 7,
+			"origin": [3.25, 6, -4],
+			"rotation": [69.98246, 2.34914, 0.85553],
+			"export": true,
+			"visibility": true,
+			"locked": false,
+			"render_order": "default",
+			"allow_mirror_modeling": true,
+			"vertices": {
+				"vz7P": [2.5, 0, 2.5],
+				"tN5b": [2.5, 0, -2.5],
+				"Fa4m": [-2.5, 0, 2.5],
+				"mIL4": [-2.5, 0, -2.5]
+			},
+			"faces": {
+				"khFEtoEa": {
+					"uv": {
+						"Fa4m": [0, 22],
+						"mIL4": [0, 17],
+						"tN5b": [5, 17],
+						"vz7P": [5, 22]
+					},
+					"vertices": ["vz7P", "tN5b", "mIL4", "Fa4m"],
+					"texture": 0
+				}
+			},
+			"type": "mesh",
+			"uuid": "616effbf-8ff5-8113-d544-f9d9983b3d6a"
+		}
+	],
+	"outliner": [
+		{
+			"name": "root",
+			"origin": [0, 0, 0],
+			"color": 0,
+			"uuid": "e8afb2dd-70d5-bf11-e30a-a04822960004",
+			"export": true,
+			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
+			"children": [
+				"4646645e-7ceb-2aa7-6bad-4e1e839ce6a3",
+				"cacc5386-49d8-932b-a070-a1308b07f680",
+				"d96319e5-8645-3a0e-6042-960ba3318161",
+				"616effbf-8ff5-8113-d544-f9d9983b3d6a"
+			]
+		}
+	],
+	"textures": [
+		{
+			"path": "C:\\Documents\\Blockbench\\items\\coconut_splitter.png",
+			"name": "coconut_splitter.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "0",
+			"group": "",
+			"width": 32,
+			"height": 32,
+			"uv_width": 32,
+			"uv_height": 32,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "6a5447ec-75d9-3450-00c0-8fe0207bc49b",
+			"relative_path": "coconut_splitter.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAaBJREFUWEdjZCAAtpRa/FcyloSrunf2OcO+a18YLt9/DxfTVRRk6Nt6hZGQWdjkUTSpy0v/v/nwKYrYtRWB/9E1zll8exg5oMhb5z9y8IH4Tlo8DD7dJ8AhQfMQAFkIis9HXxkY5LgZGEDxOagcgCsRoqcLshOhq5Y0OJHBQgBm8O5rkMQIixKYOHoOQFdPak4gmHVwpQGqhQB6EIMMhuV1UFoAAfRyACQGCgmQPLIcTC82PbBEje5wRmw+hBkEMzyw/BSDrbgBw+GXFxjWd5qBzQA5Et1yfMGvFbEea2gT5YC+vl8MfjLSDJuePGUoKmKjrgMIRQHIl+ghgBxFFEcBeiqHxS+obICVCbjqgnxvWYxQB6UNEIClH5h5uLIpo3rn2f8y8QcYJK6kM8w8NYnBmNkdbMDNcmOCOYTULIe1MgI5AJvEqAPoFgLUiEdKzIAntP4LRv9NFb8z2PBfp0vigzkabBnI8ktXeRn0tD8zFBqco78DEpfa/x8Iy0GeZwRZPj/6IF19jZxmBsxilDRASSqmVO9oCIyGwGgIjIYAAG/pDTASI9U1AAAAAElFTkSuQmCC"
+		}
+	]
+}

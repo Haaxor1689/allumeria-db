@@ -480,6 +480,12 @@
 		"requirements": { "iron_ingot": 1 }
 	},
 	{
+		"result": "glass_shard",
+		"amount": 10,
+		"station": "inventory",
+		"requirements": { "glass": 1 }
+	},
+	{
 		"result": "dart",
 		"amount": 10,
 		"station": "inventory",
@@ -636,12 +642,6 @@
 		"requirements": { "any_planks": 5, "glass": 1 }
 	},
 	{
-		"result": "alpha_shop",
-		"amount": 1,
-		"station": "inventory",
-		"requirements": { "any_planks": 5, "copper_coin": 5 }
-	},
-	{
 		"result": "health_potion",
 		"amount": 1,
 		"station": "potions",
@@ -651,31 +651,31 @@
 		"result": "health_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "blueberry": 1, "allumerium_ore": 1 }
+		"requirements": { "blueberry": 1, "thorns": 1 }
 	},
 	{
 		"result": "weak_health_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "red_mushroom_item": 1, "iron_ore": 1 }
+		"requirements": { "red_mushroom_item": 1, "wheat": 1 }
 	},
 	{
 		"result": "weak_health_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "blueberry": 1, "iron_ore": 1 }
+		"requirements": { "blueberry": 1, "wheat": 1 }
 	},
 	{
 		"result": "regen_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "red_mushroom_item": 1, "silver_ore": 1 }
+		"requirements": { "red_mushroom_item": 1, "tomato": 1 }
 	},
 	{
 		"result": "regen_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "blueberry": 1, "silver_ore": 1 }
+		"requirements": { "blueberry": 1, "tomato": 1 }
 	},
 	{
 		"result": "poison_potion",
@@ -690,6 +690,18 @@
 		"requirements": { "frost_algae": 1, "mint": 1 }
 	},
 	{
+		"result": "speed_potion",
+		"amount": 1,
+		"station": "potions",
+		"requirements": { "ice_cap": 1, "mint": 1 }
+	},
+	{
+		"result": "speed_potion",
+		"amount": 1,
+		"station": "potions",
+		"requirements": { "watermelon": 1, "mint": 1 }
+	},
+	{
 		"result": "armour_potion",
 		"amount": 1,
 		"station": "potions",
@@ -699,13 +711,13 @@
 		"result": "flight_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "blueberry": 1, "silver_ore": 1 }
+		"requirements": { "blueberry": 1, "fish_fillet": 3 }
 	},
 	{
 		"result": "respawn_potion",
 		"amount": 1,
 		"station": "potions",
-		"requirements": { "blueberry": 1, "gold_ore": 1 }
+		"requirements": { "blueberry": 1, "throwable_glow_bean": 1 }
 	},
 	{
 		"result": "mining_potion",
@@ -762,6 +774,12 @@
 		"requirements": { "any_planks": 1, "gold_ingot": 4 }
 	},
 	{
+		"result": "palladium_arrow",
+		"amount": 64,
+		"station": "inventory",
+		"requirements": { "palladium_ingot": 1 }
+	},
+	{
 		"result": "flaming_arrow",
 		"amount": 4,
 		"station": "inventory",
@@ -772,6 +790,12 @@
 		"amount": 1,
 		"station": "inventory",
 		"requirements": { "arrow": 1, "dynamite": 1 }
+	},
+	{
+		"result": "ice_arrow",
+		"amount": 32,
+		"station": "inventory",
+		"requirements": { "permafrost": 1, "ice_cap": 1 }
 	},
 	{
 		"result": "brick",
@@ -819,7 +843,7 @@
 		"result": "hoe",
 		"amount": 1,
 		"station": "work_bench",
-		"requirements": { "iron_ingot": 3, "any_planks": 5 }
+		"requirements": { "flint": 3, "any_planks": 5 }
 	},
 	{
 		"result": "bread",
@@ -913,7 +937,7 @@
 		"result": "forest_ingot",
 		"amount": 1,
 		"station": "furnace",
-		"requirements": { "gold_ingot": 1, "forest_flower": 1 }
+		"requirements": { "thorns": 1, "forest_flower": 1 }
 	},
 	{
 		"result": "forest_pickaxe",
@@ -1012,6 +1036,78 @@
 		"requirements": { "cobalt_ingot": 15 }
 	},
 	{
+		"result": "palladium_ingot",
+		"amount": 1,
+		"station": "furnace",
+		"requirements": { "palladium_ore": 3 }
+	},
+	{
+		"result": "palladium_pickaxe",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 12 }
+	},
+	{
+		"result": "palladium_axe",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 12 }
+	},
+	{
+		"result": "palladium_sword",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 12 }
+	},
+	{
+		"result": "palladium_spear",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 12 }
+	},
+	{
+		"result": "palladium_bow",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 12 }
+	},
+	{
+		"result": "palladium_crossbow",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 12 }
+	},
+	{
+		"result": "palladium_greaves",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 15 }
+	},
+	{
+		"result": "palladium_helmet",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 15 }
+	},
+	{
+		"result": "palladium_chestplate",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "palladium_ingot": 15 }
+	},
+	{
+		"result": "cobalt_shuriken",
+		"amount": 64,
+		"station": "inventory",
+		"requirements": { "cobalt_ingot": 1, "snowball": 1 }
+	},
+	{
+		"result": "desert_shuriken",
+		"amount": 64,
+		"station": "inventory",
+		"requirements": { "palladium_ingot": 1, "cactus": 1 }
+	},
+	{
 		"result": "spawn_pointer",
 		"amount": 1,
 		"station": "work_bench",
@@ -1030,10 +1126,16 @@
 		"requirements": { "spoon_fragment": 10 }
 	},
 	{
-		"result": "ominous_deer_skull",
+		"result": "sand_dungeon_key",
 		"amount": 1,
-		"station": "work_bench",
-		"requirements": { "skull_fragment": 10 }
+		"station": "inventory",
+		"requirements": { "sand_key_part": 3, "palladium_ingot": 1 }
+	},
+	{
+		"result": "frozen_heart",
+		"amount": 1,
+		"station": "inventory",
+		"requirements": { "ice_cap": 20, "cobalt_ingot": 1, "heart_beet": 1 }
 	},
 	{
 		"result": "basket_hoop",
@@ -1076,6 +1178,12 @@
 		"amount": 1,
 		"station": "work_bench",
 		"requirements": { "bread": 10 }
+	},
+	{
+		"result": "npc_sign",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "any_planks": 5 }
 	},
 	{
 		"result": "sapphire_block",

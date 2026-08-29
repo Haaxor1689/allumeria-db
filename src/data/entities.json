@@ -13,7 +13,7 @@
 		"id": "BossSnow",
 		"category": "creature",
 		"walkSpeed": 0.1,
-		"health": 200,
+		"health": 2000,
 		"defence": 2,
 		"baseDamage": 5,
 		"minCoinDrop": 1,
@@ -27,7 +27,7 @@
 		"id": "BossTest",
 		"category": "creature",
 		"walkSpeed": 0.1,
-		"health": 200,
+		"health": 600,
 		"defence": 2,
 		"baseDamage": 5,
 		"minCoinDrop": 1,
@@ -76,6 +76,34 @@
 		"canSpawnInSunlight": false,
 		"flying": false
 	},
+	{
+		"id": "BossWorm",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 200,
+		"defence": 2,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": true,
+		"model": "entity.worm_segment",
+		"texture": "entity.worm_segment_head"
+	},
+	{
+		"id": "BossWormSegment",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 5000,
+		"defence": 2,
+		"baseDamage": 45,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"model": "entity.worm_segment",
+		"texture": "entity.worm_segment_head"
+	},
 	{ "id": "MinecartEntity", "category": "vehicle" },
 	{
 		"id": "MinecartRegular",
@@ -98,66 +126,6 @@
 		"texture": "uvtest2"
 	},
 	{
-		"id": "Fluffy",
-		"category": "creature",
-		"walkSpeed": 0.1,
-		"health": 4,
-		"defence": 0,
-		"baseDamage": 2,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
-		"canSpawnInSunlight": true,
-		"flying": false,
-		"loot": "fuzzy",
-		"model": "entity.creature",
-		"texture": "entity.creature"
-	},
-	{
-		"id": "FluffyGreen",
-		"category": "creature",
-		"walkSpeed": 0.1,
-		"health": 4,
-		"defence": 0,
-		"baseDamage": 6,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
-		"canSpawnInSunlight": false,
-		"flying": false,
-		"loot": "fuzzy",
-		"model": "entity.creature",
-		"texture": "entity.creature_green"
-	},
-	{
-		"id": "FuzzyIce",
-		"category": "creature",
-		"walkSpeed": 0.1,
-		"health": 20,
-		"defence": 0,
-		"baseDamage": 2,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
-		"canSpawnInSunlight": false,
-		"flying": false,
-		"loot": "fuzzy",
-		"model": "entity.creature",
-		"texture": "entity.ice_fuzzy"
-	},
-	{
-		"id": "Hog",
-		"category": "creature",
-		"walkSpeed": 0.1,
-		"health": 4,
-		"defence": 0,
-		"baseDamage": 2,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
-		"canSpawnInSunlight": true,
-		"flying": false,
-		"loot": "hog",
-		"model": "entity.hog",
-		"texture": "entity.hog"
-	},
-	{
 		"id": "LivingEntity",
 		"category": "entity",
 		"walkSpeed": 0.1,
@@ -168,21 +136,6 @@
 		"maxCoinDrop": 5,
 		"canSpawnInSunlight": false,
 		"flying": false
-	},
-	{
-		"id": "NightFlyer",
-		"category": "creature",
-		"walkSpeed": 0.1,
-		"health": 5,
-		"defence": 0,
-		"baseDamage": 5,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
-		"canSpawnInSunlight": false,
-		"flying": true,
-		"loot": "forest_enemy_loot",
-		"model": "entity.nightflyer",
-		"texture": "entity.nightflyer"
 	},
 	{
 		"id": "Pukeko",
@@ -199,7 +152,111 @@
 		"texture": "entity.damnbird"
 	},
 	{
-		"id": "Shroomer",
+		"id": "FacelessMiner",
+		"category": "creature",
+		"walkSpeed": 0.08,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 60,
+		"minCoinDrop": 200,
+		"maxCoinDrop": 800,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "minerLoot",
+		"model": "entity.crazy_miner",
+		"texture": "entity.crazy_miner"
+	},
+	{
+		"id": "PunchingBag",
+		"category": "creature",
+		"walkSpeed": 0.03,
+		"health": 10000,
+		"defence": 0,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"model": "entity.damnbird",
+		"texture": "entity.damnbird"
+	},
+	{
+		"id": "Mummy",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 70,
+		"minCoinDrop": 20,
+		"maxCoinDrop": 40,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "sand_enemy",
+		"model": "entity.zombie",
+		"texture": "entity.mummy"
+	},
+	{
+		"id": "PoisonBulb",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 70,
+		"minCoinDrop": 20,
+		"maxCoinDrop": 40,
+		"canSpawnInSunlight": false,
+		"flying": true,
+		"loot": "sand_enemy",
+		"model": "entity.poison_bulb",
+		"texture": "entity.poison_bulb"
+	},
+	{
+		"id": "SandGhost",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 70,
+		"minCoinDrop": 30,
+		"maxCoinDrop": 60,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "sand_enemy",
+		"model": "entity.zombie",
+		"texture": "entity.ghost"
+	},
+	{
+		"id": "SandSkeleton",
+		"category": "creature",
+		"walkSpeed": 0.28,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 50,
+		"minCoinDrop": 20,
+		"maxCoinDrop": 40,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "sand_enemy",
+		"model": "entity.skeleton",
+		"texture": "entity.sand_skeleton"
+	},
+	{
+		"id": "Tumbleweed",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 60,
+		"minCoinDrop": 20,
+		"maxCoinDrop": 40,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "sand_enemy",
+		"model": "entity.tumbleweed",
+		"texture": "entity.tumbleweed"
+	},
+	{
+		"id": "Fluffy",
 		"category": "creature",
 		"walkSpeed": 0.1,
 		"health": 20,
@@ -207,9 +264,69 @@
 		"baseDamage": 5,
 		"minCoinDrop": 1,
 		"maxCoinDrop": 5,
+		"canSpawnInSunlight": true,
+		"flying": false,
+		"loot": "fuzzy",
+		"model": "entity.creature",
+		"texture": "entity.creature"
+	},
+	{
+		"id": "FluffyGreen",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 40,
+		"minCoinDrop": 5,
+		"maxCoinDrop": 15,
 		"canSpawnInSunlight": false,
 		"flying": false,
+		"loot": "undergrowth_loot",
+		"model": "entity.creature",
+		"texture": "entity.creature_green"
+	},
+	{
+		"id": "Hog",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": true,
+		"flying": false,
+		"loot": "hog",
+		"model": "entity.hog",
+		"texture": "entity.hog"
+	},
+	{
+		"id": "NightFlyer",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 20,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": true,
 		"loot": "forest_enemy_loot",
+		"model": "entity.nightflyer",
+		"texture": "entity.nightflyer"
+	},
+	{
+		"id": "Shroomer",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 40,
+		"minCoinDrop": 10,
+		"maxCoinDrop": 20,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "undergrowth_loot",
 		"model": "entity.mushroomer",
 		"texture": "entity.mushroomer"
 	},
@@ -217,9 +334,9 @@
 		"id": "Skeleton",
 		"category": "creature",
 		"walkSpeed": 0.28,
-		"health": 7,
+		"health": 20,
 		"defence": 0,
-		"baseDamage": 5,
+		"baseDamage": 15,
 		"minCoinDrop": 1,
 		"maxCoinDrop": 5,
 		"canSpawnInSunlight": false,
@@ -229,12 +346,72 @@
 		"texture": "entity.skeleton"
 	},
 	{
+		"id": "StoneMonster",
+		"category": "creature",
+		"walkSpeed": 0.08,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 30,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "forest_enemy_loot",
+		"model": "entity.rockmonster",
+		"texture": "entity.rockmonster"
+	},
+	{
+		"id": "Zombie",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 20,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "forest_enemy_loot",
+		"model": "entity.zombie",
+		"texture": "entity.zombie"
+	},
+	{
+		"id": "Wizard",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 10,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "forest_enemy_loot",
+		"model": "entity.wizard",
+		"texture": "entity.wizard"
+	},
+	{
+		"id": "FuzzyIce",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 60,
+		"minCoinDrop": 10,
+		"maxCoinDrop": 20,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"loot": "fuzzy",
+		"model": "entity.creature",
+		"texture": "entity.ice_fuzzy"
+	},
+	{
 		"id": "Snowman",
 		"category": "creature",
 		"walkSpeed": 0.1,
-		"health": 40,
+		"health": 20,
 		"defence": 0,
-		"baseDamage": 5,
+		"baseDamage": 50,
 		"minCoinDrop": 1,
 		"maxCoinDrop": 5,
 		"canSpawnInSunlight": false,
@@ -247,11 +424,11 @@
 		"id": "SnowWizard",
 		"category": "creature",
 		"walkSpeed": 0.08,
-		"health": 40,
+		"health": 20,
 		"defence": 0,
-		"baseDamage": 5,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
+		"baseDamage": 60,
+		"minCoinDrop": 15,
+		"maxCoinDrop": 30,
 		"canSpawnInSunlight": false,
 		"flying": false,
 		"loot": "forest_enemy_loot",
@@ -259,44 +436,14 @@
 		"texture": "entity.ice_wizard"
 	},
 	{
-		"id": "StoneMonster",
-		"category": "creature",
-		"walkSpeed": 0.2,
-		"health": 20,
-		"defence": 0,
-		"baseDamage": 5,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
-		"canSpawnInSunlight": false,
-		"flying": false,
-		"loot": "forest_enemy_loot",
-		"model": "entity.rockmonster",
-		"texture": "entity.rockmonster"
-	},
-	{
-		"id": "Wizard",
-		"category": "creature",
-		"walkSpeed": 0.1,
-		"health": 20,
-		"defence": 0,
-		"baseDamage": 5,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
-		"canSpawnInSunlight": false,
-		"flying": false,
-		"loot": "forest_enemy_loot",
-		"model": "entity.wizard",
-		"texture": "entity.wizard"
-	},
-	{
 		"id": "Yeti",
 		"category": "creature",
 		"walkSpeed": 0.08,
-		"health": 40,
+		"health": 20,
 		"defence": 0,
-		"baseDamage": 30,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
+		"baseDamage": 80,
+		"minCoinDrop": 15,
+		"maxCoinDrop": 40,
 		"canSpawnInSunlight": false,
 		"flying": false,
 		"loot": "forest_enemy_loot",
@@ -304,19 +451,19 @@
 		"texture": "entity.yeti"
 	},
 	{
-		"id": "Zombie",
+		"id": "IceFlyer",
 		"category": "creature",
 		"walkSpeed": 0.1,
 		"health": 20,
 		"defence": 0,
-		"baseDamage": 5,
-		"minCoinDrop": 1,
-		"maxCoinDrop": 5,
+		"baseDamage": 60,
+		"minCoinDrop": 15,
+		"maxCoinDrop": 30,
 		"canSpawnInSunlight": false,
-		"flying": false,
+		"flying": true,
 		"loot": "forest_enemy_loot",
-		"model": "entity.zombie",
-		"texture": "zombie"
+		"model": "entity.nightflyer",
+		"texture": "entity.iceflyer"
 	},
 	{
 		"id": "Arrow",
@@ -326,64 +473,10 @@
 	},
 	{ "id": "ArrowBase", "category": "projectile" },
 	{
-		"id": "BasketBall",
-		"category": "projectile",
-		"model": "item.watermelon",
-		"texture": "item.basketball"
-	},
-	{
-		"id": "Bomberry",
-		"category": "projectile",
-		"model": "item.watermelon",
-		"texture": "item.bomberry"
-	},
-	{
-		"id": "BoomerangFrozen",
-		"category": "projectile",
-		"model": "item.boomerang",
-		"texture": "item.boomerang"
-	},
-	{
-		"id": "BoomerangProjectile",
-		"category": "projectile",
-		"model": "item.boomerang",
-		"texture": "item.boomerang"
-	},
-	{
-		"id": "BrickProjectile",
-		"category": "projectile",
-		"model": "item.brick",
-		"texture": "item.brick"
-	},
-	{
-		"id": "Dart",
-		"category": "projectile",
-		"model": "item.arrow",
-		"texture": "item.dart"
-	},
-	{
-		"id": "Dynamite",
-		"category": "projectile",
-		"model": "item.dynamite",
-		"texture": "item.dynamite"
-	},
-	{
 		"id": "ExplosiveArrow",
 		"category": "projectile",
 		"model": "item.arrow",
 		"texture": "item.arrow2"
-	},
-	{
-		"id": "Fireball",
-		"category": "projectile",
-		"model": "item.arrow",
-		"texture": "item.arrow2"
-	},
-	{
-		"id": "FishingBobber",
-		"category": "projectile",
-		"model": "item.bobber",
-		"texture": "item.bobber"
 	},
 	{
 		"id": "FlamingArrow",
@@ -392,22 +485,22 @@
 		"texture": "item.arrow2"
 	},
 	{
-		"id": "GlowBeanProjectile",
+		"id": "IceArrow",
 		"category": "projectile",
-		"model": "item.dynamite",
-		"texture": "item.glowing_bean"
+		"model": "item.arrow",
+		"texture": "item.arrow2"
+	},
+	{
+		"id": "ShockArrow",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.arrow2"
 	},
 	{
 		"id": "IceSpell",
 		"category": "projectile",
 		"model": "projectile.spell",
 		"texture": "projectile.spell"
-	},
-	{
-		"id": "IcycleProjectile",
-		"category": "projectile",
-		"model": "projectile.cross",
-		"texture": "projectile.icycle"
 	},
 	{
 		"id": "Poisonball",
@@ -422,16 +515,58 @@
 		"texture": "projectile.spell_green"
 	},
 	{
-		"id": "RockMelonProjectile",
+		"id": "Spell",
 		"category": "projectile",
-		"model": "item.watermelon",
-		"texture": "item.rockmelon"
+		"model": "projectile.spell",
+		"texture": "projectile.spell"
 	},
 	{
-		"id": "RockProjectile",
+		"id": "BasketBall",
 		"category": "projectile",
-		"model": "item.rock",
-		"texture": "item.rock"
+		"model": "item.watermelon",
+		"texture": "item.basketball"
+	},
+	{
+		"id": "Bomberry",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.bomberry"
+	},
+	{
+		"id": "BrickProjectile",
+		"category": "projectile",
+		"model": "item.brick",
+		"texture": "item.brick"
+	},
+	{
+		"id": "Dart",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.dart"
+	},
+	{
+		"id": "DesertShuriken",
+		"category": "projectile",
+		"model": "item.shuriken",
+		"texture": "item.desert_shuriken"
+	},
+	{
+		"id": "Dynamite",
+		"category": "projectile",
+		"model": "item.dynamite",
+		"texture": "item.dynamite"
+	},
+	{
+		"id": "GlassShard",
+		"category": "projectile",
+		"model": "item.shuriken",
+		"texture": "item.glass_shard"
+	},
+	{
+		"id": "GlowBeanProjectile",
+		"category": "projectile",
+		"model": "item.dynamite",
+		"texture": "item.glowing_bean"
 	},
 	{
 		"id": "Shuriken",
@@ -446,12 +581,6 @@
 		"texture": "item.snowball"
 	},
 	{
-		"id": "Spell",
-		"category": "projectile",
-		"model": "projectile.spell",
-		"texture": "projectile.spell"
-	},
-	{
 		"id": "TorchProjectile",
 		"category": "projectile",
 		"model": "item.dynamite",
@@ -464,9 +593,125 @@
 		"texture": "item.watermelon"
 	},
 	{
+		"id": "BoomerangFrozen",
+		"category": "projectile",
+		"model": "item.boomerang",
+		"texture": "item.boomerang"
+	},
+	{
+		"id": "BoomerangProjectile",
+		"category": "projectile",
+		"model": "item.boomerang",
+		"texture": "item.boomerang"
+	},
+	{
+		"id": "CoconutProjectile",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.coconut"
+	},
+	{
+		"id": "CompactDisc",
+		"category": "projectile",
+		"model": "item.frisbee",
+		"texture": "item.disc"
+	},
+	{
+		"id": "CursedPickaxe",
+		"category": "projectile",
+		"model": "item.pickaxe",
+		"texture": "item.pickaxe"
+	},
+	{
+		"id": "Fireball",
+		"category": "projectile",
+		"model": "item.arrow",
+		"texture": "item.arrow2"
+	},
+	{
+		"id": "FishingBobber",
+		"category": "projectile",
+		"model": "item.bobber",
+		"texture": "item.bobber"
+	},
+	{
+		"id": "IcycleProjectile",
+		"category": "projectile",
+		"model": "projectile.cross",
+		"texture": "projectile.icycle"
+	},
+	{
+		"id": "RockMelonProjectile",
+		"category": "projectile",
+		"model": "item.watermelon",
+		"texture": "item.rockmelon"
+	},
+	{
+		"id": "RockProjectile",
+		"category": "projectile",
+		"model": "item.rock",
+		"texture": "item.rock"
+	},
+	{
 		"id": "WatermelonSeed",
 		"category": "projectile",
 		"model": "item.rock",
 		"texture": "item.watermelon_seed"
+	},
+	{
+		"id": "BlacksmithNPC",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"model": "player.player",
+		"texture": "npc.blacksmith"
+	},
+	{
+		"id": "BuilderNPC",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"model": "player.player",
+		"texture": "npc.builder"
+	},
+	{
+		"id": "FarmerNPC",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"model": "player.player",
+		"texture": "npc.farmer"
+	},
+	{
+		"id": "MerchantNPC",
+		"category": "creature",
+		"walkSpeed": 0.1,
+		"health": 20,
+		"defence": 0,
+		"baseDamage": 5,
+		"minCoinDrop": 1,
+		"maxCoinDrop": 5,
+		"canSpawnInSunlight": false,
+		"flying": false,
+		"model": "player.player",
+		"texture": "npc.merchant"
 	}
 ]

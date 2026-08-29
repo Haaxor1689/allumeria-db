@@ -1,5 +1,12 @@
 {
+	"meta": { "format_version": "4.10", "model_format": "free", "box_uv": false },
 	"name": "shuriken",
+	"model_identifier": "",
+	"visible_box": [1, 1, 0],
+	"variable_placeholders": "",
+	"variable_placeholder_buttons": [],
+	"timeline_setups": [],
+	"unhandled_root_fields": {},
 	"resolution": { "width": 16, "height": 16 },
 	"elements": [
 		{
@@ -7,6 +14,9 @@
 			"color": 1,
 			"origin": [0, 0, 0],
 			"rotation": [0, 0, 0],
+			"export": true,
+			"visibility": true,
+			"locked": false,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"vertices": {
@@ -35,6 +45,9 @@
 			"color": 1,
 			"origin": [0, 0, 0],
 			"rotation": [0, -20, 90],
+			"export": true,
+			"visibility": true,
+			"locked": false,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"vertices": {
@@ -63,6 +76,9 @@
 			"color": 1,
 			"origin": [0, 0, 0],
 			"rotation": [0, 70, 90],
+			"export": true,
+			"visibility": true,
+			"locked": false,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"vertices": {
@@ -91,13 +107,51 @@
 		{
 			"name": "bone",
 			"origin": [0, 0, 0],
+			"color": 0,
 			"uuid": "bc95c086-8374-dd66-3160-7d283f8d6072",
+			"export": true,
 			"mirror_uv": false,
+			"isOpen": true,
+			"locked": false,
+			"visibility": true,
+			"autouv": 0,
+			"selected": false,
 			"children": [
 				"2017a1e7-e11b-d441-f72e-fd3c8cda34b3",
 				"b7baa0fb-c9bd-a16c-6a10-70bb9faa13ca",
 				"79acf294-a287-7dd6-3e21-ca6afd23e086"
 			]
+		}
+	],
+	"textures": [
+		{
+			"path": "C:\\Documents\\Blockbench\\items\\shuriken.png",
+			"name": "shuriken.png",
+			"folder": "block",
+			"namespace": "",
+			"id": "0",
+			"group": "",
+			"width": 16,
+			"height": 16,
+			"uv_width": 16,
+			"uv_height": 16,
+			"particle": false,
+			"use_as_default": false,
+			"layers_enabled": false,
+			"sync_to_project": "",
+			"render_mode": "default",
+			"render_sides": "auto",
+			"pbr_channel": "color",
+			"frame_time": 1,
+			"frame_order_type": "loop",
+			"frame_order": "",
+			"frame_interpolate": false,
+			"visible": true,
+			"internal": true,
+			"saved": true,
+			"uuid": "3ee9d44f-576c-69e2-0aef-9e9beae8a03c",
+			"relative_path": "shuriken.png",
+			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKBJREFUOE9jZEAD/////8/IyMgIEkZmo6uD8cEKYWDHmRv/VeTEGFTEhMDid169+w9j4zQAZMvd1+8Z7jx6xXDh+hMGA00ZBg8TDbABHYv3/K+IdUGxBN0gsCTIZpBmkGKQJmRDcNmM4QWYISDNIG8oiwoydC7ZCzYUnyFwSZB/Qd6AOZ/oMICZji3ESY4FQv7FJo/Xf8QYOGoAA8MwCAMAO8RJEa9VFEoAAAAASUVORK5CYII="
 		}
 	]
 }

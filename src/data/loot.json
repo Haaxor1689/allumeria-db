@@ -31,6 +31,15 @@
 		]
 	},
 	{
+		"id": "palm_leaves",
+		"group": "EarlyForest",
+		"entries": [
+			{ "item": "palm_sapling", "amount": 1, "chance": 0.05 },
+			{ "item": "coconut", "amount": 1, "chance": 0.5 },
+			{ "item": "palm_leaves", "amount": 1, "needs": "axe_power" }
+		]
+	},
+	{
 		"id": "cotton",
 		"group": "EarlyForest",
 		"item": "cotton_plant",
@@ -133,6 +142,39 @@
 		]
 	},
 	{
+		"id": "sand_enemy",
+		"group": "Misc",
+		"entries": [
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "coconut", "min": 1, "max": 10 },
+					{ "item": "shock_arrow", "min": 1, "max": 10 },
+					{ "item": "health_potion", "min": 1, "max": 2 },
+					{ "item": "desert_shuriken", "min": 1, "max": 10 }
+				]
+			},
+			{ "item": "purple_fire_lighter", "amount": 1, "chance": 0.05 }
+		]
+	},
+	{
+		"id": "sand_enemy",
+		"group": "Misc",
+		"entries": [
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "coconut", "min": 1, "max": 10 },
+					{ "item": "shock_arrow", "min": 1, "max": 10 },
+					{ "item": "health_potion", "min": 1, "max": 2 },
+					{ "item": "desert_shuriken", "min": 1, "max": 10 },
+					{ "item": "purple_fire_extinguisher", "amount": 1 }
+				]
+			},
+			{ "item": "purple_fire_lighter", "amount": 1, "chance": 0.05 }
+		]
+	},
+	{
 		"id": "crate_base",
 		"group": "ForestCaves",
 		"entries": [
@@ -164,11 +206,10 @@
 			{
 				"oneOf": true,
 				"entries": [
-					{ "item": "coal_ore", "min": 3, "max": 8 },
-					{ "item": "planks", "min": 3, "max": 8 },
-					{ "item": "silver_ore", "min": 1, "max": 2 },
-					{ "item": "iron_ore", "min": 1, "max": 3 },
-					{ "item": "reinforced_arrow", "min": 3, "max": 8 },
+					{ "item": "silver_ore", "min": 2, "max": 5 },
+					{ "item": "gold_ore", "min": 1, "max": 3 },
+					{ "item": "cobalt_ore", "min": 1, "max": 3 },
+					{ "item": "ice_arrow", "min": 3, "max": 8 },
 					{ "item": "respawn_potion", "amount": 1 }
 				]
 			},
@@ -191,6 +232,7 @@
 			{ "item": "whoopee_cushion", "amount": 1 },
 			{ "item": "eightball", "amount": 1 },
 			{ "item": "dice", "amount": 1 },
+			{ "item": "bubble_mix", "amount": 1 },
 			{ "item": "basketball", "amount": 10 }
 		]
 	},
@@ -266,11 +308,49 @@
 		]
 	},
 	{
+		"id": "undergrowth_loot",
+		"group": "EarlyForest",
+		"entries": [
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "torch", "min": 3, "max": 8 },
+					{ "item": "reinforced_arrow", "min": 3, "max": 8 },
+					{ "item": "weak_health_potion", "amount": 1 },
+					{ "item": "shuriken", "min": 3, "max": 8 },
+					{ "item": "skull_fragment", "amount": 1 },
+					{ "item": "flint", "min": 1, "max": 3 }
+				],
+				"chance": 0.3
+			},
+			{ "item": "thorns", "min": 3, "max": 7, "chance": 0.5 }
+		]
+	},
+	{
 		"id": "forest_spirit",
 		"group": "ForestCaves",
 		"entries": [
 			{ "item": "thorn_blade", "amount": 1 },
 			{ "item": "forest_key", "amount": 1 },
+			{ "item": "health_potion", "amount": 5 }
+		]
+	},
+	{
+		"id": "sand_worm",
+		"group": "SandDungeon",
+		"entries": [
+			{ "item": "nightmare_blade", "amount": 1 },
+			{ "item": "purple_fire_lighter", "amount": 1 },
+			{ "item": "worm", "amount": 1 },
+			{ "item": "health_potion", "amount": 5 }
+		]
+	},
+	{
+		"id": "snow_spirit",
+		"group": "SnowDungeon",
+		"entries": [
+			{ "item": "ice_pickaxe", "amount": 1 },
+			{ "item": "arctic_blade", "amount": 1 },
 			{ "item": "health_potion", "amount": 5 }
 		]
 	},
@@ -286,7 +366,8 @@
 				],
 				"chance": 0.4
 			},
-			{ "item": "forest_key", "amount": 1, "chance": 0.2 }
+			{ "item": "forest_key", "amount": 1, "chance": 0.2 },
+			{ "item": "thorns", "min": 1, "max": 7, "chance": 0.2 }
 		]
 	},
 	{
@@ -347,16 +428,20 @@
 					{ "item": "painting_cloud", "amount": 1 },
 					{ "item": "painting_deer", "amount": 1 },
 					{ "item": "painting_waves", "amount": 1 },
-					{ "item": "painting_pipes", "amount": 1 },
 					{ "item": "painting_melon", "amount": 1 },
-					{ "item": "painting_triangle", "amount": 1 },
 					{ "item": "painting_stars", "amount": 1 },
 					{ "item": "painting_bird", "amount": 1 },
 					{ "item": "painting_blue", "amount": 1 },
 					{ "item": "painting_city", "amount": 1 },
 					{ "item": "painting_desolate", "amount": 1 },
 					{ "item": "painting_undergrowth", "amount": 1 },
-					{ "item": "painting_figure", "amount": 1 }
+					{ "item": "painting_figure", "amount": 1 },
+					{ "item": "painting_alpha", "amount": 1 },
+					{ "item": "painting_droplet", "amount": 1 },
+					{ "item": "painting_parthenon", "amount": 1 },
+					{ "item": "painting_horse", "amount": 1 },
+					{ "item": "painting_sky", "amount": 1 },
+					{ "item": "painting_ornate", "amount": 1 }
 				]
 			}
 		]
@@ -417,20 +502,34 @@
 			{
 				"oneOf": true,
 				"entries": [
+					{ "item": "paint_roller", "amount": 1 },
+					{ "item": "paint_roller_earthy", "amount": 1 },
+					{ "item": "paint_roller_greyscale", "amount": 1 },
+					{ "item": "paint_roller_pastel", "amount": 1 }
+				],
+				"chance": 0.25
+			},
+			{
+				"oneOf": true,
+				"entries": [
 					{ "item": "painting_biome", "amount": 1 },
 					{ "item": "painting_cloud", "amount": 1 },
 					{ "item": "painting_deer", "amount": 1 },
 					{ "item": "painting_waves", "amount": 1 },
-					{ "item": "painting_pipes", "amount": 1 },
 					{ "item": "painting_melon", "amount": 1 },
-					{ "item": "painting_triangle", "amount": 1 },
 					{ "item": "painting_stars", "amount": 1 },
 					{ "item": "painting_bird", "amount": 1 },
 					{ "item": "painting_blue", "amount": 1 },
 					{ "item": "painting_city", "amount": 1 },
 					{ "item": "painting_desolate", "amount": 1 },
 					{ "item": "painting_undergrowth", "amount": 1 },
-					{ "item": "painting_figure", "amount": 1 }
+					{ "item": "painting_figure", "amount": 1 },
+					{ "item": "painting_alpha", "amount": 1 },
+					{ "item": "painting_droplet", "amount": 1 },
+					{ "item": "painting_parthenon", "amount": 1 },
+					{ "item": "painting_horse", "amount": 1 },
+					{ "item": "painting_sky", "amount": 1 },
+					{ "item": "painting_ornate", "amount": 1 }
 				]
 			}
 		]
@@ -536,20 +635,34 @@
 			{
 				"oneOf": true,
 				"entries": [
+					{ "item": "paint_roller", "amount": 1 },
+					{ "item": "paint_roller_earthy", "amount": 1 },
+					{ "item": "paint_roller_greyscale", "amount": 1 },
+					{ "item": "paint_roller_pastel", "amount": 1 }
+				],
+				"chance": 0.4
+			},
+			{
+				"oneOf": true,
+				"entries": [
 					{ "item": "painting_biome", "amount": 1 },
 					{ "item": "painting_cloud", "amount": 1 },
 					{ "item": "painting_deer", "amount": 1 },
 					{ "item": "painting_waves", "amount": 1 },
-					{ "item": "painting_pipes", "amount": 1 },
 					{ "item": "painting_melon", "amount": 1 },
-					{ "item": "painting_triangle", "amount": 1 },
 					{ "item": "painting_stars", "amount": 1 },
 					{ "item": "painting_bird", "amount": 1 },
 					{ "item": "painting_blue", "amount": 1 },
 					{ "item": "painting_city", "amount": 1 },
 					{ "item": "painting_desolate", "amount": 1 },
 					{ "item": "painting_undergrowth", "amount": 1 },
-					{ "item": "painting_figure", "amount": 1 }
+					{ "item": "painting_figure", "amount": 1 },
+					{ "item": "painting_alpha", "amount": 1 },
+					{ "item": "painting_droplet", "amount": 1 },
+					{ "item": "painting_parthenon", "amount": 1 },
+					{ "item": "painting_horse", "amount": 1 },
+					{ "item": "painting_sky", "amount": 1 },
+					{ "item": "painting_ornate", "amount": 1 }
 				]
 			}
 		]
@@ -624,20 +737,235 @@
 			{
 				"oneOf": true,
 				"entries": [
+					{ "item": "paint_roller_pixel", "amount": 1 },
+					{ "item": "paint_roller_earthy", "amount": 1 },
+					{ "item": "paint_roller_greyscale", "amount": 1 }
+				],
+				"chance": 0.25
+			},
+			{
+				"oneOf": true,
+				"entries": [
 					{ "item": "painting_biome", "amount": 1 },
 					{ "item": "painting_cloud", "amount": 1 },
 					{ "item": "painting_deer", "amount": 1 },
 					{ "item": "painting_waves", "amount": 1 },
-					{ "item": "painting_pipes", "amount": 1 },
 					{ "item": "painting_melon", "amount": 1 },
-					{ "item": "painting_triangle", "amount": 1 },
 					{ "item": "painting_stars", "amount": 1 },
 					{ "item": "painting_bird", "amount": 1 },
 					{ "item": "painting_blue", "amount": 1 },
 					{ "item": "painting_city", "amount": 1 },
 					{ "item": "painting_desolate", "amount": 1 },
 					{ "item": "painting_undergrowth", "amount": 1 },
-					{ "item": "painting_figure", "amount": 1 }
+					{ "item": "painting_figure", "amount": 1 },
+					{ "item": "painting_alpha", "amount": 1 },
+					{ "item": "painting_droplet", "amount": 1 },
+					{ "item": "painting_parthenon", "amount": 1 },
+					{ "item": "painting_horse", "amount": 1 },
+					{ "item": "painting_sky", "amount": 1 },
+					{ "item": "painting_ornate", "amount": 1 }
+				]
+			}
+		]
+	},
+	{
+		"id": "sand_station_loot",
+		"group": "SandUnderground",
+		"entries": [
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "palladium_crossbow", "amount": 1 },
+					{ "item": "palladium_bow", "amount": 1 },
+					{ "item": "coconut_cannon", "amount": 1 },
+					{ "item": "coconut_splitter", "amount": 1 },
+					{ "item": "compact_disc", "amount": 1 },
+					{ "item": "cleaver", "amount": 1 }
+				]
+			},
+			{ "item": "health_potion", "amount": 1 },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "speed_potion", "amount": 1 },
+					{ "item": "regen_potion", "amount": 1 },
+					{ "item": "poison_potion", "amount": 1 },
+					{ "item": "respawn_potion", "amount": 1 },
+					{ "item": "mining_potion", "amount": 1 },
+					{ "item": "armour_potion", "amount": 1 },
+					{ "item": "flight_potion", "amount": 1 }
+				]
+			},
+			{ "item": "respawn_potion", "amount": 1 },
+			{ "item": "sand_key_part", "amount": 1 },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "gold_ingot", "min": 1, "max": 5 },
+					{ "item": "cobalt_ingot", "min": 1, "max": 5 }
+				]
+			},
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "palladium_arrow", "min": 20, "max": 60 },
+					{ "item": "shock_arrow", "min": 20, "max": 60 },
+					{ "item": "ice_arrow", "min": 20, "max": 60 },
+					{ "item": "desert_shuriken", "min": 20, "max": 60 }
+				]
+			},
+			{ "item": "health_potion", "min": 1, "max": 2, "oneOf": true },
+			{ "item": "sand_key_part", "amount": 1, "oneOf": true },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "paint_roller_pixel", "amount": 1 },
+					{ "item": "paint_roller_desert", "amount": 1 },
+					{ "item": "paint_roller_greyscale", "amount": 1 }
+				],
+				"chance": 0.25
+			},
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "painting_biome", "amount": 1 },
+					{ "item": "painting_cloud", "amount": 1 },
+					{ "item": "painting_deer", "amount": 1 },
+					{ "item": "painting_waves", "amount": 1 },
+					{ "item": "painting_melon", "amount": 1 },
+					{ "item": "painting_stars", "amount": 1 },
+					{ "item": "painting_bird", "amount": 1 },
+					{ "item": "painting_blue", "amount": 1 },
+					{ "item": "painting_city", "amount": 1 },
+					{ "item": "painting_desolate", "amount": 1 },
+					{ "item": "painting_undergrowth", "amount": 1 },
+					{ "item": "painting_figure", "amount": 1 },
+					{ "item": "painting_alpha", "amount": 1 },
+					{ "item": "painting_droplet", "amount": 1 },
+					{ "item": "painting_parthenon", "amount": 1 },
+					{ "item": "painting_horse", "amount": 1 },
+					{ "item": "painting_sky", "amount": 1 },
+					{ "item": "painting_ornate", "amount": 1 }
+				]
+			}
+		]
+	},
+	{
+		"id": "sand_dungeon_loot",
+		"group": "SandDungeon",
+		"entries": [
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "glass_cannon", "amount": 1 },
+					{ "item": "shuriken_launcher", "amount": 1 }
+				]
+			},
+			{ "item": "health_potion", "amount": 1 },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "speed_potion", "amount": 1 },
+					{ "item": "regen_potion", "amount": 1 },
+					{ "item": "poison_potion", "amount": 1 },
+					{ "item": "respawn_potion", "amount": 1 },
+					{ "item": "mining_potion", "amount": 1 },
+					{ "item": "armour_potion", "amount": 1 },
+					{ "item": "flight_potion", "amount": 1 }
+				]
+			},
+			{ "item": "respawn_potion", "amount": 1 },
+			{ "item": "sand_key_part", "amount": 1 },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "gold_ingot", "min": 1, "max": 5 },
+					{ "item": "cobalt_ingot", "min": 1, "max": 5 }
+				]
+			},
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "palladium_arrow", "min": 20, "max": 60 },
+					{ "item": "shock_arrow", "min": 20, "max": 60 },
+					{ "item": "ice_arrow", "min": 20, "max": 60 },
+					{ "item": "desert_shuriken", "min": 20, "max": 60 }
+				]
+			},
+			{ "item": "health_potion", "min": 1, "max": 2, "oneOf": true },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "paint_roller_pixel", "amount": 1 },
+					{ "item": "paint_roller_desert", "amount": 1 },
+					{ "item": "paint_roller_greyscale", "amount": 1 }
+				],
+				"chance": 0.25
+			},
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "painting_biome", "amount": 1 },
+					{ "item": "painting_cloud", "amount": 1 },
+					{ "item": "painting_deer", "amount": 1 },
+					{ "item": "painting_waves", "amount": 1 },
+					{ "item": "painting_melon", "amount": 1 },
+					{ "item": "painting_stars", "amount": 1 },
+					{ "item": "painting_bird", "amount": 1 },
+					{ "item": "painting_blue", "amount": 1 },
+					{ "item": "painting_city", "amount": 1 },
+					{ "item": "painting_desolate", "amount": 1 },
+					{ "item": "painting_undergrowth", "amount": 1 },
+					{ "item": "painting_figure", "amount": 1 },
+					{ "item": "painting_alpha", "amount": 1 },
+					{ "item": "painting_droplet", "amount": 1 },
+					{ "item": "painting_parthenon", "amount": 1 },
+					{ "item": "painting_horse", "amount": 1 },
+					{ "item": "painting_sky", "amount": 1 },
+					{ "item": "painting_ornate", "amount": 1 }
+				]
+			}
+		]
+	},
+	{
+		"id": "sand_dungeon_final_loot",
+		"group": "SandDungeon",
+		"entries": [
+			{ "item": "desert_glider", "amount": 1 },
+			{ "item": "desert_glider", "amount": 1 },
+			{ "item": "desert_glider", "amount": 1 },
+			{ "item": "desert_glider", "amount": 1 },
+			{ "item": "jet_boots", "amount": 1 },
+			{ "item": "jet_boots", "amount": 1 },
+			{ "item": "jet_boots", "amount": 1 },
+			{ "item": "jet_boots", "amount": 1 },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "glass_cannon", "amount": 1 },
+					{ "item": "shuriken_launcher", "amount": 1 },
+					{ "item": "palladium_crossbow", "amount": 1 }
+				]
+			},
+			{ "item": "health_potion", "amount": 5 },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "speed_potion", "amount": 1 },
+					{ "item": "regen_potion", "amount": 1 },
+					{ "item": "poison_potion", "amount": 1 },
+					{ "item": "respawn_potion", "amount": 1 },
+					{ "item": "armour_potion", "amount": 1 }
+				]
+			},
+			{ "item": "palladium_ingot", "min": 1, "max": 5, "oneOf": true },
+			{
+				"oneOf": true,
+				"entries": [
+					{ "item": "palladium_arrow", "min": 20, "max": 60 },
+					{ "item": "shock_arrow", "min": 20, "max": 60 },
+					{ "item": "ice_arrow", "min": 20, "max": 60 },
+					{ "item": "desert_shuriken", "min": 20, "max": 60 }
 				]
 			}
 		]
@@ -693,16 +1021,20 @@
 					{ "item": "painting_cloud", "amount": 1 },
 					{ "item": "painting_deer", "amount": 1 },
 					{ "item": "painting_waves", "amount": 1 },
-					{ "item": "painting_pipes", "amount": 1 },
 					{ "item": "painting_melon", "amount": 1 },
-					{ "item": "painting_triangle", "amount": 1 },
 					{ "item": "painting_stars", "amount": 1 },
 					{ "item": "painting_bird", "amount": 1 },
 					{ "item": "painting_blue", "amount": 1 },
 					{ "item": "painting_city", "amount": 1 },
 					{ "item": "painting_desolate", "amount": 1 },
 					{ "item": "painting_undergrowth", "amount": 1 },
-					{ "item": "painting_figure", "amount": 1 }
+					{ "item": "painting_figure", "amount": 1 },
+					{ "item": "painting_alpha", "amount": 1 },
+					{ "item": "painting_droplet", "amount": 1 },
+					{ "item": "painting_parthenon", "amount": 1 },
+					{ "item": "painting_horse", "amount": 1 },
+					{ "item": "painting_sky", "amount": 1 },
+					{ "item": "painting_ornate", "amount": 1 }
 				]
 			}
 		]

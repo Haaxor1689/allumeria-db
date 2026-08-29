@@ -1,7 +1,7 @@
 [
 	{
 		"id": "unbreakable",
-		"miningLevel": 10,
+		"miningLevel": 20,
 		"punchesRequired": 5,
 		"overcharge": 40,
 		"swingMultiplier": 1,
@@ -11,7 +11,7 @@
 	},
 	{
 		"id": "stone",
-		"miningLevel": 2,
+		"miningLevel": 1,
 		"punchesRequired": 4,
 		"overcharge": 3,
 		"swingMultiplier": 1,
@@ -21,7 +21,7 @@
 	},
 	{
 		"id": "dirt",
-		"miningLevel": 1,
+		"miningLevel": 0,
 		"punchesRequired": 3,
 		"overcharge": 3,
 		"swingMultiplier": 1,
@@ -31,7 +31,7 @@
 	},
 	{
 		"id": "wood",
-		"miningLevel": 1,
+		"miningLevel": 0,
 		"punchesRequired": 2,
 		"overcharge": 6,
 		"swingMultiplier": 1,
@@ -41,7 +41,7 @@
 	},
 	{
 		"id": "trunk",
-		"miningLevel": 1,
+		"miningLevel": 0,
 		"punchesRequired": 10,
 		"overcharge": 3,
 		"swingMultiplier": 1,
@@ -51,7 +51,7 @@
 	},
 	{
 		"id": "soft_ore",
-		"miningLevel": 2,
+		"miningLevel": 1,
 		"punchesRequired": 3,
 		"overcharge": 2,
 		"swingMultiplier": 1,
@@ -71,7 +71,7 @@
 	},
 	{
 		"id": "dungeon_brick_forest",
-		"miningLevel": 4,
+		"miningLevel": 3,
 		"punchesRequired": 4,
 		"overcharge": 3,
 		"swingMultiplier": 1,
@@ -80,8 +80,28 @@
 		"preferredTool": "pickaxe_power"
 	},
 	{
-		"id": "undergrowth_rock",
+		"id": "dungeon_brick_snow",
 		"miningLevel": 4,
+		"punchesRequired": 4,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"canBeBlownUp": false,
+		"hammerLevel": 3,
+		"preferredTool": "pickaxe_power"
+	},
+	{
+		"id": "dungeon_brick_sand",
+		"miningLevel": 5,
+		"punchesRequired": 4,
+		"overcharge": 3,
+		"swingMultiplier": 1,
+		"canBeBlownUp": false,
+		"hammerLevel": 4,
+		"preferredTool": "pickaxe_power"
+	},
+	{
+		"id": "undergrowth_rock",
+		"miningLevel": 3,
 		"punchesRequired": 4,
 		"overcharge": 3,
 		"swingMultiplier": 1,
@@ -91,7 +111,7 @@
 	},
 	{
 		"id": "spawner",
-		"miningLevel": 4,
+		"miningLevel": 5,
 		"punchesRequired": 15,
 		"overcharge": 3,
 		"swingMultiplier": 1,
@@ -101,7 +121,7 @@
 	},
 	{
 		"id": "plant",
-		"miningLevel": 1,
+		"miningLevel": 0,
 		"punchesRequired": 1,
 		"overcharge": 1,
 		"swingMultiplier": 0.5,
@@ -110,7 +130,7 @@
 	},
 	{
 		"id": "glass",
-		"miningLevel": 1,
+		"miningLevel": 0,
 		"punchesRequired": 1,
 		"overcharge": 1,
 		"swingMultiplier": 0.5,
@@ -119,7 +139,7 @@
 	},
 	{
 		"id": "torch",
-		"miningLevel": 1,
+		"miningLevel": 0,
 		"punchesRequired": 1,
 		"overcharge": 1,
 		"swingMultiplier": 0.5,
@@ -127,8 +147,18 @@
 		"hammerLevel": 1
 	},
 	{
+		"id": "snow_crate",
+		"miningLevel": 3,
+		"punchesRequired": 1,
+		"overcharge": 1,
+		"swingMultiplier": 1,
+		"canBeBlownUp": false,
+		"hammerLevel": 2,
+		"preferredTool": "pickaxe_power"
+	},
+	{
 		"id": "fluid",
-		"miningLevel": 10,
+		"miningLevel": 20,
 		"punchesRequired": 5,
 		"overcharge": 40,
 		"swingMultiplier": 0.5,

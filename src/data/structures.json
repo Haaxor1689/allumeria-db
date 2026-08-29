@@ -1,7 +1,17 @@
 [
 	{
 		"id": "SnowCabin",
-		"chests": [{ "chest": "chest", "loot": "snow_station_loot" }]
+		"chests": [
+			{ "chest": "chest", "loot": "snow_station_loot" },
+			{ "chest": "sand_chest", "loot": "sand_station_loot" }
+		]
+	},
+	{
+		"id": "SnowCabin",
+		"chests": [
+			{ "chest": "chest", "loot": "snow_station_loot" },
+			{ "chest": "sand_chest", "loot": "sand_station_loot" }
+		]
 	},
 	{
 		"id": "TinyForestChest",
@@ -21,5 +31,12 @@
 	{
 		"id": "Mineshaft",
 		"chests": [{ "chest": "chest", "loot": "station_loot" }]
+	},
+	{
+		"id": "SandDungeon",
+		"chests": [
+			{ "chest": "sand_chest", "loot": "sand_dungeon_loot" },
+			{ "chest": "sand_chest", "loot": "sand_dungeon_final_loot" }
+		]
 	}
 ]

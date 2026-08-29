@@ -32,7 +32,7 @@ const Footer = ({ className }: Props) => (
 		<div className="relative shrink space-y-2 text-center text-xs text-muted/80">
 			<p className="shrink">
 				AllumeriaDB is a fan-made database site for the game Allumeria and is
-				not affiliated with the official Allumeria developers.
+				not affiliated with Infinimelon studio.
 			</p>
 			<p className="shrink">
 				All content, including images and descriptions, is used for
