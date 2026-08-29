@@ -384,7 +384,7 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 									) : undefined
 								}
 								tooltipExtra={
-									<CostTooltip value={price} className="ns-btn-teal" />
+									<CostTooltip value={price ?? 0} className="ns-btn-teal" />
 								}
 							/>
 						))}

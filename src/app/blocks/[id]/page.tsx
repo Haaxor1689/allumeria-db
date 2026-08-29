@@ -360,7 +360,10 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 									) : undefined
 								}
 								tooltipExtra={
-									<CostTooltip value={entry.price} className="ns-btn-teal" />
+									<CostTooltip
+										value={entry.price ?? 0}
+										className="ns-btn-teal"
+									/>
 								}
 							/>
 						))}
