@@ -847,6 +847,7 @@
 		"material": "wood",
 		"interactible": true,
 		"textures": ["workbench_top", "workbench_side", "oak_planks"],
+		"craftingStation": "work_bench",
 		"blockModel": "topBottom"
 	},
 	{
@@ -859,6 +860,7 @@
 			"potion_station_side",
 			"potion_station_bottom"
 		],
+		"craftingStation": "potions",
 		"blockModel": "topBottom"
 	},
 	{
@@ -878,6 +880,7 @@
 			"decoration_station_side",
 			"decoration_station_bottom"
 		],
+		"craftingStation": "decorations",
 		"blockModel": "topBottom"
 	},
 	{
@@ -886,6 +889,7 @@
 		"material": "stone",
 		"interactible": true,
 		"textures": ["furnace_top", "furnace_side", "furnace_top"],
+		"craftingStation": "furnace",
 		"blockModel": "topBottom",
 		"lightEmission": [8, 3, 0]
 	},
