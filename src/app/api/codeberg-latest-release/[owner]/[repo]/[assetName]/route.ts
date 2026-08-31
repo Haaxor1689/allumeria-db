@@ -1,7 +1,8 @@
-export const GET = async () => {
-	const owner = 'ignitron';
-	const repo = 'ignitron';
-	const assetName = 'Ignitron.Loader.zip';
+type RouteProps =
+	RouteContext<'/api/codeberg-latest-release/[owner]/[repo]/[assetName]'>;
+
+export const GET = async (_: Request, { params }: RouteProps) => {
+	const { owner, repo, assetName } = await params;
 
 	const res = await fetch(
 		`https://codeberg.org/api/v1/repos/${owner}/${repo}/releases/latest`,
