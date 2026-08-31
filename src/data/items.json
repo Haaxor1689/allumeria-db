@@ -1332,8 +1332,7 @@
 		"id": "thick_palm_log",
 		"block": "thick_palm_log",
 		"tags": { "can_place": true },
-		"category": ["blocks", "natural"],
-		"sprite": "missing"
+		"category": ["blocks", "natural"]
 	},
 	{
 		"id": "trampoline",
@@ -1936,7 +1935,7 @@
 			"melee_damage": 6,
 			"swing_speed": 34,
 			"can_block": 20,
-			"knockback": 0
+			"knockback": 20
 		},
 		"category": ["items", "weapons"]
 	},
@@ -1953,7 +1952,7 @@
 			"melee_damage": 8,
 			"swing_speed": 30,
 			"can_block": 20,
-			"knockback": 15
+			"knockback": 30
 		},
 		"category": ["items", "weapons"]
 	},
@@ -4065,7 +4064,7 @@
 		"stackSize": 1,
 		"sellValue": 50,
 		"tags": { "swing_speed": 1, "cant_mine": true },
-		"paintMode": 4,
+		"paintMode": 6,
 		"category": ["items", "tools", "decoration"]
 	},
 	{
@@ -4074,7 +4073,7 @@
 		"stackSize": 1,
 		"sellValue": 50,
 		"tags": { "swing_speed": 1, "cant_mine": true },
-		"paintMode": 4,
+		"paintMode": 22,
 		"category": ["items", "tools", "decoration"]
 	},
 	{
@@ -4083,7 +4082,7 @@
 		"stackSize": 1,
 		"sellValue": 50,
 		"tags": { "swing_speed": 1, "cant_mine": true },
-		"paintMode": 4,
+		"paintMode": 38,
 		"category": ["items", "tools", "decoration"]
 	},
 	{
@@ -4092,7 +4091,7 @@
 		"stackSize": 1,
 		"sellValue": 50,
 		"tags": { "swing_speed": 1, "cant_mine": true },
-		"paintMode": 4,
+		"paintMode": 46,
 		"category": ["items", "tools", "decoration"]
 	},
 	{
@@ -4101,7 +4100,7 @@
 		"stackSize": 1,
 		"sellValue": 50,
 		"tags": { "swing_speed": 1, "cant_mine": true },
-		"paintMode": 4,
+		"paintMode": 2,
 		"category": ["items", "tools", "decoration"]
 	},
 	{
@@ -4110,7 +4109,7 @@
 		"stackSize": 1,
 		"sellValue": 50,
 		"tags": { "swing_speed": 1, "cant_mine": true },
-		"paintMode": 4,
+		"paintMode": 49,
 		"category": ["items", "tools", "decoration"]
 	},
 	{

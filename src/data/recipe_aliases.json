@@ -1,7 +1,14 @@
 [
 	{
 		"id": "any_planks",
-		"items": ["planks", "maple_planks", "birch_planks", "pine_planks"]
+		"items": [
+			"planks",
+			"maple_planks",
+			"birch_planks",
+			"pine_planks",
+			"palm_planks",
+			"sakura_planks"
+		]
 	},
 	{
 		"id": "common_fish",

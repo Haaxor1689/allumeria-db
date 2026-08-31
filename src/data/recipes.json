@@ -1240,6 +1240,12 @@
 		"requirements": { "any_planks": 5 }
 	},
 	{
+		"result": "bed",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_planks": 5, "cotton_plant": 5 }
+	},
+	{
 		"result": "sign",
 		"amount": 1,
 		"station": "decorations",

@@ -1012,7 +1012,7 @@
 	{
 		"id": "dynamite_block",
 		"class": "Dynamite",
-		"material": "spawner",
+		"material": "torch",
 		"interactible": true,
 		"textures": ["dynamite_top", "dynamite_side", "dynamite_bottom"],
 		"blockModel": "topBottom"
