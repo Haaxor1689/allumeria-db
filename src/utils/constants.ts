@@ -1,10 +1,5 @@
 export const NavigationLinks = [
 	{
-		href: '/',
-		label: 'Home',
-		icon: '/icon_allumeria.png'
-	},
-	{
 		href: '/items',
 		label: 'Items',
 		icon: '/assets/items/big_sword.webp'
@@ -34,12 +29,12 @@ export const NavigationLinks = [
 export const SocialLinks = [
 	{
 		href: 'https://allumeria.com/',
-		label: 'Official Website',
+		label: 'Website',
 		icon: '/icon_web.png'
 	},
 	{
 		href: 'https://store.steampowered.com/app/3516590/Allumeria/',
-		label: 'Steam Page',
+		label: 'Steam',
 		icon: '/icon_steam.png'
 	},
 	{

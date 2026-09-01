@@ -48,7 +48,6 @@ const ItemGrid = () => {
 			itemHeight="calc(var(--spacing) * 18)"
 			gap={8}
 			overscan={0}
-			variant="rarity5"
 			renderItem={item => (
 				<ItemSlot
 					item={item}

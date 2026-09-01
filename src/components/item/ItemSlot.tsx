@@ -4,6 +4,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { type ReactNode } from 'react';
 
+import ButtonLink from '#components/styled/ButtonLink.tsx';
 import { type Item } from '#server/types.ts';
 import { getItemIcon, getTranslation } from '#utils/helpers.ts';
 
@@ -19,6 +20,7 @@ type Props = {
 
 const ItemSlot = ({ item, overlay, tooltipExtra, transparent }: Props) => {
 	const name = getTranslation(`item.${item.id}`);
+	const link = `/items/${item.id}`;
 	return (
 		<Tooltip<HTMLAnchorElement>
 			tooltip={() => (
@@ -27,10 +29,11 @@ const ItemSlot = ({ item, overlay, tooltipExtra, transparent }: Props) => {
 					{tooltipExtra}
 				</div>
 			)}
+			actions={() => <ButtonLink href={link}>Open detail</ButtonLink>}
 		>
 			{props => (
 				<Link
-					href={`/items/${item.id}`}
+					href={link}
 					aria-label={name}
 					prefetch={false}
 					{...props}

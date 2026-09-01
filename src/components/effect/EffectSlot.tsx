@@ -4,6 +4,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 
 import Img from '#components/Img.tsx';
+import ButtonLink from '#components/styled/ButtonLink.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Effect } from '#server/types.ts';
 import { getTranslation } from '#utils/helpers.ts';
@@ -17,13 +18,15 @@ type Props = {
 
 const EffectSlot = ({ effect }: Props) => {
 	const name = getTranslation(`effect.${effect.id}`, toDisplayName(effect.id));
+	const link = `/effects/${effect.id}`;
 	return (
 		<Tooltip<HTMLAnchorElement>
 			tooltip={() => <EffectTooltip effect={effect} />}
+			actions={() => <ButtonLink href={link}>Open detail</ButtonLink>}
 		>
 			{props => (
 				<Link
-					href={`/effects/${effect.id}`}
+					href={link}
 					{...props}
 					className={cn(
 						'group flex size-18 items-center justify-center relative before:pointer-events-none before:absolute before:inset-0 before:opacity-50 hover:before:opacity-100 before:bg-cover',

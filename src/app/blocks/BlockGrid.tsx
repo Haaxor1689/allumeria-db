@@ -51,7 +51,6 @@ const BlockGrid = () => {
 			rows={8}
 			gap={8}
 			overscan={0}
-			variant="rarity5"
 			renderItem={block => (
 				<BlockSlot
 					block={block}

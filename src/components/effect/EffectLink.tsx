@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import Img from '#components/Img.tsx';
+import ButtonLink from '#components/styled/ButtonLink.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Effect } from '#server/types.ts';
 import { getTranslation } from '#utils/helpers.ts';
@@ -16,13 +17,15 @@ type Props = {
 
 const EffectLink = ({ effect }: Props) => {
 	const name = getTranslation(`effect.${effect.id}`, toDisplayName(effect.id));
+	const link = `/effects/${effect.id}`;
 	return (
 		<Tooltip<HTMLAnchorElement>
 			tooltip={() => <EffectTooltip effect={effect} />}
+			actions={() => <ButtonLink href={link}>Open detail</ButtonLink>}
 		>
 			{props => (
 				<Link
-					href={`/effects/${effect.id}`}
+					href={link}
 					className="text-aqua underline hocus:text-white"
 					{...props}
 				>

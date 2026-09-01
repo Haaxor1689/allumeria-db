@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import summary from '#data/summary.json';
-import { SocialLinks } from '#utils/constants.ts';
+import { NavigationLinks, SocialLinks } from '#utils/constants.ts';
 
 const generatedAt = new Intl.DateTimeFormat('en-US', {
 	dateStyle: 'medium',
@@ -9,109 +9,42 @@ const generatedAt = new Intl.DateTimeFormat('en-US', {
 	timeZone: 'UTC'
 }).format(new Date(summary.generatedAtUtc));
 
-const categories = [
-	{
-		href: '/items',
-		label: 'Items',
-		description: 'Weapons, armor, tools, consumables and more.',
-		icon: '/assets/items/big_sword.webp',
-		count: summary.itemCount,
-		unit: 'items'
-	},
-	{
-		href: '/blocks',
-		label: 'Blocks',
-		description: 'Every placeable block found in the world.',
-		icon: '/assets/items/grass.webp',
-		count: summary.blockCount,
-		unit: 'blocks'
-	},
-	{
-		href: '/creatures',
-		label: 'Creatures',
-		description: 'Enemies, animals and NPCs that roam Allumeria.',
-		icon: '/assets/items/ominous_deer_skull.webp',
-		count: summary.entityCount,
-		unit: 'creatures'
-	},
-	{
-		href: '/effects',
-		label: 'Effects',
-		description: 'Status effects, buffs and debuffs.',
-		icon: '/assets/effects/112x368.webp',
-		count: summary.effectCount,
-		unit: 'effects'
-	}
-];
-
-const stats = [
-	{ label: 'Items', value: summary.itemCount },
-	{ label: 'Blocks', value: summary.blockCount },
-	{ label: 'Block Models', value: summary.blockModelCount },
-	{ label: 'Block Materials', value: summary.blockMaterialCount },
-	{ label: 'Recipes', value: summary.recipeCount },
-	{ label: 'Recipe Aliases', value: summary.recipeAliasCount },
-	{ label: 'Creatures', value: summary.entityCount },
-	{ label: 'Effects', value: summary.effectCount },
-	{ label: 'Loot Tables', value: summary.lootCount },
-	{ label: 'Spawns', value: summary.spawnCount },
-	{ label: 'Item Tags', value: summary.itemTagCount },
-	{ label: 'Structures', value: summary.structureCount },
-	{ label: 'Shops', value: summary.catalogueCount },
-	{ label: 'NPCs', value: summary.npcDataCount },
-	{ label: 'Comfort Requirements', value: summary.comfortRequirementCount }
-];
-
 const Page = () => (
 	<>
 		{/* Hero */}
-		<section className="relative mx-auto flex w-full max-w-400 flex-col items-center gap-4 ns-dialog p-8 text-center">
-			<p className="text-sm font-semibold tracking-widest text-aqua uppercase">
-				{summary.gameVersion}
-			</p>
-			<p className="-mt-3 text-xs text-muted">
-				Data snapshot: {generatedAt} UTC
-			</p>
-			<h1 className="text-4xl font-bold pixel-shadow md:text-5xl">
-				AllumeriaDB
+		<section className="relative mx-auto flex w-full max-w-294 flex-col gap-4 ns-card p-8">
+			<h1 className="text-2xl font-bold pixel-shadow md:text-3xl">
+				Welcome to the Allumeria Database!
 			</h1>
-			<p className="max-w-xl text-lg">
-				A community database for{' '}
-				<a
-					href="https://store.steampowered.com/app/3516590/Allumeria/"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-aqua underline-offset-2 hocus:underline"
-				>
-					Allumeria
-				</a>{' '}
-				— a classic voxel sandbox with in-depth progression through exploration,
-				dungeon crawling and boss battles. Discover weapons, abilities,
-				resources, enemies, structures and more.
+			<p className="text-lg text-muted">
+				This database contains information about Allumeria game content and is
+				generated directly from the game assets and code.
+			</p>
+			<p className="text-lg text-muted">
+				Browse through the categories below to find information about items,
+				blocks, recipes, creatures, effects, loot tables, spawns, item tags,
+				structures, shops and NPCs.
 			</p>
 
-			{/* Stats bar */}
-			<div className="mt-2 flex flex-wrap justify-center gap-6">
-				{stats.map(stat => (
-					<div key={stat.label} className="flex flex-col items-center gap-0.5">
-						<span className="text-2xl font-bold text-aqua pixel-shadow">
-							{stat.value.toLocaleString()}
-						</span>
-						<span className="text-xs">{stat.label}</span>
-					</div>
-				))}
+			<div className="justify-items-start-start grid grid-cols-[auto_1fr] items-center gap-2 text-muted">
+				<p>Game version:</p>
+				<p className="text-xl font-semibold text-aqua">{summary.gameVersion}</p>
+				<p>Last updated:</p>
+				<p className="text-xl font-semibold text-aqua">{generatedAt} UTC</p>
 			</div>
 		</section>
 
 		{/* Category cards */}
-		<section className="mx-auto flex w-full max-w-400 flex-col gap-3">
-			<h2 className="text-xl font-bold pixel-shadow">Browse the Database</h2>
-			<div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-				{categories.map(cat => (
+		<section className="mx-auto flex w-full max-w-294 flex-col gap-5">
+			<h2 className="text-center text-3xl font-bold pixel-shadow">
+				Browse Categories
+			</h2>
+			<div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] content-center gap-3">
+				{NavigationLinks.map(cat => (
 					<Link
 						key={cat.href}
 						href={cat.href}
-						className="group flex items-center gap-4 ns-card p-4 transition-opacity active:ns-card-pressed hocus:ns-card-hover"
+						className="group flex flex-col items-center gap-4 ns-btn-pink p-4 transition-opacity active:ns-btn-pressed hocus:ns-btn-hover"
 					>
 						<img
 							src={cat.icon}
@@ -120,49 +53,44 @@ const Page = () => (
 							height={48}
 							className="size-12"
 						/>
-						<div className="flex shrink flex-col gap-0.5">
-							<div className="flex items-baseline gap-2">
-								<span className="text-lg font-bold pixel-shadow">
-									{cat.label}
-								</span>
-								<span className="shrink text-xs text-muted">
-									{cat.count.toLocaleString()} {cat.unit}
-								</span>
-							</div>
-							<p className="shrink text-sm text-muted">{cat.description}</p>
-						</div>
+						<span className="text-xl font-bold pixel-shadow">{cat.label}</span>
 					</Link>
 				))}
 			</div>
 		</section>
 
 		{/* About */}
-		<section className="mx-auto flex max-w-400 flex-col gap-3 ns-card p-5">
-			<h2 className="text-lg font-bold pixel-shadow">About Allumeria</h2>
-			<p className="shrink text-sm leading-relaxed text-muted">
-				Allumeria is a classic voxel sandbox with in-depth progression through
-				exploration, dungeon crawling and boss battles. With a strong focus on
-				discovery, variety and creativity — spend every minute uncovering new
-				weapons, abilities, resources, enemies, structures, mechanics and tools.
-				This database is automatically generated from game data to help players
-				discover items, plan builds, and understand game mechanics.
-			</p>
-			<div className="flex flex-wrap gap-1">
+		<section className="mx-auto flex max-w-294 flex-col gap-1">
+			<div className="flex flex-col gap-2 ns-card p-5 sm:flex-row sm:gap-5">
+				<img
+					src="/icon_allumeria.png"
+					alt="Allumeria logo"
+					className="size-16"
+				/>
+				<div className="flex shrink flex-col gap-2">
+					<h2 className="text-2xl font-bold pixel-shadow">About Allumeria</h2>
+					<p className="text-muted">
+						A classic voxel sandbox combined with in-depth progression through
+						exploration, dungeon crawling and boss battles. Spend every minute
+						discovering new weapons, abilities, resources, enemies, structures,
+						mechanics and tools. With a strong focus on discovery, variety and
+						creativity, the world is yours.
+					</p>
+					<p className="text-muted">
+						Find out more about the game on official links below!
+					</p>
+				</div>
+			</div>
+			<div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] content-center gap-1">
 				{SocialLinks.map(link => (
 					<Link
 						key={link.href}
 						href={link.href}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="-m-1 flex items-center gap-2 transparent-btn pr-2 font-semibold pixel-shadow active:ns-btn-pressed! hocus:ns-btn-hover"
+						className="flex items-center justify-center gap-2 ns-card font-semibold pixel-shadow active:ns-card-pressed! hocus:ns-card-hover"
 					>
-						<img
-							src={link.icon}
-							alt={link.label}
-							width={16}
-							height={16}
-							className="size-8"
-						/>
+						<img src={link.icon} alt={link.label} className="-ml-2 size-8" />
 						{link.label}
 					</Link>
 				))}

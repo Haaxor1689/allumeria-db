@@ -2,7 +2,7 @@ import { type Metadata } from 'next';
 import Link from 'next/link';
 
 import NPCFilters from './NPCFilters';
-import CreatureGrid from './NPCGrid';
+import NPCGrid from './NPCGrid';
 
 export const metadata: Metadata = {
 	title: 'NPCs'
@@ -17,7 +17,7 @@ const Page = () => (
 
 		<NPCFilters />
 
-		<CreatureGrid />
+		<NPCGrid />
 	</div>
 );
 

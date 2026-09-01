@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import Img from '#components/Img.tsx';
+import ButtonLink from '#components/styled/ButtonLink.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Block } from '#server/types.ts';
 import { getBlockName } from '#utils/helpers.ts';
@@ -15,11 +16,15 @@ type Props = {
 
 const BlockLink = ({ block }: Props) => {
 	const name = getBlockName(block);
+	const link = `/blocks/${block.id}`;
 	return (
-		<Tooltip<HTMLAnchorElement> tooltip={() => <BlockTooltip block={block} />}>
+		<Tooltip<HTMLAnchorElement>
+			tooltip={() => <BlockTooltip block={block} />}
+			actions={() => <ButtonLink href={link}>Open detail</ButtonLink>}
+		>
 			{props => (
 				<Link
-					href={`/blocks/${block.id}`}
+					href={link}
 					className="text-aqua underline hocus:text-white"
 					{...props}
 				>

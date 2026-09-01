@@ -1,7 +1,6 @@
 'use client';
 
 import { useVirtualizer } from '@tanstack/react-virtual';
-import cls from 'classnames';
 import {
 	useCallback,
 	useLayoutEffect,
@@ -14,17 +13,6 @@ import {
 
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 
-type DialogVariant =
-	| 'default'
-	| 'positive'
-	| 'negative'
-	| 'rarity0'
-	| 'rarity1'
-	| 'rarity2'
-	| 'rarity3'
-	| 'rarity4'
-	| 'rarity5';
-
 type Props<T> = {
 	items: readonly T[];
 	renderItem: (item: T, index: number) => ReactNode;
@@ -34,7 +22,6 @@ type Props<T> = {
 	rows?: number;
 	gap?: number;
 	overscan?: number;
-	variant?: DialogVariant;
 };
 
 const FALLBACK_ITEM_SIZE = 72;
@@ -47,8 +34,7 @@ const VirtualizedGrid = <T,>({
 	itemHeight = `calc(var(--spacing) * 18)`,
 	rows = 10,
 	gap = 8,
-	overscan = 0,
-	variant = 'default'
+	overscan = 0
 }: Props<T>) => {
 	const viewportRef = useRef<HTMLDivElement>(null);
 	const contentRef = useRef<HTMLDivElement>(null);
@@ -143,17 +129,7 @@ const VirtualizedGrid = <T,>({
 			offset={48}
 			showHorizontalScrollbar={false}
 			containerStyle={containerStyle}
-			containerClassName={cls('relative', {
-				'ns-dialog': variant === 'default',
-				'ns-dialog-positive': variant === 'positive',
-				'ns-dialog-negative': variant === 'negative',
-				'ns-dialog-rarity-0': variant === 'rarity0',
-				'ns-dialog-rarity-1': variant === 'rarity1',
-				'ns-dialog-rarity-2': variant === 'rarity2',
-				'ns-dialog-rarity-3': variant === 'rarity3',
-				'ns-dialog-rarity-4': variant === 'rarity4',
-				'ns-dialog-rarity-5': variant === 'rarity5'
-			})}
+			containerClassName="relative ns-dialog"
 			contentClassName="relative w-full p-3"
 		>
 			<div

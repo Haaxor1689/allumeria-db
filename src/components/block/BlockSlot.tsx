@@ -20,8 +20,8 @@ type Props = {
 
 const BlockSlot = ({ block, overlay, tooltipExtra }: Props) => {
 	const name = getBlockName(block);
+	const link = `/blocks/${block.id}`;
 	const numVariants = getBlockVariants(block).length;
-
 	return (
 		<Tooltip<HTMLAnchorElement>
 			tooltip={() => (
@@ -30,13 +30,11 @@ const BlockSlot = ({ block, overlay, tooltipExtra }: Props) => {
 					{tooltipExtra}
 				</div>
 			)}
-			actions={() => (
-				<ButtonLink href={`/blocks/${block.id}`}>Open detail</ButtonLink>
-			)}
+			actions={() => <ButtonLink href={link}>Open detail</ButtonLink>}
 		>
 			{props => (
 				<Link
-					href={`/blocks/${block.id}`}
+					href={link}
 					aria-label={name}
 					prefetch={false}
 					{...props}

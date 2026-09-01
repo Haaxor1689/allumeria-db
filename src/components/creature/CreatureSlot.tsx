@@ -20,7 +20,6 @@ type Props = {
 const CreatureSlot = ({ creature, overlay, tooltipExtra }: Props) => {
 	const name = getCreatureName(creature);
 	const link = getCreatureLink(creature);
-
 	return (
 		<Tooltip<HTMLAnchorElement>
 			tooltip={() => (

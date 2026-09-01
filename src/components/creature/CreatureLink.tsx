@@ -3,6 +3,7 @@
 import Link from 'next/link';
 
 import Img from '#components/Img.tsx';
+import ButtonLink from '#components/styled/ButtonLink.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Entity } from '#server/types.ts';
 import { getCreatureIcon, getCreatureLink } from '#utils/helpers.ts';
@@ -16,13 +17,15 @@ type Props = {
 
 const CreatureLink = ({ creature }: Props) => {
 	const name = toDisplayName(creature.id);
+	const link = getCreatureLink(creature);
 	return (
 		<Tooltip<HTMLAnchorElement>
 			tooltip={() => <CreatureTooltip creature={creature} />}
+			actions={() => <ButtonLink href={link}>Open detail</ButtonLink>}
 		>
 			{props => (
 				<Link
-					href={getCreatureLink(creature)}
+					href={link}
 					className="text-aqua underline hocus:text-white"
 					{...props}
 				>

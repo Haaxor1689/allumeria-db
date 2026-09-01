@@ -73,16 +73,18 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 								className="mx-auto w-full max-w-84"
 							/>
 						</Link>
-						<nav className="relative flex grow before:pointer-events-none before:absolute before:inset-0 before:ns-borderless-panel before:opacity-50 md:flex-row lg:flex-col">
-							{NavigationLinks.map(item => (
-								<NavLink
-									key={item.href}
-									href={item.href}
-									icon={item.icon}
-									label={item.label}
-								/>
-							))}
-						</nav>
+						<div className="grow">
+							<nav className="relative flex before:pointer-events-none before:absolute before:inset-0 before:ns-borderless-panel before:opacity-50 md:flex-row lg:flex-col">
+								{NavigationLinks.map(item => (
+									<NavLink
+										key={item.href}
+										href={item.href}
+										icon={item.icon}
+										label={item.label}
+									/>
+								))}
+							</nav>
+						</div>
 					</header>
 					<Footer className="hidden lg:block" />
 				</div>
