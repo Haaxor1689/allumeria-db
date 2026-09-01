@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Img from '#components/Img.tsx';
 import Tooltip from '#components/styled/Tooltip.tsx';
 import { type Entity } from '#server/types.ts';
-import { getCreatureIcon } from '#utils/helpers.ts';
+import { getCreatureIcon, getCreatureLink } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
 
 import CreatureTooltip from './CreatureTooltip';
@@ -22,7 +22,7 @@ const CreatureLink = ({ creature }: Props) => {
 		>
 			{props => (
 				<Link
-					href={`/creatures/${creature.id}`}
+					href={getCreatureLink(creature)}
 					className="text-aqua underline hocus:text-white"
 					{...props}
 				>

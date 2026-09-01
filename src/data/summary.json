@@ -1,6 +1,6 @@
 {
-	"generatedAtUtc": "2026-08-31T20:37:30.0626329+00:00",
-	"gameVersion": "0.15.3",
+	"generatedAtUtc": "2026-09-01T21:33:44.3031738+00:00",
+	"gameVersion": "0.15.5",
 	"itemCount": 542,
 	"catalogueCount": 5,
 	"recipeCount": 215,
@@ -13,5 +13,7 @@
 	"itemTagCount": 18,
 	"blockMaterialCount": 17,
 	"structureCount": 7,
-	"blockModelCount": 62
+	"blockModelCount": 62,
+	"comfortRequirementCount": 5,
+	"npcDataCount": 4
 }

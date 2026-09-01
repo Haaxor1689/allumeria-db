@@ -4,6 +4,7 @@ import blocks from '#data/blocks.json';
 import effects from '#data/effects.json';
 import entities from '#data/entities.json';
 import items from '#data/items.json';
+import npcData from '#data/npc_data.json';
 import summary from '#data/summary.json';
 import { env } from '#env.js';
 
@@ -49,6 +50,13 @@ const sitemap = (): MetadataRoute.Sitemap => {
 			priority: 0.7
 		}));
 
+	const npcEntries = npcData.map(npc => ({
+		url: toAbsoluteUrl(`/npcs/${npc.entity}`),
+		lastModified,
+		changeFrequency: 'weekly' as const,
+		priority: 0.7
+	}));
+
 	const effectEntries = effects
 		.map(effect => effect.id)
 		.map(id => ({
@@ -63,6 +71,7 @@ const sitemap = (): MetadataRoute.Sitemap => {
 		...itemEntries,
 		...blockEntries,
 		...creatureEntries,
+		...npcEntries,
 		...effectEntries
 	];
 };

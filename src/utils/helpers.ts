@@ -1,6 +1,11 @@
+import entities from '#data/entities.json';
 import itemTags from '#data/item_tags.json';
 import items from '#data/items.json';
+import npcData from '#data/npc_data.json';
 import translations from '#data/translations.json';
+import { type Entity } from '#server/types.ts';
+
+import { toDisplayName } from '.';
 
 export const getTranslation = (key: string, fallback?: string) =>
 	translations[key as keyof typeof translations] ?? fallback ?? key;
@@ -32,6 +37,14 @@ export const itemTagsExt = itemTags.map(tag => ({
 				: undefined
 }));
 
+export const npcDataExt = npcData
+	.map(e => {
+		const entity = entities.find(entity => entity.id === e.entity);
+		if (!entity) return null;
+		return { ...e, entity };
+	})
+	.filter(v => v !== null);
+
 export type LootEntry = {
 	entries?: LootEntry[];
 	oneOf?: boolean;
@@ -52,3 +65,13 @@ export const getTool = (tool: string) => {
 
 export const getCreatureIcon = (creature: string) =>
 	getItemIcon(items.find(i => i.entityType === creature));
+
+export const getCreatureName = (creature: Entity) =>
+	creature.category === 'npc'
+		? toDisplayName(creature.id.slice(0, -3))
+		: toDisplayName(creature.id);
+
+export const getCreatureLink = (creature: Entity) =>
+	creature.category === 'npc'
+		? `/npcs/${creature.id}`
+		: `/creatures/${creature.id}`;

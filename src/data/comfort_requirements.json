@@ -1,0 +1,46 @@
+[
+	{
+		"id": "greenhouse",
+		"requirements": [
+			{ "name": "room_size", "minSize": 18, "maxSize": 700 },
+			{ "name": "room_light", "minLight": 1, "maxLight": 16 },
+			{
+				"name": "room_sunlight",
+				"minLight": 8,
+				"maxLight": 16,
+				"directLight": true
+			}
+		]
+	},
+	{
+		"id": "forge",
+		"requirements": [
+			{ "name": "room_size", "minSize": 18, "maxSize": 700 },
+			{ "name": "room_light", "minLight": 1, "maxLight": 16 },
+			{ "name": "room_lava" },
+			{ "name": "room_crafting", "stations": ["furnace"] }
+		]
+	},
+	{
+		"id": "builder",
+		"requirements": [
+			{ "name": "room_size", "minSize": 18, "maxSize": 700 },
+			{ "name": "room_light", "minLight": 1, "maxLight": 16 },
+			{ "name": "room_crafting", "stations": ["workbench", "decoration"] }
+		]
+	},
+	{
+		"id": "sleepRequirements",
+		"requirements": [
+			{ "name": "room_size", "minSize": 18, "maxSize": 700 },
+			{ "name": "room_light", "minLight": 1, "maxLight": 16 }
+		]
+	},
+	{
+		"id": "basicRoomScan",
+		"requirements": [
+			{ "name": "room_size", "minSize": 18, "maxSize": 700 },
+			{ "name": "room_light", "minLight": 1, "maxLight": 16 }
+		]
+	}
+]

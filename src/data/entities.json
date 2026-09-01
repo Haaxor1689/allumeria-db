@@ -660,7 +660,7 @@
 	},
 	{
 		"id": "BlacksmithNPC",
-		"category": "creature",
+		"category": "npc",
 		"walkSpeed": 0.1,
 		"health": 20,
 		"defence": 0,
@@ -674,7 +674,7 @@
 	},
 	{
 		"id": "BuilderNPC",
-		"category": "creature",
+		"category": "npc",
 		"walkSpeed": 0.1,
 		"health": 20,
 		"defence": 0,
@@ -688,7 +688,7 @@
 	},
 	{
 		"id": "FarmerNPC",
-		"category": "creature",
+		"category": "npc",
 		"walkSpeed": 0.1,
 		"health": 20,
 		"defence": 0,
@@ -702,7 +702,7 @@
 	},
 	{
 		"id": "MerchantNPC",
-		"category": "creature",
+		"category": "npc",
 		"walkSpeed": 0.1,
 		"health": 20,
 		"defence": 0,

@@ -25,7 +25,12 @@ import recipeAliases from '#data/recipe_aliases.json';
 import recipes from '#data/recipes.json';
 import spawn from '#data/spawn.json';
 import structures from '#data/structures.json';
-import { getItemIcon, getTranslation, type LootEntry } from '#utils/helpers.ts';
+import {
+	getItemIcon,
+	getTranslation,
+	npcDataExt,
+	type LootEntry
+} from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
 
 export const generateStaticParams = () =>
@@ -145,9 +150,13 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 		.flatMap(c => {
 			const entry = c.entries.find(e => e.item === item.id);
 			if (!entry) return null;
-			return blocks
+			return npcDataExt
 				.filter(b => b.catalogue === c.id)
-				.map(block => ({ block, price: entry.price, amount: entry.amount }));
+				.map(npc => ({
+					entity: npc.entity,
+					price: entry.price,
+					amount: entry.amount
+				}));
 		})
 		.filter(v => v !== null);
 
@@ -366,13 +375,13 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 						Sold by:
 					</h2>
 
-					<p>{name} can be purchased from the following blocks:</p>
+					<p>{name} can be purchased from the following NPCs:</p>
 
 					<div className="flex flex-wrap gap-2">
-						{soldBy.map(({ block, price, amount }) => (
-							<BlockSlot
-								key={block.id}
-								block={block}
+						{soldBy.map(({ entity, price, amount }) => (
+							<CreatureSlot
+								key={entity.id}
+								creature={entity}
 								overlay={
 									amount > 1 ? (
 										<div

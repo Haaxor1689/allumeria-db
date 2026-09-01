@@ -20,6 +20,11 @@ export const NavigationLinks = [
 		icon: '/assets/items/ominous_deer_skull.webp'
 	},
 	{
+		href: '/npcs',
+		label: 'NPCs',
+		icon: '/assets/icons/npc_head.webp'
+	},
+	{
 		href: '/effects',
 		label: 'Effects',
 		icon: '/assets/effects/112x368.webp'

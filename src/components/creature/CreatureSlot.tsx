@@ -5,7 +5,7 @@ import { type ReactNode } from 'react';
 
 import Img from '#components/Img.tsx';
 import { type Entity } from '#server/types.ts';
-import { toDisplayName } from '#utils/index.ts';
+import { getCreatureLink, getCreatureName } from '#utils/helpers.ts';
 
 import ButtonLink from '../styled/ButtonLink';
 import Tooltip from '../styled/Tooltip';
@@ -18,7 +18,8 @@ type Props = {
 };
 
 const CreatureSlot = ({ creature, overlay, tooltipExtra }: Props) => {
-	const name = toDisplayName(creature.id);
+	const name = getCreatureName(creature);
+	const link = getCreatureLink(creature);
 
 	return (
 		<Tooltip<HTMLAnchorElement>
@@ -28,13 +29,11 @@ const CreatureSlot = ({ creature, overlay, tooltipExtra }: Props) => {
 					{tooltipExtra}
 				</div>
 			)}
-			actions={() => (
-				<ButtonLink href={`/creatures/${creature.id}`}>Open detail</ButtonLink>
-			)}
+			actions={() => <ButtonLink href={link}>Open detail</ButtonLink>}
 		>
 			{props => (
 				<Link
-					href={`/creatures/${creature.id}`}
+					href={link}
 					aria-label={name}
 					prefetch={false}
 					{...props}

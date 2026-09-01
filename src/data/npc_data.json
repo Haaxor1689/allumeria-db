@@ -1,0 +1,26 @@
+[
+	{
+		"id": "merchant",
+		"entity": "MerchantNPC",
+		"catalogue": "merchant",
+		"comfortRequirements": "basicRoomScan"
+	},
+	{
+		"id": "blacksmith",
+		"entity": "BlacksmithNPC",
+		"catalogue": "blacksmith",
+		"comfortRequirements": "forge"
+	},
+	{
+		"id": "farmer",
+		"entity": "FarmerNPC",
+		"catalogue": "farmer",
+		"comfortRequirements": "greenhouse"
+	},
+	{
+		"id": "builder",
+		"entity": "BuilderNPC",
+		"catalogue": "builder",
+		"comfortRequirements": "builder"
+	}
+]

@@ -57,7 +57,9 @@ const stats = [
 	{ label: 'Spawns', value: summary.spawnCount },
 	{ label: 'Item Tags', value: summary.itemTagCount },
 	{ label: 'Structures', value: summary.structureCount },
-	{ label: 'Shops', value: summary.catalogueCount }
+	{ label: 'Shops', value: summary.catalogueCount },
+	{ label: 'NPCs', value: summary.npcDataCount },
+	{ label: 'Comfort Requirements', value: summary.comfortRequirementCount }
 ];
 
 const Page = () => (

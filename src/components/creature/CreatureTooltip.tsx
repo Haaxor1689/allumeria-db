@@ -1,6 +1,6 @@
 import TooltipEntry from '#components/TooltipEntry.tsx';
 import { type Entity } from '#server/types.ts';
-import { toDisplayName } from '#utils/index.ts';
+import { getCreatureName } from '#utils/helpers.ts';
 
 const heartIcons = [
 	'/assets/icons/heart_empty.webp',
@@ -50,7 +50,7 @@ type Props = {
 
 const CreatureTooltip = ({ creature }: Props) => (
 	<div className="ns-dialog-negative px-2 py-1 text-2xl">
-		<p className="font-bold">{toDisplayName(creature.id)}</p>
+		<p className="font-bold">{getCreatureName(creature)}</p>
 
 		{creature.category === 'creature' && (
 			<>
@@ -79,6 +79,22 @@ const CreatureTooltip = ({ creature }: Props) => (
 						Can spawn in sunlight
 					</TooltipEntry>
 				)}
+			</>
+		)}
+
+		{creature.category === 'npc' && (
+			<>
+				<TooltipEntry icon="/assets/icons/small_heart.webp">
+					Health: <HealthBar health={creature.health ?? 0} />
+				</TooltipEntry>
+				{creature.defence !== undefined && (
+					<TooltipEntry icon="/assets/icons/small_defence.webp">
+						Defence: {creature.defence}
+					</TooltipEntry>
+				)}
+				<TooltipEntry icon="/custom/speed.webp">
+					Walk speed: {creature.walkSpeed}
+				</TooltipEntry>
 			</>
 		)}
 	</div>
