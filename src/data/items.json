@@ -1192,6 +1192,7 @@
 	{
 		"id": "elevator",
 		"block": "elevator",
+		"sellValue": 20,
 		"tags": { "can_place": true },
 		"category": ["blocks", "technical"]
 	},
@@ -2217,7 +2218,7 @@
 			"melee_damage": 54,
 			"swing_speed": 50,
 			"can_block": 30,
-			"knockback": 120
+			"knockback": 180
 		},
 		"effect": "concussion",
 		"ticks": 30,
@@ -2478,7 +2479,7 @@
 		"sellValue": 17,
 		"tags": { "defence": 20 },
 		"model": "player.helmet",
-		"texture": "player.palladium_helmet",
+		"texture": "player.palladium_armour",
 		"slotType": "Helmet",
 		"category": ["items"]
 	},
@@ -2555,7 +2556,7 @@
 		"sellValue": 17,
 		"tags": { "defence": 20 },
 		"model": "player.chestplate",
-		"texture": "player.palladium_chestplate",
+		"texture": "player.palladium_armour",
 		"slotType": "Chestplate",
 		"category": ["items"]
 	},
@@ -2632,7 +2633,7 @@
 		"sellValue": 17,
 		"tags": { "defence": 20 },
 		"model": "player.greaves",
-		"texture": "player.palladium_greaves",
+		"texture": "player.palladium_armour",
 		"slotType": "Greaves",
 		"category": ["items"]
 	},
@@ -4137,7 +4138,7 @@
 		"stackSize": 1,
 		"sellValue": 50,
 		"tags": { "swing_speed": 1, "cant_mine": true },
-		"rangeStart": 29,
+		"rangeStart": 30,
 		"rangeEnd": 41,
 		"category": ["items", "decoration"]
 	},

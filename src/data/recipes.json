@@ -300,18 +300,6 @@
 		"requirements": { "stone": 1 }
 	},
 	{
-		"result": "framed_glass",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "glass": 1 }
-	},
-	{
-		"result": "bubble_glass",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "glass": 1 }
-	},
-	{
 		"result": "lamp_red",
 		"amount": 1,
 		"station": "decorations",
@@ -352,36 +340,6 @@
 		"amount": 1,
 		"station": "decorations",
 		"requirements": { "glass": 1 }
-	},
-	{
-		"result": "thick_oak_log",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "log": 1 }
-	},
-	{
-		"result": "thick_maple_log",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "maple_log": 1 }
-	},
-	{
-		"result": "thick_birch_log",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "birch_log": 1 }
-	},
-	{
-		"result": "thick_pine_log",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "pine_log": 1 }
-	},
-	{
-		"result": "thick_palm_log",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "palm_log": 1 }
 	},
 	{
 		"result": "copper_bars",
@@ -1156,6 +1114,12 @@
 		"requirements": { "spider_web": 5 }
 	},
 	{
+		"result": "iron_ore",
+		"amount": 2,
+		"station": "inventory",
+		"requirements": { "spike_trap": 1 }
+	},
+	{
 		"result": "rail",
 		"amount": 64,
 		"station": "work_bench",
@@ -1298,5 +1262,89 @@
 		"amount": 1,
 		"station": "inventory",
 		"requirements": { "gourmet_fish": 1 }
+	},
+	{
+		"result": "thick_oak_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "log": 1 }
+	},
+	{
+		"result": "thick_maple_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "maple_log": 1 }
+	},
+	{
+		"result": "thick_birch_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "birch_log": 1 }
+	},
+	{
+		"result": "thick_pine_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "pine_log": 1 }
+	},
+	{
+		"result": "thick_palm_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "palm_log": 1 }
+	},
+	{
+		"result": "log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "thick_oak_log": 1 }
+	},
+	{
+		"result": "maple_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "thick_maple_log": 1 }
+	},
+	{
+		"result": "birch_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "thick_birch_log": 1 }
+	},
+	{
+		"result": "pine_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "thick_pine_log": 1 }
+	},
+	{
+		"result": "palm_log",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "thick_palm_log": 1 }
+	},
+	{
+		"result": "framed_glass",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "glass": 1 }
+	},
+	{
+		"result": "glass",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "framed_glass": 1 }
+	},
+	{
+		"result": "bubble_glass",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "glass": 1 }
+	},
+	{
+		"result": "glass",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "bubble_glass": 1 }
 	}
 ]

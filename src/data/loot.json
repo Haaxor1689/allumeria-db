@@ -367,6 +367,7 @@
 				"chance": 0.4
 			},
 			{ "item": "forest_key", "amount": 1, "chance": 0.2 },
+			{ "item": "spoon_fragment", "amount": 1, "chance": 0.05 },
 			{ "item": "thorns", "min": 1, "max": 7, "chance": 0.2 }
 		]
 	},

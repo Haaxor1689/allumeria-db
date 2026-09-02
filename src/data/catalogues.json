@@ -22,7 +22,7 @@
 			{ "item": "wallpaperable_wood", "amount": 8, "price": 8 },
 			{ "item": "grid_block", "amount": 8, "price": 24 },
 			{ "item": "blank_block", "amount": 8, "price": 24 },
-			{ "item": "elevator", "amount": 8 },
+			{ "item": "elevator", "amount": 8, "price": 320 },
 			{ "item": "carving_knife", "amount": 1, "price": 100 },
 			{ "item": "logic_wire", "amount": 5, "price": 5 },
 			{ "item": "logic_repeater", "amount": 1, "price": 4 },
@@ -57,7 +57,7 @@
 	{
 		"id": "blacksmith",
 		"entries": [
-			{ "item": "elevator", "amount": 2 },
+			{ "item": "elevator", "amount": 2, "price": 80 },
 			{ "item": "logic_wire", "amount": 5, "price": 5 },
 			{ "item": "logic_repeater", "amount": 1, "price": 4 },
 			{ "item": "logic_and", "amount": 1, "price": 4 },
