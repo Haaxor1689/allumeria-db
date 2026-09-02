@@ -1,4 +1,4 @@
-import { prerenderBlockPreviews, prerenderModelPreviews } from './prerender.ts';
+import { prerenderBlockPreviews, prerenderModelPreviews } from '../src/renderer/prerender.ts';
 
 const [, , arg1, arg2, arg3, arg4] = process.argv;
 
@@ -59,5 +59,3 @@ if (mode === 'all' || mode === 'blocks')
 
 if (mode === 'all' || mode === 'entities')
 	await prerenderModelPreviews({ width });
-
-export {};
