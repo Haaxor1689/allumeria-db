@@ -8,7 +8,14 @@ import npcData from '#data/npc_data.json';
 import summary from '#data/summary.json';
 import { env } from '#env.js';
 
-const staticRoutes = ['/', '/items', '/blocks', '/creatures', '/effects'];
+const staticRoutes = [
+	'/',
+	'/items',
+	'/blocks',
+	'/creatures',
+	'/effects',
+	'/npcs'
+];
 
 const toAbsoluteUrl = (path: string) => new URL(path, env.BASE_URL).toString();
 

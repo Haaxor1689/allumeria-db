@@ -5,6 +5,7 @@ import { Fragment } from 'react/jsx-runtime';
 
 import BlockLink from '#components/block/BlockLink.tsx';
 import BlockSlot from '#components/block/BlockSlot.tsx';
+import Breadcrumbs from '#components/Breadcrumbs.tsx';
 import CreatureTooltip from '#components/creature/CreatureTooltip.tsx';
 import Img from '#components/Img.tsx';
 import ItemLink from '#components/item/ItemLink.tsx';
@@ -30,7 +31,12 @@ export const generateMetadata = async ({
 	const { id } = await params;
 	const creature = creatures.find(c => c.id === id);
 	if (!creature) return { title: 'Creature not found' };
-	return { title: toDisplayName(creature.id) };
+	const name = toDisplayName(creature.id);
+	return {
+		title: name,
+		description: `Discover ${name} in the Allumeria database, including spawn locations, loot drops, and related game data.`,
+		alternates: { canonical: `/creatures/${id}` }
+	};
 };
 
 const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
@@ -70,115 +76,119 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 		);
 
 	return (
-		<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
-			<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
-				{creature.model && creature.texture ? (
-					<EntityRenderer model={creature.model} texture={creature.texture} />
-				) : (
-					<div className="flex aspect-2/3 w-full items-center ns-slot">
-						<p className="font bold mx-auto w-min text-center text-4xl text-tooltip/50 select-none pixel-shadow">
-							Preview unavailable
-						</p>
+		<>
+			<Breadcrumbs
+				items={[
+					{ label: 'Home', href: '/' },
+					{ label: 'Creatures', href: '/creatures' },
+					{ label: name }
+				]}
+				className="mx-auto -mb-6 w-full max-w-294"
+			/>
+			<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
+				<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
+					{creature.model && creature.texture ? (
+						<EntityRenderer model={creature.model} texture={creature.texture} />
+					) : (
+						<div className="flex aspect-2/3 w-full items-center ns-slot">
+							<p className="font bold mx-auto w-min text-center text-4xl text-tooltip/50 select-none pixel-shadow">
+								Preview unavailable
+							</p>
+						</div>
+					)}
+				</div>
+
+				<h1 className="-order-1 flex items-center gap-2 pb-4 text-4xl font-bold pixel-shadow md:text-5xl">
+					<div className="flex size-18 items-center justify-center ns-borderless-slot">
+						<Img
+							src={getCreatureIcon(creature.id)}
+							alt={name}
+							fallback="/previews/blocks/missing.webp"
+							className="size-16"
+						/>
+					</div>
+					{name}
+				</h1>
+
+				<div className="-order-1 -mt-12 w-fit self-start">
+					<CreatureTooltip creature={creature} />
+				</div>
+
+				<div className="flex flex-col gap-4">
+					<p>No community description available yet.</p>
+
+					{spawnedBy && (
+						<AlertMessage>
+							{name} can also be spawned using <ItemLink item={spawnedBy} /> in
+							creative mode.
+						</AlertMessage>
+					)}
+				</div>
+
+				{creature.loot && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Loot:
+						</h2>
+
+						<p>{name} normally drops following items when killed:</p>
+						<ScrollArea>
+							<LootTooltip id={creature.loot} variant="red" />
+						</ScrollArea>
 					</div>
 				)}
-			</div>
 
-			<Link
-				href="/creatures"
-				className="-order-1 -mb-8 block self-start text-muted underline 2xl:mb-2 hocus:text-aqua"
-			>
-				&lt; Back to creatures
-			</Link>
-			<h1 className="-order-1 flex items-center gap-2 pb-4 text-4xl font-bold pixel-shadow md:text-5xl">
-				<div className="flex size-18 items-center justify-center ns-borderless-slot">
-					<Img
-						src={getCreatureIcon(creature.id)}
-						alt={name}
-						fallback="/previews/blocks/missing.webp"
-						className="size-16"
-					/>
-				</div>
-				{name}
-			</h1>
+				{Object.entries(lootOverrides).length > 0 && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Loot overrides:
+						</h2>
 
-			<div className="-order-1 -mt-12 w-fit self-start">
-				<CreatureTooltip creature={creature} />
-			</div>
+						<p>
+							{name} can drop different loot when spawned on certain blocks. The
+							following blocks override the normal loot table:
+						</p>
 
-			<div className="flex flex-col gap-4">
-				<p>No community description available yet.</p>
-
-				{spawnedBy && (
-					<AlertMessage>
-						{name} can also be spawned using <ItemLink item={spawnedBy} /> in
-						creative mode.
-					</AlertMessage>
-				)}
-			</div>
-
-			{creature.loot && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Loot:
-					</h2>
-
-					<p>{name} normally drops following items when killed:</p>
-					<ScrollArea>
-						<LootTooltip id={creature.loot} variant="red" />
-					</ScrollArea>
-				</div>
-			)}
-
-			{Object.entries(lootOverrides).length > 0 && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Loot overrides:
-					</h2>
-
-					<p>
-						{name} can drop different loot when spawned on certain blocks. The
-						following blocks override the normal loot table:
-					</p>
-
-					{Object.entries(lootOverrides).map(([loot, blocks]) => (
-						<Fragment key={loot}>
-							<p>
-								Blocks:{' '}
-								{blocks.flatMap((block, i) => [
-									i > 0 && ', ',
-									<BlockLink key={block.id} block={block} />
-								])}
-							</p>
-							<ScrollArea>
-								<LootTooltip
-									id={loot}
-									variant="red"
-									title={toDisplayName(loot)}
-								/>
-							</ScrollArea>
-						</Fragment>
-					))}
-				</div>
-			)}
-
-			{spawnsOn.length > 0 && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Spawns on:
-					</h2>
-
-					<p>
-						{name} can spawn on the following blocks. Some blocks may change
-						what loot is dropped:
-					</p>
-					<div className="flex flex-wrap gap-2">
-						{spawnsOn.map(b => (
-							<BlockSlot key={b.id} block={b} />
+						{Object.entries(lootOverrides).map(([loot, blocks]) => (
+							<Fragment key={loot}>
+								<p>
+									Blocks:{' '}
+									{blocks.flatMap((block, i) => [
+										i > 0 && ', ',
+										<BlockLink key={block.id} block={block} />
+									])}
+								</p>
+								<ScrollArea>
+									<LootTooltip
+										id={loot}
+										variant="red"
+										title={toDisplayName(loot)}
+									/>
+								</ScrollArea>
+							</Fragment>
 						))}
 					</div>
-				</div>
-			)}
-		</div>
+				)}
+
+				{spawnsOn.length > 0 && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Spawns on:
+						</h2>
+
+						<p>
+							{name} can spawn on the following blocks. Some blocks may change
+							what loot is dropped:
+						</p>
+						<div className="flex flex-wrap gap-2">
+							{spawnsOn.map(b => (
+								<BlockSlot key={b.id} block={b} />
+							))}
+						</div>
+					</div>
+				)}
+			</div>
+		</>
 	);
 };
 

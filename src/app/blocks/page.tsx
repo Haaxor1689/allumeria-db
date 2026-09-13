@@ -1,18 +1,23 @@
 import { type Metadata } from 'next';
-import Link from 'next/link';
+
+import Breadcrumbs from '#components/Breadcrumbs.tsx';
 
 import BlockFilters from './BlockFilters';
 import BlockGrid from './BlockGrid';
 
 export const metadata: Metadata = {
-	title: 'Blocks'
+	title: 'Blocks',
+	description:
+		'Browse Allumeria blocks, materials, crafting stations, drops, spawning, and related properties.',
+	alternates: { canonical: '/blocks' }
 };
 
 const Page = () => (
 	<div className="mx-auto flex w-full max-w-294 flex-col gap-1">
-		<Link href="/" className="self-start text-muted underline hocus:text-aqua">
-			&lt; Back to homepage
-		</Link>
+		<Breadcrumbs
+			items={[{ label: 'Home', href: '/' }, { label: 'Blocks' }]}
+			className="self-start"
+		/>
 		<h1 className="mb-3 text-3xl font-bold pixel-shadow md:text-4xl">Blocks</h1>
 
 		<BlockFilters />

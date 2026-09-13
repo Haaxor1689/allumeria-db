@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 import AutoBlur from '#components/AutoBlur.tsx';
+import JsonLd from '#components/JsonLd.tsx';
 import Footer from '#components/layout/Footer.tsx';
 import NavLink from '#components/layout/NavLink.tsx';
 import { env } from '#env.js';
@@ -20,7 +21,9 @@ const atkinsonHyperlegible = Atkinson_Hyperlegible({
 
 export const metadata: Metadata = {
 	title: { default: 'AllumeriaDB', template: '%s | AllumeriaDB' },
-	description: 'Database site for Allumeria game.',
+	description:
+		'Browse items, blocks, creatures, effects, recipes, loot, structures, and NPCs from the Allumeria game.',
+	alternates: { canonical: '/' },
 	icons: [{ rel: 'icon', url: '/icon.png' }],
 	metadataBase: new URL(env.BASE_URL)
 };
@@ -56,6 +59,15 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 			)}
 		</head>
 		<body className={`${atkinsonHyperlegible.className} text-white`}>
+			<JsonLd
+				data={{
+					'@context': 'https://schema.org',
+					'@type': 'WebSite',
+					'name': 'AllumeriaDB',
+					'url': env.BASE_URL,
+					'description': 'A searchable database of Allumeria game content.'
+				}}
+			/>
 			<div
 				className="flex min-h-screen flex-col gap-8 overflow-x-clip p-2 lg:flex-row lg:p-8"
 				style={{

@@ -1,9 +1,9 @@
 import { type Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import BlockLink from '#components/block/BlockLink.tsx';
 import BlockSlot from '#components/block/BlockSlot.tsx';
+import Breadcrumbs from '#components/Breadcrumbs.tsx';
 import CreatureLink from '#components/creature/CreatureLink.tsx';
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
 import EffectLink from '#components/effect/EffectLink.tsx';
@@ -42,7 +42,12 @@ export const generateMetadata = async ({
 	const { id } = await params;
 	const item = items.find(item => item.id === id);
 	if (!item) return { title: 'Item not found' };
-	return { title: getTranslation(`item.${item.id}`) };
+	const name = getTranslation(`item.${item.id}`);
+	return {
+		title: name,
+		description: `Explore ${name} in the Allumeria database, including recipes, effects, loot sources, and related game data.`,
+		alternates: { canonical: `/items/${id}` }
+	};
 };
 
 const getLootItemIds = (entry: LootEntry): string[] => {
@@ -182,225 +187,230 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 	].filter(v => v !== null);
 
 	return (
-		<div className="container mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
-			{models.length > 0 ? (
-				<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
-					{models}
+		<>
+			<Breadcrumbs
+				items={[
+					{ label: 'Home', href: '/' },
+					{ label: 'Items', href: '/items' },
+					{ label: name }
+				]}
+				className="mx-auto -mb-6 w-full max-w-294"
+			/>
+			<div className="container mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
+				{models.length > 0 ? (
+					<div className="mx-auto -mt-6 mb-0 w-full max-w-90 2xl:float-right 2xl:mt-0 2xl:ml-6">
+						{models}
+					</div>
+				) : null}
+
+				<h1 className="-order-1 flex items-center gap-2 pb-4 text-4xl font-bold pixel-shadow md:text-5xl">
+					<div className="flex size-18 items-center justify-center ns-borderless-slot">
+						<img
+							src={getItemIcon(item)}
+							alt={item.id}
+							loading="lazy"
+							fetchPriority="low"
+							className="size-16"
+						/>
+					</div>
+					{name}
+				</h1>
+
+				<div className="-order-1 -mt-12 w-fit self-start">
+					<ItemTooltip item={item} />
 				</div>
-			) : null}
 
-			<Link
-				href="/items"
-				className="-order-1 -mb-8 block self-start text-muted underline 2xl:mb-2 hocus:text-aqua"
-			>
-				&lt; Back to items
-			</Link>
-			<h1 className="-order-1 flex items-center gap-2 pb-4 text-4xl font-bold pixel-shadow md:text-5xl">
-				<div className="flex size-18 items-center justify-center ns-borderless-slot">
-					<img
-						src={getItemIcon(item)}
-						alt={item.id}
-						loading="lazy"
-						fetchPriority="low"
-						className="size-16"
-					/>
+				<div className="flex flex-col gap-4">
+					<p>No community description available yet.</p>
+
+					{block && (
+						<p>
+							This item is also a <BlockLink block={block} /> block. For more
+							information about its material, drops, and other properties,
+							please visit the block's detail page.
+						</p>
+					)}
+
+					{item.slotType && (
+						<p>
+							{name} can be equipped in the{' '}
+							<span className="text-aqua">
+								<img
+									src={`/assets/icons/slot_${item.slotType.toLocaleLowerCase()}.webp`}
+									alt={item.slotType}
+									className="-m-1.5 inline size-8"
+								/>{' '}
+								{item.slotType}
+							</span>{' '}
+							slot.
+						</p>
+					)}
 				</div>
-				{name}
-			</h1>
 
-			<div className="-order-1 -mt-12 w-fit self-start">
-				<ItemTooltip item={item} />
-			</div>
-
-			<div className="flex flex-col gap-4">
-				<p>No community description available yet.</p>
-
-				{block && (
-					<p>
-						This item is also a <BlockLink block={block} /> block. For more
-						information about its material, drops, and other properties, please
-						visit the block's detail page.
-					</p>
+				{joinedEffects.length > 0 && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Effects:
+						</h2>
+						{joinedEffects}
+					</div>
 				)}
 
-				{item.slotType && (
-					<p>
-						{name} can be equipped in the{' '}
-						<span className="text-aqua">
-							<img
-								src={`/assets/icons/slot_${item.slotType.toLocaleLowerCase()}.webp`}
-								alt={item.slotType}
-								className="-m-1.5 inline size-8"
-							/>{' '}
-							{item.slotType}
-						</span>{' '}
-						slot.
-					</p>
-				)}
-			</div>
+				{itemRecipes.length > 0 && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							How to make:
+						</h2>
 
-			{joinedEffects.length > 0 && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Effects:
-					</h2>
-					{joinedEffects}
-				</div>
-			)}
+						<p>You can craft {name} using the following ingredients:</p>
 
-			{itemRecipes.length > 0 && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						How to make:
-					</h2>
-
-					<p>You can craft {name} using the following ingredients:</p>
-
-					{itemRecipes.map((recipe, idx) => (
-						<RecipeTooltip key={idx} recipe={recipe} />
-					))}
-				</div>
-			)}
-
-			{ingredientFor.length > 0 && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Used to make:
-					</h2>
-
-					<p>{name} is used to craft the following items:</p>
-					<div className="flex flex-wrap gap-2">
-						{ingredientFor.map((item, idx) => (
-							<ItemSlot
-								key={idx}
-								item={item}
-								tooltipExtra={recipes
-									.filter(r => r.result === item.id)
-									.map((recipe, idx) => (
-										<RecipeTooltip key={idx} recipe={recipe} />
-									))}
-							/>
+						{itemRecipes.map((recipe, idx) => (
+							<RecipeTooltip key={idx} recipe={recipe} />
 						))}
 					</div>
-				</div>
-			)}
+				)}
 
-			{item.sellValue ? (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Sell value:
-					</h2>
+				{ingredientFor.length > 0 && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Used to make:
+						</h2>
 
-					<p>{name} can be sold for the following value:</p>
-					<CostTooltip value={item.sellValue} />
-				</div>
-			) : null}
-
-			{Object.values(dropsFrom).some(arr => arr.length > 0) && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Drops from:
-					</h2>
-
-					<p>{name} can be obtained from the following sources:</p>
-
-					{(dropsFrom.blocks.length > 0 ||
-						dropsFrom.harvesting.length > 0 ||
-						dropsFrom.structures.length > 0) && (
+						<p>{name} is used to craft the following items:</p>
 						<div className="flex flex-wrap gap-2">
-							{dropsFrom.blocks.map(block => (
-								<BlockSlot
-									key={block.id}
-									block={block}
-									tooltipExtra={[
-										<LootTooltip
-											key="loot"
-											id={block.loot}
-											fallbackItem={block.item ?? block.id}
-											title="Drops"
-										/>
-									]}
+							{ingredientFor.map((item, idx) => (
+								<ItemSlot
+									key={idx}
+									item={item}
+									tooltipExtra={recipes
+										.filter(r => r.result === item.id)
+										.map((recipe, idx) => (
+											<RecipeTooltip key={idx} recipe={recipe} />
+										))}
 								/>
 							))}
-							{dropsFrom.harvesting.map(block => (
-								<BlockSlot
-									key={block.id}
-									block={block}
-									tooltipExtra={[
-										<LootTooltip
-											key="harvest"
-											id={block.harvestLoot}
-											variant="green"
-											title="Harvest"
-										/>
-									]}
-								/>
-							))}
-							{dropsFrom.structures.map(s =>
-								s.chests.map(c => {
-									const chest = blocks.find(b => b.id === c.chest);
-									if (!chest) return null;
-									return (
-										<BlockSlot
-											key={`${s.id}-${c.chest}`}
-											block={chest}
-											tooltipExtra={
-												<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-muted">
-													{toDisplayName(s.id)}
-												</div>
-											}
-										/>
-									);
-								})
-							)}
 						</div>
-					)}
-
-					{(dropsFrom.creatures.length > 0 || dropsFrom.spawns.length > 0) && (
-						<ScrollArea offset={32} contentClassName="flex gap-2">
-							{dropsFrom.creatures.map(creature => (
-								<CreatureSlot key={creature.id} creature={creature} />
-							))}
-							{dropsFrom.spawns.map(spawn => (
-								<CreatureSlot key={spawn.id} creature={spawn} />
-							))}
-						</ScrollArea>
-					)}
-				</div>
-			)}
-
-			{soldBy.length > 0 && (
-				<div className="flex flex-col gap-4">
-					<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
-						Sold by:
-					</h2>
-
-					<p>{name} can be purchased from the following NPCs:</p>
-
-					<div className="flex flex-wrap gap-2">
-						{soldBy.map(({ entity, price, amount }) => (
-							<CreatureSlot
-								key={entity.id}
-								creature={entity}
-								overlay={
-									amount > 1 ? (
-										<div
-											key="amount"
-											className="absolute right-0 -bottom-1 text-2xl font-bold pixel-shadow"
-										>
-											{amount}
-										</div>
-									) : undefined
-								}
-								tooltipExtra={
-									<CostTooltip value={price ?? 0} className="ns-btn-teal" />
-								}
-							/>
-						))}
 					</div>
-				</div>
-			)}
-		</div>
+				)}
+
+				{item.sellValue ? (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Sell value:
+						</h2>
+
+						<p>{name} can be sold for the following value:</p>
+						<CostTooltip value={item.sellValue} />
+					</div>
+				) : null}
+
+				{Object.values(dropsFrom).some(arr => arr.length > 0) && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Drops from:
+						</h2>
+
+						<p>{name} can be obtained from the following sources:</p>
+
+						{(dropsFrom.blocks.length > 0 ||
+							dropsFrom.harvesting.length > 0 ||
+							dropsFrom.structures.length > 0) && (
+							<div className="flex flex-wrap gap-2">
+								{dropsFrom.blocks.map(block => (
+									<BlockSlot
+										key={block.id}
+										block={block}
+										tooltipExtra={[
+											<LootTooltip
+												key="loot"
+												id={block.loot}
+												fallbackItem={block.item ?? block.id}
+												title="Drops"
+											/>
+										]}
+									/>
+								))}
+								{dropsFrom.harvesting.map(block => (
+									<BlockSlot
+										key={block.id}
+										block={block}
+										tooltipExtra={[
+											<LootTooltip
+												key="harvest"
+												id={block.harvestLoot}
+												variant="green"
+												title="Harvest"
+											/>
+										]}
+									/>
+								))}
+								{dropsFrom.structures.map(s =>
+									s.chests.map(c => {
+										const chest = blocks.find(b => b.id === c.chest);
+										if (!chest) return null;
+										return (
+											<BlockSlot
+												key={`${s.id}-${c.chest}`}
+												block={chest}
+												tooltipExtra={
+													<div className="flex gap-2 ns-borderless-ribbon p-3.5 pr-6 pl-2 text-muted">
+														{toDisplayName(s.id)}
+													</div>
+												}
+											/>
+										);
+									})
+								)}
+							</div>
+						)}
+
+						{(dropsFrom.creatures.length > 0 ||
+							dropsFrom.spawns.length > 0) && (
+							<ScrollArea offset={32} contentClassName="flex gap-2">
+								{dropsFrom.creatures.map(creature => (
+									<CreatureSlot key={creature.id} creature={creature} />
+								))}
+								{dropsFrom.spawns.map(spawn => (
+									<CreatureSlot key={spawn.id} creature={spawn} />
+								))}
+							</ScrollArea>
+						)}
+					</div>
+				)}
+
+				{soldBy.length > 0 && (
+					<div className="flex flex-col gap-4">
+						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">
+							Sold by:
+						</h2>
+
+						<p>{name} can be purchased from the following NPCs:</p>
+
+						<div className="flex flex-wrap gap-2">
+							{soldBy.map(({ entity, price, amount }) => (
+								<CreatureSlot
+									key={entity.id}
+									creature={entity}
+									overlay={
+										amount > 1 ? (
+											<div
+												key="amount"
+												className="absolute right-0 -bottom-1 text-2xl font-bold pixel-shadow"
+											>
+												{amount}
+											</div>
+										) : undefined
+									}
+									tooltipExtra={
+										<CostTooltip value={price ?? 0} className="ns-btn-teal" />
+									}
+								/>
+							))}
+						</div>
+					</div>
+				)}
+			</div>
+		</>
 	);
 };
 
