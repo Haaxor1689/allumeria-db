@@ -1,5 +1,4 @@
 import { type Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Fragment } from 'react/jsx-runtime';
 
@@ -9,6 +8,7 @@ import Breadcrumbs from '#components/Breadcrumbs.tsx';
 import CreatureTooltip from '#components/creature/CreatureTooltip.tsx';
 import Img from '#components/Img.tsx';
 import ItemLink from '#components/item/ItemLink.tsx';
+import JsonData from '#components/JsonData.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
 import EntityRenderer from '#components/renderer/EntityRenderer.tsx';
 import AlertMessage from '#components/styled/AlertMessage.tsx';
@@ -187,6 +187,8 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 						</div>
 					</div>
 				)}
+
+				<JsonData data={creature} />
 			</div>
 		</>
 	);

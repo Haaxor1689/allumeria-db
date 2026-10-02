@@ -11,6 +11,7 @@ import CostTooltip from '#components/item/CostTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
 import ItemTooltip from '#components/item/ItemTooltip.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
+import JsonData from '#components/JsonData.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
 import BlockRender from '#components/renderer/BlockRender.tsx';
 import EntityRenderer from '#components/renderer/EntityRenderer.tsx';
@@ -409,6 +410,8 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 						</div>
 					</div>
 				)}
+
+				<JsonData data={item} />
 			</div>
 		</>
 	);

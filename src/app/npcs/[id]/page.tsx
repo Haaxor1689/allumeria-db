@@ -1,5 +1,4 @@
 import { type Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import BlockLink from '#components/block/BlockLink.tsx';
@@ -8,6 +7,7 @@ import CreatureTooltip from '#components/creature/CreatureTooltip.tsx';
 import Img from '#components/Img.tsx';
 import CostTooltip from '#components/item/CostTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
+import JsonData from '#components/JsonData.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
 import EntityRenderer from '#components/renderer/EntityRenderer.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
@@ -222,6 +222,14 @@ const Page = async ({ params }: PageProps<'/npcs/[id]'>) => {
 						</div>
 					</div>
 				)}
+
+				<JsonData
+					data={{
+						...npc,
+						comfortRequirements: comfortRequirementsForNpc,
+						catalogue
+					}}
+				/>
 			</div>
 		</>
 	);

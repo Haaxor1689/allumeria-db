@@ -2,29 +2,25 @@ import { type Metadata } from 'next';
 
 import Breadcrumbs from '#components/Breadcrumbs.tsx';
 
-import EffectFilters from './EffectFilters';
-import EffectGrid from './EffectGrid';
+import DataTagsReader from './DataTagsReader';
 
 export const metadata: Metadata = {
-	title: 'Effects',
-	description:
-		'Browse Allumeria buffs, debuffs, passive effects, modifiers, and their item or block sources.',
-	alternates: { canonical: '/effects' }
+	title: 'Data Tag Reader',
+	description: "Read Allumeria's data tag format files.",
+	alternates: { canonical: '/data-tag-reader' }
 };
 
 const Page = () => (
 	<div className="mx-auto flex w-full max-w-294 flex-col gap-1">
 		<Breadcrumbs
-			items={[{ label: 'Home', href: '/' }, { label: 'Effects' }]}
+			items={[{ label: 'Home', href: '/' }, { label: 'Data Tag Reader' }]}
 			className="self-start"
 		/>
 		<h1 className="my-3 text-3xl font-bold pixel-shadow md:text-4xl">
-			Effects
+			Data Tag Reader
 		</h1>
 
-		<EffectFilters />
-
-		<EffectGrid />
+		<DataTagsReader />
 	</div>
 );
 

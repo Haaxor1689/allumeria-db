@@ -1,12 +1,12 @@
 import cn from 'classnames';
 import { type Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import BlockSlot from '#components/block/BlockSlot.tsx';
 import Breadcrumbs from '#components/Breadcrumbs.tsx';
 import EffectTooltip from '#components/effect/EffectTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
+import JsonData from '#components/JsonData.tsx';
 import ScrollArea from '#components/styled/ScrollArea.tsx';
 import TooltipEntry from '#components/TooltipEntry.tsx';
 import blocks from '#data/blocks.json';
@@ -140,6 +140,8 @@ const Page = async ({ params }: PageProps<'/effects/[id]'>) => {
 						)}
 					</div>
 				)}
+
+				<JsonData data={effect} />
 			</div>
 		</>
 	);

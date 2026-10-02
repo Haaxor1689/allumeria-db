@@ -9,6 +9,7 @@ import Img from '#components/Img.tsx';
 import CostTooltip from '#components/item/CostTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
+import JsonData from '#components/JsonData.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
 import BlockRender from '#components/renderer/BlockRender.tsx';
 import AlertMessage from '#components/styled/AlertMessage.tsx';
@@ -425,6 +426,8 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 						</div>
 					</div>
 				)}
+
+				<JsonData data={block} />
 			</div>
 		</>
 	);

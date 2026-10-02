@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import summary from '#data/summary.json';
-import { NavigationLinks, SocialLinks } from '#utils/constants.ts';
+import { DatabaseLinks, SocialLinks, ToolsLinks } from '#utils/constants.ts';
 
 const generatedAt = new Intl.DateTimeFormat('en-US', {
 	dateStyle: 'medium',
@@ -34,17 +34,42 @@ const Page = () => (
 			</div>
 		</section>
 
-		{/* Category cards */}
+		{/* Database cards */}
 		<section className="mx-auto flex w-full max-w-294 flex-col gap-5">
 			<h2 className="text-center text-3xl font-bold pixel-shadow">
-				Browse Categories
+				Browse Database
 			</h2>
 			<div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] content-center gap-3">
-				{NavigationLinks.map(cat => (
+				{DatabaseLinks.map(cat => (
 					<Link
 						key={cat.href}
 						href={cat.href}
 						className="group flex flex-col items-center gap-4 ns-btn-pink p-4 transition-opacity active:ns-btn-pressed hocus:ns-btn-hover"
+					>
+						<img
+							src={cat.icon}
+							alt={cat.label}
+							width={48}
+							height={48}
+							className="size-12"
+						/>
+						<span className="text-xl font-bold pixel-shadow">{cat.label}</span>
+					</Link>
+				))}
+			</div>
+		</section>
+
+		{/* Tools cards */}
+		<section className="mx-auto flex w-full max-w-294 flex-col gap-5">
+			<h2 className="text-center text-3xl font-bold pixel-shadow">
+				Browse Tools
+			</h2>
+			<div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] content-center gap-3">
+				{ToolsLinks.map(cat => (
+					<Link
+						key={cat.href}
+						href={cat.href}
+						className="group flex flex-col items-center gap-4 ns-btn-purple p-4 transition-opacity active:ns-btn-pressed hocus:ns-btn-hover"
 					>
 						<img
 							src={cat.icon}

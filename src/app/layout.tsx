@@ -11,7 +11,7 @@ import JsonLd from '#components/JsonLd.tsx';
 import Footer from '#components/layout/Footer.tsx';
 import NavLink from '#components/layout/NavLink.tsx';
 import { env } from '#env.js';
-import { NavigationLinks } from '#utils/constants.ts';
+import { DatabaseLinks, ToolsLinks } from '#utils/constants.ts';
 import { MobileStateSync } from '#utils/useIsMobile.tsx';
 
 const atkinsonHyperlegible = Atkinson_Hyperlegible({
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = async ({ children }: LayoutProps<'/'>) => (
-	<html lang="en">
+	<html lang="en" className="overflow-hidden">
 		<head>
 			{process.env.NODE_ENV === 'production' ? (
 				<>
@@ -58,7 +58,9 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 				/>
 			)}
 		</head>
-		<body className={`${atkinsonHyperlegible.className} text-white`}>
+		<body
+			className={`${atkinsonHyperlegible.className} max-h-screen scrollbar-gutter-stable overflow-auto text-white`}
+		>
 			<JsonLd
 				data={{
 					'@context': 'https://schema.org',
@@ -69,13 +71,15 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 				}}
 			/>
 			<div
-				className="flex min-h-screen flex-col gap-8 overflow-x-clip p-2 lg:flex-row lg:p-8"
+				className="fixed inset-0 -z-10"
 				style={{
 					backgroundImage: 'url(/night_sky.png)',
 					backgroundSize: 'cover',
+					backgroundRepeat: 'no-repeat',
 					backgroundPosition: 'center'
 				}}
-			>
+			/>
+			<div className="flex min-h-screen flex-col gap-8 overflow-x-clip p-2 lg:flex-row lg:p-8">
 				<div className="flex max-h-[calc(100vh-4rem)] w-full flex-col gap-8 lg:sticky lg:top-8 lg:max-w-84 lg:flex-none">
 					<header className="contents">
 						<Link href="/" className="-m-4 p-4">
@@ -85,9 +89,25 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 								className="mx-auto w-full max-w-84"
 							/>
 						</Link>
-						<div className="grow">
+						<div className="flex grow flex-col gap-3">
+							<h3 className="-mb-2 text-xl font-semibold text-muted pixel-shadow">
+								Database:
+							</h3>
 							<nav className="relative flex before:pointer-events-none before:absolute before:inset-0 before:ns-borderless-panel before:opacity-50 md:flex-row lg:flex-col">
-								{NavigationLinks.map(item => (
+								{DatabaseLinks.map(item => (
+									<NavLink
+										key={item.href}
+										href={item.href}
+										icon={item.icon}
+										label={item.label}
+									/>
+								))}
+							</nav>
+							<h3 className="-mb-2 text-xl font-semibold text-muted pixel-shadow">
+								Tools:
+							</h3>
+							<nav className="relative flex before:pointer-events-none before:absolute before:inset-0 before:ns-borderless-panel before:opacity-50 md:flex-row lg:flex-col">
+								{ToolsLinks.map(item => (
 									<NavLink
 										key={item.href}
 										href={item.href}

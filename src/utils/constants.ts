@@ -1,4 +1,4 @@
-export const NavigationLinks = [
+export const DatabaseLinks = [
 	{
 		href: '/items',
 		label: 'Items',
@@ -23,6 +23,14 @@ export const NavigationLinks = [
 		href: '/effects',
 		label: 'Effects',
 		icon: '/assets/effects/112x368.webp'
+	}
+];
+
+export const ToolsLinks = [
+	{
+		href: '/data-tag-reader',
+		label: 'Data Tag Reader',
+		icon: '/assets/items/structure_marker.webp'
 	}
 ];
 

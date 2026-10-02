@@ -18,7 +18,7 @@ const Page = () => (
 			items={[{ label: 'Home', href: '/' }, { label: 'Creatures' }]}
 			className="self-start"
 		/>
-		<h1 className="mb-3 text-3xl font-bold pixel-shadow md:text-4xl">
+		<h1 className="my-3 text-3xl font-bold pixel-shadow md:text-4xl">
 			Creatures
 		</h1>
 

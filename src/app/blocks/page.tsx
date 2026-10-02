@@ -18,7 +18,7 @@ const Page = () => (
 			items={[{ label: 'Home', href: '/' }, { label: 'Blocks' }]}
 			className="self-start"
 		/>
-		<h1 className="mb-3 text-3xl font-bold pixel-shadow md:text-4xl">Blocks</h1>
+		<h1 className="my-3 text-3xl font-bold pixel-shadow md:text-4xl">Blocks</h1>
 
 		<BlockFilters />
 
