@@ -6,8 +6,6 @@ import { join } from 'node:path';
 import { test } from 'node:test';
 import { fileURLToPath } from 'node:url';
 
-import { gzipSync } from 'fflate';
-
 import {
 	DataTagNumber,
 	fromDataTagBuffer,
@@ -48,7 +46,6 @@ void test('independent binary fixture preserves root, unnamed tag, vector and by
 		toDataTagBuffer(JSON.parse(JSON.stringify(fixtureJson, jsonReplacer))),
 		fixture
 	);
-	assert.deepEqual(fromDataTagBuffer(gzipSync(fixture)), fixtureJson);
 });
 
 void test('numeric classes retain types and ordinary values stay flat', () => {
@@ -191,10 +188,6 @@ void test('literal $type tag keys throw instead of using a fallback', () => {
 		/Data tag key \$type is reserved/
 	);
 	assert.throws(
-		() => fromDataTagBuffer(gzipSync(nestedTag)),
-		/Data tag key \$type is reserved/
-	);
-	assert.throws(
 		() => toDataTagBuffer({ $type: 1 }),
 		/Data tag key \$type is reserved/
 	);
@@ -269,7 +262,7 @@ void test('rejects invalid payloads instead of truncating or inferring', () => {
 		assert.throws(() => toDataTagBuffer({ invalid: value }), Error);
 });
 
-void test('CLI exports gzip input and imports JSON with the original root and tag types', () => {
+void test('CLI exports binary input and imports JSON with the original root and tag types', () => {
 	const directory = mkdtempSync(join(tmpdir(), 'allumeria-data-tag-'));
 	const script = fileURLToPath(
 		new URL('../../scripts/parse.ts', import.meta.url)
@@ -277,26 +270,24 @@ void test('CLI exports gzip input and imports JSON with the original root and ta
 	try {
 		const input = join(directory, 'fixture.bin');
 		const json = join(directory, 'fixture.json');
-		for (const buffer of [fixture, gzipSync(fixture)]) {
-			writeFileSync(input, buffer);
-			execFileSync(process.execPath, ['--import', 'tsx', script, input]);
-			const exported: unknown = JSON.parse(readFileSync(json, 'utf8'));
-			assert.deepEqual(
-				exported,
-				JSON.parse(JSON.stringify(fixtureJson, jsonReplacer))
-			);
-			execFileSync(process.execPath, [
-				'--import',
-				'tsx',
-				script,
-				json,
-				'restored'
-			]);
-			assert.deepEqual(
-				new Uint8Array(readFileSync(join(directory, 'fixture.restored'))),
-				fixture
-			);
-		}
+		writeFileSync(input, fixture);
+		execFileSync(process.execPath, ['--import', 'tsx', script, input]);
+		const exported: unknown = JSON.parse(readFileSync(json, 'utf8'));
+		assert.deepEqual(
+			exported,
+			JSON.parse(JSON.stringify(fixtureJson, jsonReplacer))
+		);
+		execFileSync(process.execPath, [
+			'--import',
+			'tsx',
+			script,
+			json,
+			'restored'
+		]);
+		assert.deepEqual(
+			new Uint8Array(readFileSync(join(directory, 'fixture.restored'))),
+			fixture
+		);
 	} finally {
 		rmSync(directory, { recursive: true, force: true });
 	}
