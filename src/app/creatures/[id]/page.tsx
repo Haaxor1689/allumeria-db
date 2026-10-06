@@ -132,7 +132,7 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 						</h2>
 
 						<p>{name} normally drops following items when killed:</p>
-						<ScrollArea>
+						<ScrollArea offset={32} contentClassName="w-max">
 							<LootTooltip id={creature.loot} variant="red" />
 						</ScrollArea>
 					</div>
@@ -158,7 +158,7 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 										<BlockLink key={block.id} block={block} />
 									])}
 								</p>
-								<ScrollArea>
+								<ScrollArea offset={32} contentClassName="w-max">
 									<LootTooltip
 										id={loot}
 										variant="red"

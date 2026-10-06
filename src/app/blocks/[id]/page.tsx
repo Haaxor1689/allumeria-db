@@ -283,7 +283,7 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 						{block.harvestLoot ? ' or harvested' : ''}:
 					</p>
 
-					<ScrollArea offset={24}>
+					<ScrollArea offset={32} contentClassName="w-max">
 						<LootTooltip
 							id={block.loot}
 							fallbackItem={block.item ?? block.id}
@@ -292,7 +292,7 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 					</ScrollArea>
 
 					{block.harvestLoot && (
-						<ScrollArea offset={24}>
+						<ScrollArea offset={32} contentClassName="w-max">
 							<LootTooltip
 								id={block.harvestLoot}
 								variant="green"
@@ -314,7 +314,11 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 						</p>
 
 						{canContain.map(entry => (
-							<ScrollArea key={`${entry.structure}_${entry.loot}`} offset={24}>
+							<ScrollArea
+								key={`${entry.structure}_${entry.loot}`}
+								offset={32}
+								contentClassName="w-max"
+							>
 								<LootTooltip
 									id={entry.loot}
 									title={toDisplayName(entry.structure)}

@@ -9,9 +9,9 @@ import Script from 'next/script';
 import AutoBlur from '#components/AutoBlur.tsx';
 import JsonLd from '#components/JsonLd.tsx';
 import Footer from '#components/layout/Footer.tsx';
-import NavLink from '#components/layout/NavLink.tsx';
+import MobileNav from '#components/layout/MobileNav.tsx';
+import Navigation from '#components/layout/Navigation.tsx';
 import { env } from '#env.js';
-import { DatabaseLinks, ToolsLinks } from '#utils/constants.ts';
 import { MobileStateSync } from '#utils/useIsMobile.tsx';
 
 const atkinsonHyperlegible = Atkinson_Hyperlegible({
@@ -89,34 +89,7 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 								className="mx-auto w-full max-w-84"
 							/>
 						</Link>
-						<div className="flex grow flex-col gap-3">
-							<h3 className="-mb-2 text-xl font-semibold text-muted pixel-shadow">
-								Database:
-							</h3>
-							<nav className="relative flex before:pointer-events-none before:absolute before:inset-0 before:ns-borderless-panel before:opacity-50 md:flex-row lg:flex-col">
-								{DatabaseLinks.map(item => (
-									<NavLink
-										key={item.href}
-										href={item.href}
-										icon={item.icon}
-										label={item.label}
-									/>
-								))}
-							</nav>
-							<h3 className="-mb-2 text-xl font-semibold text-muted pixel-shadow">
-								Tools:
-							</h3>
-							<nav className="relative flex before:pointer-events-none before:absolute before:inset-0 before:ns-borderless-panel before:opacity-50 md:flex-row lg:flex-col">
-								{ToolsLinks.map(item => (
-									<NavLink
-										key={item.href}
-										href={item.href}
-										icon={item.icon}
-										label={item.label}
-									/>
-								))}
-							</nav>
-						</div>
+						<Navigation className="hidden lg:flex" />
 					</header>
 					<Footer className="hidden lg:block" />
 				</div>
@@ -124,7 +97,11 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 					{children}
 				</main>
 				<AutoBlur />
+
 				<Footer className="px-4 pb-6 lg:hidden" />
+				<MobileNav>
+					<Navigation />
+				</MobileNav>
 			</div>
 			<MobileStateSync />
 			<Analytics />

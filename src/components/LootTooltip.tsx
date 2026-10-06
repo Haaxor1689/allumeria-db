@@ -26,7 +26,7 @@ const LootEntries = ({
 	const chanceRibbon = entry.chance ? (
 		<div
 			className={cn(
-				'z-1 ns-borderless-ribbon p-3.5 pr-6 pl-2 pixel-shadow font-bold',
+				'z-0 ns-borderless-ribbon p-3.5 pr-6 pl-2 pixel-shadow font-bold text-xs -ml-1 mt-1',
 				variant === 'green' && 'hue-rotate-260',
 				variant === 'red' && 'hue-rotate-150'
 			)}
@@ -66,16 +66,30 @@ const LootEntries = ({
 						/>
 					) : null
 				]}
+				tooltipExtra={
+					entry.needs ? (
+						<div className="w-fit ns-card-negative px-2 py-1 font-bold pixel-shadow">
+							Requires:{' '}
+							<img
+								key={`${entry.item}_needs`}
+								src={getTool(entry.needs).icon}
+								alt={getTool(entry.needs).label}
+								className="inline-block size-8"
+							/>{' '}
+							{getTool(entry.needs).label}
+						</div>
+					) : undefined
+				}
 			/>
 		);
 		return (
-			<div className="z-1 flex flex-row items-start">
+			<div className="flex flex-row-reverse items-start justify-end">
+				{chanceRibbon}
 				{depth > 0 ? (
 					component
 				) : (
 					<LootRow variant={variant}>{component}</LootRow>
 				)}
-				{chanceRibbon}
 			</div>
 		);
 	}
@@ -91,7 +105,8 @@ const LootEntries = ({
 					One Of
 				</div>
 			)}
-			<div className="flex items-start">
+			<div className="flex flex-row-reverse items-start">
+				{chanceRibbon}
 				<LootRow
 					variant={variant}
 					style={
@@ -113,7 +128,6 @@ const LootEntries = ({
 						/>
 					))}
 				</LootRow>
-				{chanceRibbon}
 			</div>
 		</div>
 	);

@@ -15,7 +15,7 @@ const NavLink = ({ href, icon, label }: Props) => {
 		<Link
 			href={href}
 			className={cn(
-				'flex items-center grow lg:grow-0 justify-center lg:justify-start gap-3 transparent-btn active:ns-btn-pressed hocus:ns-btn-hover font-semibold pixel-shadow select-none text-xl',
+				'flex items-center grow gap-3 transparent-btn active:ns-btn-pressed hocus:ns-btn-hover font-semibold pixel-shadow select-none text-xl',
 				{ 'ns-btn-active': pathname === href }
 			)}
 		>
@@ -26,14 +26,7 @@ const NavLink = ({ href, icon, label }: Props) => {
 				height={16}
 				className="size-8"
 			/>
-			<span
-				className={cn(
-					'pr-3 hidden',
-					pathname !== href ? 'lg:inline' : 'sm:inline'
-				)}
-			>
-				{label}
-			</span>
+			<span className="pr-3">{label}</span>
 		</Link>
 	);
 };

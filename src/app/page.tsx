@@ -34,12 +34,12 @@ const Page = () => (
 			</div>
 		</section>
 
-		{/* Database cards */}
-		<section className="mx-auto flex w-full max-w-294 flex-col gap-5">
-			<h2 className="text-center text-3xl font-bold pixel-shadow">
+		<section className="mx-auto grid w-full max-w-294 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] flex-col content-center gap-5">
+			{/* Database cards */}
+			<h2 className="col-span-full text-center text-3xl font-bold pixel-shadow">
 				Browse Database
 			</h2>
-			<div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] content-center gap-3">
+			<div className="col-span-full grid grid-cols-subgrid gap-3">
 				{DatabaseLinks.map(cat => (
 					<Link
 						key={cat.href}
@@ -53,18 +53,18 @@ const Page = () => (
 							height={48}
 							className="size-12"
 						/>
-						<span className="text-xl font-bold pixel-shadow">{cat.label}</span>
+						<span className="text-center text-xl font-bold pixel-shadow">
+							{cat.label}
+						</span>
 					</Link>
 				))}
 			</div>
-		</section>
 
-		{/* Tools cards */}
-		<section className="mx-auto flex w-full max-w-294 flex-col gap-5">
-			<h2 className="text-center text-3xl font-bold pixel-shadow">
+			{/* Tools cards */}
+			<h2 className="col-span-full text-center text-3xl font-bold pixel-shadow">
 				Browse Tools
 			</h2>
-			<div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] content-center gap-3">
+			<div className="col-span-full grid grid-cols-subgrid gap-3">
 				{ToolsLinks.map(cat => (
 					<Link
 						key={cat.href}
@@ -78,7 +78,9 @@ const Page = () => (
 							height={48}
 							className="size-12"
 						/>
-						<span className="text-xl font-bold pixel-shadow">{cat.label}</span>
+						<span className="text-center text-xl font-bold pixel-shadow">
+							{cat.label}
+						</span>
 					</Link>
 				))}
 			</div>

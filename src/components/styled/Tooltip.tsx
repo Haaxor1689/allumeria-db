@@ -44,7 +44,7 @@ const MobileTooltip = <T extends HTMLElement>({
 				}
 			})
 		}
-		contentClassName="flex flex-col items-center gap-5"
+		contentClassName="flex flex-col items-center gap-5 py-5"
 	>
 		<div className="group/tooltip pointer-events-none">{children({})}</div>
 		{resolveContent(tooltip)}
