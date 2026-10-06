@@ -31,6 +31,11 @@ export const ToolsLinks = [
 		href: '/data-tag-reader',
 		label: 'Data Tag Reader',
 		icon: '/assets/items/structure_marker.webp'
+	},
+	{
+		href: '/skin-converter',
+		label: 'Skin Converter',
+		icon: '/assets/items/painting_triangle.webp'
 	}
 ];
 

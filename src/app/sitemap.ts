@@ -14,7 +14,9 @@ const staticRoutes = [
 	'/blocks',
 	'/creatures',
 	'/effects',
-	'/npcs'
+	'/npcs',
+	'/data-tag-reader',
+	'/skin-converter'
 ];
 
 const toAbsoluteUrl = (path: string) => new URL(path, env.BASE_URL).toString();

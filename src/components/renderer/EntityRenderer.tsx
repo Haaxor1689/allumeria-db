@@ -9,9 +9,14 @@ import Renderer, { type BuildGroupsOptions } from './Renderer.tsx';
 type Props = {
 	model: string | string[];
 	texture: string;
+	className?: string;
 };
 
-const EntityRenderer = ({ model, texture }: Props) => {
+const EntityRenderer = ({
+	model,
+	texture,
+	className = 'relative aspect-2/3 w-full ns-slot'
+}: Props) => {
 	const buildGroups = useCallback(
 		async (_: BuildGroupsOptions) => await buildEntityGroup({ model, texture }),
 		[model, texture]
@@ -21,7 +26,7 @@ const EntityRenderer = ({ model, texture }: Props) => {
 		<Renderer
 			buildGroups={buildGroups}
 			ariaLabel="Interactive creature preview"
-			className="relative aspect-2/3 w-full ns-slot"
+			className={className}
 		/>
 	);
 };

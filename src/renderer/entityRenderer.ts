@@ -422,7 +422,9 @@ const createBrowserTextureLoader = () => {
 
 		const pending = (async () => {
 			const texture = await loader.loadAsync(
-				`/assets/textures/${textureRef.replace('.', '/')}.webp`
+				/^(data|blob):/.test(textureRef)
+					? textureRef
+					: `/assets/textures/${textureRef.replace('.', '/')}.webp`
 			);
 			texture.wrapS = THREE.ClampToEdgeWrapping;
 			texture.wrapT = THREE.ClampToEdgeWrapping;
