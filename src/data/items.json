@@ -1924,6 +1924,15 @@
 		"category": ["items", "tools"]
 	},
 	{
+		"id": "worm_pickaxe",
+		"stackSize": 1,
+		"sellValue": 1000,
+		"model": "item.pickaxe",
+		"texture": "item.worm_pickaxe",
+		"tags": { "pickaxe_power": 5, "swing_speed": 13, "material_level": 5 },
+		"category": ["items", "tools"]
+	},
+	{
 		"id": "flint_sword",
 		"stackSize": 1,
 		"sellValue": 2,

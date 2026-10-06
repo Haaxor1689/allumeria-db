@@ -1346,5 +1346,41 @@
 		"amount": 1,
 		"station": "decorations",
 		"requirements": { "bubble_glass": 1 }
+	},
+	{
+		"result": "copper_plated_stone",
+		"amount": 4,
+		"station": "decorations",
+		"requirements": { "stone": 4, "copper_ingot": 1 }
+	},
+	{
+		"result": "iron_plated_stone",
+		"amount": 4,
+		"station": "decorations",
+		"requirements": { "stone": 4, "iron_ingot": 1 }
+	},
+	{
+		"result": "silver_plated_stone",
+		"amount": 4,
+		"station": "decorations",
+		"requirements": { "stone": 4, "silver_ingot": 1 }
+	},
+	{
+		"result": "gold_plated_stone",
+		"amount": 4,
+		"station": "decorations",
+		"requirements": { "stone": 4, "gold_ingot": 1 }
+	},
+	{
+		"result": "cobalt_plated_stone",
+		"amount": 4,
+		"station": "decorations",
+		"requirements": { "stone": 4, "cobalt_ingot": 1 }
+	},
+	{
+		"result": "palladium_plated_stone",
+		"amount": 4,
+		"station": "decorations",
+		"requirements": { "stone": 4, "palladium_ingot": 1 }
 	}
 ]

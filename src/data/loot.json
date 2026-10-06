@@ -254,7 +254,6 @@
 				"oneOf": true,
 				"entries": [
 					{ "item": "melon_slicer", "amount": 1 },
-					{ "item": "snowball_cannon", "amount": 1 },
 					{ "item": "pizza_cutter", "amount": 1 },
 					{ "item": "crowbar", "amount": 1 }
 				],
@@ -266,8 +265,8 @@
 					{ "item": "health_potion", "amount": 1 },
 					{ "item": "torch", "min": 3, "max": 8 },
 					{ "item": "gold_ingot", "amount": 1 },
-					{ "item": "skull_fragment", "min": 1, "max": 3 },
-					{ "item": "lava_bucket", "min": 1, "max": 3 }
+					{ "item": "forest_flower", "min": 1, "max": 3 },
+					{ "item": "thorns", "min": 1, "max": 3 }
 				]
 			},
 			{ "item": "lava_sponge", "amount": 1, "chance": 0.1 },
@@ -340,6 +339,7 @@
 		"group": "SandDungeon",
 		"entries": [
 			{ "item": "nightmare_blade", "amount": 1 },
+			{ "item": "worm_pickaxe", "amount": 1 },
 			{ "item": "purple_fire_lighter", "amount": 1 },
 			{ "item": "worm", "amount": 1 },
 			{ "item": "health_potion", "amount": 5 }

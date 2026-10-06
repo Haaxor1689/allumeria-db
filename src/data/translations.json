@@ -1175,8 +1175,8 @@
 	"npc.merchant.generic8": "Thanks for checking in with me. You know what would cheer me right up? If you bought something!",
 	"npc.merchant.generic9": "Don\u0027t worry, I wont run out of things to sell. How, you ask? Well, I have my sources!",
 	"npc.merchant.refuse0": "I\u0027m not selling you anything until my living situation improves!",
-	"npc.merchant.refuse1": "This place is absolutely dreadful. Please fix this abhorrent living quarters!",
-	"npc.merchant.refuse2": "How am I supposed to conduct business in a room like this? This is no place for a distinguished gentleman such as myself!",
+	"npc.merchant.refuse1": "This place is absolutely dreadful. Please spruce it up a little bit with more furniture!",
+	"npc.merchant.refuse2": "Please add some more furniture! The room is not well-decorated enough.",
 	"npc.blacksmith.name": "Blacksmith",
 	"npc.blacksmith.generic0": "Let\u0027s forge this ingot, let\u0027s forge this ingot to perfection with hammers!",
 	"npc.blacksmith.generic1": "I used to know how to smash geodes open but I forgot. Maybe I will remember someday.",
@@ -1239,5 +1239,6 @@
 	"item_category.tools": "Tools",
 	"item_category.decoration": "Decoration",
 	"item_category.natural": "Natural",
+	"item.worm_pickaxe": "Worm Pickaxe",
 	"settings.fullscreen": "Fullscreen"
 }
