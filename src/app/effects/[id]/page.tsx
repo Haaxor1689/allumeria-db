@@ -90,8 +90,6 @@ const Page = async ({ params }: PageProps<'/effects/[id]'>) => {
 				</div>
 
 				<div className="flex flex-col gap-4">
-					<p>No community description available yet.</p>
-
 					<TooltipEntry>Numeric Id: {effect.intId}</TooltipEntry>
 
 					{effect.speedModifier !== undefined && (

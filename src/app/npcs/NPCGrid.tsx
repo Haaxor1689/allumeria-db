@@ -1,7 +1,6 @@
 'use client';
 
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
-import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import { npcDataExt } from '#utils/helpers.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
 
@@ -28,16 +27,11 @@ const NPCGrid = () => {
 			</button>
 		</div>
 	) : (
-		<VirtualizedGrid
-			items={filteredNPCs}
-			getItemKey={npc => npc.id}
-			itemMinWidth="calc(var(--spacing) * 54)"
-			itemHeight="calc(var(--spacing) * 81)"
-			gap={8}
-			rows={3}
-			overscan={0}
-			renderItem={npc => <CreatureSlot creature={npc.entity} />}
-		/>
+		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*54))] justify-center gap-2 ns-dialog p-3">
+			{filteredNPCs.map(npc => (
+				<CreatureSlot key={npc.id} creature={npc.entity} />
+			))}
+		</div>
 	);
 };
 

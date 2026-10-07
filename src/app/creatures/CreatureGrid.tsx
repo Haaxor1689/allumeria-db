@@ -1,7 +1,6 @@
 'use client';
 
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
-import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import entities from '#data/entities.json';
 import { toDisplayName } from '#utils/index.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
@@ -32,16 +31,11 @@ const CreatureGrid = () => {
 			</button>
 		</div>
 	) : (
-		<VirtualizedGrid
-			items={filteredCreatures}
-			getItemKey={creature => creature.id}
-			itemMinWidth="calc(var(--spacing) * 54)"
-			itemHeight="calc(var(--spacing) * 81)"
-			gap={8}
-			rows={3}
-			overscan={0}
-			renderItem={creature => <CreatureSlot creature={creature} />}
-		/>
+		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*54))] justify-center gap-2 ns-dialog p-3">
+			{filteredCreatures.map(creature => (
+				<CreatureSlot key={creature.id} creature={creature} />
+			))}
+		</div>
 	);
 };
 

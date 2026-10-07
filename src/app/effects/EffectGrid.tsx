@@ -1,7 +1,6 @@
 'use client';
 
 import EffectSlot from '#components/effect/EffectSlot.tsx';
-import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import effects from '#data/effects.json';
 import { getTranslation } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
@@ -38,15 +37,11 @@ const EffectGrid = () => {
 			</button>
 		</div>
 	) : (
-		<VirtualizedGrid
-			items={filteredEffects}
-			getItemKey={effect => effect.id}
-			itemMinWidth="calc(var(--spacing) * 18)"
-			itemHeight="calc(var(--spacing) * 18)"
-			gap={8}
-			overscan={0}
-			renderItem={effect => <EffectSlot effect={effect} />}
-		/>
+		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*18))] justify-center gap-2 ns-dialog p-3">
+			{filteredEffects.map(effect => (
+				<EffectSlot key={effect.id} effect={effect} />
+			))}
+		</div>
 	);
 };
 

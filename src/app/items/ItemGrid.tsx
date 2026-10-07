@@ -4,7 +4,6 @@ import CostTooltip from '#components/item/CostTooltip.tsx';
 import ItemMetaTooltip from '#components/item/ItemMetaTooltip.tsx';
 import ItemSlot from '#components/item/ItemSlot.tsx';
 import RecipeTooltip from '#components/item/RecipeTooltip.tsx';
-import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import items from '#data/items.json';
 import recipes from '#data/recipes.json';
 import { getTranslation } from '#utils/helpers.ts';
@@ -41,15 +40,10 @@ const ItemGrid = () => {
 			</button>
 		</div>
 	) : (
-		<VirtualizedGrid
-			items={filteredItems}
-			getItemKey={item => item.id}
-			itemMinWidth="calc(var(--spacing) * 18)"
-			itemHeight="calc(var(--spacing) * 18)"
-			gap={8}
-			overscan={0}
-			renderItem={item => (
+		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*18))] justify-center gap-2 ns-dialog p-3">
+			{filteredItems.map(item => (
 				<ItemSlot
+					key={item.id}
 					item={item}
 					tooltipExtra={
 						<>
@@ -63,8 +57,8 @@ const ItemGrid = () => {
 						</>
 					}
 				/>
-			)}
-		/>
+			))}
+		</div>
 	);
 };
 

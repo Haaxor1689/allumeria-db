@@ -222,8 +222,6 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 				</div>
 
 				<div className="flex flex-col gap-4">
-					<p>No community description available yet.</p>
-
 					{block && (
 						<p>
 							This item is also a <BlockLink block={block} /> block. For more

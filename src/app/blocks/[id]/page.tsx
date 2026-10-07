@@ -138,7 +138,6 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 				</h1>
 
 				<div className="flex flex-col gap-4">
-					<p>No community description available yet.</p>
 					{block.decorationScore ? (
 						<TooltipEntry
 							key="decoration"

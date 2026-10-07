@@ -2,7 +2,6 @@
 
 import BlockMetaTooltip from '#components/block/BlockMetaTooltip.tsx';
 import LootTooltip from '#components/LootTooltip.tsx';
-import VirtualizedGrid from '#components/VirtualizedGrid.tsx';
 import blocks from '#data/blocks.json';
 import { getBlockName } from '#utils/helpers.ts';
 import useSearchParams from '#utils/useSearchParams.ts';
@@ -43,16 +42,10 @@ const BlockGrid = () => {
 			</button>
 		</div>
 	) : (
-		<VirtualizedGrid
-			items={filteredBlocks}
-			getItemKey={block => block.id}
-			itemMinWidth="calc(var(--spacing) * 26)"
-			itemHeight="calc(var(--spacing) * 26)"
-			rows={8}
-			gap={8}
-			overscan={0}
-			renderItem={block => (
+		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*26))] justify-center gap-2 ns-dialog p-3">
+			{filteredBlocks.map(block => (
 				<BlockSlot
+					key={block.id}
 					block={block}
 					tooltipExtra={[
 						<LootTooltip
@@ -70,8 +63,8 @@ const BlockGrid = () => {
 						<BlockMetaTooltip key="meta" block={block} />
 					]}
 				/>
-			)}
-		/>
+			))}
+		</div>
 	);
 };
 

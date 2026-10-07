@@ -103,10 +103,6 @@ const Page = async ({ params }: PageProps<'/npcs/[id]'>) => {
 					<CreatureTooltip creature={creature} />
 				</div>
 
-				<div className="flex flex-col gap-4">
-					<p>No community description available yet.</p>
-				</div>
-
 				{comfortRequirementsForNpc && (
 					<div className="flex flex-col gap-4">
 						<h2 className="text-3xl font-bold text-dark-aqua pixel-shadow">

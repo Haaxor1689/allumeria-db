@@ -2,6 +2,7 @@
 
 import cn from 'classnames';
 import { Download, FileUp } from 'lucide-react';
+import Link from 'next/link';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 import EntityRenderer from '#components/renderer/EntityRenderer.tsx';
@@ -220,6 +221,18 @@ const SkinConverter = () => {
 					</span>
 				</li>
 			</ol>
+
+			<p className="pt-4 text-sm pixel-shadow">
+				Original implementation of the conversion algorithm belongs to the{' '}
+				<Link
+					href="https://github.com/DarBarri/Allumeria-Skin-Converter"
+					target="_blank"
+					className="text-aqua underline hocus:text-white"
+				>
+					DarBarri/Allumeria-Skin-Converter
+				</Link>{' '}
+				project written in Python.
+			</p>
 		</div>
 	);
 };

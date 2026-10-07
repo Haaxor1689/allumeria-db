@@ -115,8 +115,6 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 				</div>
 
 				<div className="flex flex-col gap-4">
-					<p>No community description available yet.</p>
-
 					{spawnedBy && (
 						<AlertMessage>
 							{name} can also be spawned using <ItemLink item={spawnedBy} /> in
