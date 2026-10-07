@@ -401,7 +401,12 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 										) : undefined
 									}
 									tooltipExtra={
-										<CostTooltip value={price ?? 0} className="ns-btn-teal" />
+										<div className="flex flex-col">
+											<div className="-mb-5 w-fit ns-btn-dark font-bold pixel-shadow">
+												{amount}x for:
+											</div>
+											<CostTooltip value={price ?? 0} className="ns-btn-teal" />
+										</div>
 									}
 								/>
 							))}
