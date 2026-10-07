@@ -42,7 +42,7 @@ const BlockGrid = () => {
 			</button>
 		</div>
 	) : (
-		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*26))] justify-center gap-2 ns-dialog p-3">
+		<div className="grid grid-cols-[repeat(auto-fill,--spacing(26))] justify-center gap-2 ns-dialog p-3">
 			{filteredBlocks.map(block => (
 				<BlockSlot
 					key={block.id}

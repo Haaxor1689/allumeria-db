@@ -37,7 +37,7 @@ const EffectGrid = () => {
 			</button>
 		</div>
 	) : (
-		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*18))] justify-center gap-2 ns-dialog p-3">
+		<div className="grid grid-cols-[repeat(auto-fill,--spacing(18))] justify-center gap-2 ns-dialog p-3">
 			{filteredEffects.map(effect => (
 				<EffectSlot key={effect.id} effect={effect} />
 			))}

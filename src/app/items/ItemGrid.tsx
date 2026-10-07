@@ -40,7 +40,7 @@ const ItemGrid = () => {
 			</button>
 		</div>
 	) : (
-		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*18))] justify-center gap-2 ns-dialog p-3">
+		<div className="grid grid-cols-[repeat(auto-fill,--spacing(18))] justify-center gap-2 ns-dialog p-3">
 			{filteredItems.map(item => (
 				<ItemSlot
 					key={item.id}

@@ -27,7 +27,7 @@ const NPCGrid = () => {
 			</button>
 		</div>
 	) : (
-		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*54))] justify-center gap-2 ns-dialog p-3">
+		<div className="grid grid-cols-[repeat(auto-fill,--spacing(54))] justify-center gap-2 ns-dialog p-3">
 			{filteredNPCs.map(npc => (
 				<CreatureSlot key={npc.id} creature={npc.entity} />
 			))}

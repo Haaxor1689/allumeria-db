@@ -31,7 +31,7 @@ const CreatureGrid = () => {
 			</button>
 		</div>
 	) : (
-		<div className="grid grid-cols-[repeat(auto-fill,calc(var(--spacing)*54))] justify-center gap-2 ns-dialog p-3">
+		<div className="grid grid-cols-[repeat(auto-fill,--spacing(54))] justify-center gap-2 ns-dialog p-3">
 			{filteredCreatures.map(creature => (
 				<CreatureSlot key={creature.id} creature={creature} />
 			))}
