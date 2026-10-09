@@ -16,8 +16,27 @@ Allumeria DB is a Next.js web app that presents game data for Allumeria in a sea
 The current implementation includes:
 
 - A home page with summary stats and category links
-- An item database page with live search and category filters
-- Rich item visuals and tooltips powered by local JSON datasets
+- Searchable catalogs for blocks, items, creatures, effects, and NPCs, with query autocomplete and detail pages
+- A Data Tag Reader and a skin converter
+- Game visuals, previews, and tooltips powered by local JSON datasets and assets
+
+## Grid Search
+
+Blocks, items, creatures, effects, and NPCs use the same query syntax:
+
+- Plain text searches IDs and display names by case-insensitive substring.
+- `field:value` matches an attribute exactly (strings are case-insensitive).
+- Numeric values accept `>`, `<`, `>=`, and `<=` prefixes, such as `damage:>5` or `damage:<=10`.
+- `HAS:field` matches records where an attribute exists, even if it is false or zero.
+- Prefix a term with `!` to negate it, such as `!HAS:harvestLoot` or `!hidden:true`. `HAS` is case-insensitive.
+- Separate terms with spaces to AND them. Quote values containing spaces, such as `name:"Stone Sword"`.
+- Nested attributes use dotted paths, such as `tags.can_place:true`. Arrays match any element; numeric paths select individual elements.
+
+Autocomplete offers matching keywords first, followed by fields and observed values for the term at the cursor. Numeric fields also offer comparison operators before their values. Unfinished or invalid terms are ignored with feedback while other terms continue to filter results. Numbers and booleans match their raw dataset values, not converted display units.
+
+NPC queries retain the raw `entity` ID and expose joined entity attributes under `entityDetails`, such as `HAS:entityDetails.health`.
+
+Queries are applied on submission or autocomplete selection, not while typing, and are stored in the `search` URL parameter. Clearing search resets both the input and results. Legacy category, material, and toggle parameters no longer filter results.
 
 ## Getting Started
 
@@ -50,6 +69,8 @@ http://localhost:3050
 - `bun run dev`: run Next dev server on port `3050`
 - `bun run build`: create production build
 - `bun run start`: start production server
+- `bun run parse <file>`: convert a game data-tag file to JSON; with `<json-file> <extension>`, convert JSON to a data-tag file
+- `bun run prerender`: regenerate block and entity model previews
 - `bun run lint`: run oxlint
 - `bun run lint:fix`: run oxlint with autofix
 - `bun run format`: run oxfmt
@@ -63,12 +84,16 @@ public/
 src/
 	app/
 		page.tsx            # home page
-		items/
-			page.tsx          # item database page
-			ItemFilters.tsx   # search + category filters
-			ItemGrid.tsx      # filtered virtualized item grid
+		blocks/              # block catalog and detail pages
+		creatures/           # creature catalog and detail pages
+		effects/             # effect catalog and detail pages
+		items/               # item catalog and detail pages
+		npcs/                 # NPC catalog and detail pages
+		data-tag-reader/      # data-tag inspection tool
+		skin-converter/       # player skin conversion tool
 	components/           # reusable UI and tooltip components
-	data/                 # static game datasets (items, recipes, loot, etc.)
+	data/                 # static game datasets (items, entities, recipes, loot, etc.)
+	renderer/             # block and entity preview rendering
 	server/               # server utilities and typed helpers
 	utils/                # shared constants, hooks, and helpers
 ```
@@ -83,40 +108,14 @@ Examples:
 
 - `items.json`
 - `blocks.json`
-- `creatures.json`
+- `entities.json`
+- `npc_data.json`
 - `effects.json`
 - `recipes.json`
 - `translations.json`
 - `summary.json`
 
 `summary.json` drives headline counts and game version labels shown on the home page.
-
-## Routes
-
-Currently implemented:
-
-- `/`
-- `/items`
-
-Navigation already includes links for `/blocks`, `/creatures`, and `/effects`, but those route pages are not yet implemented in this workspace snapshot.
-
-## Production Notes
-
-- Ensure `BASE_URL` is set to the deployed URL.
-- Ads and additional production-only head tags are conditionally injected when `NODE_ENV=production`.
-
-## Contributing
-
-1. Create a branch.
-2. Make your changes.
-3. Run checks:
-
-```bash
-bun run lint
-bun run build
-```
-
-4. Open a PR.
 
 ## License
 

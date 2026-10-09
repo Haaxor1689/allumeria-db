@@ -9,7 +9,11 @@ const AutoBlur = () => {
 		const blurAfterInteraction = () => {
 			// Defer blur so the current interaction can finish first.
 			requestAnimationFrame(() => {
-				if (allowedElements.includes(document.activeElement?.tagName ?? ''))
+				if (
+					allowedElements.includes(document.activeElement?.tagName ?? '') ||
+					(document.activeElement instanceof HTMLElement &&
+						document.activeElement.isContentEditable)
+				)
 					return;
 				if (document.activeElement instanceof HTMLElement) {
 					document.activeElement.blur();

@@ -1,41 +1,52 @@
 'use client';
 
+import { Activity } from 'react';
+
 import CreatureSlot from '#components/creature/CreatureSlot.tsx';
-import entities from '#data/entities.json';
-import { toDisplayName } from '#utils/index.ts';
-import useSearchParams from '#utils/useSearchParams.ts';
+import { type Entity } from '#server/types.ts';
+import { type SearchCatalog } from '#utils/searchQuery.ts';
+import useGridSearch from '#utils/useGridSearch.ts';
 
-import { CreatureFiltersSearchSchema } from './CreatureFilters';
+const CreatureGridEntry = ({
+	creature,
+	visible
+}: {
+	creature: Entity;
+	visible: boolean;
+}) => (
+	<div hidden={!visible} className="contents">
+		<CreatureSlot creature={creature} />
+	</div>
+);
 
-const creatures = entities.filter(e => e.category === 'creature');
+const CreatureGrid = ({ catalog }: { catalog: SearchCatalog<Entity> }) => {
+	const { visible, reset } = useGridSearch(catalog);
 
-const CreatureGrid = () => {
-	const params = useSearchParams(CreatureFiltersSearchSchema);
-
-	const filteredCreatures = creatures.filter(e =>
-		[
-			params.search === '' ||
-				e.id.toLowerCase().includes(params.search.toLowerCase()) ||
-				toDisplayName(e.id).toLowerCase().includes(params.search.toLowerCase())
-		].every(Boolean)
-	);
-
-	return filteredCreatures.length === 0 ? (
-		<div className="flex flex-col items-center justify-center gap-2 ns-dialog p-8">
-			<p className="text-lg pixel-shadow">No creatures found</p>
-			<button
-				onClick={() => params.reset()}
-				className="cursor-pointer ns-btn px-3 py-1 text-sm pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover"
-			>
-				Clear filters
-			</button>
-		</div>
-	) : (
-		<div className="grid grid-cols-[repeat(auto-fill,--spacing(54))] justify-center gap-2 ns-dialog p-3">
-			{filteredCreatures.map(creature => (
-				<CreatureSlot key={creature.id} creature={creature} />
-			))}
-		</div>
+	return (
+		<>
+			{visible.size === 0 && (
+				<div className="flex flex-col items-center justify-center gap-2 ns-dialog p-8">
+					<p className="text-lg pixel-shadow">No creatures found</p>
+					<button
+						onClick={reset}
+						className="cursor-pointer ns-btn px-3 py-1 text-sm pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover"
+					>
+						Clear search
+					</button>
+				</div>
+			)}
+			<Activity mode={visible.size === 0 ? 'hidden' : 'visible'}>
+				<div className="grid grid-cols-[repeat(auto-fill,--spacing(54))] justify-center gap-2 ns-dialog p-3">
+					{catalog.entries.map(({ record: creature }) => (
+						<CreatureGridEntry
+							key={creature.id}
+							creature={creature}
+							visible={visible.has(creature)}
+						/>
+					))}
+				</div>
+			</Activity>
+		</>
 	);
 };
 

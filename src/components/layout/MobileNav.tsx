@@ -9,7 +9,7 @@ const MobileNav = ({ children }: { children: ReactNode }) => (
 		trigger={open => (
 			<button
 				onClick={open}
-				className="sticky bottom-2 -mt-12 cursor-pointer self-end ns-btn-dark active:ns-btn-pressed lg:hidden hocus:ns-btn-hover"
+				className="fixed right-2 bottom-2 z-1100 cursor-pointer ns-btn-dark active:ns-btn-pressed lg:hidden hocus:ns-btn-hover"
 			>
 				<img
 					src="/assets/icons/icon_menu.webp"

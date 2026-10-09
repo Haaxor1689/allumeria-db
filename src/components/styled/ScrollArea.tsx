@@ -4,6 +4,7 @@ import cls from 'classnames';
 type Props = {
 	ref?: React.RefObject<HTMLDivElement | null>;
 	contentRef?: React.RefObject<HTMLDivElement | null>;
+	tabIndex?: number;
 	offset?: number;
 	containerClassName?: string;
 	containerStyle?: React.CSSProperties;
@@ -37,6 +38,7 @@ const Scrollbar = ({
 const ScrollArea = ({
 	ref,
 	contentRef,
+	tabIndex,
 	children,
 	offset,
 	containerClassName,
@@ -48,7 +50,7 @@ const ScrollArea = ({
 		className={cls('group/scroll flex shrink flex-col', containerClassName)}
 		style={containerStyle}
 	>
-		<Base.Viewport className="shrink grow" ref={ref}>
+		<Base.Viewport ref={ref} tabIndex={tabIndex} className="shrink grow">
 			<Base.Content className={contentClassName} ref={contentRef}>
 				{children}
 			</Base.Content>

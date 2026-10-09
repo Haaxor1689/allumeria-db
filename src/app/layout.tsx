@@ -82,13 +82,19 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 			<div className="flex min-h-screen flex-col gap-8 overflow-x-clip p-2 lg:flex-row lg:p-8">
 				<div className="flex max-h-[calc(100vh-4rem)] w-full flex-col gap-8 lg:sticky lg:top-8 lg:max-w-84 lg:flex-none">
 					<header className="contents">
-						<Link href="/" className="-m-4 p-4">
+						<Link
+							href="/"
+							className="-mb-4 p-4 focus-visible:ring-2 focus-visible:ring-aqua md:-m-4"
+						>
 							<img
 								src="/db_logo.png"
 								alt="AllumeriaDB Logo"
 								className="mx-auto w-full max-w-84"
 							/>
 						</Link>
+						<MobileNav>
+							<Navigation />
+						</MobileNav>
 						<Navigation className="hidden lg:flex" />
 					</header>
 					<Footer className="hidden lg:block" />
@@ -99,9 +105,6 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 				<AutoBlur />
 
 				<Footer className="px-4 pb-6 lg:hidden" />
-				<MobileNav>
-					<Navigation />
-				</MobileNav>
 			</div>
 			<MobileStateSync />
 			<Analytics />

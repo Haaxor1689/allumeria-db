@@ -269,19 +269,31 @@ const ensureDesktopTooltipLayer = () => {
 	desktopLayerRoot.render(<DesktopTooltipLayer />);
 };
 
-const findHoveredElementWithin = (element: HTMLElement) => {
+// Layout effects of every slot run in the same task; hit-test the document once per task.
+let hoverCache: { pointed: Element | null; hovered: Element[] } | null = null;
+
+const getHoverCache = () => {
+	if (hoverCache) return hoverCache;
 	const point = desktopLastMousePoint;
-	if (point) {
-		const pointedElement = document.elementFromPoint(point.x, point.y);
-		if (
-			pointedElement instanceof HTMLElement &&
-			element.contains(pointedElement)
-		) {
-			return pointedElement;
-		}
+	hoverCache = {
+		pointed: point ? document.elementFromPoint(point.x, point.y) : null,
+		hovered: Array.from(document.querySelectorAll(':hover'))
+	};
+	queueMicrotask(() => {
+		hoverCache = null;
+	});
+	return hoverCache;
+};
+
+const findHoveredElementWithin = (element: HTMLElement) => {
+	const { pointed: pointedElement, hovered: hoveredElements } = getHoverCache();
+	if (
+		pointedElement instanceof HTMLElement &&
+		element.contains(pointedElement)
+	) {
+		return pointedElement;
 	}
 
-	const hoveredElements = Array.from(document.querySelectorAll(':hover'));
 	for (let i = hoveredElements.length - 1; i >= 0; i -= 1) {
 		const candidate = hoveredElements[i];
 		if (candidate instanceof HTMLElement && element.contains(candidate)) {
@@ -303,7 +315,7 @@ const showDesktopTooltipFromCurrentHover = ({
 }) => {
 	const hoveredElement = findHoveredElementWithin(element);
 	const isCursorOverElement =
-		element.matches(':hover') || hoveredElement !== null;
+		hoveredElement !== null || getHoverCache().hovered.includes(element);
 	if (!isCursorOverElement) {
 		return;
 	}

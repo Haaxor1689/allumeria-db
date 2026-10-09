@@ -390,16 +390,6 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 								<CreatureSlot
 									key={entity.id}
 									creature={entity}
-									overlay={
-										amount > 1 ? (
-											<div
-												key="amount"
-												className="absolute right-0 -bottom-1 text-2xl font-bold pixel-shadow"
-											>
-												{amount}
-											</div>
-										) : undefined
-									}
 									tooltipExtra={
 										<div className="flex flex-col">
 											<div className="-mb-5 w-fit ns-btn-dark font-bold pixel-shadow">

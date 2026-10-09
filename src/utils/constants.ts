@@ -12,7 +12,7 @@ export const DatabaseLinks = [
 	{
 		href: '/creatures',
 		label: 'Creatures',
-		icon: '/assets/items/ominous_deer_skull.webp'
+		icon: '/assets/items/spawn_pukeko.webp'
 	},
 	{
 		href: '/npcs',
