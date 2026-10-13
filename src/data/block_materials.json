@@ -72,7 +72,7 @@
 	{
 		"id": "dungeon_brick_forest",
 		"miningLevel": 3,
-		"punchesRequired": 4,
+		"punchesRequired": 6,
 		"overcharge": 3,
 		"swingMultiplier": 1,
 		"canBeBlownUp": false,
@@ -82,7 +82,7 @@
 	{
 		"id": "dungeon_brick_snow",
 		"miningLevel": 4,
-		"punchesRequired": 4,
+		"punchesRequired": 6,
 		"overcharge": 3,
 		"swingMultiplier": 1,
 		"canBeBlownUp": false,
@@ -92,7 +92,7 @@
 	{
 		"id": "dungeon_brick_sand",
 		"miningLevel": 5,
-		"punchesRequired": 4,
+		"punchesRequired": 7,
 		"overcharge": 3,
 		"swingMultiplier": 1,
 		"canBeBlownUp": false,
@@ -102,7 +102,7 @@
 	{
 		"id": "undergrowth_rock",
 		"miningLevel": 3,
-		"punchesRequired": 4,
+		"punchesRequired": 6,
 		"overcharge": 3,
 		"swingMultiplier": 1,
 		"canBeBlownUp": false,

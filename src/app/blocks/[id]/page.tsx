@@ -119,12 +119,6 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 					<BlockRender block={block} />
 				</div>
 
-				<Link
-					href="/blocks"
-					className="-order-1 -mb-8 block self-start text-muted underline 2xl:mb-2 hocus:text-aqua"
-				>
-					&lt; Back to blocks
-				</Link>
 				<h1 className="-order-1 flex items-center gap-2 pb-4 text-4xl font-bold pixel-shadow md:text-5xl">
 					<div className="flex size-18 items-center justify-center ns-borderless-slot">
 						<Img

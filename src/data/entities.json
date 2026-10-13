@@ -520,12 +520,7 @@
 		"model": "projectile.spell",
 		"texture": "projectile.spell"
 	},
-	{
-		"id": "BasketBall",
-		"category": "projectile",
-		"model": "item.watermelon",
-		"texture": "item.basketball"
-	},
+	{ "id": "BasketBall", "category": "projectile" },
 	{
 		"id": "Bomberry",
 		"category": "projectile",

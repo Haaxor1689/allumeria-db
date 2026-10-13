@@ -11,6 +11,21 @@
 		]
 	},
 	{
+		"id": "any_leaves",
+		"items": [
+			"oak_leaves",
+			"maple_leaves",
+			"leaves",
+			"pine_leaves",
+			"palm_leaves",
+			"sakura_leaves"
+		]
+	},
+	{
+		"id": "any_marble",
+		"items": ["marble_stone", "marble_block", "marble_tiles"]
+	},
+	{
 		"id": "common_fish",
 		"items": [
 			"fish_catfish",
@@ -19,7 +34,8 @@
 			"fish_salmon",
 			"fish_minnow",
 			"fish_blobfish",
-			"fish_nautilus"
+			"fish_nautilus",
+			"fish_slapper"
 		]
 	},
 	{
@@ -34,7 +50,15 @@
 			"fish_obsidieel",
 			"fish_stonefish",
 			"fish_rainbow_trout",
-			"fish_walleye"
+			"fish_walleye",
+			"fish_arctic_char",
+			"fish_jellyfish",
+			"fish_soy_sauce",
+			"fish_fish_finger",
+			"fish_the_destroyer",
+			"fish_neon_tetra",
+			"fish_mackerel_icefish",
+			"fish_arrow_fish"
 		]
 	}
 ]

@@ -498,6 +498,20 @@
 		"category": ["blocks", "natural"]
 	},
 	{
+		"id": "arctic_crocus",
+		"block": "arctic_crocus",
+		"sellValue": 5,
+		"tags": { "can_place": true },
+		"category": ["blocks", "natural"]
+	},
+	{
+		"id": "desert_flower",
+		"block": "desert_flower",
+		"sellValue": 5,
+		"tags": { "can_place": true },
+		"category": ["blocks", "natural"]
+	},
+	{
 		"id": "cotton_plant",
 		"block": "cotton_plant",
 		"sellValue": 1,
@@ -754,6 +768,30 @@
 		"category": ["blocks", "decoration"]
 	},
 	{
+		"id": "marble_stone",
+		"block": "marble_stone",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "marble_block",
+		"block": "marble_block",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "marble_tiles",
+		"block": "marble_tiles",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "oak_hedge",
+		"block": "oak_hedge",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
 		"id": "workbench",
 		"block": "workbench",
 		"tags": { "can_place": true },
@@ -936,24 +974,6 @@
 		"category": ["blocks", "technical"]
 	},
 	{
-		"id": "door",
-		"block": "door",
-		"tags": { "can_place": true },
-		"category": ["blocks", "technical", "decoration"]
-	},
-	{
-		"id": "table",
-		"block": "table",
-		"tags": { "can_place": true },
-		"category": ["blocks", "decoration"]
-	},
-	{
-		"id": "chair",
-		"block": "chair",
-		"tags": { "can_place": true },
-		"category": ["blocks", "decoration"]
-	},
-	{
 		"id": "sign",
 		"block": "sign",
 		"tags": { "can_place": true },
@@ -978,14 +998,68 @@
 		"category": ["blocks", "decoration"]
 	},
 	{
+		"id": "carved_pumpkin",
+		"block": "carved_pumpkin",
+		"tags": { "can_place": true },
+		"category": ["blocks", "technical", "decoration"]
+	},
+	{
+		"id": "door",
+		"block": "door",
+		"tags": { "can_place": true },
+		"category": ["blocks", "technical", "decoration"]
+	},
+	{
+		"id": "table",
+		"block": "table",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "chair",
+		"block": "chair",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "counter",
+		"block": "counter",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
 		"id": "basic_lamp",
 		"block": "basic_lamp",
 		"tags": { "can_place": true },
 		"category": ["blocks", "technical", "decoration"]
 	},
 	{
-		"id": "carved_pumpkin",
-		"block": "carved_pumpkin",
+		"id": "marble_door",
+		"block": "marble_door",
+		"tags": { "can_place": true },
+		"category": ["blocks", "technical", "decoration"]
+	},
+	{
+		"id": "marble_table",
+		"block": "marble_table",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "marble_chair",
+		"block": "marble_chair",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "marble_counter",
+		"block": "marble_counter",
+		"tags": { "can_place": true },
+		"category": ["blocks", "decoration"]
+	},
+	{
+		"id": "marble_lamp",
+		"block": "marble_lamp",
 		"tags": { "can_place": true },
 		"category": ["blocks", "technical", "decoration"]
 	},
@@ -1848,7 +1922,7 @@
 		"sellValue": 2,
 		"model": "item.pickaxe",
 		"texture": "item.flint_pickaxe",
-		"tags": { "pickaxe_power": 2, "swing_speed": 22, "material_level": 1 },
+		"tags": { "pickaxe_power": 1, "swing_speed": 22, "material_level": 1 },
 		"category": ["items", "tools"]
 	},
 	{
@@ -1929,7 +2003,7 @@
 		"sellValue": 1000,
 		"model": "item.pickaxe",
 		"texture": "item.worm_pickaxe",
-		"tags": { "pickaxe_power": 5, "swing_speed": 13, "material_level": 5 },
+		"tags": { "pickaxe_power": 6, "swing_speed": 13, "material_level": 5 },
 		"category": ["items", "tools"]
 	},
 	{
@@ -2482,6 +2556,17 @@
 		"category": ["items"]
 	},
 	{
+		"id": "scale_helmet",
+		"class": "Armour",
+		"stackSize": 1,
+		"sellValue": 15,
+		"tags": { "defence": 15 },
+		"model": "player.helmet",
+		"texture": "player.scale_armour",
+		"slotType": "Helmet",
+		"category": ["items"]
+	},
+	{
 		"id": "palladium_helmet",
 		"class": "Armour",
 		"stackSize": 1,
@@ -2559,6 +2644,17 @@
 		"category": ["items"]
 	},
 	{
+		"id": "scale_chestplate",
+		"class": "Armour",
+		"stackSize": 1,
+		"sellValue": 15,
+		"tags": { "defence": 15 },
+		"model": "player.chestplate",
+		"texture": "player.scale_armour",
+		"slotType": "Chestplate",
+		"category": ["items"]
+	},
+	{
 		"id": "palladium_chestplate",
 		"class": "Armour",
 		"stackSize": 1,
@@ -2632,6 +2728,17 @@
 		"tags": { "defence": 14 },
 		"model": "player.greaves",
 		"texture": "player.cobalt_armour",
+		"slotType": "Greaves",
+		"category": ["items"]
+	},
+	{
+		"id": "scale_greaves",
+		"class": "Armour",
+		"stackSize": 1,
+		"sellValue": 15,
+		"tags": { "defence": 15 },
+		"model": "player.greaves",
+		"texture": "player.scale_armour",
 		"slotType": "Greaves",
 		"category": ["items"]
 	},
@@ -3352,7 +3459,7 @@
 	{
 		"id": "obsidian_rod",
 		"class": "ingRod",
-		"sellValue": 10,
+		"sellValue": 50,
 		"model": "item.fishing_rod",
 		"texture": "item.obsidian_rod",
 		"projectileModel": "item.bobber",
@@ -3360,6 +3467,19 @@
 		"velocity": 0.3,
 		"amount": 1,
 		"difficultMultiplier": 0.4,
+		"category": ["items"]
+	},
+	{
+		"id": "scale_rod",
+		"class": "ingRod",
+		"sellValue": 100,
+		"model": "item.fishing_rod",
+		"texture": "item.scale_rod",
+		"projectileModel": "item.bobber",
+		"projectileTexture": "item.bobber",
+		"velocity": 0.3,
+		"amount": 1,
+		"difficultMultiplier": 0.2,
 		"category": ["items"]
 	},
 	{
@@ -3397,7 +3517,7 @@
 		"sellValue": 5,
 		"model": "item.watering_can",
 		"texture": "item.watering_can",
-		"tags": { "swing_speed": 15, "cant_mine": true },
+		"tags": { "swing_speed": 15 },
 		"category": ["items", "tools"]
 	},
 	{
@@ -3997,6 +4117,7 @@
 		"model": "item.watermelon",
 		"texture": "item.basketball",
 		"tags": { "can_consume": true },
+		"type": "BasketBall",
 		"velocity": 0.4,
 		"amount": 1,
 		"category": ["items"]
@@ -4073,7 +4194,7 @@
 		"class": "PaintRoller",
 		"stackSize": 1,
 		"sellValue": 50,
-		"tags": { "swing_speed": 1, "cant_mine": true },
+		"tags": { "swing_speed": 1 },
 		"paintMode": 6,
 		"category": ["items", "tools", "decoration"]
 	},
@@ -4082,7 +4203,7 @@
 		"class": "PaintRoller",
 		"stackSize": 1,
 		"sellValue": 50,
-		"tags": { "swing_speed": 1, "cant_mine": true },
+		"tags": { "swing_speed": 1 },
 		"paintMode": 22,
 		"category": ["items", "tools", "decoration"]
 	},
@@ -4091,7 +4212,7 @@
 		"class": "PaintRoller",
 		"stackSize": 1,
 		"sellValue": 50,
-		"tags": { "swing_speed": 1, "cant_mine": true },
+		"tags": { "swing_speed": 1 },
 		"paintMode": 38,
 		"category": ["items", "tools", "decoration"]
 	},
@@ -4100,7 +4221,7 @@
 		"class": "PaintRoller",
 		"stackSize": 1,
 		"sellValue": 50,
-		"tags": { "swing_speed": 1, "cant_mine": true },
+		"tags": { "swing_speed": 1 },
 		"paintMode": 46,
 		"category": ["items", "tools", "decoration"]
 	},
@@ -4109,7 +4230,7 @@
 		"class": "PaintRoller",
 		"stackSize": 1,
 		"sellValue": 50,
-		"tags": { "swing_speed": 1, "cant_mine": true },
+		"tags": { "swing_speed": 1 },
 		"paintMode": 2,
 		"category": ["items", "tools", "decoration"]
 	},
@@ -4118,7 +4239,7 @@
 		"class": "PaintRoller",
 		"stackSize": 1,
 		"sellValue": 50,
-		"tags": { "swing_speed": 1, "cant_mine": true },
+		"tags": { "swing_speed": 1 },
 		"paintMode": 49,
 		"category": ["items", "tools", "decoration"]
 	},
@@ -4348,6 +4469,68 @@
 	{ "id": "fish_obsidieel", "category": ["items"] },
 	{ "id": "fish_stonefish", "category": ["items"] },
 	{ "id": "fish_rainbow_trout", "category": ["items"] },
+	{ "id": "fish_arctic_char", "category": ["items"] },
+	{ "id": "fish_jellyfish", "category": ["items"] },
+	{ "id": "fish_goldfish", "sellValue": 10000, "category": ["items"] },
+	{ "id": "fish_soy_sauce", "category": ["items"] },
+	{ "id": "fish_fish_finger", "category": ["items"] },
+	{ "id": "fish_the_destroyer", "category": ["items"] },
+	{
+		"id": "fish_pufferfish",
+		"class": "Throwable",
+		"sellValue": 100,
+		"model": "item.watermelon",
+		"texture": "item.pufferfish",
+		"tags": { "can_consume": true },
+		"type": "Pufferfish",
+		"velocity": 0.4,
+		"amount": 1,
+		"category": ["items"]
+	},
+	{ "id": "fish_neon_tetra", "category": ["items"] },
+	{ "id": "fish_mackerel_icefish", "category": ["items"] },
+	{
+		"id": "fish_arrow_fish",
+		"class": "Ammo",
+		"sellValue": 100,
+		"tags": { "ranged_damage": 7, "ammo": "ammo.arrow" },
+		"rangedDamage": 7,
+		"projectileType": "Arrow",
+		"type": "Arrow",
+		"slotType": "Ammo",
+		"category": ["items", "weapons"]
+	},
+	{
+		"id": "fish_slapper",
+		"class": "MeleeEffect",
+		"stackSize": 1,
+		"sellValue": 15,
+		"sweeping": true,
+		"swingAnim": 3,
+		"model": "item.sword",
+		"texture": "item.slapper",
+		"tags": {
+			"cant_mine": true,
+			"melee_damage": 2,
+			"swing_speed": 50,
+			"knockback": 300
+		},
+		"effect": "concussion",
+		"ticks": 60,
+		"category": ["items", "weapons"]
+	},
+	{
+		"id": "fish_ninja_starfish",
+		"class": "Ammo",
+		"sellValue": 100,
+		"tags": { "ranged_damage": 32, "can_consume": true, "swing_speed": 25 },
+		"rangedDamage": 32,
+		"projectileType": "Shuriken",
+		"type": "Shuriken",
+		"slotType": "Ammo",
+		"category": ["items", "weapons"]
+	},
+	{ "id": "ancient_scale", "category": ["items"], "sprite": "missing" },
 	{ "id": "spoon_fragment", "sellValue": 5, "category": ["items"] },
 	{ "id": "thorns", "sellValue": 5, "category": ["items"] },
 	{ "id": "geode", "sellValue": 5, "category": ["items"] },

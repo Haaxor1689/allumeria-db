@@ -1,11 +1,11 @@
 {
-	"generatedAtUtc": "2026-10-06T19:59:39.5439225+00:00",
-	"gameVersion": "0.15.14",
-	"itemCount": 543,
+	"generatedAtUtc": "2026-10-12T22:29:30.072643+00:00",
+	"gameVersion": "0.16",
+	"itemCount": 572,
 	"catalogueCount": 5,
-	"recipeCount": 229,
-	"recipeAliasCount": 3,
-	"blockCount": 287,
+	"recipeCount": 243,
+	"recipeAliasCount": 5,
+	"blockCount": 299,
 	"entityCount": 77,
 	"lootCount": 48,
 	"spawnCount": 10,
@@ -13,7 +13,7 @@
 	"itemTagCount": 18,
 	"blockMaterialCount": 17,
 	"structureCount": 7,
-	"blockModelCount": 63,
+	"blockModelCount": 65,
 	"comfortRequirementCount": 5,
 	"npcDataCount": 4
 }

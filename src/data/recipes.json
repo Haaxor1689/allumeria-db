@@ -1006,6 +1006,24 @@
 		"requirements": { "cobalt_ingot": 15 }
 	},
 	{
+		"result": "scale_greaves",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "cobalt_ingot": 4, "ancient_scale": 3 }
+	},
+	{
+		"result": "scale_helmet",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "cobalt_ingot": 4, "ancient_scale": 3 }
+	},
+	{
+		"result": "scale_chestplate",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "cobalt_ingot": 4, "ancient_scale": 3 }
+	},
+	{
 		"result": "palladium_ingot",
 		"amount": 1,
 		"station": "furnace",
@@ -1192,18 +1210,6 @@
 		"requirements": { "clay": 1 }
 	},
 	{
-		"result": "chair",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "any_planks": 5 }
-	},
-	{
-		"result": "table",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "any_planks": 5 }
-	},
-	{
 		"result": "bed",
 		"amount": 1,
 		"station": "decorations",
@@ -1228,12 +1234,6 @@
 		"requirements": { "glass": 1 }
 	},
 	{
-		"result": "basic_lamp",
-		"amount": 1,
-		"station": "decorations",
-		"requirements": { "any_planks": 5 }
-	},
-	{
 		"result": "white_torch",
 		"amount": 4,
 		"station": "decorations",
@@ -1244,6 +1244,60 @@
 		"amount": 4,
 		"station": "decorations",
 		"requirements": { "ice": 1, "torch": 4 }
+	},
+	{
+		"result": "chair",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_planks": 5 }
+	},
+	{
+		"result": "table",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_planks": 5 }
+	},
+	{
+		"result": "basic_lamp",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_planks": 5 }
+	},
+	{
+		"result": "counter",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_planks": 5 }
+	},
+	{
+		"result": "marble_chair",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
+	},
+	{
+		"result": "marble_table",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
+	},
+	{
+		"result": "marble_lamp",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
+	},
+	{
+		"result": "marble_counter",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
+	},
+	{
+		"result": "marble_door",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
 	},
 	{
 		"result": "unobtainable_melon",
@@ -1382,5 +1436,35 @@
 		"amount": 4,
 		"station": "decorations",
 		"requirements": { "stone": 4, "palladium_ingot": 1 }
+	},
+	{
+		"result": "marble_stone",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
+	},
+	{
+		"result": "marble_block",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
+	},
+	{
+		"result": "marble_tiles",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_marble": 1 }
+	},
+	{
+		"result": "marble_stone",
+		"amount": 2,
+		"station": "decorations",
+		"requirements": { "any_marble": 1, "stone": 1 }
+	},
+	{
+		"result": "oak_hedge",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "any_leaves": 1 }
 	}
 ]

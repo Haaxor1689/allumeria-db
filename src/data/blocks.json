@@ -627,6 +627,22 @@
 		"blockModel": "small_plant"
 	},
 	{
+		"id": "arctic_crocus",
+		"class": "Plant",
+		"material": "plant",
+		"needsSupport": true,
+		"textures": ["arctic_crocus"],
+		"blockModel": "small_plant"
+	},
+	{
+		"id": "desert_flower",
+		"class": "Plant",
+		"material": "plant",
+		"needsSupport": true,
+		"textures": ["desert_flower"],
+		"blockModel": "small_plant"
+	},
+	{
 		"id": "cotton_plant",
 		"class": "Cotton",
 		"material": "plant",
@@ -841,6 +857,30 @@
 		"canBeShaped": true,
 		"textures": ["maple_planks", "maple_bookshelf", "maple_planks"],
 		"blockModel": "topBottom"
+	},
+	{
+		"id": "marble_stone",
+		"material": "stone",
+		"canBeShaped": true,
+		"textures": ["marble_stone"]
+	},
+	{
+		"id": "marble_block",
+		"material": "stone",
+		"canBeShaped": true,
+		"textures": ["marble_block"]
+	},
+	{
+		"id": "marble_tiles",
+		"material": "stone",
+		"canBeShaped": true,
+		"textures": ["marble_tiles"]
+	},
+	{
+		"id": "oak_hedge",
+		"material": "plant",
+		"canBeShaped": true,
+		"textures": ["oak_hedge"]
 	},
 	{
 		"id": "workbench",
@@ -1110,36 +1150,6 @@
 		"decorationScore": 1
 	},
 	{
-		"id": "door",
-		"class": "Door",
-		"material": "wood",
-		"interactible": true,
-		"textures": [
-			"wood_door_tl",
-			"wood_door_bl",
-			"wood_door_tr",
-			"wood_door_br"
-		],
-		"blockModel": "door",
-		"decorationScore": 1,
-		"keyItem": "iron_key"
-	},
-	{
-		"id": "table",
-		"material": "wood",
-		"textures": ["wood_table_top", "wood_table_side"],
-		"blockModel": "table",
-		"decorationScore": 1
-	},
-	{
-		"id": "chair",
-		"class": "Chair",
-		"material": "wood",
-		"textures": ["wood_chair_top", "wood_chair_side"],
-		"blockModel": "chair",
-		"decorationScore": 1
-	},
-	{
 		"id": "sign",
 		"class": "Sign",
 		"material": "torch",
@@ -1212,16 +1222,6 @@
 		"decorationScore": 1
 	},
 	{
-		"id": "basic_lamp",
-		"class": "ToggleLamp",
-		"material": "torch",
-		"interactible": true,
-		"textures": ["lamp_top_onoff", "lamp_side_onoff", "lamp_base_onoff"],
-		"blockModel": "table_lamp",
-		"decorationScore": 1,
-		"lightEmission": [9, 8, 6]
-	},
-	{
 		"id": "carved_pumpkin",
 		"class": "Pumpkin",
 		"material": "torch",
@@ -1249,6 +1249,106 @@
 		"blockModel": "pumpkin_lantern",
 		"decorationScore": 1,
 		"lightEmission": [9, 5, 1]
+	},
+	{
+		"id": "door",
+		"class": "Door",
+		"material": "wood",
+		"interactible": true,
+		"textures": [
+			"wood_door_tl",
+			"wood_door_bl",
+			"wood_door_tr",
+			"wood_door_br"
+		],
+		"blockModel": "door",
+		"decorationScore": 1,
+		"keyItem": "iron_key"
+	},
+	{
+		"id": "table",
+		"material": "wood",
+		"textures": ["wood_table_top", "wood_table_side"],
+		"blockModel": "table",
+		"decorationScore": 1
+	},
+	{
+		"id": "chair",
+		"class": "Chair",
+		"material": "wood",
+		"textures": ["wood_chair_top", "wood_chair_side"],
+		"blockModel": "chair",
+		"decorationScore": 1
+	},
+	{
+		"id": "counter",
+		"class": "Chair",
+		"material": "wood",
+		"textures": ["wood_table_top", "wood_counter_side"],
+		"blockModel": "counter",
+		"decorationScore": 1
+	},
+	{
+		"id": "basic_lamp",
+		"class": "ToggleLamp",
+		"material": "torch",
+		"interactible": true,
+		"textures": ["lamp_top_onoff", "lamp_side_onoff", "lamp_base_onoff"],
+		"blockModel": "table_lamp",
+		"decorationScore": 1,
+		"lightEmission": [15, 12, 9]
+	},
+	{
+		"id": "marble_door",
+		"class": "Door",
+		"material": "stone",
+		"interactible": true,
+		"textures": [
+			"marble_door_tl",
+			"marble_door_bl",
+			"marble_door_tr",
+			"marble_door_br"
+		],
+		"blockModel": "door",
+		"decorationScore": 1,
+		"keyItem": "iron_key"
+	},
+	{
+		"id": "marble_table",
+		"material": "stone",
+		"textures": ["marble_table_top", "marble_table_side"],
+		"blockModel": "table",
+		"decorationScore": 1
+	},
+	{
+		"id": "marble_chair",
+		"class": "Chair",
+		"material": "stone",
+		"textures": ["marble_chair_top", "marble_chair_side"],
+		"blockModel": "chair",
+		"decorationScore": 1
+	},
+	{
+		"id": "marble_counter",
+		"class": "Chair",
+		"material": "stone",
+		"textures": ["marble_table_top", "marble_counter_side"],
+		"blockModel": "counter",
+		"decorationScore": 1
+	},
+	{
+		"id": "marble_lamp",
+		"class": "ToggleLamp",
+		"material": "torch",
+		"interactible": true,
+		"textures": [
+			"marble_lamp_top_onoff",
+			"marble_lamp_side_onoff",
+			"marble_lamp_base_onoff"
+		],
+		"blockModel": "table_lamp",
+		"decorationScore": 1,
+		"lightEmission": [15, 15, 15]
 	},
 	{
 		"id": "bed",
