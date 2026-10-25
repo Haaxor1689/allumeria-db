@@ -6,7 +6,8 @@
 		"effectType": "Debuff",
 		"textureX": 0,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "regen",
@@ -16,7 +17,8 @@
 		"textureX": 64,
 		"textureY": 368,
 		"delay": 600,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "wet",
@@ -25,7 +27,8 @@
 		"effectType": "Neutral",
 		"textureX": 16,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "slowfall",
@@ -33,7 +36,8 @@
 		"effectType": "Buff",
 		"textureX": 32,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "fire",
@@ -42,7 +46,8 @@
 		"effectType": "Debuff",
 		"textureX": 48,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "healcooldown",
@@ -51,7 +56,8 @@
 		"effectType": "Neutral",
 		"textureX": 80,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "freezing",
@@ -60,7 +66,8 @@
 		"effectType": "Debuff",
 		"textureX": 96,
 		"textureY": 368,
-		"incompatibilityID": 45
+		"incompatibilityID": 45,
+		"viral": false
 	},
 	{
 		"id": "fast",
@@ -70,7 +77,8 @@
 		"textureX": 112,
 		"textureY": 368,
 		"speedModifier": 1.5,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "slow",
@@ -80,7 +88,8 @@
 		"textureX": 128,
 		"textureY": 368,
 		"speedModifier": 0.5,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "anchored",
@@ -88,7 +97,8 @@
 		"effectType": "Debuff",
 		"textureX": 144,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "frozen",
@@ -96,7 +106,8 @@
 		"effectType": "Debuff",
 		"textureX": 160,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "watched",
@@ -104,7 +115,8 @@
 		"effectType": "Passive",
 		"textureX": 176,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "fast_walking",
@@ -114,7 +126,8 @@
 		"textureX": 112,
 		"textureY": 368,
 		"speedModifier": 1.25,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "buoyant",
@@ -123,7 +136,8 @@
 		"effectType": "Hidden",
 		"textureX": 192,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "flippers",
@@ -132,7 +146,8 @@
 		"effectType": "Hidden",
 		"textureX": 192,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "flight",
@@ -142,7 +157,8 @@
 		"textureX": 32,
 		"textureY": 368,
 		"ticks": 30,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "short_flight",
@@ -152,7 +168,8 @@
 		"textureX": 32,
 		"textureY": 368,
 		"ticks": 60,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "spring_boots",
@@ -162,7 +179,8 @@
 		"textureX": 192,
 		"textureY": 368,
 		"modifier": 1.5,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "trampoline",
@@ -172,7 +190,8 @@
 		"textureX": 192,
 		"textureY": 368,
 		"modifier": 2.5,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "glide",
@@ -182,7 +201,8 @@
 		"textureX": 192,
 		"textureY": 368,
 		"speedModifier": 1,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "jumping_bean",
@@ -192,7 +212,8 @@
 		"textureX": 192,
 		"textureY": 368,
 		"modifier": 1.5,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "bouncy",
@@ -201,7 +222,8 @@
 		"effectType": "Hidden",
 		"textureX": 192,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "sneaky",
@@ -210,7 +232,8 @@
 		"effectType": "Hidden",
 		"textureX": 192,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "wall_jumping",
@@ -219,7 +242,8 @@
 		"effectType": "Hidden",
 		"textureX": 192,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "speed_boots",
@@ -229,7 +253,8 @@
 		"textureX": 224,
 		"textureY": 336,
 		"speedModifier": 1.5,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "poison_immunity",
@@ -238,7 +263,8 @@
 		"effectType": "Hidden",
 		"textureX": 224,
 		"textureY": 336,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "weak_health_potion",
@@ -248,7 +274,8 @@
 		"textureX": 224,
 		"textureY": 336,
 		"hp": 50,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "health_potion",
@@ -258,7 +285,8 @@
 		"textureX": 224,
 		"textureY": 336,
 		"hp": 100,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "regen_potion",
@@ -268,7 +296,8 @@
 		"textureX": 64,
 		"textureY": 368,
 		"delay": 60,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "armoured",
@@ -278,7 +307,8 @@
 		"textureX": 208,
 		"textureY": 368,
 		"amount": 10,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "returning",
@@ -287,7 +317,8 @@
 		"effectType": "Hidden",
 		"textureX": 192,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "concussion",
@@ -296,7 +327,8 @@
 		"effectType": "Debuff",
 		"textureX": 240,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "snack",
@@ -306,7 +338,8 @@
 		"textureX": 256,
 		"textureY": 368,
 		"strength": 1,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "small_meal",
@@ -316,7 +349,8 @@
 		"textureX": 272,
 		"textureY": 368,
 		"strength": 2,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "webbed",
@@ -325,7 +359,8 @@
 		"effectType": "Debuff",
 		"textureX": 288,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "magnetism",
@@ -334,7 +369,8 @@
 		"effectType": "Hidden",
 		"textureX": 288,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "scuba_helmet",
@@ -343,7 +379,8 @@
 		"effectType": "Hidden",
 		"textureX": 288,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "fast_mining",
@@ -352,7 +389,8 @@
 		"effectType": "Buff",
 		"textureX": 304,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "super_weak_heal",
@@ -362,7 +400,8 @@
 		"textureX": 224,
 		"textureY": 368,
 		"hp": 25,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "curse_of_core",
@@ -371,7 +410,8 @@
 		"effectType": "Hidden",
 		"textureX": 224,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "cosmic_radiation",
@@ -380,7 +420,8 @@
 		"effectType": "Hidden",
 		"textureX": 224,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "water_walking",
@@ -389,7 +430,8 @@
 		"effectType": "Buff",
 		"textureX": 336,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "crate_potion",
@@ -399,7 +441,8 @@
 		"textureX": 320,
 		"textureY": 368,
 		"amount": 1,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "jelly_spoon",
@@ -408,7 +451,8 @@
 		"effectType": "Hidden",
 		"textureX": 320,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "quicksand",
@@ -417,7 +461,8 @@
 		"effectType": "Hidden",
 		"textureX": 288,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "freezing_immunity",
@@ -425,7 +470,8 @@
 		"effectType": "Hidden",
 		"textureX": 288,
 		"textureY": 368,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
 	},
 	{
 		"id": "desert_glide",
@@ -435,6 +481,17 @@
 		"textureX": 192,
 		"textureY": 368,
 		"speedModifier": 2,
-		"incompatibilityID": -1
+		"incompatibilityID": -1,
+		"viral": false
+	},
+	{
+		"id": "spooky_spirit",
+		"intId": 47,
+		"class": "Spooky",
+		"effectType": "Hidden",
+		"textureX": 192,
+		"textureY": 368,
+		"incompatibilityID": -1,
+		"viral": true
 	}
 ]

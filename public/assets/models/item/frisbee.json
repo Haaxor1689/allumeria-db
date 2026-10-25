@@ -1,12 +1,5 @@
 {
-	"meta": { "format_version": "4.10", "model_format": "free", "box_uv": false },
 	"name": "frisbee",
-	"model_identifier": "",
-	"visible_box": [1, 1, 0],
-	"variable_placeholders": "",
-	"variable_placeholder_buttons": [],
-	"timeline_setups": [],
-	"unhandled_root_fields": {},
 	"resolution": { "width": 32, "height": 32 },
 	"elements": [
 		{
@@ -14,9 +7,6 @@
 			"color": 1,
 			"origin": [0, 0, 0],
 			"rotation": [0, 0, 0],
-			"export": true,
-			"visibility": true,
-			"locked": false,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"vertices": {
@@ -45,9 +35,6 @@
 			"color": 1,
 			"origin": [0, 0, 0],
 			"rotation": [0, 0, 90],
-			"export": true,
-			"visibility": true,
-			"locked": false,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"vertices": {
@@ -76,9 +63,6 @@
 			"color": 1,
 			"origin": [0, 0, 0],
 			"rotation": [0, 90, 90],
-			"export": true,
-			"visibility": true,
-			"locked": false,
 			"render_order": "default",
 			"allow_mirror_modeling": true,
 			"vertices": {
@@ -107,51 +91,13 @@
 		{
 			"name": "bone",
 			"origin": [0, 0, 0],
-			"color": 0,
 			"uuid": "bc95c086-8374-dd66-3160-7d283f8d6072",
-			"export": true,
 			"mirror_uv": false,
-			"isOpen": true,
-			"locked": false,
-			"visibility": true,
-			"autouv": 0,
-			"selected": false,
 			"children": [
 				"2017a1e7-e11b-d441-f72e-fd3c8cda34b3",
 				"b7baa0fb-c9bd-a16c-6a10-70bb9faa13ca",
 				"79acf294-a287-7dd6-3e21-ca6afd23e086"
 			]
-		}
-	],
-	"textures": [
-		{
-			"path": "C:\\Documents\\Blockbench\\items\\disc.png",
-			"name": "disc.png",
-			"folder": "block",
-			"namespace": "",
-			"id": "0",
-			"group": "",
-			"width": 32,
-			"height": 32,
-			"uv_width": 32,
-			"uv_height": 32,
-			"particle": false,
-			"use_as_default": false,
-			"layers_enabled": false,
-			"sync_to_project": "",
-			"render_mode": "default",
-			"render_sides": "auto",
-			"pbr_channel": "color",
-			"frame_time": 1,
-			"frame_order_type": "loop",
-			"frame_order": "",
-			"frame_interpolate": false,
-			"visible": true,
-			"internal": true,
-			"saved": true,
-			"uuid": "a95c4498-5388-111d-ee92-9654ddf8e775",
-			"relative_path": "disc.png",
-			"source": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAdFJREFUWEdjZMACPB2b/qMLb99fx4guBlKHTRybmbjEUAyFWdyamY2hvnr6VLAYsoXnVr39bxQmjOEwshwAshxm8Rn+ZwxMlzhQzDGSFwLzQQ6BOeJRUet/ub5qyh0As/yk812wJcxnODEc4PZ8FVjujUUG3BE0cwC6I2CW08QB6L6HhTssFJAt3yUZBpYGRQcoKmYaMjNQHAW4HACyKIrVlOFjQxvYUpjlyA5YsbGWgZ+PkbI0AHLAxqm1DAseX0FJdAmyOgz+2c0M+OQozYIgCxlhDli09Q7cAcgJDpYwkV2X/NIU7DhQrqE4G1akHPvfVGTJAHMAepz/0/vB8NfkO0rogBxQ13ecIYtvP+VpAGQyzBEv5kDiGznO0R0As7xjjhUj1bIhyAGVfZZYExzIMciOACXM9qLjDFR1ACwUQI4AgdUzEekB5oBwSx2wHMxyEJtqIQALdlBIgNgwhyBHPMhiEAD5HCb+8dP//xRnQ5TUBeXAHIIsh2wxsoOxiWMzE5cYOBtSIz+TYimyWsZf1/7/Z9OirDQj13KQPsbpb0/9zxQ2o6g4HXXA0A6BAU+ElAQfNfSOZsPRcmDgQ2DAs+GA14bUyMuUmDFgtSDM0QDwChUw4Dh2tgAAAABJRU5ErkJggg=="
 		}
 	]
 }

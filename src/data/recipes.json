@@ -850,6 +850,12 @@
 		}
 	},
 	{
+		"result": "scale_rod",
+		"amount": 1,
+		"station": "work_bench",
+		"requirements": { "obsidian_rod": 1, "ancient_scale": 4 }
+	},
+	{
 		"result": "wood_bow",
 		"amount": 1,
 		"station": "work_bench",
@@ -1466,5 +1472,23 @@
 		"amount": 1,
 		"station": "decorations",
 		"requirements": { "any_leaves": 1 }
+	},
+	{
+		"result": "gold_crown",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "gold_ingot": 10 }
+	},
+	{
+		"result": "vanity_glasses",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "glass": 2 }
+	},
+	{
+		"result": "forest_antlers",
+		"amount": 1,
+		"station": "decorations",
+		"requirements": { "allumerium_ore": 1, "skull_fragment": 5 }
 	}
 ]

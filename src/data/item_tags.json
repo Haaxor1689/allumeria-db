@@ -16,5 +16,6 @@
 	{ "id": "can_block", "iconX": 96, "iconY": 320 },
 	{ "id": "knockback", "iconX": 104, "iconY": 320 },
 	{ "id": "demo_locked", "iconX": 112, "iconY": 320 },
-	{ "id": "material_level", "iconX": 120, "iconY": 320 }
+	{ "id": "material_level", "iconX": 120, "iconY": 320 },
+	{ "id": "vanity", "iconX": 128, "iconY": 320 }
 ]

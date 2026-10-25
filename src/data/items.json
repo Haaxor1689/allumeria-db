@@ -2498,7 +2498,8 @@
 		"model": "player.helmet",
 		"texture": "player.copper_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "iron_helmet",
@@ -2509,7 +2510,8 @@
 		"model": "player.helmet",
 		"texture": "player.iron_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "silver_helmet",
@@ -2520,7 +2522,8 @@
 		"model": "player.helmet",
 		"texture": "player.silver_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "gold_helmet",
@@ -2531,7 +2534,8 @@
 		"model": "player.helmet",
 		"texture": "player.gold_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "forest_helmet",
@@ -2542,7 +2546,8 @@
 		"model": "player.helmet",
 		"texture": "player.forest_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "cobalt_helmet",
@@ -2553,7 +2558,8 @@
 		"model": "player.helmet",
 		"texture": "player.cobalt_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "scale_helmet",
@@ -2564,7 +2570,8 @@
 		"model": "player.helmet",
 		"texture": "player.scale_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "palladium_helmet",
@@ -2575,7 +2582,8 @@
 		"model": "player.helmet",
 		"texture": "player.palladium_armour",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "copper_chestplate",
@@ -2586,7 +2594,8 @@
 		"model": "player.chestplate",
 		"texture": "player.copper_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "iron_chestplate",
@@ -2597,7 +2606,8 @@
 		"model": "player.chestplate",
 		"texture": "player.iron_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "silver_chestplate",
@@ -2608,7 +2618,8 @@
 		"model": "player.chestplate",
 		"texture": "player.silver_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "gold_chestplate",
@@ -2619,7 +2630,8 @@
 		"model": "player.chestplate",
 		"texture": "player.gold_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "forest_chestplate",
@@ -2630,7 +2642,8 @@
 		"model": "player.chestplate",
 		"texture": "player.forest_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "cobalt_chestplate",
@@ -2641,7 +2654,8 @@
 		"model": "player.chestplate",
 		"texture": "player.cobalt_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "scale_chestplate",
@@ -2652,7 +2666,8 @@
 		"model": "player.chestplate",
 		"texture": "player.scale_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "palladium_chestplate",
@@ -2663,7 +2678,8 @@
 		"model": "player.chestplate",
 		"texture": "player.palladium_armour",
 		"slotType": "Chestplate",
-		"category": ["items"]
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "copper_greaves",
@@ -2674,7 +2690,8 @@
 		"model": "player.greaves",
 		"texture": "player.copper_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "iron_greaves",
@@ -2685,7 +2702,8 @@
 		"model": "player.greaves",
 		"texture": "player.iron_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "silver_greaves",
@@ -2696,7 +2714,8 @@
 		"model": "player.greaves",
 		"texture": "player.silver_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "gold_greaves",
@@ -2707,7 +2726,8 @@
 		"model": "player.greaves",
 		"texture": "player.gold_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "forest_greaves",
@@ -2718,7 +2738,8 @@
 		"model": "player.greaves",
 		"texture": "player.forest_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "cobalt_greaves",
@@ -2729,7 +2750,8 @@
 		"model": "player.greaves",
 		"texture": "player.cobalt_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "scale_greaves",
@@ -2740,7 +2762,8 @@
 		"model": "player.greaves",
 		"texture": "player.scale_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "palladium_greaves",
@@ -2751,7 +2774,8 @@
 		"model": "player.greaves",
 		"texture": "player.palladium_armour",
 		"slotType": "Greaves",
-		"category": ["items"]
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "wood_bow",
@@ -4530,7 +4554,7 @@
 		"slotType": "Ammo",
 		"category": ["items", "weapons"]
 	},
-	{ "id": "ancient_scale", "category": ["items"], "sprite": "missing" },
+	{ "id": "ancient_scale", "category": ["items"] },
 	{ "id": "spoon_fragment", "sellValue": 5, "category": ["items"] },
 	{ "id": "thorns", "sellValue": 5, "category": ["items"] },
 	{ "id": "geode", "sellValue": 5, "category": ["items"] },
@@ -4538,19 +4562,205 @@
 	{
 		"id": "merchant_hat",
 		"class": "Armour",
-		"stackSize": 1,
+		"sellValue": 200,
+		"tags": { "vanity": true },
 		"model": "vanity.merchant_hat",
 		"texture": "vanity.merchant_hat",
 		"slotType": "Helmet",
-		"category": ["items"]
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
 	},
 	{
 		"id": "merchant_backpack",
 		"class": "Armour",
-		"stackSize": 1,
+		"sellValue": 200,
+		"tags": { "vanity": true },
 		"model": "vanity.merchant_backpack",
 		"texture": "vanity.merchant_backpack",
 		"slotType": "Chestplate",
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "straw_hat",
+		"class": "Armour",
+		"sellValue": 200,
+		"tags": { "vanity": true },
+		"model": "vanity.straw_hat",
+		"texture": "vanity.straw_hat",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "witch_hat",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "vanity.witch_hat",
+		"texture": "vanity.witch_hat",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "hockey_mask",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.helmet",
+		"texture": "vanity.hockey_mask",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "hard_hat",
+		"class": "Armour",
+		"sellValue": 200,
+		"tags": { "vanity": true },
+		"model": "vanity.hard_hat",
+		"texture": "vanity.hard_hat",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "vanity_glasses",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "vanity.glasses",
+		"texture": "vanity.glasses",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "gold_crown",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "vanity.crown",
+		"texture": "vanity.gold_crown",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "cat_ears",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.helmet_cards",
+		"texture": "vanity.cat_ears",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "forest_antlers",
+		"class": "Armour",
+		"sellValue": 200,
+		"tags": { "vanity": true },
+		"model": "player.helmet_cards",
+		"texture": "vanity.forest_antlers",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "hazmat_head",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.helmet",
+		"texture": "vanity.hazmat",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "hazmat_torso",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.chestplate",
+		"texture": "vanity.hazmat",
+		"slotType": "Chestplate",
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "hazmat_legs",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.greaves",
+		"texture": "vanity.hazmat",
+		"slotType": "Greaves",
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "tuxedo",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "vanity.chestplate_lowshoulders",
+		"texture": "vanity.tuxedo",
+		"slotType": "Chestplate",
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "dress_pants",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.greaves",
+		"texture": "vanity.tuxedo",
+		"slotType": "Greaves",
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "ghost_head",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.helmet",
+		"texture": "vanity.ghost",
+		"slotType": "Helmet",
+		"vanitySlotType": "VanityHead",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "ghost_torso",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.chestplate",
+		"texture": "vanity.ghost",
+		"slotType": "Chestplate",
+		"vanitySlotType": "VanityTorso",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "ghost_legs",
+		"class": "Armour",
+		"sellValue": 5,
+		"tags": { "vanity": true },
+		"model": "player.greaves",
+		"texture": "vanity.ghost",
+		"slotType": "Greaves",
+		"vanitySlotType": "VanityLegs",
+		"category": ["items", "wearable"]
+	},
+	{
+		"id": "costume_bag",
+		"class": "LootBag",
+		"tags": { "can_consume": true },
 		"category": ["items"]
 	}
 ]
