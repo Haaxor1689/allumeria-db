@@ -4,16 +4,6 @@ import { type ProcedureResult } from '#server/helpers.ts';
 
 import { Errors, isErrors } from './errors';
 
-export const downloadBlob = (blob: Blob, title: string) => {
-	const url = window.URL.createObjectURL(blob);
-	const link = document.createElement('a');
-
-	link.href = url;
-	link.download = title;
-
-	link.click();
-};
-
 export const safeJsonParse = <T extends z.ZodType>({
 	text,
 	schema,

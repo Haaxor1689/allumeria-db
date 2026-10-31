@@ -77,7 +77,7 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 
 	const [inputValue, setInputValue] = useState(search);
 	const [caret, setCaret] = useState(inputValue.length);
-	const [selection, setSelection] = useState({
+	const selection = useRef({
 		start: inputValue.length,
 		end: inputValue.length
 	});
@@ -177,7 +177,7 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 		if (!current) return;
 		const offsets = getSelectionOffsets(current);
 		setCaret(offsets.start);
-		setSelection(offsets);
+		selection.current = offsets;
 	};
 
 	const updateQueryFromEditor = (element: HTMLDivElement) => {
@@ -189,7 +189,7 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 			end: Math.min(offsets.end, value.length)
 		};
 		setCaret(pendingSelection.current.start);
-		setSelection(pendingSelection.current);
+		selection.current = pendingSelection.current;
 		setInputValue(value);
 		setHighlightedIdx(-1);
 	};
@@ -197,7 +197,7 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 	const chooseSuggestion = (suggestion: SearchSuggestion) => {
 		const offsets = editor.current
 			? getSelectionOffsets(editor.current)
-			: { start: caret, end: selection.end };
+			: { start: caret, end: selection.current.end };
 		const replacement = applySearchSuggestion(
 			inputValue,
 			offsets.start,
@@ -209,7 +209,7 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 			end: replacement.caret
 		};
 		setCaret(replacement.caret);
-		setSelection(pendingSelection.current);
+		selection.current = pendingSelection.current;
 		setInputValue(replacement.query);
 		setSearch(replacement.query);
 		setHighlightedIdx(-1);
@@ -219,8 +219,8 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 	return (
 		<form
 			className="-my-2.5 w-full px-1"
-			onSubmit={event => {
-				event.preventDefault();
+			onSubmit={e => {
+				e.preventDefault();
 				if (composing.current) return;
 				setSearch(inputValue);
 				pendingSelection.current = null;
@@ -320,7 +320,7 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 							pendingSelection.current = { start: 0, end: 0 };
 							setInputValue('');
 							setCaret(0);
-							setSelection({ start: 0, end: 0 });
+							selection.current = { start: 0, end: 0 };
 							setHighlightedIdx(-1);
 							editor.current?.focus();
 						}}

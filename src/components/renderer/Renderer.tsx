@@ -18,6 +18,8 @@ type Props = {
 	getVariantLabel?: (index: number, total: number) => string;
 };
 
+const defaultVariantLabel = (index: number) => `Variant ${index + 1}`;
+
 let webglSupport: boolean | undefined;
 const webglListeners = new Set<() => void>();
 
@@ -199,8 +201,9 @@ const Renderer = ({
 	className = 'relative aspect-square w-full ns-slot',
 	showWireframeButton = true,
 	showVariantControls = true,
-	getVariantLabel = (index: number) => `Variant ${index + 1}`
+	getVariantLabel: customVariantLabel
 }: Props) => {
+	const getVariantLabel = customVariantLabel ?? defaultVariantLabel;
 	const containerRef = useRef<HTMLDivElement | null>(null);
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const groupsRef = useRef<THREE.Group[]>([]);

@@ -1,6 +1,6 @@
 import { Dialog as Base } from '@base-ui/react/dialog';
 import cls from 'classnames';
-import { useRef, useState } from 'react';
+import { useEffect, useEffectEvent, useRef, useState } from 'react';
 
 import ScrollArea from './ScrollArea';
 
@@ -58,7 +58,6 @@ const Dialog = ({
 	contentClassName
 }: Props) => {
 	const ref = useRef<HTMLDivElement>(null);
-	const cbRef = useRef<((e: Event) => void) | null>(null);
 	const closeInteractionTypeRef = useRef<InteractionType>('');
 
 	const [open, setOpen] = useState(defaultOpen ?? false);
@@ -66,23 +65,24 @@ const Dialog = ({
 	const handleOpenChange = (open: boolean) => {
 		setOpen(open);
 		onOpenChange?.(open);
-		if (open) {
-			closeInteractionTypeRef.current = '';
-			cbRef.current = (e: Event) => {
-				const detail = (e as CustomEvent).detail as
-					| { sender?: HTMLElement; interactionType?: InteractionType }
-					| undefined;
-				if (!detail?.sender || !ref.current?.contains(detail.sender)) return;
-				closeInteractionTypeRef.current = detail.interactionType ?? '';
-				handleOpenChange(false);
-			};
-			window.addEventListener('dialog-close', cbRef.current);
-		} else {
-			if (cbRef.current)
-				window.removeEventListener('dialog-close', cbRef.current);
-			cbRef.current = null;
-		}
 	};
+
+	const handleClose = useEffectEvent((e: Event) => {
+		const detail = (e as CustomEvent).detail as
+			| { sender?: HTMLElement; interactionType?: InteractionType }
+			| undefined;
+		if (!detail?.sender || !ref.current?.contains(detail.sender)) return;
+		closeInteractionTypeRef.current = detail.interactionType ?? '';
+		handleOpenChange(false);
+	});
+
+	useEffect(() => {
+		if (!open) return;
+
+		closeInteractionTypeRef.current = '';
+		window.addEventListener('dialog-close', handleClose);
+		return () => window.removeEventListener('dialog-close', handleClose);
+	}, [open]);
 
 	return (
 		<Base.Root open={open} onOpenChange={handleOpenChange}>

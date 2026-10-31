@@ -14,17 +14,15 @@ type Props = {
 
 const CostTooltip = ({ value, className = 'ns-dialog-positive' }: Props) => {
 	if (!value) return null;
-	const split = coins.reduce(
-		(acc, coin) => {
-			const count = Math.floor(value / coin.currencyAmount!);
-			if (count > 0) {
-				acc.push({ item: coin, count });
-				value -= count * coin.currencyAmount!;
-			}
-			return acc;
-		},
-		[] as { item: (typeof coins)[number]; count: number }[]
-	);
+	let remainingValue = value;
+	const split: { item: (typeof coins)[number]; count: number }[] = [];
+	for (const coin of coins) {
+		const count = Math.floor(remainingValue / coin.currencyAmount!);
+		if (count > 0) {
+			split.push({ item: coin, count });
+			remainingValue -= count * coin.currencyAmount!;
+		}
+	}
 	return (
 		<div className={cn('flex gap-2 self-start text-xl', className)}>
 			{split.map(({ item, count }) => (

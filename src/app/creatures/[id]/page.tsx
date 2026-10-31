@@ -74,8 +74,9 @@ const Page = async ({ params }: PageProps<'/creatures/[id]'>) => {
 		.filter(v => v !== null)
 		.reduce(
 			(acc, [loot, block]) => {
-				acc[loot] ??= [];
-				acc[loot].push(block);
+				const lootBlocks = acc[loot] ?? [];
+				lootBlocks.push(block);
+				acc[loot] = lootBlocks;
 				return acc;
 			},
 			{} as Record<string, typeof blocks>

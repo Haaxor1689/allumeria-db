@@ -59,6 +59,11 @@ const getLootItemIds = (entry: LootEntry): string[] => {
 	return ret;
 };
 
+const lootTableItems = loot.map(entry => ({
+	id: entry.id,
+	items: new Set(getLootItemIds(entry))
+}));
+
 const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 	const { id } = await params;
 	const item = items.find(item => item.id === id);
@@ -110,17 +115,14 @@ const Page = async ({ params }: PageProps<'/items/[id]'>) => {
 	const inAliases = recipeAliases
 		.filter(r => r.items?.includes(item.id))
 		.map(r => r.id);
+	const ingredientIds = new Set([item.id, ...inAliases]);
 	const ingredientFor = recipes
-		.filter(r =>
-			[item.id, ...inAliases].some(id =>
-				Object.keys(r.requirements).includes(id)
-			)
-		)
+		.filter(r => Object.keys(r.requirements).some(id => ingredientIds.has(id)))
 		.map(r => items.find(i => i.id === r.result))
 		.filter(i => i !== undefined);
 
 	const lootTableIds = new Set(
-		loot.filter(l => getLootItemIds(l).includes(item.id)).map(l => l.id)
+		lootTableItems.filter(l => l.items.has(item.id)).map(l => l.id)
 	);
 
 	const dropsFrom = {

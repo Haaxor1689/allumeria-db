@@ -160,33 +160,37 @@ export const buildBlockGroup = async (
 	block: BlockRenderData,
 	loadTexture: (name: string) => Promise<THREE.Texture>
 ) => {
+	const variants = getBlockVariants(block);
 	const textureCache = new Map<string, THREE.Material>();
+	const textureNames = [
+		...new Set(variants.flatMap(variant => variant.map(mesh => mesh.texture)))
+	];
+	const pendingTextures = textureNames.values();
 
-	const resolveMaterial = async (textureName: string) => {
-		const cacheKey = textureName;
-		const cached = textureCache.get(cacheKey);
-		if (cached) return cached;
+	const loadNextMaterial = async (): Promise<void> => {
+		const next = pendingTextures.next();
+		if (next.done) return;
 
-		const texture = await loadTexture(textureName);
-		const material = createTextureMaterial(texture);
-		textureCache.set(cacheKey, material);
-		return material;
+		const texture = await loadTexture(next.value);
+		textureCache.set(next.value, createTextureMaterial(texture));
+		return await loadNextMaterial();
 	};
 
-	const variants = getBlockVariants(block);
-
-	return await Promise.all(
-		variants.map(async variant => {
-			const group = new THREE.Group();
-
-			for (const meshDef of variant) {
-				const geometry = createQuadGeometry(meshDef);
-				const material = await resolveMaterial(meshDef.texture);
-				const mesh = new THREE.Mesh(geometry, material);
-				group.add(mesh);
-			}
-
-			return group;
-		})
+	// Load up to 4 textures concurrently
+	await Promise.all(
+		Array.from({ length: Math.min(4, textureNames.length) }, loadNextMaterial)
 	);
+
+	return variants.map(variant => {
+		const group = new THREE.Group();
+
+		for (const meshDef of variant) {
+			const geometry = createQuadGeometry(meshDef);
+			const material = textureCache.get(meshDef.texture)!;
+			const mesh = new THREE.Mesh(geometry, material);
+			group.add(mesh);
+		}
+
+		return group;
+	});
 };
