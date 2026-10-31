@@ -1,3 +1,5 @@
+import { type Metadata } from 'next';
+
 import blockMaterials from '#data/block_materials.json';
 import blocks from '#data/blocks.json';
 import catalogues from '#data/catalogues.json';
@@ -20,6 +22,25 @@ import { toDisplayName } from './index.ts';
 
 const describe = (...sentences: (string | undefined)[]) =>
 	sentences.filter(Boolean).join(' ').replace(/\s+/g, ' ').trim();
+
+export const getEntrySocialMetadata = (
+	title: string,
+	description: string,
+	url: string
+): Pick<Metadata, 'openGraph' | 'twitter'> => ({
+	openGraph: {
+		title,
+		description,
+		url,
+		siteName: 'AllumeriaDB',
+		type: 'website'
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title,
+		description
+	}
+});
 
 export const getItemDescription = (item: Item) => {
 	const recipe = recipes.find(recipe => recipe.result === item.id);

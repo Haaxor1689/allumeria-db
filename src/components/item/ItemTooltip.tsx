@@ -17,7 +17,8 @@ const ItemTooltip = ({ item }: { item: Item }) => {
 				'ns-dialog-rarity-2': item.rarity === 2,
 				'ns-dialog-rarity-3': item.rarity === 3,
 				'ns-dialog-rarity-4': item.rarity === 4,
-				'ns-dialog-rarity-5': item.rarity === 5
+				'ns-dialog-rarity-5': item.rarity === 5,
+				'ns-dialog-rarity-6': item.rarity === 6
 			})}
 		>
 			<p className="font-bold">{name}</p>

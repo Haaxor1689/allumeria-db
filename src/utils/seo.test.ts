@@ -11,9 +11,30 @@ import {
 	getBlockDescription,
 	getCreatureDescription,
 	getEffectDescription,
+	getEntrySocialMetadata,
 	getItemDescription,
 	getNpcDescription
 } from './seo.ts';
+
+void test('social metadata uses entry details and large Twitter cards', () => {
+	const metadata = getEntrySocialMetadata(
+		'Agave',
+		'Agave is an item in Allumeria.',
+		'/items/agave'
+	);
+	assert.deepEqual(metadata.openGraph, {
+		title: 'Agave',
+		description: 'Agave is an item in Allumeria.',
+		url: '/items/agave',
+		siteName: 'AllumeriaDB',
+		type: 'website'
+	});
+	assert.deepEqual(metadata.twitter, {
+		card: 'summary_large_image',
+		title: 'Agave',
+		description: 'Agave is an item in Allumeria.'
+	});
+});
 
 void test('item descriptions include translated text and factual statistics', () => {
 	const item = items.find(item => getTranslation(`item.${item.id}.desc`, ''));

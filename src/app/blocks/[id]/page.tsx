@@ -26,7 +26,7 @@ import spawn from '#data/spawn.json';
 import structures from '#data/structures.json';
 import { getBlockName, getTool, getTranslation } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
-import { getBlockDescription } from '#utils/seo.ts';
+import { getBlockDescription, getEntrySocialMetadata } from '#utils/seo.ts';
 
 import ItemLink from '../../../components/item/ItemLink';
 
@@ -43,6 +43,11 @@ export const generateMetadata = async ({
 	return {
 		title: `${name} (block)`,
 		description: getBlockDescription(block),
+		...getEntrySocialMetadata(
+			name,
+			getBlockDescription(block),
+			`/blocks/${id}`
+		),
 		alternates: { canonical: `/blocks/${id}` }
 	};
 };

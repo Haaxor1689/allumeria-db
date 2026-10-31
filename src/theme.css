@@ -157,6 +157,12 @@
 	--nsbottom-dialog-rarity-5: 4;
 	--nsleft-dialog-rarity-5: 4;
 
+	--nssource-dialog-rarity-6: url('/assets/ui/dialog_rarity_6.webp');
+	--nstop-dialog-rarity-6: 4;
+	--nsright-dialog-rarity-6: 4;
+	--nsbottom-dialog-rarity-6: 4;
+	--nsleft-dialog-rarity-6: 4;
+
 	--nssource-dialog: url('/assets/ui/dialog.webp');
 	--nstop-dialog: 4;
 	--nsright-dialog: 4;

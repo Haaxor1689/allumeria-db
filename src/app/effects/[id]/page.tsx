@@ -14,7 +14,7 @@ import effects from '#data/effects.json';
 import items from '#data/items.json';
 import { getTranslation } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
-import { getEffectDescription } from '#utils/seo.ts';
+import { getEffectDescription, getEntrySocialMetadata } from '#utils/seo.ts';
 
 export const generateStaticParams = () =>
 	Array.from(new Set(effects.map(effect => effect.id))).map(id => ({ id }));
@@ -29,6 +29,11 @@ export const generateMetadata = async ({
 	return {
 		title: name,
 		description: getEffectDescription(effect),
+		...getEntrySocialMetadata(
+			name,
+			getEffectDescription(effect),
+			`/effects/${id}`
+		),
 		alternates: { canonical: `/effects/${id}` }
 	};
 };

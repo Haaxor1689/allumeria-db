@@ -19,7 +19,7 @@ import items from '#data/items.json';
 import spawn from '#data/spawn.json';
 import { getCreatureIcon } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
-import { getCreatureDescription } from '#utils/seo.ts';
+import { getCreatureDescription, getEntrySocialMetadata } from '#utils/seo.ts';
 
 const creatures = entities.filter(e => e.category === 'creature');
 
@@ -36,6 +36,11 @@ export const generateMetadata = async ({
 	return {
 		title: name,
 		description: getCreatureDescription(creature),
+		...getEntrySocialMetadata(
+			name,
+			getCreatureDescription(creature),
+			`/creatures/${id}`
+		),
 		alternates: { canonical: `/creatures/${id}` }
 	};
 };

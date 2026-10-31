@@ -33,7 +33,7 @@ import {
 	type LootEntry
 } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
-import { getItemDescription } from '#utils/seo.ts';
+import { getEntrySocialMetadata, getItemDescription } from '#utils/seo.ts';
 
 export const generateStaticParams = () =>
 	Array.from(new Set(items.map(item => item.id))).map(id => ({ id }));
@@ -48,6 +48,7 @@ export const generateMetadata = async ({
 	return {
 		title: `${name} (Item)`,
 		description: getItemDescription(item),
+		...getEntrySocialMetadata(name, getItemDescription(item), `/items/${id}`),
 		alternates: { canonical: `/items/${id}` }
 	};
 };

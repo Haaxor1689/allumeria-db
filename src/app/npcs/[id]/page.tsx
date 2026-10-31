@@ -17,7 +17,7 @@ import comfortRequirements from '#data/comfort_requirements.json';
 import items from '#data/items.json';
 import { getCreatureName } from '#utils/helpers.ts';
 import { npcDataExt } from '#utils/helpers.ts';
-import { getNpcDescription } from '#utils/seo.ts';
+import { getEntrySocialMetadata, getNpcDescription } from '#utils/seo.ts';
 
 export const generateStaticParams = () =>
 	npcDataExt.map(npc => ({ id: npc.entity.id }));
@@ -32,6 +32,7 @@ export const generateMetadata = async ({
 	return {
 		title: name,
 		description: getNpcDescription(npc),
+		...getEntrySocialMetadata(name, getNpcDescription(npc), `/npcs/${id}`),
 		alternates: { canonical: `/npcs/${id}` }
 	};
 };
