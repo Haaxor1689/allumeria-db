@@ -87,8 +87,6 @@
 			{ "item": "grid_block", "amount": 8, "price": 24 },
 			{ "item": "blank_block", "amount": 8, "price": 24 },
 			{ "item": "carving_knife", "amount": 1, "price": 100 },
-			{ "item": "counter", "amount": 1 },
-			{ "item": "marble_counter", "amount": 1 },
 			{ "item": "bed", "amount": 1, "price": 100 },
 			{ "item": "hard_hat", "amount": 1, "price": 400 }
 		]
