@@ -19,6 +19,7 @@ import items from '#data/items.json';
 import spawn from '#data/spawn.json';
 import { getCreatureIcon } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
+import { getCreatureDescription } from '#utils/seo.ts';
 
 const creatures = entities.filter(e => e.category === 'creature');
 
@@ -34,7 +35,7 @@ export const generateMetadata = async ({
 	const name = toDisplayName(creature.id);
 	return {
 		title: name,
-		description: `Discover ${name} in the Allumeria database, including spawn locations, loot drops, and related game data.`,
+		description: getCreatureDescription(creature),
 		alternates: { canonical: `/creatures/${id}` }
 	};
 };

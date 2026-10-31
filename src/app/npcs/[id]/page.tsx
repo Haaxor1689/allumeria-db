@@ -17,6 +17,7 @@ import comfortRequirements from '#data/comfort_requirements.json';
 import items from '#data/items.json';
 import { getCreatureName } from '#utils/helpers.ts';
 import { npcDataExt } from '#utils/helpers.ts';
+import { getNpcDescription } from '#utils/seo.ts';
 
 export const generateStaticParams = () =>
 	npcDataExt.map(npc => ({ id: npc.entity.id }));
@@ -30,7 +31,7 @@ export const generateMetadata = async ({
 	const name = getCreatureName(npc.entity);
 	return {
 		title: name,
-		description: `Discover ${name} in the Allumeria database, including trading, comfort requirements, spawns, and related game data.`,
+		description: getNpcDescription(npc),
 		alternates: { canonical: `/npcs/${id}` }
 	};
 };

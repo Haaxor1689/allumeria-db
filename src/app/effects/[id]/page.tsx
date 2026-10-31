@@ -14,6 +14,7 @@ import effects from '#data/effects.json';
 import items from '#data/items.json';
 import { getTranslation } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
+import { getEffectDescription } from '#utils/seo.ts';
 
 export const generateStaticParams = () =>
 	Array.from(new Set(effects.map(effect => effect.id))).map(id => ({ id }));
@@ -27,7 +28,7 @@ export const generateMetadata = async ({
 	const name = getTranslation(`effect.${effect.id}`, toDisplayName(effect.id));
 	return {
 		title: name,
-		description: `Learn about the ${name} effect in Allumeria, including its modifiers, duration, and items or blocks that grant it.`,
+		description: getEffectDescription(effect),
 		alternates: { canonical: `/effects/${id}` }
 	};
 };

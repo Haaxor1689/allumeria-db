@@ -1,3 +1,6 @@
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+
 import { type MetadataRoute } from 'next';
 
 import blocks from '#data/blocks.json';
@@ -7,9 +10,11 @@ import items from '#data/items.json';
 import npcData from '#data/npc_data.json';
 import summary from '#data/summary.json';
 import { env } from '#env.js';
+import { getItemIcon } from '#utils/helpers.ts';
 
 const staticRoutes = [
 	'/',
+	'/about',
 	'/items',
 	'/blocks',
 	'/creatures',
@@ -21,59 +26,55 @@ const staticRoutes = [
 
 const toAbsoluteUrl = (path: string) => new URL(path, env.BASE_URL).toString();
 
+const imageUrls = (...paths: string[]) =>
+	paths
+		.filter(path =>
+			existsSync(join(process.cwd(), 'public', ...path.split('/')))
+		)
+		.map(toAbsoluteUrl);
+
 const sitemap = (): MetadataRoute.Sitemap => {
 	const lastModified = new Date(summary.generatedAtUtc);
 
 	const staticEntries = staticRoutes.map(route => ({
 		url: toAbsoluteUrl(route),
 		lastModified,
-		changeFrequency: 'daily' as const,
-		priority: route === '/' ? 1 : 0.8
+		...(route === '/' ? { images: imageUrls('/db_logo.png') } : {})
 	}));
 
-	const itemEntries = items
-		.map(item => item.id)
-		.map(id => ({
-			url: toAbsoluteUrl(`/items/${id}`),
-			lastModified,
-			changeFrequency: 'weekly' as const,
-			priority: 0.7
-		}));
+	const itemEntries = items.map(item => ({
+		url: toAbsoluteUrl(`/items/${item.id}`),
+		lastModified,
+		images: imageUrls(getItemIcon(item))
+	}));
 
-	const blockEntries = blocks
-		.map(block => block.id)
-		.map(id => ({
-			url: toAbsoluteUrl(`/blocks/${id}`),
-			lastModified,
-			changeFrequency: 'weekly' as const,
-			priority: 0.7
-		}));
+	const blockEntries = blocks.map(block => ({
+		url: toAbsoluteUrl(`/blocks/${block.id}`),
+		lastModified,
+		images: imageUrls(`/previews/blocks/${block.id}.webp`)
+	}));
 
 	const creatureEntries = entities
 		.filter(entity => entity.category === 'creature')
-		.map(entity => entity.id)
-		.map(id => ({
-			url: toAbsoluteUrl(`/creatures/${id}`),
+		.map(entity => ({
+			url: toAbsoluteUrl(`/creatures/${entity.id}`),
 			lastModified,
-			changeFrequency: 'weekly' as const,
-			priority: 0.7
+			images: imageUrls(`/previews/entities/${entity.id}.webp`)
 		}));
 
 	const npcEntries = npcData.map(npc => ({
 		url: toAbsoluteUrl(`/npcs/${npc.entity}`),
 		lastModified,
-		changeFrequency: 'weekly' as const,
-		priority: 0.7
+		images: imageUrls(`/previews/entities/${npc.entity}.webp`)
 	}));
 
-	const effectEntries = effects
-		.map(effect => effect.id)
-		.map(id => ({
-			url: toAbsoluteUrl(`/effects/${id}`),
-			lastModified,
-			changeFrequency: 'weekly' as const,
-			priority: 0.7
-		}));
+	const effectEntries = effects.map(effect => ({
+		url: toAbsoluteUrl(`/effects/${effect.id}`),
+		lastModified,
+		images: imageUrls(
+			`/assets/effects/${effect.textureX}x${effect.textureY}.webp`
+		)
+	}));
 
 	return [
 		...staticEntries,

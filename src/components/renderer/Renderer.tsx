@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import * as THREE from 'three';
 
 import Button from '#components/styled/Button.tsx';
@@ -17,6 +17,40 @@ type Props = {
 	showVariantControls?: boolean;
 	getVariantLabel?: (index: number, total: number) => string;
 };
+
+let webglSupport: boolean | undefined;
+const webglListeners = new Set<() => void>();
+
+// Googlebot's renderer (and some locked-down browsers) have no WebGL. Detect it
+// up front so the page degrades to a fallback instead of crashing into error.tsx.
+const isWebGLAvailable = () => {
+	if (webglSupport !== undefined) return webglSupport;
+	try {
+		const canvas = document.createElement('canvas');
+		webglSupport = !!(
+			canvas.getContext('webgl2') ?? canvas.getContext('webgl')
+		);
+	} catch {
+		webglSupport = false;
+	}
+	return webglSupport;
+};
+
+const markWebGLUnavailable = () => {
+	webglSupport = false;
+	for (const listener of webglListeners) listener();
+};
+
+const subscribeWebGL = (listener: () => void) => {
+	webglListeners.add(listener);
+	return () => {
+		webglListeners.delete(listener);
+	};
+};
+
+// Server snapshot assumes support so SSR markup matches the common case.
+const useWebGLAvailable = () =>
+	useSyncExternalStore(subscribeWebGL, isWebGLAvailable, () => true);
 
 type FitCameraOptions = {
 	camera: THREE.OrthographicCamera;
@@ -173,6 +207,7 @@ const Renderer = ({
 	const [groups, setGroups] = useState<THREE.Group[]>([]);
 	const [currentMesh, setCurrentMesh] = useState(0);
 	const [showWireframe, setShowWireframe] = useState(false);
+	const webglAvailable = useWebGLAvailable();
 
 	const zoomRef = useRef(1);
 	const rotationXRef = useRef(0);
@@ -197,6 +232,8 @@ const Renderer = ({
 	);
 
 	useEffect(() => {
+		if (!isWebGLAvailable()) return;
+
 		let disposed = false;
 		const loadTexture = createBrowserTextureLoader();
 		zoomRef.current = 1;
@@ -234,12 +271,18 @@ const Renderer = ({
 		const initBounds = new THREE.Box3().setFromObject(initialGroup);
 		initialGroup.position.sub(initBounds.getCenter(new THREE.Vector3()));
 
-		const renderer = new THREE.WebGLRenderer({
-			canvas,
-			alpha: true,
-			antialias: true,
-			premultipliedAlpha: true
-		});
+		let renderer: THREE.WebGLRenderer;
+		try {
+			renderer = new THREE.WebGLRenderer({
+				canvas,
+				alpha: true,
+				antialias: true,
+				premultipliedAlpha: true
+			});
+		} catch {
+			markWebGLUnavailable();
+			return;
+		}
 		renderer.setClearColor(0x000000, 0);
 		renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
@@ -387,7 +430,12 @@ const Renderer = ({
 
 	return (
 		<div ref={containerRef} className={className}>
-			{showWireframeButton && (
+			{!webglAvailable && (
+				<p className="flex h-full w-full items-center justify-center p-4 text-center text-muted">
+					Interactive preview unavailable
+				</p>
+			)}
+			{webglAvailable && showWireframeButton && (
 				<div className="absolute -top-2 -right-2 z-10 md:top-0 md:right-0">
 					<Button
 						variant={showWireframe ? 'positive' : 'negative'}
@@ -397,7 +445,7 @@ const Renderer = ({
 					</Button>
 				</div>
 			)}
-			{showVariantControls && groups.length > 1 && (
+			{webglAvailable && showVariantControls && groups.length > 1 && (
 				<div className="absolute -bottom-2 left-1/2 z-10 flex -translate-x-1/2 items-center gap-4 text-white md:bottom-0">
 					<Button
 						variant="purple"
@@ -418,11 +466,13 @@ const Renderer = ({
 					</Button>
 				</div>
 			)}
-			<canvas
-				aria-label={ariaLabel}
-				ref={canvasRef}
-				className="block h-full w-full cursor-grab touch-none active:cursor-grabbing"
-			/>
+			{webglAvailable && (
+				<canvas
+					aria-label={ariaLabel}
+					ref={canvasRef}
+					className="block h-full w-full cursor-grab touch-none active:cursor-grabbing"
+				/>
+			)}
 		</div>
 	);
 };

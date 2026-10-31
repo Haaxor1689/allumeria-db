@@ -5,7 +5,8 @@ import { env } from '#env.js';
 const robots = (): MetadataRoute.Robots => ({
 	rules: {
 		userAgent: '*',
-		allow: '/'
+		allow: '/',
+		disallow: '/api/'
 	},
 	sitemap: new URL('/sitemap.xml', env.BASE_URL).toString()
 });

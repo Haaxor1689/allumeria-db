@@ -19,7 +19,9 @@ const Breadcrumbs = ({ items, className }: BreadcrumbsProps) => {
 		'@type': 'ListItem',
 		'position': index + 1,
 		'name': item.label,
-		'item': new URL(item.href ?? '/', env.BASE_URL).toString()
+		...(item.href && {
+			item: new URL(item.href, env.BASE_URL).toString()
+		})
 	}));
 
 	return (

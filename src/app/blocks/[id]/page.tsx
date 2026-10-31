@@ -26,6 +26,7 @@ import spawn from '#data/spawn.json';
 import structures from '#data/structures.json';
 import { getBlockName, getTool, getTranslation } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
+import { getBlockDescription } from '#utils/seo.ts';
 
 import ItemLink from '../../../components/item/ItemLink';
 
@@ -40,8 +41,8 @@ export const generateMetadata = async ({
 	if (!block) return { title: 'Block not found' };
 	const name = getBlockName(block);
 	return {
-		title: name,
-		description: `Explore ${name} in the Allumeria database, including materials, crafting, drops, spawning, and related game data.`,
+		title: `${name} (block)`,
+		description: getBlockDescription(block),
 		alternates: { canonical: `/blocks/${id}` }
 	};
 };

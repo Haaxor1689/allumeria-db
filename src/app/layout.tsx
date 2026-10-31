@@ -7,7 +7,6 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 import AutoBlur from '#components/AutoBlur.tsx';
-import JsonLd from '#components/JsonLd.tsx';
 import Footer from '#components/layout/Footer.tsx';
 import MobileNav from '#components/layout/MobileNav.tsx';
 import Navigation from '#components/layout/Navigation.tsx';
@@ -16,7 +15,7 @@ import { MobileStateSync } from '#utils/useIsMobile.tsx';
 
 const atkinsonHyperlegible = Atkinson_Hyperlegible({
 	weight: ['400', '700'],
-	display: 'block'
+	display: 'swap'
 });
 
 export const metadata: Metadata = {
@@ -48,7 +47,6 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 					{/* Anti AI scrape */}
 					<meta name="robots" content="noai, noimageai" />
 					<meta name="googlebot" content="noai" />
-					<meta httpEquiv="X-Robots-Tag" content="noai, noimageai" />
 				</>
 			) : (
 				<Script
@@ -61,15 +59,6 @@ const RootLayout = async ({ children }: LayoutProps<'/'>) => (
 		<body
 			className={`${atkinsonHyperlegible.className} max-h-screen scrollbar-gutter-stable overflow-auto text-white`}
 		>
-			<JsonLd
-				data={{
-					'@context': 'https://schema.org',
-					'@type': 'WebSite',
-					'name': 'AllumeriaDB',
-					'url': env.BASE_URL,
-					'description': 'A searchable database of Allumeria game content.'
-				}}
-			/>
 			<div
 				className="fixed inset-0 -z-10"
 				style={{

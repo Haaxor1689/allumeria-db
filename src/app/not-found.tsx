@@ -1,3 +1,10 @@
+import { type Metadata } from 'next';
+
+export const metadata: Metadata = {
+	title: 'Page not found',
+	robots: { index: false, follow: true }
+};
+
 const NotFound = () => (
 	<div className="flex grow flex-col justify-center gap-4 p-6 text-center">
 		<h2 className="text-8xl font-bold">404</h2>

@@ -8,7 +8,7 @@ const BLOCKED_UAS = [
 	'ClaudeBot',
 	'PerplexityBot',
 	'Omgilibot',
-	'facebookexternalhit',
+	'meta-externalagent',
 	'Bytespider'
 ];
 

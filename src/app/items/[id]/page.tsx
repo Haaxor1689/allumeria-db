@@ -33,6 +33,7 @@ import {
 	type LootEntry
 } from '#utils/helpers.ts';
 import { toDisplayName } from '#utils/index.ts';
+import { getItemDescription } from '#utils/seo.ts';
 
 export const generateStaticParams = () =>
 	Array.from(new Set(items.map(item => item.id))).map(id => ({ id }));
@@ -45,8 +46,8 @@ export const generateMetadata = async ({
 	if (!item) return { title: 'Item not found' };
 	const name = getTranslation(`item.${item.id}`);
 	return {
-		title: name,
-		description: `Explore ${name} in the Allumeria database, including recipes, effects, loot sources, and related game data.`,
+		title: `${name} (Item)`,
+		description: getItemDescription(item),
 		alternates: { canonical: `/items/${id}` }
 	};
 };
