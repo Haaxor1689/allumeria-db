@@ -1,5 +1,6 @@
 'use client';
 
+import { useVirtualizer } from '@tanstack/react-virtual';
 import cls from 'classnames';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
@@ -16,6 +17,114 @@ import useGridSearch from '#utils/useGridSearch.ts';
 type Props<RecordType> = {
 	catalog: SearchCatalog<RecordType>;
 	label: string;
+};
+
+// `text-lg` line height plus the `transparent-btn` nine-slice borders;
+// real sizes are measured after mount
+const SUGGESTION_ROW_HEIGHT = 60;
+// Matches `max-h-[min(48rem,70vh)]` on the suggestions scroll area
+const SUGGESTIONS_MAX_HEIGHT = 768;
+
+type SuggestionListProps = {
+	suggestions: SearchSuggestion[];
+	highlightedIdx: number;
+	onHighlight: (index: number) => void;
+	onChoose: (suggestion: SearchSuggestion) => void;
+};
+
+// Suggestion lists can reach thousands of rows, so only the visible window is
+// rendered. Kept separate so the compiler bail-out from `useVirtualizer` stays
+// out of QuerySearch.
+const SuggestionList = ({
+	suggestions,
+	highlightedIdx,
+	onHighlight,
+	onChoose
+}: SuggestionListProps) => {
+	const viewport = useRef<HTMLDivElement>(null);
+	// oxlint-disable-next-line react/incompatible-library
+	const virtualizer = useVirtualizer({
+		count: suggestions.length,
+		getScrollElement: () => viewport.current,
+		getItemKey: index => suggestions[index]!.text,
+		estimateSize: () => SUGGESTION_ROW_HEIGHT,
+		initialRect: { width: 0, height: SUGGESTIONS_MAX_HEIGHT },
+		overscan: 8
+	});
+	const rows = virtualizer.getVirtualItems();
+	const firstRow = rows[0];
+	const lastRow = rows[rows.length - 1];
+	const activeKey = suggestions[highlightedIdx]?.text;
+
+	useLayoutEffect(() => {
+		if (highlightedIdx < 0 || !activeKey) return;
+		virtualizer.scrollToIndex(highlightedIdx, { align: 'auto' });
+	}, [virtualizer, highlightedIdx, activeKey]);
+
+	return (
+		<ScrollArea
+			ref={viewport}
+			tabIndex={-1}
+			containerClassName="max-h-[min(48rem,70vh)] ns-borderless-btn-dark p-2 pb-3"
+			contentClassName="flex min-w-max w-full flex-col whitespace-nowrap"
+			contentStyle={{
+				paddingTop: firstRow?.start ?? 0,
+				paddingBottom: virtualizer.getTotalSize() - (lastRow?.end ?? 0)
+			}}
+			offset={24}
+		>
+			{rows.map(row => {
+				const index = row.index;
+				const suggestion = suggestions[index]!;
+				return (
+					<div
+						key={row.key}
+						ref={virtualizer.measureElement}
+						data-index={index}
+						id={`query-suggestion-${index}`}
+						// oxlint-disable-next-line jsx-a11y/prefer-tag-over-role
+						role="option"
+						aria-selected={index === highlightedIdx}
+						className={cls(
+							'flex cursor-pointer items-center gap-8 transparent-btn px-2 text-lg font-bold select-none pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover hocus:*:text-white!',
+							index === highlightedIdx && 'ns-btn-hover *:text-white!'
+						)}
+						tabIndex={-1}
+						onMouseEnter={() => onHighlight(index)}
+						onKeyDown={event => {
+							if (event.key === 'Enter' || event.key === ' ') {
+								event.preventDefault();
+								onChoose(suggestion);
+							}
+						}}
+						onClick={() => onChoose(suggestion)}
+					>
+						<span>
+							{suggestion.prefix && (
+								<span className="text-muted">{suggestion.prefix}</span>
+							)}
+							<span
+								className={cls(
+									suggestion.kind === 'keyword'
+										? 'text-alert'
+										: suggestion.kind === 'attribute'
+											? ''
+											: 'italic'
+								)}
+							>
+								{suggestion.label}
+							</span>
+						</span>
+						{suggestion.description && (
+							<span className="text-base text-muted italic">
+								{suggestion.description}
+							</span>
+						)}
+					</div>
+				);
+			})}
+		</ScrollArea>
+	);
 };
 
 const getSelectionOffsets = (element: HTMLElement) => {
@@ -85,8 +194,6 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 	const [focused, setFocused] = useState(false);
 
 	const editor = useRef<HTMLDivElement>(null);
-	const suggestionsViewport = useRef<HTMLDivElement>(null);
-	const highlightedOption = useRef<HTMLDivElement>(null);
 	const pendingSelection = useRef<{ start: number; end: number } | null>(null);
 	const pointerDownTarget = useRef<EventTarget | null>(null);
 	const composing = useRef(false);
@@ -96,31 +203,30 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 	const visibleSuggestions = focused ? suggestions : [];
 	const activeSuggestion = visibleSuggestions[highlightedIdx];
 
-	useLayoutEffect(() => {
-		const viewport = suggestionsViewport.current;
-		const option = highlightedOption.current;
-		if (!viewport || !option) return;
-		const viewportBounds = viewport.getBoundingClientRect();
-		const optionBounds = option.getBoundingClientRect();
-		if (optionBounds.top < viewportBounds.top) {
-			viewport.scrollTop += optionBounds.top - viewportBounds.top;
-		} else if (optionBounds.bottom > viewportBounds.bottom) {
-			viewport.scrollTop += optionBounds.bottom - viewportBounds.bottom;
-		}
-	}, [highlightedIdx, focused, activeSuggestion?.text]);
-
 	useEffect(() => {
 		const trackPointerDown = (event: PointerEvent) => {
 			pointerDownTarget.current = event.target;
 		};
-		const clearPointerDown = () => {
+
+		const finishPointerDown = () => {
+			if (!pointerDownTarget.current) return;
 			pointerDownTarget.current = null;
+			if (editor.current && document.activeElement === editor.current)
+				setFocused(true);
 		};
+
 		document.addEventListener('pointerdown', trackPointerDown, true);
-		document.addEventListener('pointerup', clearPointerDown, true);
+		document.addEventListener('pointerup', finishPointerDown, true);
+		document.addEventListener('pointercancel', finishPointerDown, true);
+		document.addEventListener('contextmenu', finishPointerDown, true);
+		window.addEventListener('blur', finishPointerDown);
+
 		return () => {
 			document.removeEventListener('pointerdown', trackPointerDown, true);
-			document.removeEventListener('pointerup', clearPointerDown, true);
+			document.removeEventListener('pointerup', finishPointerDown, true);
+			document.removeEventListener('pointercancel', finishPointerDown, true);
+			document.removeEventListener('contextmenu', finishPointerDown, true);
+			window.removeEventListener('blur', finishPointerDown);
 		};
 	}, []);
 
@@ -246,14 +352,8 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 					className="w-full min-w-0 overflow-x-auto ns-input p-2 pr-10 text-base whitespace-pre caret-white empty:before:pointer-events-none empty:before:text-muted empty:before:content-[attr(data-placeholder)] hover:ns-input-hover focus:ns-input-active"
 					onFocus={event => {
 						const target = pointerDownTarget.current;
-						if (
-							target instanceof Node &&
-							!event.currentTarget.contains(target)
-						) {
-							event.currentTarget.blur();
+						if (target instanceof Node && event.currentTarget.contains(target))
 							return;
-						}
-						if (target instanceof Node) return;
 						setFocused(true);
 					}}
 					onBlur={() => {
@@ -265,10 +365,7 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 						updateCaret();
 					}}
 					onInput={event => updateQueryFromEditor(event.currentTarget)}
-					onMouseUp={() => {
-						updateCaret();
-						setFocused(true);
-					}}
+					onMouseUp={updateCaret}
 					onKeyUp={updateCaret}
 					onPaste={event => {
 						event.preventDefault();
@@ -343,59 +440,12 @@ const QuerySearch = <RecordType,>({ catalog, label }: Props<RecordType>) => {
 						className="absolute top-full left-0 z-50 w-full pt-1"
 						onMouseDown={event => event.preventDefault()}
 					>
-						<ScrollArea
-							ref={suggestionsViewport}
-							tabIndex={-1}
-							containerClassName="max-h-[min(48rem,70vh)] ns-borderless-btn-dark p-2 pb-3"
-							contentClassName="flex min-w-max w-full flex-col whitespace-nowrap"
-							offset={24}
-						>
-							{visibleSuggestions.map((suggestion, index) => (
-								<div
-									key={suggestion.text}
-									ref={index === highlightedIdx ? highlightedOption : undefined}
-									id={`query-suggestion-${index}`}
-									// oxlint-disable-next-line jsx-a11y/prefer-tag-over-role
-									role="option"
-									aria-selected={index === highlightedIdx}
-									className={cls(
-										'flex cursor-pointer items-center gap-8 transparent-btn px-2 text-lg font-bold select-none pixel-shadow active:ns-btn-pressed hocus:ns-btn-hover hocus:*:text-white!',
-										index === highlightedIdx && 'ns-btn-hover *:text-white!'
-									)}
-									tabIndex={-1}
-									onMouseEnter={() => setHighlightedIdx(index)}
-									onKeyDown={event => {
-										if (event.key === 'Enter' || event.key === ' ') {
-											event.preventDefault();
-											chooseSuggestion(suggestion);
-										}
-									}}
-									onClick={() => chooseSuggestion(suggestion)}
-								>
-									<span>
-										{suggestion.prefix && (
-											<span className="text-muted">{suggestion.prefix}</span>
-										)}
-										<span
-											className={cls(
-												suggestion.kind === 'keyword'
-													? 'text-alert'
-													: suggestion.kind === 'attribute'
-														? ''
-														: 'italic'
-											)}
-										>
-											{suggestion.label}
-										</span>
-									</span>
-									{suggestion.description && (
-										<span className="text-base text-muted italic">
-											{suggestion.description}
-										</span>
-									)}
-								</div>
-							))}
-						</ScrollArea>
+						<SuggestionList
+							suggestions={visibleSuggestions}
+							highlightedIdx={highlightedIdx}
+							onHighlight={setHighlightedIdx}
+							onChoose={chooseSuggestion}
+						/>
 					</div>
 				)}
 			</div>

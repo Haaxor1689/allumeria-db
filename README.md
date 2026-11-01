@@ -32,7 +32,7 @@ Blocks, items, creatures, effects, and NPCs use the same query syntax:
 - Separate terms with spaces to AND them. Quote values containing spaces, such as `name:"Stone Sword"`.
 - Nested attributes use dotted paths, such as `tags.can_place:true`. Arrays match any element; numeric paths select individual elements.
 
-Autocomplete offers matching keywords first, followed by fields and observed values for the term at the cursor. Numeric fields also offer comparison operators before their values. Unfinished or invalid terms are ignored with feedback while other terms continue to filter results. Numbers and booleans match their raw dataset values, not converted display units.
+Autocomplete offers matching keywords first, followed by fields and observed values for the term at the cursor. Values are grouped by attribute in catalog order, with prefix matches first and alphabetical ordering within each group. Unqualified text needs at least two characters before value suggestions appear; explicit `field:` queries can suggest values immediately. Value suggestions stop at the first 20 distinct matches per attribute, while matching fields remain uncapped. Numeric fields also offer comparison operators before their values. Unfinished or invalid terms are ignored with feedback while other terms continue to filter results. Numbers and booleans match their raw dataset values, not converted display units.
 
 NPC queries retain the raw `entity` ID and expose joined entity attributes under `entityDetails`, such as `HAS:entityDetails.health`.
 

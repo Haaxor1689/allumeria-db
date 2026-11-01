@@ -9,6 +9,7 @@ type Props = {
 	containerClassName?: string;
 	containerStyle?: React.CSSProperties;
 	contentClassName?: string;
+	contentStyle?: React.CSSProperties;
 	showHorizontalScrollbar?: boolean;
 	children: React.ReactNode;
 };
@@ -44,6 +45,7 @@ const ScrollArea = ({
 	containerClassName,
 	containerStyle,
 	contentClassName,
+	contentStyle,
 	showHorizontalScrollbar = true
 }: Props) => (
 	<Base.Root
@@ -51,7 +53,11 @@ const ScrollArea = ({
 		style={containerStyle}
 	>
 		<Base.Viewport ref={ref} tabIndex={tabIndex} className="shrink grow">
-			<Base.Content className={contentClassName} ref={contentRef}>
+			<Base.Content
+				className={contentClassName}
+				style={contentStyle}
+				ref={contentRef}
+			>
 				{children}
 			</Base.Content>
 		</Base.Viewport>

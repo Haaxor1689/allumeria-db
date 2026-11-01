@@ -624,7 +624,7 @@ void test('catalog discovers sparse fields across records and preserves order', 
 	);
 });
 
-void test('autocomplete returns all matching fields and values without a cap', () => {
+void test('autocomplete preserves matching fields but caps values at 20', () => {
 	const values = Array.from({ length: 40 }, (_, index) => index);
 	const large = createSearchCatalog({
 		records: [
@@ -649,8 +649,162 @@ void test('autocomplete returns all matching fields and values without a cap', (
 				.filter(value => value.kind === 'value')
 				.map(value => value.label)
 		),
-		new Set(values.map(String))
+		new Set(values.slice(0, 20).map(String))
 	);
+});
+
+void test('raw value autocomplete requires two characters in the active term', () => {
+	for (const query of ['', 's', '!', '!s', 'stone s']) {
+		assert.ok(
+			getSearchSuggestions(query, query.length, catalog).every(
+				suggestion => suggestion.kind !== 'value'
+			),
+			query
+		);
+	}
+	assert.ok(
+		getSearchSuggestions('m', 1, catalog).some(
+			suggestion => suggestion.text === 'material:'
+		)
+	);
+	for (const query of ['st', '!st', 'stone st']) {
+		assert.ok(
+			getSearchSuggestions(query, query.length, catalog).some(
+				suggestion =>
+					suggestion.text === `${query.includes('!') ? '!' : ''}material:stone`
+			),
+			query
+		);
+	}
+	assert.ok(
+		getSearchSuggestions('stone', 1, catalog).every(
+			suggestion => suggestion.kind !== 'value'
+		)
+	);
+	assert.ok(
+		getSearchSuggestions('material:s', 10, catalog).some(
+			suggestion => suggestion.text === 'material:stone'
+		)
+	);
+});
+
+void test('raw value suggestions stay grouped by attribute in source order', () => {
+	const grouped = createSearchCatalog({
+		records: [
+			{ id: 'cobalt_bars', name: 'Cobalt Bars', block: 'cobalt_bars' },
+			{ id: 'barrel', name: 'Barrel', block: 'barrel' },
+			{ id: 'bars', name: 'Bars', block: 'bars' }
+		]
+	});
+	for (const prefix of ['', '!']) {
+		const query = `${prefix}bar`;
+		assert.deepEqual(
+			getSearchSuggestions(query, query.length, grouped).map(
+				suggestion => suggestion.text
+			),
+			[
+				`${prefix}id:barrel`,
+				`${prefix}id:bars`,
+				`${prefix}id:cobalt_bars`,
+				`${prefix}name:Barrel`,
+				`${prefix}name:Bars`,
+				`${prefix}name:"Cobalt Bars"`,
+				`${prefix}block:barrel`,
+				`${prefix}block:bars`,
+				`${prefix}block:cobalt_bars`
+			]
+		);
+	}
+	const query = 'block';
+	assert.equal(
+		getSearchSuggestions(query, query.length, grouped)[0]?.text,
+		'block:'
+	);
+	assert.deepEqual(
+		getSearchSuggestions('id:bar', 6, grouped).map(
+			suggestion => suggestion.text
+		),
+		['id:barrel', 'id:bars', 'id:cobalt_bars']
+	);
+});
+
+void test('value limits apply per attribute after matching and deduplication', () => {
+	const values = [
+		...Array.from({ length: 25 }, (_, index) => `other-${index}`),
+		...Array.from({ length: 30 }, (_, index) => `match-${index}`)
+	];
+	const large = createSearchCatalog({
+		records: [
+			{ id: 'many', first: values, second: values, mixed: [1, '1', ...values] }
+		]
+	});
+	for (const query of ['ma', '!ma']) {
+		const suggestions = getSearchSuggestions(query, query.length, large);
+		for (const field of ['first', 'second', 'mixed']) {
+			assert.deepEqual(
+				new Set(
+					suggestions
+						.filter(
+							suggestion =>
+								suggestion.prefix === `${query === '!ma' ? '!' : ''}${field}:`
+						)
+						.map(suggestion => suggestion.label)
+				),
+				new Set(values.slice(25, 45))
+			);
+		}
+	}
+	assert.deepEqual(
+		new Set(
+			getSearchSuggestions('!first:MA', 9, large).map(
+				suggestion => suggestion.label
+			)
+		),
+		new Set(values.slice(25, 45))
+	);
+	assert.equal(
+		getSearchSuggestions('mixed:', 6, large).filter(
+			suggestion => suggestion.kind === 'value'
+		).length,
+		20
+	);
+});
+
+void test('numeric comparison suggestions keep operators outside the value cap', () => {
+	const large = createSearchCatalog({
+		records: [
+			{
+				values: [
+					'not numeric',
+					...Array.from({ length: 40 }, (_, index) => index)
+				]
+			}
+		]
+	});
+	const suggestions = getSearchSuggestions('values:', 7, large);
+	assert.equal(
+		suggestions.filter(suggestion => suggestion.kind === 'keyword').length,
+		4
+	);
+	assert.equal(
+		suggestions.filter(suggestion => suggestion.kind === 'value').length,
+		20
+	);
+	for (const query of ['values:>=', '!values:>=']) {
+		const suggestions = getSearchSuggestions(query, query.length, large);
+		assert.equal(suggestions.length, 20);
+		assert.ok(suggestions.every(suggestion => suggestion.prefix === query));
+		assert.deepEqual(
+			new Set(suggestions.map(suggestion => suggestion.label)),
+			new Set(Array.from({ length: 20 }, (_, index) => String(index)))
+		);
+	}
+	Object.defineProperty(large.fields.get('values')!, 21, {
+		get: () => {
+			assert.fail('Value generation should stop after 20 matches');
+		}
+	});
+	assert.equal(getSearchSuggestions('values:>=', 9, large).length, 20);
 });
 
 void test('attribute suggestions retain source order including nested and sparse fields', () => {

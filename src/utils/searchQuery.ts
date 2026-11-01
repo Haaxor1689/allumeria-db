@@ -306,6 +306,8 @@ const getOrderedFields = (fields: Map<string, Primitive[]>) => {
 	return ordered;
 };
 
+const maxValueSuggestions = 20;
+
 export const getSearchSuggestions = <RecordType>(
 	query: string,
 	caret: number,
@@ -336,6 +338,32 @@ export const getSearchSuggestions = <RecordType>(
 			isSuggestibleAttribute(path) &&
 			catalog.fields.get(path)!.some(value => value !== null)
 	);
+	const getValueSuggestions = (
+		field: string,
+		needle: string,
+		comparison = ''
+	): SearchSuggestion[] => {
+		const lower = needle.toLowerCase();
+		const matches: SearchSuggestion[] = [];
+		const seen = new Set<string>();
+		for (const value of catalog.fields.get(field) ?? []) {
+			if (comparison && typeof value !== 'number') continue;
+			const label = String(value);
+			if (!label.toLowerCase().includes(lower)) continue;
+			const text = `${prefix}${field}:${comparison}${quoteValue(label)}`;
+			if (seen.has(text)) continue;
+			seen.add(text);
+			matches.push({
+				label,
+				prefix: `${prefix}${field}:${comparison}`,
+				kind: 'value',
+				text,
+				complete: true
+			});
+			if (matches.length === maxValueSuggestions) break;
+		}
+		return matches;
+	};
 	let candidates: SearchSuggestion[];
 	let needle = text;
 	if (partial && partial.separator >= 0) {
@@ -374,15 +402,7 @@ export const getSearchSuggestions = <RecordType>(
 									complete: false
 								}))
 							: []),
-						...values
-							.filter(value => !comparison || typeof value === 'number')
-							.map(value => ({
-								label: String(value),
-								prefix: `${prefix}${field}:${comparison ?? ''}`,
-								kind: 'value' as const,
-								text: `${prefix}${field}:${comparison ?? ''}${quoteValue(String(value))}`,
-								complete: true
-							}))
+						...getValueSuggestions(field, needle, comparison)
 					];
 	} else {
 		candidates = [
@@ -413,40 +433,39 @@ export const getSearchSuggestions = <RecordType>(
 							complete: false
 						}
 					]),
-			...(needle
-				? fields.flatMap(field =>
-						(catalog.fields.get(field) ?? [])
-							.filter(value =>
-								String(value).toLowerCase().includes(needle.toLowerCase())
-							)
-							.map(value => ({
-								label: String(value),
-								prefix: `${prefix}${field}:`,
-								kind: 'value' as const,
-								text: `${prefix}${field}:${quoteValue(String(value))}`,
-								complete: true
-							}))
-					)
+			...(needle.length >= 2
+				? fields.flatMap(field => getValueSuggestions(field, needle))
 				: [])
 		];
 	}
 	const lower = needle.toLowerCase();
-	return candidates
-		.filter(candidate => candidate.label.toLowerCase().includes(lower))
-		.filter(
-			(candidate, index, all) =>
-				all.findIndex(other => other.text === candidate.text) === index
-		)
-		.toSorted(
-			(left, right) =>
-				Number(right.kind === 'keyword') - Number(left.kind === 'keyword') ||
-				(left.kind === 'attribute' && right.kind === 'attribute'
-					? 0
-					: Number(right.label.toLowerCase().startsWith(lower)) -
-							Number(left.label.toLowerCase().startsWith(lower)) ||
-						Number(left.complete) - Number(right.complete) ||
-						left.label.localeCompare(right.label))
-		);
+	const seen = new Set<string>();
+	const lowerLabels = new Map<SearchSuggestion, string>();
+	const valueGroups = new Map<string | undefined, number>();
+	const matches = candidates.filter(candidate => {
+		const label = candidate.label.toLowerCase();
+		if (!label.includes(lower) || seen.has(candidate.text)) return false;
+		seen.add(candidate.text);
+		lowerLabels.set(candidate, label);
+		if (candidate.kind === 'value' && !valueGroups.has(candidate.prefix)) {
+			valueGroups.set(candidate.prefix, valueGroups.size);
+		}
+		return true;
+	});
+	return matches.toSorted(
+		(left, right) =>
+			Number(right.kind === 'keyword') - Number(left.kind === 'keyword') ||
+			Number(right.kind === 'attribute') - Number(left.kind === 'attribute') ||
+			(left.kind === 'value' && right.kind === 'value'
+				? valueGroups.get(left.prefix)! - valueGroups.get(right.prefix)!
+				: 0) ||
+			(left.kind === 'attribute' && right.kind === 'attribute'
+				? 0
+				: Number(lowerLabels.get(right)!.startsWith(lower)) -
+						Number(lowerLabels.get(left)!.startsWith(lower)) ||
+					Number(left.complete) - Number(right.complete) ||
+					left.label.localeCompare(right.label))
+	);
 };
 
 export const applySearchSuggestion = (
