@@ -66,7 +66,7 @@ const Page = async ({ params }: PageProps<'/effects/[id]'>) => {
 				]}
 				className="mx-auto -mb-6 w-full max-w-294"
 			/>
-			<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4">
+			<div className="container mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
 				<h1 className="flex items-center gap-2 pb-4 text-4xl font-bold pixel-shadow md:text-5xl">
 					<div
 						className={cn(

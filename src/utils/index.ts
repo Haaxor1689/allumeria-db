@@ -1,39 +1,3 @@
-import { type z } from 'zod';
-
-import { type ProcedureResult } from '#server/helpers.ts';
-
-import { Errors, isErrors } from './errors';
-
-export const safeJsonParse = <T extends z.ZodType>({
-	text,
-	schema,
-	errorMessage: message
-}: {
-	text: string;
-	schema: T;
-	errorMessage?: string;
-}) => {
-	try {
-		const json = JSON.parse(text) as unknown;
-		const parsed = schema.safeParse(json);
-		if (!parsed.success)
-			throw Errors.schemaValidation({
-				message,
-				error: parsed.error,
-				data: json
-			});
-		return parsed.data as z.infer<T>;
-	} catch (err) {
-		throw isErrors(err) ? err : Errors.jsonParse({ message, data: text });
-	}
-};
-
-export const invoke = <T>(value: Promise<ProcedureResult<T>>) =>
-	value.then(res => {
-		if (!res.ok) throw res.error;
-		return res.data;
-	});
-
 export const toDisplayName = (str: string) =>
 	// oxlint-disable-next-line typescript/no-misused-spread
 	[...str].reduce((acc, char, index, arr) => {
@@ -47,3 +11,22 @@ export const toDisplayName = (str: string) =>
 		if (!isUppercase && isPrevSpace) return `${acc}${char.toUpperCase()}`;
 		return acc + char;
 	}, '');
+
+export const getLastUpdatedString = (date: Date) => {
+	if (!date) return 'Never';
+	const now = new Date();
+	const diff = now.getTime() - new Date(date).getTime();
+	const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+	const plural = (n: number) => (n === 1 ? '' : 's');
+	if (days >= 365) return 'Over a year ago';
+	if (days >= 30) {
+		const months = Math.floor(days / 30);
+		return `${months} month${plural(months)} ago`;
+	}
+	if (days > 0) return `${days} day${plural(days)} ago`;
+	const hours = Math.floor(diff / (1000 * 60 * 60));
+	if (hours > 0) return `${hours} hour${plural(hours)} ago`;
+	const minutes = Math.floor(diff / (1000 * 60));
+	if (minutes > 0) return `${minutes} minute${plural(minutes)} ago`;
+	return `<1 minute ago`;
+};

@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { mock, test } from 'node:test';
 
@@ -26,10 +27,28 @@ import entities from '#data/entities.json';
 import items from '#data/items.json';
 import { npcDataExt } from '#utils/helpers.ts';
 
-import { renderEntryOg } from './entryOg.tsx';
+import { loadFonts, renderEntryOg } from './entryOg.tsx';
 
 // Node runs the renderer without Next's compiled "use cache" context.
 mock.method(nextCache, 'cacheLife', () => {});
+
+void test('OG color literals match the theme palette', async () => {
+	const [theme, renderer] = await Promise.all([
+		readFile(join(process.cwd(), 'src', 'theme.css'), 'utf8'),
+		readFile(join(process.cwd(), 'src', 'server', 'entryOg.tsx'), 'utf8')
+	]);
+	const palette = new Set(
+		Array.from(theme.matchAll(/--color-[\w-]+:\s*(#[\da-f]+);/gi), match =>
+			match[1]!.toLowerCase()
+		)
+	);
+	for (const [color] of renderer.matchAll(/#[\da-f]{6}(?:[\da-f]{2})?\b/gi)) {
+		assert.ok(
+			palette.has(color.toLowerCase()),
+			`${color} must be a theme color`
+		);
+	}
+});
 
 void test('OG routes enumerate every unique detail ID for build-time rendering', () => {
 	for (const [generateParams, ids] of [
@@ -344,4 +363,144 @@ void test('missing preview assets log a warning and render the fallback', async 
 		String(warning.mock.calls[0]?.arguments[0]),
 		/OG preview not found/
 	);
+});
+
+void test('mod OG cards render metadata and the author avatar as a 1200 x 630 PNG', async context => {
+	const fonts = await loadFonts();
+	const avatar = await sharp({
+		create: {
+			width: 64,
+			height: 64,
+			channels: 3,
+			background: '#ff0000'
+		}
+	})
+		.png()
+		.toBuffer();
+	const avatarUrl = 'https://codeberg.org/avatars/test-author';
+	const fetchMock = context.mock.method(
+		globalThis,
+		'fetch',
+		async (url: Parameters<typeof fetch>[0]) => {
+			assert.equal(typeof url, 'string');
+			if (typeof url !== 'string') throw new Error('Expected a string URL');
+			if (url === avatarUrl) return new Response(new Uint8Array(avatar));
+			const font = fonts.find(font =>
+				url.includes(font.weight === 400 ? '-Regular.ttf' : '-Bold.ttf')
+			);
+			assert.ok(font, `Unexpected request: ${url}`);
+			return new Response(font.data);
+		}
+	);
+	const mod = {
+		display_name: 'Test Mod',
+		version: '1.2.3',
+		description: 'A custom Allumeria mod.'
+	};
+	const render = async (metadata = mod) => {
+		const response = await renderEntryOg({
+			name: metadata.display_name,
+			category: 'Mod',
+			previewKind: 'mod',
+			avatarUrl,
+			version: metadata.version,
+			description: metadata.description
+		});
+		assert.equal(response.headers.get('Content-Type'), 'image/png');
+		const buffer = Buffer.from(await response.arrayBuffer());
+		const info = await sharp(buffer).metadata();
+		assert.equal(info.format, 'png');
+		assert.equal(info.width, 1200);
+		assert.equal(info.height, 630);
+		return buffer;
+	};
+	const original = await render();
+	const entry = Buffer.from(
+		await (
+			await renderEntryOg({
+				name: mod.display_name,
+				category: 'Mod',
+				previewKind: 'item',
+				images: ['/assets/items/agave.webp']
+			})
+		).arrayBuffer()
+	);
+	const region = async (
+		image: Buffer,
+		left: number,
+		top: number,
+		width: number,
+		height: number
+	) =>
+		await sharp(image).extract({ left, top, width, height }).raw().toBuffer();
+	assert.ok(
+		(await region(original, 92, 92, 624, 50)).equals(
+			await region(entry, 92, 92, 624, 50)
+		),
+		'Mod category must match the entry card category styling and position'
+	);
+	const categoryPixels = await region(original, 92, 92, 624, 50);
+	let aquaPixels = 0;
+	for (let i = 0; i < categoryPixels.length; i += 4) {
+		if (
+			categoryPixels[i] === 0x34 &&
+			categoryPixels[i + 1] === 0xeb &&
+			categoryPixels[i + 2] === 0xba
+		)
+			aquaPixels++;
+	}
+	assert.ok(aquaPixels > 100, 'Category text must render in theme aqua');
+	assert.ok(
+		(await region(original, 92, 160, 624, 80)).equals(
+			await region(entry, 92, 160, 624, 80)
+		),
+		'Short mod titles must match the entry card typography and position'
+	);
+	assert.ok(
+		(await region(original, 92, 424, 408, 114)).equals(
+			await region(entry, 92, 424, 408, 114)
+		),
+		'Branding must match the entry card size and position'
+	);
+	const center = await sharp(original)
+		.extract({ left: 928, top: 272, width: 1, height: 1 })
+		.removeAlpha()
+		.raw()
+		.toBuffer();
+	assert.deepEqual([...center], [255, 0, 0]);
+
+	const textRegion = async (image: Buffer) =>
+		await sharp(image)
+			.extract({ left: 92, top: 92, width: 624, height: 340 })
+			.raw()
+			.toBuffer();
+	const originalText = await textRegion(original);
+	for (const metadata of [
+		{ ...mod, display_name: 'Different Title' },
+		{ ...mod, version: '9.8.7' },
+		{ ...mod, description: 'A different description.' }
+	]) {
+		assert.ok(!(await textRegion(await render(metadata))).equals(originalText));
+	}
+	await render({ ...mod, description: '' });
+	const long = await render({
+		...mod,
+		display_name: 'An unusually long mod title that wraps onto multiple lines',
+		description: 'A long description with lots of details. '.repeat(30)
+	});
+	const brandingRegion = async (image: Buffer) =>
+		await sharp(image)
+			.extract({ left: 92, top: 424, width: 408, height: 114 })
+			.raw()
+			.toBuffer();
+	assert.ok(
+		(await brandingRegion(long)).equals(await brandingRegion(original)),
+		'Long metadata must not overlap or move the branding'
+	);
+	assert.ok(fetchMock.mock.calls.some(call => call.arguments[0] === avatarUrl));
+
+	fetchMock.mock.mockImplementation(
+		async () => new Response('Unavailable', { status: 503 })
+	);
+	await assert.rejects(render(), /Failed to fetch mod OG avatar: HTTP 503/);
 });

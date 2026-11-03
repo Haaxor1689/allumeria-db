@@ -8,10 +8,19 @@ import sharp from 'sharp';
 type EntryOg = {
 	name: string;
 	category: string;
-	images: string[];
-	previewKind: 'item' | 'block' | 'entity' | 'effect';
-	effectType?: string;
-};
+} & (
+	| {
+			images: string[];
+			previewKind: 'item' | 'block' | 'entity' | 'effect';
+			effectType?: string;
+	  }
+	| {
+			previewKind: 'mod';
+			avatarUrl: string;
+			version: string;
+			description?: string;
+	  }
+);
 
 export const entryOgSize = { width: 1200, height: 630 };
 
@@ -84,6 +93,23 @@ const previewLayouts = {
 };
 
 const loadPreview = async (entry: EntryOg) => {
+	if (entry.previewKind === 'mod') {
+		const response = await fetch(entry.avatarUrl, { cache: 'force-cache' });
+		if (!response.ok)
+			throw new Error(`Failed to fetch mod OG avatar: HTTP ${response.status}`);
+		const image = await sharp(Buffer.from(await response.arrayBuffer()))
+			.resize(320, 320, { fit: 'cover' })
+			.png()
+			.toBuffer();
+		return {
+			src: `data:image/png;base64,${image.toString('base64')}`,
+			width: 320,
+			height: 320,
+			slotWidth: 360,
+			slotHeight: 360,
+			pixelScale: 4
+		};
+	}
 	const layout = previewLayouts[entry.previewKind];
 	const scale = Math.min(360 / layout.width, 446 / layout.height);
 	const slotWidth = Math.round(layout.width * scale);
@@ -164,7 +190,7 @@ const loadBranding = async () => {
 	};
 };
 
-const loadFonts = async () =>
+export const loadFonts = async () =>
 	await Promise.all(
 		([400, 700] as const).map(async weight => {
 			const response = await fetch(
@@ -187,7 +213,9 @@ const loadFonts = async () =>
 const renderEntryOgData = async (entry: EntryOg) => {
 	'use cache';
 
-	nextCache.cacheLife({ revalidate: Infinity, expire: Infinity });
+	// Accessed via the namespace so tests can mock it without Next's "use cache" runtime.
+	if (entry.previewKind === 'mod') nextCache.cacheLife('hours');
+	else nextCache.cacheLife({ revalidate: Infinity, expire: Infinity });
 
 	const [preview, brand, loadedFonts, dialog] = await Promise.all([
 		loadPreview(entry),
@@ -212,7 +240,7 @@ const renderEntryOgData = async (entry: EntryOg) => {
 				display: 'flex',
 				width: '100%',
 				height: '100%',
-				backgroundColor: '#111827',
+				backgroundColor: '#000000',
 				backgroundImage: `url(${brand.background})`,
 				backgroundSize: 'cover',
 				color: '#ffffff',
@@ -245,29 +273,54 @@ const renderEntryOgData = async (entry: EntryOg) => {
 						justifyContent: 'space-between'
 					}}
 				>
-					<div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+					<div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
 						<div
 							style={{
 								display: 'flex',
-								color: '#6ee7e7',
-								fontSize: 42,
-								textTransform: 'uppercase',
-								letterSpacing: 3
+								color: '#34ebba',
+								fontSize: 38,
+								textTransform: 'uppercase'
 							}}
 						>
 							{entry.category}
 						</div>
 						<div
 							style={{
-								display: 'flex',
-								fontSize: 82,
+								display: 'block',
+								fontSize:
+									entry.name.length > 16
+										? 62
+										: entry.name.length > 13
+											? 70
+											: 82,
 								fontWeight: 700,
 								lineHeight: 1.08,
-								overflowWrap: 'break-word'
+								overflowWrap: 'break-word',
+								lineClamp: 2,
+								paddingBottom: 8
 							}}
 						>
 							{entry.name}
 						</div>
+						{entry.previewKind === 'mod' && (
+							<div style={{ display: 'flex', color: '#34ebba', fontSize: 26 }}>
+								v{entry.version}
+							</div>
+						)}
+						{entry.previewKind === 'mod' && entry.description && (
+							<div
+								style={{
+									display: 'block',
+									color: '#ffffffb3',
+									fontSize: 24,
+									lineHeight: 1.25,
+									overflowWrap: 'break-word',
+									lineClamp: 2
+								}}
+							>
+								{entry.description}
+							</div>
+						)}
 					</div>
 					<img src={brand.logo} width={408} height={114} alt="AllumeriaDB" />
 				</div>

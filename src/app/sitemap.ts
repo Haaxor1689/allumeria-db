@@ -10,7 +10,9 @@ import items from '#data/items.json';
 import npcData from '#data/npc_data.json';
 import summary from '#data/summary.json';
 import { env } from '#env.js';
+import { getAllMods } from '#server/mods.ts';
 import { getItemIcon } from '#utils/helpers.ts';
+import { Mods } from '#utils/mods.ts';
 
 const staticRoutes = [
 	'/',
@@ -21,7 +23,8 @@ const staticRoutes = [
 	'/effects',
 	'/npcs',
 	'/data-tag-reader',
-	'/skin-converter'
+	'/skin-converter',
+	'/mods'
 ];
 
 const toAbsoluteUrl = (path: string) => new URL(path, env.BASE_URL).toString();
@@ -33,7 +36,7 @@ const imageUrls = (...paths: string[]) =>
 		)
 		.map(toAbsoluteUrl);
 
-const sitemap = (): MetadataRoute.Sitemap => {
+const sitemap = async (): Promise<MetadataRoute.Sitemap> => {
 	const lastModified = new Date(summary.generatedAtUtc);
 
 	const staticEntries = staticRoutes.map(route => ({
@@ -76,13 +79,23 @@ const sitemap = (): MetadataRoute.Sitemap => {
 		)
 	}));
 
+	const loadedMods = await getAllMods();
+	const modEntries = Mods.map(mod => {
+		const releasedAt = loadedMods.find(m => m.slug === mod.slug)?.releasedAt;
+		return {
+			url: toAbsoluteUrl(`/mods/${mod.slug}`),
+			...(releasedAt && { lastModified: new Date(releasedAt) })
+		};
+	});
+
 	return [
 		...staticEntries,
 		...itemEntries,
 		...blockEntries,
 		...creatureEntries,
 		...npcEntries,
-		...effectEntries
+		...effectEntries,
+		...modEntries
 	];
 };
 

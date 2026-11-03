@@ -117,9 +117,9 @@ const Page = async ({ params }: PageProps<'/blocks/[id]'>) => {
 					{ label: 'Blocks', href: '/blocks' },
 					{ label: name }
 				]}
-				className="-order-1 -mb-8 self-start 2xl:mb-2"
+				className="mx-auto -mb-6 w-full max-w-294"
 			/>
-			<div className="mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
+			<div className="container mx-auto flex w-full max-w-294 flex-col gap-10 ns-dialog p-4 2xl:block 2xl:space-y-10">
 				<div className="mx-auto -mt-6 mb-0 w-full max-w-120 2xl:float-right 2xl:mt-0 2xl:ml-6">
 					<BlockRender block={block} />
 				</div>

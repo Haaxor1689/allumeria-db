@@ -28,6 +28,11 @@ export const DatabaseLinks = [
 
 export const ToolsLinks = [
 	{
+		href: '/mods',
+		label: 'Mods',
+		icon: '/assets/icons/screen.webp'
+	},
+	{
 		href: '/skin-converter',
 		label: 'Skin Converter',
 		icon: '/assets/items/painting_triangle.webp'
